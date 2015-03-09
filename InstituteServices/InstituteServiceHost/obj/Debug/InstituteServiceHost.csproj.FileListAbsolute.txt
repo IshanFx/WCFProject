@@ -1,0 +1,9 @@
+E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServiceHost.exe.config
+E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServiceHost.exe
+E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServiceHost.pdb
+E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServices.dll
+E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\bin\Debug\MySql.Data.dll
+E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServices.pdb
+E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\obj\Debug\InstituteServiceHost.csprojResolveAssemblyReference.cache
+E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\obj\Debug\InstituteServiceHost.exe
+E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\obj\Debug\InstituteServiceHost.pdb

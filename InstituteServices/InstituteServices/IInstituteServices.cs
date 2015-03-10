@@ -32,6 +32,10 @@ namespace InstituteServices
 
         [OperationContract]
         DataSet GetEmployeeData();
+
+        [OperationContract]
+        DataSet GetEmployeePaymentFull();
+
         
     }
 
@@ -48,7 +52,12 @@ namespace InstituteServices
 
         [OperationContract]
         int SaveTeacherPayment(Teacher teacher);
-    
+
+        [OperationContract]
+        DataSet GetTeachersIncome();
+
+        [OperationContract]
+        DataSet GetTeachersPaymentFull();
     }
 
 

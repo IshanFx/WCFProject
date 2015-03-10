@@ -68,6 +68,12 @@
   <wsdl:message name="ITeacherServices_SaveTeacherPayment_OutputMessage">
     <wsdl:part name="parameters" element="tns:SaveTeacherPaymentResponse" />
   </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeachersIncome_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeachersIncome" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeachersIncome_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeachersIncomeResponse" />
+  </wsdl:message>
   <wsdl:portType name="IInstituteServices">
     <wsdl:operation name="DoWork">
       <wsdl:input wsaw:Action="http://tempuri.org/IInstituteServices/DoWork" message="tns:IInstituteServices_DoWork_InputMessage" />
@@ -112,6 +118,10 @@
     <wsdl:operation name="SaveTeacherPayment">
       <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/SaveTeacherPayment" message="tns:ITeacherServices_SaveTeacherPayment_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/SaveTeacherPaymentResponse" message="tns:ITeacherServices_SaveTeacherPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeachersIncome">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/GetTeachersIncome" message="tns:ITeacherServices_GetTeachersIncome_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/GetTeachersIncomeResponse" message="tns:ITeacherServices_GetTeachersIncome_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IInstituteServices" type="tns:IInstituteServices">
@@ -205,6 +215,15 @@
     </wsdl:operation>
     <wsdl:operation name="SaveTeacherPayment">
       <soap:operation soapAction="http://tempuri.org/ITeacherServices/SaveTeacherPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeachersIncome">
+      <soap:operation soapAction="http://tempuri.org/ITeacherServices/GetTeachersIncome" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

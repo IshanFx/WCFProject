@@ -546,6 +546,9 @@ namespace InstituteAdminSide.InstituteService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/SaveTeacherPayment", ReplyAction="http://tempuri.org/ITeacherServices/SaveTeacherPaymentResponse")]
         int SaveTeacherPayment(InstituteAdminSide.InstituteService.Teacher teacher);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/GetTeachersIncome", ReplyAction="http://tempuri.org/ITeacherServices/GetTeachersIncomeResponse")]
+        System.Data.DataSet GetTeachersIncome();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -589,6 +592,10 @@ namespace InstituteAdminSide.InstituteService {
         
         public int SaveTeacherPayment(InstituteAdminSide.InstituteService.Teacher teacher) {
             return base.Channel.SaveTeacherPayment(teacher);
+        }
+        
+        public System.Data.DataSet GetTeachersIncome() {
+            return base.Channel.GetTeachersIncome();
         }
     }
 }

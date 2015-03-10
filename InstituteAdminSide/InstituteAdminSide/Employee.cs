@@ -104,8 +104,11 @@ namespace InstituteAdminSide
         private void tabPage3_Click(object sender, EventArgs e)
         {
             InstituteService.EmployeeServicesClient client = new InstituteService.EmployeeServicesClient();
-            
-            empAlldatagrid.DataSource = client.GetEmployeeData();
+           
+            InstituteService.Employee emploee = new InstituteService.Employee();
+            DataSet set = client.GetEmployeeData();
+            DataTable table = set.Tables[0];
+            empAlldatagrid.DataSource = table;
         }
     }
 }

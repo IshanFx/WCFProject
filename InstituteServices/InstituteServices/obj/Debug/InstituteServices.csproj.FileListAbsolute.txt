@@ -5,3 +5,10 @@ E:\Software Projects\Intergrated\InstituteServices\InstituteServices\bin\Debug\M
 E:\Software Projects\Intergrated\InstituteServices\InstituteServices\obj\Debug\InstituteServices.dll
 E:\Software Projects\Intergrated\InstituteServices\InstituteServices\obj\Debug\InstituteServices.pdb
 E:\Software Projects\Intergrated\InstituteServices\InstituteServices\obj\Debug\InstituteServices.csprojResolveAssemblyReference.cache
+E:\Software Projects\gitWCFproject\InstituteServices\InstituteServices\bin\Debug\InstituteServices.dll.config
+E:\Software Projects\gitWCFproject\InstituteServices\InstituteServices\bin\Debug\InstituteServices.dll
+E:\Software Projects\gitWCFproject\InstituteServices\InstituteServices\bin\Debug\InstituteServices.pdb
+E:\Software Projects\gitWCFproject\InstituteServices\InstituteServices\bin\Debug\MySql.Data.dll
+E:\Software Projects\gitWCFproject\InstituteServices\InstituteServices\obj\Debug\InstituteServices.csprojResolveAssemblyReference.cache
+E:\Software Projects\gitWCFproject\InstituteServices\InstituteServices\obj\Debug\InstituteServices.dll
+E:\Software Projects\gitWCFproject\InstituteServices\InstituteServices\obj\Debug\InstituteServices.pdb

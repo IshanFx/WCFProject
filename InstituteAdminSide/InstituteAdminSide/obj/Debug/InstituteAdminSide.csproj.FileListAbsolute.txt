@@ -11,3 +11,16 @@ E:\Software Projects\Intergrated\InstituteAdminSide\InstituteAdminSide\obj\Debug
 E:\Software Projects\Intergrated\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.Reports.resources
 E:\Software Projects\Intergrated\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.Teacher.resources
 E:\Software Projects\Intergrated\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.MyChart.resources
+E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\bin\Debug\InstituteAdminSide.exe.config
+E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.exe
+E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.pdb
+E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\bin\Debug\InstituteAdminSide.exe
+E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\bin\Debug\InstituteAdminSide.pdb
+E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.csprojResolveAssemblyReference.cache
+E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.MyChart.resources
+E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.Employee.resources
+E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.Home.resources
+E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.Properties.Resources.resources
+E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.Reports.resources
+E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.Teacher.resources
+E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.csproj.GenerateResource.Cache

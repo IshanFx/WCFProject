@@ -70,12 +70,12 @@ namespace InstituteServices
                 db = new DB ();
                 DataTable table = db.SelectQuery(sql);  
                 teacher.TeacherFName = table.Rows[0][1].ToString();
-                teacher.TeacherLName = table.Rows[0][21].ToString();
-                teacher.TeacherNIC = table.Rows[0][1].ToString();
-                teacher.TeacherContact = table.Rows[0][1].ToString();
-                teacher.TeacherAddress = table.Rows[0][1].ToString();
-                teacher.TeacherMail = table.Rows[0][1].ToString();
-                teacher.TeacherSubject = table.Rows[0][1].ToString();
+                teacher.TeacherLName = table.Rows[0][2].ToString();
+                teacher.TeacherNIC = table.Rows[0][3].ToString();
+                teacher.TeacherContact = table.Rows[0][4].ToString();
+                teacher.TeacherAddress = table.Rows[0][5].ToString();
+                teacher.TeacherMail = table.Rows[0][6].ToString();
+                teacher.TeacherSubject = table.Rows[0][7].ToString();
            
             return teacher;
         }
@@ -117,11 +117,14 @@ namespace InstituteServices
         }
 
 
-        public DataTable GetEmployeeData()
+        public DataSet GetEmployeeData()
         {
-            string sql = "SELECT * FROM employee";
-            db = new DB();
-            return db.SelectQuery(sql);
+                string sql = "SELECT* FROM Employee ";
+                db = new DB();
+                DataTable table = db.SelectQuery(sql);
+                DataSet set = new DataSet();
+                set.Tables.Add(table);
+                return set;
         }
     }
 }

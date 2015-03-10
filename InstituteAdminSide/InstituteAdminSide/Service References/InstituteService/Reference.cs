@@ -480,7 +480,7 @@ namespace InstituteAdminSide.InstituteService {
         int SaveEmployeePayments(InstituteAdminSide.InstituteService.Employee employee);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/GetEmployeeData", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeeDataResponse")]
-        System.Data.DataTable GetEmployeeData();
+        System.Data.DataSet GetEmployeeData();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -526,7 +526,7 @@ namespace InstituteAdminSide.InstituteService {
             return base.Channel.SaveEmployeePayments(employee);
         }
         
-        public System.Data.DataTable GetEmployeeData() {
+        public System.Data.DataSet GetEmployeeData() {
             return base.Channel.GetEmployeeData();
         }
     }

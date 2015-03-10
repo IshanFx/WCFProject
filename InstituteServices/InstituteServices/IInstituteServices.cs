@@ -31,7 +31,7 @@ namespace InstituteServices
         int SaveEmployeePayments(Employee employee);
 
         [OperationContract]
-        DataTable GetEmployeeData();
+        DataSet GetEmployeeData();
         
     }
 

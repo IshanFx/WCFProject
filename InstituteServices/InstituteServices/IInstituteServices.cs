@@ -54,6 +54,9 @@ namespace InstituteServices
         int SaveTeacherPayment(Teacher teacher);
 
         [OperationContract]
+        DataSet GetTeacherData();
+
+        [OperationContract]
         DataSet GetTeachersIncome();
 
         [OperationContract]

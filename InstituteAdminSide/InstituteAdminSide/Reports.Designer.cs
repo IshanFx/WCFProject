@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.reportTab = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.stuAllPay = new System.Windows.Forms.Button();
-            this.sSearchbtn = new System.Windows.Forms.Button();
             this.stuPayTable = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.stuTeaId = new System.Windows.Forms.ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tyear = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,6 +54,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button4 = new System.Windows.Forms.Button();
             this.reportTab.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stuPayTable)).BeginInit();
@@ -62,6 +65,8 @@
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empPayTable)).BeginInit();
             this.panel1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // reportTab
@@ -69,6 +74,7 @@
             this.reportTab.Controls.Add(this.tabPage3);
             this.reportTab.Controls.Add(this.tabPage4);
             this.reportTab.Controls.Add(this.tabPage5);
+            this.reportTab.Controls.Add(this.tabPage1);
             this.reportTab.Font = new System.Drawing.Font("Stencil Std", 14.25F, System.Drawing.FontStyle.Bold);
             this.reportTab.ItemSize = new System.Drawing.Size(119, 28);
             this.reportTab.Location = new System.Drawing.Point(14, 88);
@@ -82,12 +88,10 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
+            this.tabPage3.Controls.Add(this.button4);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.stuAllPay);
-            this.tabPage3.Controls.Add(this.sSearchbtn);
             this.tabPage3.Controls.Add(this.stuPayTable);
-            this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Controls.Add(this.stuTeaId);
             this.tabPage3.Location = new System.Drawing.Point(4, 32);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -103,30 +107,19 @@
             this.button1.TabIndex = 16;
             this.button1.Text = "Income Chart";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // stuAllPay
             // 
             this.stuAllPay.BackColor = System.Drawing.Color.SaddleBrown;
             this.stuAllPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.stuAllPay.ForeColor = System.Drawing.Color.White;
-            this.stuAllPay.Location = new System.Drawing.Point(534, 22);
+            this.stuAllPay.Location = new System.Drawing.Point(7, 24);
             this.stuAllPay.Name = "stuAllPay";
             this.stuAllPay.Size = new System.Drawing.Size(132, 35);
             this.stuAllPay.TabIndex = 15;
             this.stuAllPay.Text = "All";
             this.stuAllPay.UseVisualStyleBackColor = false;
-            // 
-            // sSearchbtn
-            // 
-            this.sSearchbtn.BackColor = System.Drawing.Color.SaddleBrown;
-            this.sSearchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sSearchbtn.ForeColor = System.Drawing.Color.White;
-            this.sSearchbtn.Location = new System.Drawing.Point(325, 24);
-            this.sSearchbtn.Name = "sSearchbtn";
-            this.sSearchbtn.Size = new System.Drawing.Size(119, 31);
-            this.sSearchbtn.TabIndex = 14;
-            this.sSearchbtn.Text = "Search";
-            this.sSearchbtn.UseVisualStyleBackColor = false;
             // 
             // stuPayTable
             // 
@@ -135,27 +128,6 @@
             this.stuPayTable.Name = "stuPayTable";
             this.stuPayTable.Size = new System.Drawing.Size(994, 305);
             this.stuPayTable.TabIndex = 13;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Stencil Std", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.label3.Location = new System.Drawing.Point(25, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 25);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Teacher";
-            // 
-            // stuTeaId
-            // 
-            this.stuTeaId.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.stuTeaId.FormattingEnabled = true;
-            this.stuTeaId.Location = new System.Drawing.Point(169, 26);
-            this.stuTeaId.Name = "stuTeaId";
-            this.stuTeaId.Size = new System.Drawing.Size(121, 26);
-            this.stuTeaId.TabIndex = 9;
             // 
             // tabPage4
             // 
@@ -279,6 +251,7 @@
             this.button3.TabIndex = 15;
             this.button3.Text = "All";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // eserchbtn
             // 
@@ -352,6 +325,43 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.chart1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1007, 505);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "Total Income";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(28, 20);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(880, 442);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(828, 427);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(104, 33);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "PDF";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,7 +372,6 @@
             this.Text = "Reports";
             this.reportTab.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stuPayTable)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
@@ -372,6 +381,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.empPayTable)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -381,10 +392,7 @@
         private System.Windows.Forms.TabControl reportTab;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button stuAllPay;
-        private System.Windows.Forms.Button sSearchbtn;
         private System.Windows.Forms.DataGridView stuPayTable;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox stuTeaId;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TextBox tyear;
         private System.Windows.Forms.Label label1;
@@ -404,5 +412,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

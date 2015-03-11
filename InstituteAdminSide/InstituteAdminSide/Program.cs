@@ -15,7 +15,7 @@ namespace InstituteAdminSide
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MyChart());
+            Application.Run(new LogIn());
         }
     }
 }

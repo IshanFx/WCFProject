@@ -13,7 +13,7 @@ namespace InstituteServices
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "InstituteServices" in both code and config file together.
     public class InstituteServices : IInstituteServices,IEmployeeServices,ITeacherServices,IStudentServices,ICourseServices
     {
-        string con = ConfigurationManager.ConnectionStrings["Studb"].ConnectionString;
+       
         DB db;
         DataTable table;
         DataSet set;
@@ -156,6 +156,16 @@ namespace InstituteServices
         {
             string sql = "SELECT CONCAT(e.fname,' ',e.lname)AS Name,e.nic AS NIC,ep.month AS Month,ep.year AS Year,ep.paydate AS PayDate,ep.amount AS Amount FROM employee e,emppayments ep WHERE e.empid=ep.empid";
 
+            table = db.SelectQuery(sql);
+            set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
+
+
+        public DataSet GetTeacherData()
+        {
+            string sql = "SELECT * FROM teachers";
             table = db.SelectQuery(sql);
             set = new DataSet();
             set.Tables.Add(table);

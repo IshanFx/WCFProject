@@ -98,17 +98,22 @@ namespace InstituteAdminSide
 
         private void Employee_Load(object sender, EventArgs e)
         {
-            
-        }
-
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
             InstituteService.EmployeeServicesClient client = new InstituteService.EmployeeServicesClient();
-           
+
             InstituteService.Employee emploee = new InstituteService.Employee();
             DataSet set = client.GetEmployeeData();
             DataTable table = set.Tables[0];
             empAlldatagrid.DataSource = table;
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

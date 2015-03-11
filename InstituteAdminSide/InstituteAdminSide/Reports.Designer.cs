@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.reportTab = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.stuAllPay = new System.Windows.Forms.Button();
             this.stuPayTable = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.tyear = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tsearchbtn = new System.Windows.Forms.Button();
@@ -51,12 +53,11 @@
             this.empPayTable = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.empMonth = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.button4 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.reportTab.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stuPayTable)).BeginInit();
@@ -64,9 +65,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.teachPayTable)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empPayTable)).BeginInit();
-            this.panel1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // reportTab
@@ -98,6 +99,16 @@
             this.tabPage3.Size = new System.Drawing.Size(1007, 505);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Student";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(828, 427);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(104, 33);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "PDF";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button1
             // 
@@ -145,6 +156,16 @@
             this.tabPage4.Size = new System.Drawing.Size(1007, 505);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Teacher";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(20, 439);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(207, 36);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "Income Chart";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tyear
             // 
@@ -208,6 +229,7 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.White;
+            this.tabPage5.Controls.Add(this.button5);
             this.tabPage5.Controls.Add(this.empPayYear);
             this.tabPage5.Controls.Add(this.label2);
             this.tabPage5.Controls.Add(this.button3);
@@ -293,6 +315,33 @@
             this.empMonth.Size = new System.Drawing.Size(121, 26);
             this.empMonth.TabIndex = 11;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.chart1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1007, 505);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "Total Income";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // chart1
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(28, 20);
+            this.chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(880, 442);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SaddleBrown;
@@ -315,52 +364,15 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Report";
             // 
-            // button2
+            // button5
             // 
-            this.button2.Location = new System.Drawing.Point(20, 439);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(207, 36);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Income Chart";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.chart1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 32);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1007, 505);
-            this.tabPage1.TabIndex = 5;
-            this.tabPage1.Text = "Total Income";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(28, 20);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(880, 442);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(828, 427);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 33);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "PDF";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button5.Location = new System.Drawing.Point(20, 440);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(207, 36);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Income Chart";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Reports
             // 
@@ -379,10 +391,10 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empPayTable)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -415,5 +427,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Button button5;
     }
 }

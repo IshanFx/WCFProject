@@ -481,6 +481,12 @@ namespace InstituteAdminSide.InstituteService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/GetEmployeeData", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeeDataResponse")]
         System.Data.DataSet GetEmployeeData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/GetEmployeePaymentFull", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeePaymentFullResponse")]
+        System.Data.DataSet GetEmployeePaymentFull();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/GetEmployeePayment", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeePaymentResponse")]
+        System.Data.DataSet GetEmployeePayment();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -529,6 +535,14 @@ namespace InstituteAdminSide.InstituteService {
         public System.Data.DataSet GetEmployeeData() {
             return base.Channel.GetEmployeeData();
         }
+        
+        public System.Data.DataSet GetEmployeePaymentFull() {
+            return base.Channel.GetEmployeePaymentFull();
+        }
+        
+        public System.Data.DataSet GetEmployeePayment() {
+            return base.Channel.GetEmployeePayment();
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -547,8 +561,14 @@ namespace InstituteAdminSide.InstituteService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/SaveTeacherPayment", ReplyAction="http://tempuri.org/ITeacherServices/SaveTeacherPaymentResponse")]
         int SaveTeacherPayment(InstituteAdminSide.InstituteService.Teacher teacher);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/GetTeacherData", ReplyAction="http://tempuri.org/ITeacherServices/GetTeacherDataResponse")]
+        System.Data.DataSet GetTeacherData();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/GetTeachersIncome", ReplyAction="http://tempuri.org/ITeacherServices/GetTeachersIncomeResponse")]
         System.Data.DataSet GetTeachersIncome();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/GetTeachersPaymentFull", ReplyAction="http://tempuri.org/ITeacherServices/GetTeachersPaymentFullResponse")]
+        System.Data.DataSet GetTeachersPaymentFull();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -594,8 +614,16 @@ namespace InstituteAdminSide.InstituteService {
             return base.Channel.SaveTeacherPayment(teacher);
         }
         
+        public System.Data.DataSet GetTeacherData() {
+            return base.Channel.GetTeacherData();
+        }
+        
         public System.Data.DataSet GetTeachersIncome() {
             return base.Channel.GetTeachersIncome();
+        }
+        
+        public System.Data.DataSet GetTeachersPaymentFull() {
+            return base.Channel.GetTeachersPaymentFull();
         }
     }
 }

@@ -18,7 +18,9 @@ namespace InstituteAdminSide
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            InstituteService.TeacherServicesClient teacher = new InstituteService.TeacherServicesClient();
+            MyChart chart = new MyChart(teacher.GetTeachersIncome());
+            chart.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -34,6 +36,13 @@ namespace InstituteAdminSide
         private void button4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            InstituteService.EmployeeServicesClient client = new InstituteService.EmployeeServicesClient();   
+            MyChart chart = new MyChart(client.GetEmployeePayment());
+            chart.Show();
         }
     }
 }

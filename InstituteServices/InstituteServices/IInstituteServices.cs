@@ -36,8 +36,10 @@ namespace InstituteServices
         [OperationContract]
         DataSet GetEmployeePaymentFull();
 
+        [OperationContract]
+        DataSet GetEmployeePayment();
         
-    }
+        }
 
     [ServiceContract]
     public interface ITeacherServices {

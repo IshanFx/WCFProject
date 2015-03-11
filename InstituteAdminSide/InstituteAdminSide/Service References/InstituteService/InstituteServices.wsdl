@@ -44,6 +44,18 @@
   <wsdl:message name="IEmployeeServices_GetEmployeeData_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetEmployeeDataResponse" />
   </wsdl:message>
+  <wsdl:message name="IEmployeeServices_GetEmployeePaymentFull_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeePaymentFull" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_GetEmployeePaymentFull_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeePaymentFullResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_GetEmployeePayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeePayment" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_GetEmployeePayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeePaymentResponse" />
+  </wsdl:message>
   <wsdl:message name="ITeacherServices_SaveTeacher_InputMessage">
     <wsdl:part name="parameters" element="tns:SaveTeacher" />
   </wsdl:message>
@@ -68,11 +80,23 @@
   <wsdl:message name="ITeacherServices_SaveTeacherPayment_OutputMessage">
     <wsdl:part name="parameters" element="tns:SaveTeacherPaymentResponse" />
   </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeacherData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherData" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeacherData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherDataResponse" />
+  </wsdl:message>
   <wsdl:message name="ITeacherServices_GetTeachersIncome_InputMessage">
     <wsdl:part name="parameters" element="tns:GetTeachersIncome" />
   </wsdl:message>
   <wsdl:message name="ITeacherServices_GetTeachersIncome_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTeachersIncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeachersPaymentFull_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeachersPaymentFull" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeachersPaymentFull_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeachersPaymentFullResponse" />
   </wsdl:message>
   <wsdl:portType name="IInstituteServices">
     <wsdl:operation name="DoWork">
@@ -101,6 +125,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeeData" message="tns:IEmployeeServices_GetEmployeeData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeeDataResponse" message="tns:IEmployeeServices_GetEmployeeData_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetEmployeePaymentFull">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeePaymentFull" message="tns:IEmployeeServices_GetEmployeePaymentFull_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeePaymentFullResponse" message="tns:IEmployeeServices_GetEmployeePaymentFull_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeePayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeePayment" message="tns:IEmployeeServices_GetEmployeePayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeePaymentResponse" message="tns:IEmployeeServices_GetEmployeePayment_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ITeacherServices">
     <wsdl:operation name="SaveTeacher">
@@ -119,9 +151,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/SaveTeacherPayment" message="tns:ITeacherServices_SaveTeacherPayment_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/SaveTeacherPaymentResponse" message="tns:ITeacherServices_SaveTeacherPayment_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetTeacherData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/GetTeacherData" message="tns:ITeacherServices_GetTeacherData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/GetTeacherDataResponse" message="tns:ITeacherServices_GetTeacherData_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetTeachersIncome">
       <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/GetTeachersIncome" message="tns:ITeacherServices_GetTeachersIncome_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/GetTeachersIncomeResponse" message="tns:ITeacherServices_GetTeachersIncome_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeachersPaymentFull">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/GetTeachersPaymentFull" message="tns:ITeacherServices_GetTeachersPaymentFull_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/GetTeachersPaymentFullResponse" message="tns:ITeacherServices_GetTeachersPaymentFull_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IInstituteServices" type="tns:IInstituteServices">
@@ -183,6 +223,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetEmployeePaymentFull">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/GetEmployeePaymentFull" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeePayment">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/GetEmployeePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_ITeacherServices" type="tns:ITeacherServices">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -222,8 +280,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetTeacherData">
+      <soap:operation soapAction="http://tempuri.org/ITeacherServices/GetTeacherData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetTeachersIncome">
       <soap:operation soapAction="http://tempuri.org/ITeacherServices/GetTeachersIncome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeachersPaymentFull">
+      <soap:operation soapAction="http://tempuri.org/ITeacherServices/GetTeachersPaymentFull" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -171,5 +171,16 @@ namespace InstituteServices
             set.Tables.Add(table);
             return set;
         }
+
+
+        public DataSet GetEmployeePayment()
+        {
+            string sql = "SELECT SUM(amount),month FROM emppayments GROUP BY month order by payid";
+            db = new DB();
+            table = db.SelectQuery(sql);
+            set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
     }
 }

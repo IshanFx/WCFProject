@@ -41,7 +41,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(12, 12);
+            this.chart1.Location = new System.Drawing.Point(2, 0);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
             series1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
@@ -51,7 +51,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Income";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(912, 472);
+            this.chart1.Size = new System.Drawing.Size(934, 496);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 

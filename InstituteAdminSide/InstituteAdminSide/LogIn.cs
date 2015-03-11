@@ -36,19 +36,34 @@ namespace InstituteAdminSide
             client.Send(mail);
             
         }
-
+        LogIn log;
         private void label1_Click(object sender, EventArgs e)
         {
+            
             timer1.Enabled = true;
+            timer1.Start();
+
         }
-        LogIn log = new LogIn();
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (log.Height <= 420)
+            if (panel1.Height <= 150)
             {
-
-                log.Height += 10;
+                panel1.Height += 5;
             }
+                     
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+           
+        }
+
+        private void LogIn_Load(object sender, EventArgs e)
+        {
+            panel1.Height = 0;
         }
     }
 }

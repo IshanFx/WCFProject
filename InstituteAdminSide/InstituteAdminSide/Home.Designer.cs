@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.button2 = new System.Windows.Forms.Button();
             this.dateShow = new System.Windows.Forms.Label();
@@ -37,6 +38,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.timeMenuButton = new System.Windows.Forms.Timer(this.components);
+            this.timerMenuButtonMin = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +53,7 @@
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(429, 216);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(303, 278);
+            this.button2.Size = new System.Drawing.Size(303, 303);
             this.button2.TabIndex = 17;
             this.button2.Text = "Teachers";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -115,12 +118,15 @@
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.Location = new System.Drawing.Point(49, 216);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(303, 278);
+            this.button5.Size = new System.Drawing.Size(303, 303);
             this.button5.TabIndex = 16;
             this.button5.Text = "Employee";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.MouseLeave += new System.EventHandler(this.button5_MouseLeave);
+            this.button5.MouseHover += new System.EventHandler(this.button5_MouseHover);
             // 
             // button4
             // 
@@ -132,7 +138,7 @@
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.Location = new System.Drawing.Point(793, 216);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(304, 278);
+            this.button4.Size = new System.Drawing.Size(304, 303);
             this.button4.TabIndex = 15;
             this.button4.Text = "Report";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -152,6 +158,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1158, 600);
             this.panel1.TabIndex = 18;
+            // 
+            // timeMenuButton
+            // 
+            this.timeMenuButton.Interval = 10;
+            this.timeMenuButton.Tick += new System.EventHandler(this.timeMenuButton_Tick);
+            // 
+            // timerMenuButtonMin
+            // 
+            this.timerMenuButtonMin.Tick += new System.EventHandler(this.timerMenuButtonMin_Tick);
             // 
             // Home
             // 
@@ -179,5 +194,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Timer timeMenuButton;
+        private System.Windows.Forms.Timer timerMenuButtonMin;
     }
 }

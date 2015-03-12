@@ -477,4 +477,10 @@
         6XXwGSDtiU0v1oEvYP80u2aqtWqBrooSFPT/pXH8pLsVKTwAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="timeMenuButton.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="timerMenuButtonMin.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>161, 17</value>
+  </metadata>
 </root>

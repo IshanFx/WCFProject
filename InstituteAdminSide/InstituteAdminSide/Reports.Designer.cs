@@ -46,6 +46,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tcomb = new System.Windows.Forms.ComboBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
             this.empPayYear = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -57,7 +58,7 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.reportTab.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stuPayTable)).BeginInit();
@@ -102,9 +103,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(828, 427);
+            this.button4.Location = new System.Drawing.Point(836, 414);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 33);
+            this.button4.Size = new System.Drawing.Size(161, 33);
             this.button4.TabIndex = 17;
             this.button4.Text = "PDF";
             this.button4.UseVisualStyleBackColor = true;
@@ -131,6 +132,7 @@
             this.stuAllPay.TabIndex = 15;
             this.stuAllPay.Text = "All";
             this.stuAllPay.UseVisualStyleBackColor = false;
+            this.stuAllPay.Click += new System.EventHandler(this.stuAllPay_Click);
             // 
             // stuPayTable
             // 
@@ -143,6 +145,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.White;
+            this.tabPage4.Controls.Add(this.button6);
             this.tabPage4.Controls.Add(this.button2);
             this.tabPage4.Controls.Add(this.tyear);
             this.tabPage4.Controls.Add(this.label1);
@@ -243,6 +246,16 @@
             this.tabPage5.Size = new System.Drawing.Size(1007, 505);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Employee";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(20, 440);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(207, 36);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Income Chart";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // empPayYear
             // 
@@ -364,15 +377,18 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Report";
             // 
-            // button5
+            // button6
             // 
-            this.button5.Location = new System.Drawing.Point(20, 440);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(207, 36);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "Income Chart";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button6.BackColor = System.Drawing.Color.SaddleBrown;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(551, 34);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(132, 35);
+            this.button6.TabIndex = 18;
+            this.button6.Text = "All";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Reports
             // 
@@ -428,5 +444,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }

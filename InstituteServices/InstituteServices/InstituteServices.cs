@@ -144,7 +144,7 @@ namespace InstituteServices
         public DataSet GetTeachersPaymentFull()
         {
             string sql = "SELECT t.teaid AS ID,CONCAT(t.fname,' ',t.lname) AS Name,t.nic AS NIC,tp.month AS Month,tp.year AS Year,tp.amount AS Amount,tp.date AS Date FROM teachers t,teacherspayments tp WHERE t.teaid=tp.teacid ";
-
+            db = new DB();
             table = db.SelectQuery(sql);
             set = new DataSet();
             set.Tables.Add(table);
@@ -155,7 +155,7 @@ namespace InstituteServices
         public DataSet GetEmployeePaymentFull()
         {
             string sql = "SELECT CONCAT(e.fname,' ',e.lname)AS Name,e.nic AS NIC,ep.month AS Month,ep.year AS Year,ep.paydate AS PayDate,ep.amount AS Amount FROM employee e,emppayments ep WHERE e.empid=ep.empid";
-
+            db = new DB();
             table = db.SelectQuery(sql);
             set = new DataSet();
             set.Tables.Add(table);

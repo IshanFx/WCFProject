@@ -85,4 +85,9 @@ namespace InstituteServices
         [OperationContract]
         int UpdateStudent(Student student);
     }
+    [ServiceContract]
+    public interface IAccount {
+        int CheckLogIn(Account account);
+    
+    }
 }

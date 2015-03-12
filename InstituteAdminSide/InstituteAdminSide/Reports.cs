@@ -25,7 +25,10 @@ namespace InstituteAdminSide
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            InstituteService.EmployeeServicesClient client = new InstituteService.EmployeeServicesClient();
+           DataSet set  = client.GetEmployeePaymentFull();
+           DataTable table = set.Tables[0];
+           empPayTable.DataSource = table;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,6 +46,20 @@ namespace InstituteAdminSide
             InstituteService.EmployeeServicesClient client = new InstituteService.EmployeeServicesClient();   
             MyChart chart = new MyChart(client.GetEmployeePayment());
             chart.Show();
+        }
+
+        private void stuAllPay_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            InstituteService.TeacherServicesClient client = new InstituteService.TeacherServicesClient();
+            DataSet set = client.GetTeachersPaymentFull();
+            DataTable table = set.Tables[0];
+            teachPayTable.DataSource = table;
+
         }
     }
 }

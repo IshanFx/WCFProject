@@ -1,0 +1,10 @@
+E:\Software Projects\gitWCFproject\InstituteUserSide\InstituteUserSide\bin\Debug\InstituteUserSide.exe
+E:\Software Projects\gitWCFproject\InstituteUserSide\InstituteUserSide\bin\Debug\InstituteUserSide.pdb
+E:\Software Projects\gitWCFproject\InstituteUserSide\InstituteUserSide\obj\Debug\InstituteUserSide.csprojResolveAssemblyReference.cache
+E:\Software Projects\gitWCFproject\InstituteUserSide\InstituteUserSide\obj\Debug\InstituteUserSide.Course.resources
+E:\Software Projects\gitWCFproject\InstituteUserSide\InstituteUserSide\obj\Debug\InstituteUserSide.Home.resources
+E:\Software Projects\gitWCFproject\InstituteUserSide\InstituteUserSide\obj\Debug\InstituteUserSide.Properties.Resources.resources
+E:\Software Projects\gitWCFproject\InstituteUserSide\InstituteUserSide\obj\Debug\InstituteUserSide.Student.resources
+E:\Software Projects\gitWCFproject\InstituteUserSide\InstituteUserSide\obj\Debug\InstituteUserSide.csproj.GenerateResource.Cache
+E:\Software Projects\gitWCFproject\InstituteUserSide\InstituteUserSide\obj\Debug\InstituteUserSide.exe
+E:\Software Projects\gitWCFproject\InstituteUserSide\InstituteUserSide\obj\Debug\InstituteUserSide.pdb

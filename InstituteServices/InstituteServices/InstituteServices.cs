@@ -103,8 +103,7 @@ namespace InstituteServices
 
         public int SaveCourse(Course course)
         {
-            string sql = "INSERT INTO course VALUES('" + course.CourseId + "','" + course.CourseDay + "','" + course.CourseStartTime + "','" + course.CourseEndTime + "','" + course.CourseBatch + "','" + course.CourseTeacherId + "')";
-            return new DB().DMLQuery(sql);
+            throw new NotImplementedException();
         }
 
 

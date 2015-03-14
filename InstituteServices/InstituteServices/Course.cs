@@ -11,8 +11,8 @@ namespace InstituteServices
         private string courseDay;
         private int courseBatch;
         private int courseTeacherId;
-        private string courseStartTime;
-        private string courseEndTime;
+        private DateTime courseStartTime;
+        private DateTime courseEndTime;
 
 
         public int CourseId
@@ -43,18 +43,26 @@ namespace InstituteServices
         }
        
 
-        public string CourseStartTime
+        public DateTime CourseStartTime
         {
             get { return courseStartTime; }
             set { courseStartTime = value; }
         }
        
 
-        public string CourseEndTime
+        public DateTime CourseEndTime
         {
             get { return courseEndTime; }
             set { courseEndTime = value; }
         }
+
+
+
+
+
+
+
+
 
 
     }

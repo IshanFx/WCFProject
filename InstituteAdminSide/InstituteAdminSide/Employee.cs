@@ -19,6 +19,8 @@ namespace InstituteAdminSide
         InstituteService.Employee employee;
         private void empSavebtn_Click(object sender, EventArgs e)
         {
+            char[] employeeNIC = empNICtxt.Text.ToCharArray();
+           
             client = new InstituteService.EmployeeServicesClient();
             if (String.IsNullOrEmpty(empIdtxt.Text) ||
                 String.IsNullOrEmpty(empFNametxt.Text) ||
@@ -29,8 +31,21 @@ namespace InstituteAdminSide
             {
                 MessageBox.Show("Please Fill Form");
             }
+
+            
+   
+            else if (!employeeNIC.Length.Equals(9)) {
+                MessageBox.Show("Please check NIC. It should be 9 Characters");
+            
+            }
             else
+
             {
+                string NICX = "V";
+
+                if(rbnNICX.Checked){
+                   NICX = "X"; 
+                }
                 try
                 {
                     employee = new InstituteService.Employee()
@@ -40,8 +55,9 @@ namespace InstituteAdminSide
                         EmpLName = empLNametxt.Text,
                         EmpContact = empContacttxt.Text,
                         EmpAddress = empAdd1txt.Text,
-                        EmpNIC = empNICtxt.Text
+                        EmpNIC = empNICtxt.Text+NICX;
                     };
+
                     int chk = client.SaveEmployee(employee);
                     if (chk.Equals(1))
                     {
@@ -53,9 +69,11 @@ namespace InstituteAdminSide
                 {
                     MessageBox.Show("Please check Employee id");
                 }
-                catch (Exception ex) {
+                catch (Exception ex)
+                {
                     MessageBox.Show(ex.Message);
                 }
+                GetEmployeeLastId();
             }
         }
 
@@ -128,10 +146,10 @@ namespace InstituteAdminSide
         private void button7_Click(object sender, EventArgs e)
         {
           
-                InstituteService.EmployeeServicesClient client = new InstituteService.EmployeeServicesClient();
+                client = new InstituteService.EmployeeServicesClient();
                 try
                 {
-                    InstituteService.Employee employee = new InstituteService.Employee()
+                     employee = new InstituteService.Employee()
                     {
                         EmpId = int.Parse(empPayID.Text.ToString()),
                         EmpPayMonth = payEmpMonthcmb.SelectedItem.ToString(),
@@ -164,7 +182,7 @@ namespace InstituteAdminSide
 
         private void Employee_Load(object sender, EventArgs e)
         {
-            InstituteService.EmployeeServicesClient client = new InstituteService.EmployeeServicesClient();
+             client = new InstituteService.EmployeeServicesClient();
             try
             {
                 InstituteService.Employee emploee = new InstituteService.Employee();
@@ -175,6 +193,7 @@ namespace InstituteAdminSide
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
+            GetEmployeeLastId();
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
@@ -184,6 +203,7 @@ namespace InstituteAdminSide
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             RegisterFieldClear();
         }
         private void RegisterFieldClear() {
@@ -193,6 +213,16 @@ namespace InstituteAdminSide
             empFNametxt.Clear();
             empLNametxt.Clear();
             empNICtxt.Clear();
+
+        }
+        private void GetEmployeeLastId() {
+            client = new InstituteService.EmployeeServicesClient();
+            empLastIdlbl.Text = client.GetEmployeeLastId().ToString();
+        
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
 
         }
     }

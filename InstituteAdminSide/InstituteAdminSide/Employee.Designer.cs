@@ -61,6 +61,8 @@
             this.empAlldatagrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.rbnNICX = new System.Windows.Forms.RadioButton();
+            this.rbnNICY = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -84,6 +86,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.rbnNICY);
+            this.tabPage1.Controls.Add(this.rbnNICX);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.empLastIdlbl);
             this.tabPage1.Controls.Add(this.empIdtxt);
@@ -107,6 +111,7 @@
             this.tabPage1.Size = new System.Drawing.Size(882, 517);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Register";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // button1
             // 
@@ -464,6 +469,28 @@
             this.label6.TabIndex = 42;
             this.label6.Text = "Employee ";
             // 
+            // rbnNICX
+            // 
+            this.rbnNICX.AutoSize = true;
+            this.rbnNICX.Location = new System.Drawing.Point(455, 218);
+            this.rbnNICX.Name = "rbnNICX";
+            this.rbnNICX.Size = new System.Drawing.Size(43, 29);
+            this.rbnNICX.TabIndex = 42;
+            this.rbnNICX.TabStop = true;
+            this.rbnNICX.Text = "X";
+            this.rbnNICX.UseVisualStyleBackColor = true;
+            // 
+            // rbnNICY
+            // 
+            this.rbnNICY.AutoSize = true;
+            this.rbnNICY.Location = new System.Drawing.Point(395, 218);
+            this.rbnNICY.Name = "rbnNICY";
+            this.rbnNICY.Size = new System.Drawing.Size(43, 29);
+            this.rbnNICY.TabIndex = 43;
+            this.rbnNICY.TabStop = true;
+            this.rbnNICY.Text = "V";
+            this.rbnNICY.UseVisualStyleBackColor = true;
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -521,6 +548,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox empPayID;
+        private System.Windows.Forms.RadioButton rbnNICY;
+        private System.Windows.Forms.RadioButton rbnNICX;
     }
 }
 

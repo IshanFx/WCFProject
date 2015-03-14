@@ -32,4 +32,28 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Teacher" nillable="true" type="tns:Teacher" />
+  <xs:complexType name="Course">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CourseBatch" type="xs:int" />
+      <xs:element minOccurs="0" name="CourseDay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseEndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseId" type="xs:int" />
+      <xs:element minOccurs="0" name="CourseStartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseTeacherId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Course" nillable="true" type="tns:Course" />
+  <xs:complexType name="Student">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="stuAddr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stuContact" type="xs:int" />
+      <xs:element minOccurs="0" name="stuCourseID" type="xs:int" />
+      <xs:element minOccurs="0" name="stuFName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stuGender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stuLName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stuPhoto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stuid" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Student" nillable="true" type="tns:Student" />
 </xs:schema>

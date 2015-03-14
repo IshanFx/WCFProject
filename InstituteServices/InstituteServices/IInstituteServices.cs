@@ -38,7 +38,9 @@ namespace InstituteServices
 
         [OperationContract]
         DataSet GetEmployeePayment();
-        
+
+        [OperationContract]
+        int GetEmployeeLastId();
         }
 
     [ServiceContract]

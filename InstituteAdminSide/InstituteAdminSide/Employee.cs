@@ -15,95 +15,166 @@ namespace InstituteAdminSide
         {
             InitializeComponent();
         }
-
+        InstituteService.EmployeeServicesClient client;
+        InstituteService.Employee employee;
         private void empSavebtn_Click(object sender, EventArgs e)
         {
-            InstituteService.EmployeeServicesClient client = new InstituteService.EmployeeServicesClient();
-
-            InstituteService.Employee employee= new InstituteService.Employee()
+            client = new InstituteService.EmployeeServicesClient();
+            if (String.IsNullOrEmpty(empIdtxt.Text) ||
+                String.IsNullOrEmpty(empFNametxt.Text) ||
+                String.IsNullOrEmpty(empLNametxt.Text) ||
+                String.IsNullOrEmpty(empNICtxt.Text) ||
+                String.IsNullOrEmpty(empAdd1txt.Text)
+                )
             {
-                EmpId =int.Parse( empIdtxt.Text),
-                EmpFName = empFNametxt.Text,
-                EmpLName = empLNametxt.Text,
-                EmpContact = empContacttxt.Text,
-                EmpAddress = empAdd1txt.Text,
-                EmpNIC = empNICtxt.Text
-            };
-            int chk =client.SaveEmployee(employee);
-            if (chk == 1)
+                MessageBox.Show("Please Fill Form");
+            }
+            else
             {
-                MessageBox.Show("Saved");
+                try
+                {
+                    employee = new InstituteService.Employee()
+                    {
+                        EmpId = int.Parse(empIdtxt.Text),
+                        EmpFName = empFNametxt.Text,
+                        EmpLName = empLNametxt.Text,
+                        EmpContact = empContacttxt.Text,
+                        EmpAddress = empAdd1txt.Text,
+                        EmpNIC = empNICtxt.Text
+                    };
+                    int chk = client.SaveEmployee(employee);
+                    if (chk.Equals(1))
+                    {
+                        MessageBox.Show("Employeed Id " + empIdtxt.Text + " Saved", "Employee Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RegisterFieldClear();
+                    }
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show("Please check Employee id");
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
         private void empModbtn_Click(object sender, EventArgs e)
         {
-            InstituteService.EmployeeServicesClient client = new InstituteService.EmployeeServicesClient();
+           client = new InstituteService.EmployeeServicesClient();
+           try
+           {
+               if (String.IsNullOrEmpty(empIdtxt.Text) ||
+                   String.IsNullOrEmpty(empFNametxt.Text) ||
+                   String.IsNullOrEmpty(empLNametxt.Text) ||
+                   String.IsNullOrEmpty(empNICtxt.Text) ||
+                   String.IsNullOrEmpty(empAdd1txt.Text))
+               {
+                   employee = new InstituteService.Employee()
+                   {
+                       EmpId = int.Parse(empIdtxt.Text),
+                       EmpFName = empFNametxt.Text,
+                       EmpLName = empLNametxt.Text,
+                       EmpContact = empContacttxt.Text,
+                       EmpAddress = empAdd1txt.Text,
+                       EmpNIC = empNICtxt.Text
 
-            InstituteService.Employee employee = new InstituteService.Employee() {
-                EmpId = int.Parse(empIdtxt.Text),
-                EmpFName = empFNametxt.Text,
-                EmpLName = empLNametxt.Text,
-                EmpContact = empContacttxt.Text,
-                EmpAddress = empAdd1txt.Text,
-                EmpNIC = empNICtxt.Text
-            
-            };
-           int chk =  client.UpdateEmployee(employee);
-           if (chk == 1) {
-               MessageBox.Show("Updated");
+                   };
+               }
+               else
+               {
+                   int chk = client.UpdateEmployee(employee);
+                   if (chk.Equals(1))
+                   {
+                       MessageBox.Show("Updated Id " + empIdtxt.Text + " Updated", "Employee Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       RegisterFieldClear();
+                   }
+               }
            }
-
+           catch (FormatException ex)
+           {
+               MessageBox.Show("Please Check Employee ID");
+           }
+           catch (Exception ex) 
+           {
+               MessageBox.Show(ex.Message);
+           }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            InstituteService.EmployeeServicesClient client = new InstituteService.EmployeeServicesClient();
+            try
+            {
+                client = new InstituteService.EmployeeServicesClient();
 
-            InstituteService.Employee employee = new InstituteService.Employee();
-            employee = client.SearchEmployeeData(int.Parse(empIdtxt.Text));
+                employee = new InstituteService.Employee();
 
-            empLNametxt.Text = employee.EmpLName;
-            empFNametxt.Text = employee.EmpFName;
-            empNICtxt.Text = employee.EmpNIC;
-            empAdd1txt.Text = employee.EmpAddress;
-            empContacttxt.Text = employee.EmpContact;
+                employee = client.SearchEmployeeData(int.Parse(empIdtxt.Text));
 
+                empLNametxt.Text = employee.EmpLName;
+                empFNametxt.Text = employee.EmpFName;
+                empNICtxt.Text = employee.EmpNIC;
+                empAdd1txt.Text = employee.EmpAddress;
+                empContacttxt.Text = employee.EmpContact;
+                empSavebtn.Enabled = false;
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
           
                 InstituteService.EmployeeServicesClient client = new InstituteService.EmployeeServicesClient();
-               
-                InstituteService.Employee employee = new InstituteService.Employee() { 
-                    EmpId = int.Parse(empPayID.Text.ToString()),
-                    EmpPayMonth  =payEmpMonthcmb.SelectedItem.ToString(),
-                    EmpPayYear =int.Parse( payEmpYeartxt.Text),
-                    EmpPayDate = DateTime.Now,
-                    EmpPayAmount = double.Parse(payEmpAmounttxt.Text.ToString())                
+                try
+                {
+                    InstituteService.Employee employee = new InstituteService.Employee()
+                    {
+                        EmpId = int.Parse(empPayID.Text.ToString()),
+                        EmpPayMonth = payEmpMonthcmb.SelectedItem.ToString(),
+                        EmpPayYear = int.Parse(payEmpYeartxt.Text),
+                        EmpPayDate = DateTime.Now,
+                        EmpPayAmount = double.Parse(payEmpAmounttxt.Text.ToString())
 
-                };
+                    };
 
-               int chk =  client.SaveEmployeePayments(employee);
-               if (chk == 1)
-               {
-                   MessageBox.Show("Employee Payment saved");
-               }
-               else
-                   MessageBox.Show("Not Saved");
+                    int chk = client.SaveEmployeePayments(employee);
+
+
+                    if (chk == 1)
+                    {
+                        MessageBox.Show("Employee Payment saved");
+                    }
+
+                    else
+                        MessageBox.Show("Not Saved");
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show("Please check Entered data");
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
             
         }
 
         private void Employee_Load(object sender, EventArgs e)
         {
             InstituteService.EmployeeServicesClient client = new InstituteService.EmployeeServicesClient();
-
-            InstituteService.Employee emploee = new InstituteService.Employee();
-            DataSet set = client.GetEmployeeData();
-            DataTable table = set.Tables[0];
-            empAlldatagrid.DataSource = table;
+            try
+            {
+                InstituteService.Employee emploee = new InstituteService.Employee();
+                DataSet set = client.GetEmployeeData();
+                DataTable table = set.Tables[0];
+                empAlldatagrid.DataSource = table;
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
@@ -113,6 +184,15 @@ namespace InstituteAdminSide
 
         private void button1_Click(object sender, EventArgs e)
         {
+            RegisterFieldClear();
+        }
+        private void RegisterFieldClear() {
+            empIdtxt.Clear();
+            empContacttxt.Clear();
+            empAdd1txt.Clear();
+            empFNametxt.Clear();
+            empLNametxt.Clear();
+            empNICtxt.Clear();
 
         }
     }

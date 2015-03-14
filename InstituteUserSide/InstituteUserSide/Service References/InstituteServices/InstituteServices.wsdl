@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="InstituteServices" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/InstituteServices" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IInstituteServices_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="IInstituteServices_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_SaveEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_SaveEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_SearchEmployeeData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchEmployeeData" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_SearchEmployeeData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchEmployeeDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_UpdateEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_UpdateEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_SaveEmployeePayments_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEmployeePayments" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_SaveEmployeePayments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEmployeePaymentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_GetEmployeeData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeData" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_GetEmployeeData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_GetEmployeePaymentFull_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeePaymentFull" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_GetEmployeePaymentFull_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeePaymentFullResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_GetEmployeePayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeePayment" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_GetEmployeePayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_SaveTeacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTeacher" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_SaveTeacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTeacherResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_SearchTeacherData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTeacherData" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_SearchTeacherData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTeacherDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_UpdateTeacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTeacher" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_UpdateTeacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTeacherResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_SaveTeacherPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTeacherPayment" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_SaveTeacherPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTeacherPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeacherData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherData" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeacherData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeachersIncome_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeachersIncome" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeachersIncome_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeachersIncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeachersPaymentFull_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeachersPaymentFull" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeachersPaymentFull_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeachersPaymentFullResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseServices_SaveCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCourse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseServices_SaveCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseServices_UpdateCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCourse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseServices_UpdateCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_SaveStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStudent" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_SaveStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_UpdateStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStudent" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_UpdateStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStudentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IInstituteServices">
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInstituteServices/DoWork" message="tns:IInstituteServices_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInstituteServices/DoWorkResponse" message="tns:IInstituteServices_DoWork_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IEmployeeServices">
+    <wsdl:operation name="SaveEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/SaveEmployee" message="tns:IEmployeeServices_SaveEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/SaveEmployeeResponse" message="tns:IEmployeeServices_SaveEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchEmployeeData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/SearchEmployeeData" message="tns:IEmployeeServices_SearchEmployeeData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/SearchEmployeeDataResponse" message="tns:IEmployeeServices_SearchEmployeeData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/UpdateEmployee" message="tns:IEmployeeServices_UpdateEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/UpdateEmployeeResponse" message="tns:IEmployeeServices_UpdateEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveEmployeePayments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/SaveEmployeePayments" message="tns:IEmployeeServices_SaveEmployeePayments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/SaveEmployeePaymentsResponse" message="tns:IEmployeeServices_SaveEmployeePayments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeeData" message="tns:IEmployeeServices_GetEmployeeData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeeDataResponse" message="tns:IEmployeeServices_GetEmployeeData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeePaymentFull">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeePaymentFull" message="tns:IEmployeeServices_GetEmployeePaymentFull_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeePaymentFullResponse" message="tns:IEmployeeServices_GetEmployeePaymentFull_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeePayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeePayment" message="tns:IEmployeeServices_GetEmployeePayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeePaymentResponse" message="tns:IEmployeeServices_GetEmployeePayment_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ITeacherServices">
+    <wsdl:operation name="SaveTeacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/SaveTeacher" message="tns:ITeacherServices_SaveTeacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/SaveTeacherResponse" message="tns:ITeacherServices_SaveTeacher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTeacherData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/SearchTeacherData" message="tns:ITeacherServices_SearchTeacherData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/SearchTeacherDataResponse" message="tns:ITeacherServices_SearchTeacherData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTeacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/UpdateTeacher" message="tns:ITeacherServices_UpdateTeacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/UpdateTeacherResponse" message="tns:ITeacherServices_UpdateTeacher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTeacherPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/SaveTeacherPayment" message="tns:ITeacherServices_SaveTeacherPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/SaveTeacherPaymentResponse" message="tns:ITeacherServices_SaveTeacherPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/GetTeacherData" message="tns:ITeacherServices_GetTeacherData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/GetTeacherDataResponse" message="tns:ITeacherServices_GetTeacherData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeachersIncome">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/GetTeachersIncome" message="tns:ITeacherServices_GetTeachersIncome_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/GetTeachersIncomeResponse" message="tns:ITeacherServices_GetTeachersIncome_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeachersPaymentFull">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/GetTeachersPaymentFull" message="tns:ITeacherServices_GetTeachersPaymentFull_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/GetTeachersPaymentFullResponse" message="tns:ITeacherServices_GetTeachersPaymentFull_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICourseServices">
+    <wsdl:operation name="SaveCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseServices/SaveCourse" message="tns:ICourseServices_SaveCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseServices/SaveCourseResponse" message="tns:ICourseServices_SaveCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseServices/UpdateCourse" message="tns:ICourseServices_UpdateCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseServices/UpdateCourseResponse" message="tns:ICourseServices_UpdateCourse_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IStudentServices">
+    <wsdl:operation name="SaveStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentServices/SaveStudent" message="tns:IStudentServices_SaveStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentServices/SaveStudentResponse" message="tns:IStudentServices_SaveStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentServices/UpdateStudent" message="tns:IStudentServices_UpdateStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentServices/UpdateStudentResponse" message="tns:IStudentServices_UpdateStudent_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IInstituteServices" type="tns:IInstituteServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/IInstituteServices/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IEmployeeServices" type="tns:IEmployeeServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveEmployee">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/SaveEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchEmployeeData">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/SearchEmployeeData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/UpdateEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEmployeePayments">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/SaveEmployeePayments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeData">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/GetEmployeeData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeePaymentFull">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/GetEmployeePaymentFull" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeePayment">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/GetEmployeePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ITeacherServices" type="tns:ITeacherServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveTeacher">
+      <soap:operation soapAction="http://tempuri.org/ITeacherServices/SaveTeacher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTeacherData">
+      <soap:operation soapAction="http://tempuri.org/ITeacherServices/SearchTeacherData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTeacher">
+      <soap:operation soapAction="http://tempuri.org/ITeacherServices/UpdateTeacher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTeacherPayment">
+      <soap:operation soapAction="http://tempuri.org/ITeacherServices/SaveTeacherPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherData">
+      <soap:operation soapAction="http://tempuri.org/ITeacherServices/GetTeacherData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeachersIncome">
+      <soap:operation soapAction="http://tempuri.org/ITeacherServices/GetTeachersIncome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeachersPaymentFull">
+      <soap:operation soapAction="http://tempuri.org/ITeacherServices/GetTeachersPaymentFull" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ICourseServices" type="tns:ICourseServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveCourse">
+      <soap:operation soapAction="http://tempuri.org/ICourseServices/SaveCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCourse">
+      <soap:operation soapAction="http://tempuri.org/ICourseServices/UpdateCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IStudentServices" type="tns:IStudentServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveStudent">
+      <soap:operation soapAction="http://tempuri.org/IStudentServices/SaveStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStudent">
+      <soap:operation soapAction="http://tempuri.org/IStudentServices/UpdateStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InstituteServices">
+    <wsdl:port name="BasicHttpBinding_IInstituteServices" binding="tns:BasicHttpBinding_IInstituteServices">
+      <soap:address location="http://localhost:8080/InstituteServices" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IEmployeeServices" binding="tns:BasicHttpBinding_IEmployeeServices">
+      <soap:address location="http://localhost:8080/EmployeeServices" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ITeacherServices" binding="tns:BasicHttpBinding_ITeacherServices">
+      <soap:address location="http://localhost:8080/TeacherServices" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ICourseServices" binding="tns:BasicHttpBinding_ICourseServices">
+      <soap:address location="http://localhost:8080/CourseServices" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IStudentServices" binding="tns:BasicHttpBinding_IStudentServices">
+      <soap:address location="http://localhost:8080/StudentServices" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

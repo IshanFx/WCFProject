@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/InstituteServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/InstituteServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Employee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmpAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmpContact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmpFName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmpId" type="xs:int" />
+      <xs:element minOccurs="0" name="EmpLName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmpNIC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmpPayAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="EmpPayDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EmpPayMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmpPayYear" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Employee" nillable="true" type="tns:Employee" />
+  <xs:complexType name="Teacher">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TeacherAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherContact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherFName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherId" type="xs:int" />
+      <xs:element minOccurs="0" name="TeacherLName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherNIC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherPayAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="TeacherPayDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherPayMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeacherPayYear" type="xs:int" />
+      <xs:element minOccurs="0" name="TeacherSubject" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Teacher" nillable="true" type="tns:Teacher" />
+  <xs:complexType name="Course">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CourseBatch" type="xs:int" />
+      <xs:element minOccurs="0" name="CourseDay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseEndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseId" type="xs:int" />
+      <xs:element minOccurs="0" name="CourseStartTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CourseTeacherId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Course" nillable="true" type="tns:Course" />
+  <xs:complexType name="Student">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="stuAddr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stuContact" type="xs:int" />
+      <xs:element minOccurs="0" name="stuCourseID" type="xs:int" />
+      <xs:element minOccurs="0" name="stuFName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stuGender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stuLName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stuPhoto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stuid" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Student" nillable="true" type="tns:Student" />
+</xs:schema>

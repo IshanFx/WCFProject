@@ -98,7 +98,8 @@ namespace InstituteServices
 
         public int SaveStudent(Student student)
         {
-            throw new NotImplementedException();
+            string sql = "INSERT INTO student VALUES('" + student.stuid + "','" + student.stuCourseID + "','" + student.stuFName + "','" + student.stuLName + "','" + student.stuAddr + "','" + student.stuGender + "','" + student.stuContact + "','" + student.stuPhoto + "')";
+            return new DB().DMLQuery(sql);
         }
 
         public int SaveCourse(Course course)

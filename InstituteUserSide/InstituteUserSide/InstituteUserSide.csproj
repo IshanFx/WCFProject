@@ -60,7 +60,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\InstituteService\Reference.cs">
+    <Compile Include="Service References\InstituteServices\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -100,23 +100,23 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\InstituteService\InstituteServices.wsdl" />
-    <None Include="Service References\InstituteService\InstituteUserSide.InstituteService.Employee.datasource">
+    <None Include="Service References\InstituteServices\InstituteServices.wsdl" />
+    <None Include="Service References\InstituteServices\InstituteUserSide.InstituteServices.Employee.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\InstituteService\InstituteUserSide.InstituteService.Teacher.datasource">
+    <None Include="Service References\InstituteServices\InstituteUserSide.InstituteServices.Teacher.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\InstituteService\item.xsd">
+    <None Include="Service References\InstituteServices\item.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\InstituteService\item1.xsd">
+    <None Include="Service References\InstituteServices\item1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\InstituteService\item2.xsd">
+    <None Include="Service References\InstituteServices\item2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\InstituteService\item3.xsd">
+    <None Include="Service References\InstituteServices\item3.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -124,19 +124,19 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\InstituteService\" />
+    <WCFMetadataStorage Include="Service References\InstituteServices\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\InstituteService\item.disco" />
+    <None Include="Service References\InstituteServices\item.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\InstituteService\configuration91.svcinfo" />
+    <None Include="Service References\InstituteServices\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\InstituteService\configuration.svcinfo" />
+    <None Include="Service References\InstituteServices\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\InstituteService\Reference.svcmap">
+    <None Include="Service References\InstituteServices\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

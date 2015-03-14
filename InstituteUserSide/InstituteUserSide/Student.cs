@@ -21,8 +21,33 @@ namespace InstituteUserSide
             OpenFileDialog open = new OpenFileDialog();
             if(open.ShowDialog()==DialogResult.OK){
                 string pic = open.FileName.ToString();
-                pictureBox1.ImageLocation = pic;
+                stuImage.ImageLocation = pic;
             }
+        }
+
+        private void Savebtn_Click(object sender, EventArgs e)
+        {
+            InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
+
+            InstituteServices.Student student = new InstituteServices.Student()
+            {
+
+            };
+        }
+
+        private void Updatebtn_Click(object sender, EventArgs e)
+        {
+            InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
+
+            InstituteServices.Student student = new InstituteServices.Student()
+            {
+
+            };
+        }
+
+        private void Clearbtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

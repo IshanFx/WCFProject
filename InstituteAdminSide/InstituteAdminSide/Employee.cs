@@ -46,6 +46,7 @@ namespace InstituteAdminSide
                 if(rbnNICX.Checked){
                    NICX = "X"; 
                 }
+
                 try
                 {
                     employee = new InstituteService.Employee()
@@ -55,7 +56,7 @@ namespace InstituteAdminSide
                         EmpLName = empLNametxt.Text,
                         EmpContact = empContacttxt.Text,
                         EmpAddress = empAdd1txt.Text,
-                        EmpNIC = empNICtxt.Text+NICX;
+                        EmpNIC = empNICtxt.Text+NICX
                     };
 
                     int chk = client.SaveEmployee(employee);
@@ -73,6 +74,7 @@ namespace InstituteAdminSide
                 {
                     MessageBox.Show(ex.Message);
                 }
+
                 GetEmployeeLastId();
             }
         }

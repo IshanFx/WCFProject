@@ -62,7 +62,7 @@ namespace InstituteAdminSide
                     int chk = client.SaveEmployee(employee);
                     if (chk.Equals(1))
                     {
-                        MessageBox.Show("Employeed Id " + empIdtxt.Text + " Saved", "Employee Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(string.Format("Employeed Id {0} Saved", empIdtxt.Text), "Employee Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         RegisterFieldClear();
                     }
                 }
@@ -75,7 +75,7 @@ namespace InstituteAdminSide
                     MessageBox.Show(ex.Message);
                 }
 
-                GetEmployeeLastId();
+                
             }
         }
 
@@ -106,7 +106,7 @@ namespace InstituteAdminSide
                    int chk = client.UpdateEmployee(employee);
                    if (chk.Equals(1))
                    {
-                       MessageBox.Show("Updated Id " + empIdtxt.Text + " Updated", "Employee Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       MessageBox.Show(String.Format("Employee Id {0} Updated ",empIdtxt.Text) , "Employee Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                        RegisterFieldClear();
                    }
                }
@@ -136,7 +136,7 @@ namespace InstituteAdminSide
                 empNICtxt.Text = employee.EmpNIC;
                 empAdd1txt.Text = employee.EmpAddress;
                 empContacttxt.Text = employee.EmpContact;
-                empSavebtn.Enabled = false;
+                btnEmployeeSave.Enabled = false;
 
             }
             catch (Exception ex)
@@ -179,7 +179,7 @@ namespace InstituteAdminSide
                 catch (Exception ex) {
                     MessageBox.Show(ex.Message);
                 }
-            
+                GetEmployeeLastId();
         }
 
         private void Employee_Load(object sender, EventArgs e)
@@ -207,6 +207,7 @@ namespace InstituteAdminSide
         {
             
             RegisterFieldClear();
+
         }
         private void RegisterFieldClear() {
             empIdtxt.Clear();

@@ -30,12 +30,14 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.rbnNICY = new System.Windows.Forms.RadioButton();
+            this.rbnNICX = new System.Windows.Forms.RadioButton();
+            this.btnClear = new System.Windows.Forms.Button();
             this.empLastIdlbl = new System.Windows.Forms.Label();
             this.empIdtxt = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.empModbtn = new System.Windows.Forms.Button();
-            this.empSavebtn = new System.Windows.Forms.Button();
+            this.btnEmployeeSearch = new System.Windows.Forms.Button();
+            this.btnEmployeeUpdate = new System.Windows.Forms.Button();
+            this.btnEmployeeSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,7 +51,7 @@
             this.empLNametxt = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.empPayID = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnEmployeePayment = new System.Windows.Forms.Button();
             this.payEmpAmounttxt = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.payEmpYeartxt = new System.Windows.Forms.TextBox();
@@ -61,8 +63,7 @@
             this.empAlldatagrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.rbnNICX = new System.Windows.Forms.RadioButton();
-            this.rbnNICY = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -86,14 +87,15 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.rbnNICY);
             this.tabPage1.Controls.Add(this.rbnNICX);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.btnClear);
             this.tabPage1.Controls.Add(this.empLastIdlbl);
             this.tabPage1.Controls.Add(this.empIdtxt);
-            this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.empModbtn);
-            this.tabPage1.Controls.Add(this.empSavebtn);
+            this.tabPage1.Controls.Add(this.btnEmployeeSearch);
+            this.tabPage1.Controls.Add(this.btnEmployeeUpdate);
+            this.tabPage1.Controls.Add(this.btnEmployeeSave);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label3);
@@ -113,27 +115,49 @@
             this.tabPage1.Text = "Register";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // button1
+            // rbnNICY
             // 
-            this.button1.BackColor = System.Drawing.Color.Snow;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Crimson;
-            this.button1.Location = new System.Drawing.Point(734, 459);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 40);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "Clear";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.rbnNICY.AutoSize = true;
+            this.rbnNICY.Location = new System.Drawing.Point(395, 218);
+            this.rbnNICY.Name = "rbnNICY";
+            this.rbnNICY.Size = new System.Drawing.Size(43, 29);
+            this.rbnNICY.TabIndex = 43;
+            this.rbnNICY.TabStop = true;
+            this.rbnNICY.Text = "V";
+            this.rbnNICY.UseVisualStyleBackColor = true;
+            // 
+            // rbnNICX
+            // 
+            this.rbnNICX.AutoSize = true;
+            this.rbnNICX.Location = new System.Drawing.Point(455, 218);
+            this.rbnNICX.Name = "rbnNICX";
+            this.rbnNICX.Size = new System.Drawing.Size(43, 29);
+            this.rbnNICX.TabIndex = 42;
+            this.rbnNICX.TabStop = true;
+            this.rbnNICX.Text = "X";
+            this.rbnNICX.UseVisualStyleBackColor = true;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Snow;
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.FlatAppearance.BorderSize = 3;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.ForeColor = System.Drawing.Color.Crimson;
+            this.btnClear.Location = new System.Drawing.Point(744, 459);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(111, 40);
+            this.btnClear.TabIndex = 41;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.button1_Click);
             // 
             // empLastIdlbl
             // 
             this.empLastIdlbl.AutoSize = true;
             this.empLastIdlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.empLastIdlbl.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.empLastIdlbl.ForeColor = System.Drawing.Color.White;
+            this.empLastIdlbl.ForeColor = System.Drawing.Color.Black;
             this.empLastIdlbl.Location = new System.Drawing.Point(230, 15);
             this.empLastIdlbl.Name = "empLastIdlbl";
             this.empLastIdlbl.Size = new System.Drawing.Size(33, 25);
@@ -149,50 +173,50 @@
             this.empIdtxt.Size = new System.Drawing.Size(100, 26);
             this.empIdtxt.TabIndex = 28;
             // 
-            // button4
+            // btnEmployeeSearch
             // 
-            this.button4.BackColor = System.Drawing.Color.DarkRed;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(413, 53);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 33);
-            this.button4.TabIndex = 39;
-            this.button4.Text = "Search";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnEmployeeSearch.BackColor = System.Drawing.Color.DarkRed;
+            this.btnEmployeeSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEmployeeSearch.FlatAppearance.BorderSize = 0;
+            this.btnEmployeeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmployeeSearch.ForeColor = System.Drawing.Color.White;
+            this.btnEmployeeSearch.Location = new System.Drawing.Point(413, 53);
+            this.btnEmployeeSearch.Name = "btnEmployeeSearch";
+            this.btnEmployeeSearch.Size = new System.Drawing.Size(114, 33);
+            this.btnEmployeeSearch.TabIndex = 39;
+            this.btnEmployeeSearch.Text = "Search";
+            this.btnEmployeeSearch.UseVisualStyleBackColor = false;
+            this.btnEmployeeSearch.Click += new System.EventHandler(this.button4_Click);
             // 
-            // empModbtn
+            // btnEmployeeUpdate
             // 
-            this.empModbtn.BackColor = System.Drawing.Color.Maroon;
-            this.empModbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.empModbtn.FlatAppearance.BorderSize = 0;
-            this.empModbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.empModbtn.ForeColor = System.Drawing.Color.White;
-            this.empModbtn.Location = new System.Drawing.Point(579, 459);
-            this.empModbtn.Name = "empModbtn";
-            this.empModbtn.Size = new System.Drawing.Size(111, 40);
-            this.empModbtn.TabIndex = 37;
-            this.empModbtn.Text = "Modify";
-            this.empModbtn.UseVisualStyleBackColor = false;
-            this.empModbtn.Click += new System.EventHandler(this.empModbtn_Click);
+            this.btnEmployeeUpdate.BackColor = System.Drawing.Color.Maroon;
+            this.btnEmployeeUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEmployeeUpdate.FlatAppearance.BorderSize = 0;
+            this.btnEmployeeUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmployeeUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnEmployeeUpdate.Location = new System.Drawing.Point(517, 459);
+            this.btnEmployeeUpdate.Name = "btnEmployeeUpdate";
+            this.btnEmployeeUpdate.Size = new System.Drawing.Size(111, 40);
+            this.btnEmployeeUpdate.TabIndex = 37;
+            this.btnEmployeeUpdate.Text = "Modify";
+            this.btnEmployeeUpdate.UseVisualStyleBackColor = false;
+            this.btnEmployeeUpdate.Click += new System.EventHandler(this.empModbtn_Click);
             // 
-            // empSavebtn
+            // btnEmployeeSave
             // 
-            this.empSavebtn.BackColor = System.Drawing.Color.Maroon;
-            this.empSavebtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.empSavebtn.FlatAppearance.BorderSize = 0;
-            this.empSavebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.empSavebtn.ForeColor = System.Drawing.Color.White;
-            this.empSavebtn.Location = new System.Drawing.Point(417, 459);
-            this.empSavebtn.Name = "empSavebtn";
-            this.empSavebtn.Size = new System.Drawing.Size(111, 40);
-            this.empSavebtn.TabIndex = 36;
-            this.empSavebtn.Text = "Save";
-            this.empSavebtn.UseVisualStyleBackColor = false;
-            this.empSavebtn.Click += new System.EventHandler(this.empSavebtn_Click);
+            this.btnEmployeeSave.BackColor = System.Drawing.Color.Maroon;
+            this.btnEmployeeSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEmployeeSave.FlatAppearance.BorderSize = 0;
+            this.btnEmployeeSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmployeeSave.ForeColor = System.Drawing.Color.White;
+            this.btnEmployeeSave.Location = new System.Drawing.Point(375, 459);
+            this.btnEmployeeSave.Name = "btnEmployeeSave";
+            this.btnEmployeeSave.Size = new System.Drawing.Size(111, 40);
+            this.btnEmployeeSave.TabIndex = 36;
+            this.btnEmployeeSave.Text = "Save";
+            this.btnEmployeeSave.UseVisualStyleBackColor = false;
+            this.btnEmployeeSave.Click += new System.EventHandler(this.empSavebtn_Click);
             // 
             // label1
             // 
@@ -307,7 +331,7 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Controls.Add(this.empPayID);
-            this.tabPage2.Controls.Add(this.button7);
+            this.tabPage2.Controls.Add(this.btnEmployeePayment);
             this.tabPage2.Controls.Add(this.payEmpAmounttxt);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.payEmpYeartxt);
@@ -330,20 +354,20 @@
             this.empPayID.Size = new System.Drawing.Size(98, 26);
             this.empPayID.TabIndex = 20;
             // 
-            // button7
+            // btnEmployeePayment
             // 
-            this.button7.BackColor = System.Drawing.Color.DarkRed;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(572, 359);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(145, 47);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "Save";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnEmployeePayment.BackColor = System.Drawing.Color.DarkRed;
+            this.btnEmployeePayment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEmployeePayment.FlatAppearance.BorderSize = 0;
+            this.btnEmployeePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmployeePayment.ForeColor = System.Drawing.Color.White;
+            this.btnEmployeePayment.Location = new System.Drawing.Point(572, 359);
+            this.btnEmployeePayment.Name = "btnEmployeePayment";
+            this.btnEmployeePayment.Size = new System.Drawing.Size(145, 47);
+            this.btnEmployeePayment.TabIndex = 19;
+            this.btnEmployeePayment.Text = "Save";
+            this.btnEmployeePayment.UseVisualStyleBackColor = false;
+            this.btnEmployeePayment.Click += new System.EventHandler(this.button7_Click);
             // 
             // payEmpAmounttxt
             // 
@@ -469,27 +493,16 @@
             this.label6.TabIndex = 42;
             this.label6.Text = "Employee ";
             // 
-            // rbnNICX
+            // label7
             // 
-            this.rbnNICX.AutoSize = true;
-            this.rbnNICX.Location = new System.Drawing.Point(455, 218);
-            this.rbnNICX.Name = "rbnNICX";
-            this.rbnNICX.Size = new System.Drawing.Size(43, 29);
-            this.rbnNICX.TabIndex = 42;
-            this.rbnNICX.TabStop = true;
-            this.rbnNICX.Text = "X";
-            this.rbnNICX.UseVisualStyleBackColor = true;
-            // 
-            // rbnNICY
-            // 
-            this.rbnNICY.AutoSize = true;
-            this.rbnNICY.Location = new System.Drawing.Point(395, 218);
-            this.rbnNICY.Name = "rbnNICY";
-            this.rbnNICY.Size = new System.Drawing.Size(43, 29);
-            this.rbnNICY.TabIndex = 43;
-            this.rbnNICY.TabStop = true;
-            this.rbnNICY.Text = "V";
-            this.rbnNICY.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Maroon;
+            this.label7.Location = new System.Drawing.Point(57, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 22);
+            this.label7.TabIndex = 44;
+            this.label7.Text = "Last Id";
             // 
             // Employee
             // 
@@ -517,12 +530,12 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label empLastIdlbl;
         private System.Windows.Forms.TextBox empIdtxt;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button empModbtn;
-        private System.Windows.Forms.Button empSavebtn;
+        private System.Windows.Forms.Button btnEmployeeSearch;
+        private System.Windows.Forms.Button btnEmployeeUpdate;
+        private System.Windows.Forms.Button btnEmployeeSave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -535,7 +548,7 @@
         private System.Windows.Forms.TextBox empFNametxt;
         private System.Windows.Forms.TextBox empLNametxt;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnEmployeePayment;
         private System.Windows.Forms.TextBox payEmpAmounttxt;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox payEmpYeartxt;
@@ -550,6 +563,7 @@
         private System.Windows.Forms.TextBox empPayID;
         private System.Windows.Forms.RadioButton rbnNICY;
         private System.Windows.Forms.RadioButton rbnNICX;
+        private System.Windows.Forms.Label label7;
     }
 }
 

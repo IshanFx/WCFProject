@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.browsbtn = new System.Windows.Forms.Button();
             this.stuImage = new System.Windows.Forms.PictureBox();
@@ -67,6 +68,7 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.searchbtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stuImage)).BeginInit();
@@ -89,6 +91,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.searchbtn);
+            this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.button7);
             this.tabPage1.Controls.Add(this.browsbtn);
             this.tabPage1.Controls.Add(this.stuImage);
@@ -117,6 +121,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Register";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(287, 379);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(36, 18);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "+94";
             // 
             // button7
             // 
@@ -263,14 +277,16 @@
             // 
             // txtcont
             // 
-            this.txtcont.Location = new System.Drawing.Point(291, 379);
+            this.txtcont.Location = new System.Drawing.Point(323, 374);
+            this.txtcont.MaxLength = 10;
             this.txtcont.Name = "txtcont";
-            this.txtcont.Size = new System.Drawing.Size(106, 29);
+            this.txtcont.Size = new System.Drawing.Size(121, 29);
             this.txtcont.TabIndex = 5;
             // 
             // txtadd
             // 
             this.txtadd.Location = new System.Drawing.Point(291, 272);
+            this.txtadd.MaxLength = 20;
             this.txtadd.Multiline = true;
             this.txtadd.Name = "txtadd";
             this.txtadd.Size = new System.Drawing.Size(255, 80);
@@ -279,6 +295,7 @@
             // txtlname
             // 
             this.txtlname.Location = new System.Drawing.Point(291, 215);
+            this.txtlname.MaxLength = 20;
             this.txtlname.Name = "txtlname";
             this.txtlname.Size = new System.Drawing.Size(142, 29);
             this.txtlname.TabIndex = 3;
@@ -286,6 +303,7 @@
             // txtfname
             // 
             this.txtfname.Location = new System.Drawing.Point(291, 153);
+            this.txtfname.MaxLength = 20;
             this.txtfname.Name = "txtfname";
             this.txtfname.Size = new System.Drawing.Size(142, 29);
             this.txtfname.TabIndex = 2;
@@ -293,6 +311,7 @@
             // txtcourseid
             // 
             this.txtcourseid.Location = new System.Drawing.Point(291, 103);
+            this.txtcourseid.MaxLength = 11;
             this.txtcourseid.Name = "txtcourseid";
             this.txtcourseid.Size = new System.Drawing.Size(106, 29);
             this.txtcourseid.TabIndex = 1;
@@ -300,6 +319,7 @@
             // txtstuid
             // 
             this.txtstuid.Location = new System.Drawing.Point(291, 48);
+            this.txtstuid.MaxLength = 11;
             this.txtstuid.Name = "txtstuid";
             this.txtstuid.Size = new System.Drawing.Size(106, 29);
             this.txtstuid.TabIndex = 0;
@@ -454,6 +474,16 @@
             this.tabPage5.Text = "Attendance Report";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // searchbtn
+            // 
+            this.searchbtn.Location = new System.Drawing.Point(420, 44);
+            this.searchbtn.Name = "searchbtn";
+            this.searchbtn.Size = new System.Drawing.Size(99, 33);
+            this.searchbtn.TabIndex = 23;
+            this.searchbtn.Text = "Search";
+            this.searchbtn.UseVisualStyleBackColor = true;
+            this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
+            // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,5 +544,7 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button searchbtn;
     }
 }

@@ -104,6 +104,12 @@
   <wsdl:message name="ITeacherServices_GetTeachersPaymentFull_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTeachersPaymentFullResponse" />
   </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeacherLastId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherLastId" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeacherLastId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherLastIdResponse" />
+  </wsdl:message>
   <wsdl:message name="ICourseServices_SaveCourse_InputMessage">
     <wsdl:part name="parameters" element="tns:SaveCourse" />
   </wsdl:message>
@@ -196,6 +202,10 @@
     <wsdl:operation name="GetTeachersPaymentFull">
       <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/GetTeachersPaymentFull" message="tns:ITeacherServices_GetTeachersPaymentFull_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/GetTeachersPaymentFullResponse" message="tns:ITeacherServices_GetTeachersPaymentFull_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherLastId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/GetTeacherLastId" message="tns:ITeacherServices_GetTeacherLastId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/GetTeacherLastIdResponse" message="tns:ITeacherServices_GetTeacherLastId_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ICourseServices">
@@ -363,6 +373,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetTeachersPaymentFull">
       <soap:operation soapAction="http://tempuri.org/ITeacherServices/GetTeachersPaymentFull" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherLastId">
+      <soap:operation soapAction="http://tempuri.org/ITeacherServices/GetTeacherLastId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

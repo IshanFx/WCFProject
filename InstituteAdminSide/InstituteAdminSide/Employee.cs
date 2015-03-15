@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using InstituteAdminSide.InstituteService;
 
 namespace InstituteAdminSide
 {
@@ -15,13 +11,13 @@ namespace InstituteAdminSide
         {
             InitializeComponent();
         }
-        InstituteService.EmployeeServicesClient client;
+        EmployeeServicesClient client;
         InstituteService.Employee employee;
         private void empSavebtn_Click(object sender, EventArgs e)
         {
             char[] employeeNIC = empNICtxt.Text.ToCharArray();
            
-            client = new InstituteService.EmployeeServicesClient();
+            client = new EmployeeServicesClient();
             if (String.IsNullOrEmpty(empIdtxt.Text) ||
                 String.IsNullOrEmpty(empFNametxt.Text) ||
                 String.IsNullOrEmpty(empLNametxt.Text) ||
@@ -81,7 +77,7 @@ namespace InstituteAdminSide
 
         private void empModbtn_Click(object sender, EventArgs e)
         {
-           client = new InstituteService.EmployeeServicesClient();
+           client = new EmployeeServicesClient();
            try
            {
                if (String.IsNullOrEmpty(empIdtxt.Text) ||
@@ -125,7 +121,7 @@ namespace InstituteAdminSide
         {
             try
             {
-                client = new InstituteService.EmployeeServicesClient();
+                client = new EmployeeServicesClient();
 
                 employee = new InstituteService.Employee();
 
@@ -148,7 +144,7 @@ namespace InstituteAdminSide
         private void button7_Click(object sender, EventArgs e)
         {
           
-                client = new InstituteService.EmployeeServicesClient();
+                client = new EmployeeServicesClient();
                 try
                 {
                      employee = new InstituteService.Employee()
@@ -184,7 +180,7 @@ namespace InstituteAdminSide
 
         private void Employee_Load(object sender, EventArgs e)
         {
-             client = new InstituteService.EmployeeServicesClient();
+             client = new EmployeeServicesClient();
             try
             {
                 InstituteService.Employee emploee = new InstituteService.Employee();
@@ -207,7 +203,7 @@ namespace InstituteAdminSide
         {
             
             RegisterFieldClear();
-
+            btnEmployeeSave.Enabled = true;
         }
         private void RegisterFieldClear() {
             empIdtxt.Clear();
@@ -219,7 +215,7 @@ namespace InstituteAdminSide
 
         }
         private void GetEmployeeLastId() {
-            client = new InstituteService.EmployeeServicesClient();
+            client = new EmployeeServicesClient();
             empLastIdlbl.Text = client.GetEmployeeLastId().ToString();
         
         }

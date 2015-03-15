@@ -1,11 +1,14 @@
-﻿namespace InstituteAdminSide
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace InstituteAdminSide
 {
     partial class Employee
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -528,42 +531,42 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Label empLastIdlbl;
-        private System.Windows.Forms.TextBox empIdtxt;
-        private System.Windows.Forms.Button btnEmployeeSearch;
-        private System.Windows.Forms.Button btnEmployeeUpdate;
-        private System.Windows.Forms.Button btnEmployeeSave;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox empContacttxt;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox empAdd1txt;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox empNICtxt;
-        private System.Windows.Forms.TextBox empFNametxt;
-        private System.Windows.Forms.TextBox empLNametxt;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btnEmployeePayment;
-        private System.Windows.Forms.TextBox payEmpAmounttxt;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox payEmpYeartxt;
-        private System.Windows.Forms.ComboBox payEmpMonthcmb;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView empAlldatagrid;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox empPayID;
-        private System.Windows.Forms.RadioButton rbnNICY;
-        private System.Windows.Forms.RadioButton rbnNICX;
-        private System.Windows.Forms.Label label7;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private Button btnClear;
+        private Label empLastIdlbl;
+        private TextBox empIdtxt;
+        private Button btnEmployeeSearch;
+        private Button btnEmployeeUpdate;
+        private Button btnEmployeeSave;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private TextBox empContacttxt;
+        private Label label5;
+        private TextBox empAdd1txt;
+        private Label label8;
+        private TextBox empNICtxt;
+        private TextBox empFNametxt;
+        private TextBox empLNametxt;
+        private TabPage tabPage2;
+        private Button btnEmployeePayment;
+        private TextBox payEmpAmounttxt;
+        private Label label10;
+        private TextBox payEmpYeartxt;
+        private ComboBox payEmpMonthcmb;
+        private Label label11;
+        private Label label12;
+        private Label label13;
+        private TabPage tabPage3;
+        private DataGridView empAlldatagrid;
+        private Panel panel1;
+        private Label label6;
+        private TextBox empPayID;
+        private RadioButton rbnNICY;
+        private RadioButton rbnNICX;
+        private Label label7;
     }
 }
 

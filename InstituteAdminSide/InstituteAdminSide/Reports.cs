@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using InstituteAdminSide.InstituteService;
 
 namespace InstituteAdminSide
 {
@@ -18,14 +14,14 @@ namespace InstituteAdminSide
 
         private void button2_Click(object sender, EventArgs e)
         {
-            InstituteService.TeacherServicesClient teacher = new InstituteService.TeacherServicesClient();
+            TeacherServicesClient teacher = new TeacherServicesClient();
             MyChart chart = new MyChart(teacher.GetTeachersIncome());
             chart.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            InstituteService.EmployeeServicesClient client = new InstituteService.EmployeeServicesClient();
+            EmployeeServicesClient client = new EmployeeServicesClient();
            DataSet set  = client.GetEmployeePaymentFull();
            DataTable table = set.Tables[0];
            empPayTable.DataSource = table;
@@ -43,7 +39,7 @@ namespace InstituteAdminSide
 
         private void button5_Click(object sender, EventArgs e)
         {
-            InstituteService.EmployeeServicesClient client = new InstituteService.EmployeeServicesClient();   
+            EmployeeServicesClient client = new EmployeeServicesClient();   
             MyChart chart = new MyChart(client.GetEmployeePayment());
             chart.Show();
         }
@@ -55,7 +51,7 @@ namespace InstituteAdminSide
 
         private void button6_Click(object sender, EventArgs e)
         {
-            InstituteService.TeacherServicesClient client = new InstituteService.TeacherServicesClient();
+            TeacherServicesClient client = new TeacherServicesClient();
             DataSet set = client.GetTeachersPaymentFull();
             DataTable table = set.Tables[0];
             teachPayTable.DataSource = table;

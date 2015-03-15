@@ -193,5 +193,12 @@ namespace InstituteServices
             string sql = "SELECT MAX(empid) FROM employee";
             return new DB().GetLastIdQuery(sql);
         }
+
+
+        public int GetTeacherLastId()
+        {
+            string sql = "SELECT MAX(teaid) FROM teachers";
+            return new DB().GetLastIdQuery(sql);
+        }
     }
 }

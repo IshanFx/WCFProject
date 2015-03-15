@@ -65,6 +65,12 @@ namespace InstituteServices
 
         [OperationContract]
         DataSet GetTeachersPaymentFull();
+
+        [OperationContract]
+        int GetTeacherLastId(); 
+            
+        
+        
     }
 
 

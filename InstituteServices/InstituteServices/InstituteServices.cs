@@ -25,7 +25,9 @@ namespace InstituteServices
 
         public int SaveEmployee(Employee employee)
         {
-            string sql = "INSERT INTO Employee VALUES('" + employee.EmpId + "','" + employee.EmpFName + "','" + employee.EmpLName + "','" + employee.EmpNIC + "','" + employee.EmpAddress + "','" + employee .EmpContact+ "')";           
+            MySqlCommand cmd = new MySqlCommand();
+            string sql = "INSERT INTO Employee VALUES('" + employee.EmpId + "','" + employee.EmpFName + "','" + employee.EmpLName + "','" + employee.EmpNIC + "','" + employee.EmpAddress + "','" + employee .EmpContact+ "')";     
+      
             return new DB().DMLQuery(sql);
         }
 
@@ -153,7 +155,7 @@ namespace InstituteServices
         public int studentlastid()
         {
             
-            int id =new DB().GetLastID("SELECT MAX(studentid) FROM student");
+            int id =new DB().GetLastIdQuery("SELECT MAX(studentid) FROM student");
             if (id ==null){
                  id= 1;
             }
@@ -225,6 +227,20 @@ namespace InstituteServices
             set = new DataSet();
             set.Tables.Add(table);
             return set;
+        }
+
+
+        public int GetEmployeeLastId()
+        {
+            string sql = "SELECT MAX(empid) FROM employee";
+            return new DB().GetLastIdQuery(sql);
+        }
+
+
+        public int GetTeacherLastId()
+        {
+            string sql = "SELECT MAX(teaid) FROM teachers";
+            return new DB().GetLastIdQuery(sql);
         }
     }
 }

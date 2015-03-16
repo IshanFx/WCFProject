@@ -43,15 +43,14 @@ namespace InstituteServices
 
         }
 
-        public int GetLastID(string query)
-        {
-            int maxId = 0;           
-                cmd=new MySqlCommand(query,conn);
-                conn.Open();
-                maxId = int.Parse(cmd.ExecuteScalar().ToString());
-                conn.Close();
-        
-            return maxId;
-        }       
+        public int GetLastIdQuery(string sql) {
+            cmd = new MySqlCommand(sql, conn);
+            conn.Open();
+            int lastId =int.Parse( cmd.ExecuteScalar().ToString());
+            conn.Close();
+            return lastId;
+
+        }
+
     }
 }

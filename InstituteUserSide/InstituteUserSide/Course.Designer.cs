@@ -47,10 +47,13 @@
             this.txtCoursid = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.couTeaDetails = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.couTeaDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -66,6 +69,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.couTeaDetails);
             this.tabPage1.Controls.Add(this.CosClearbtn);
             this.tabPage1.Controls.Add(this.CosUpdatebtn);
             this.tabPage1.Controls.Add(this.CosSavebtn);
@@ -259,6 +264,29 @@
             this.dataGridView1.Size = new System.Drawing.Size(842, 452);
             this.dataGridView1.TabIndex = 0;
             // 
+            // couTeaDetails
+            // 
+            this.couTeaDetails.AllowUserToAddRows = false;
+            this.couTeaDetails.AllowUserToDeleteRows = false;
+            this.couTeaDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.couTeaDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.couTeaDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.couTeaDetails.Location = new System.Drawing.Point(484, 50);
+            this.couTeaDetails.Name = "couTeaDetails";
+            this.couTeaDetails.ReadOnly = true;
+            this.couTeaDetails.Size = new System.Drawing.Size(366, 283);
+            this.couTeaDetails.TabIndex = 24;
+            this.couTeaDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.couTeaDetails_CellClick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(351, 108);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 29);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Course
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +300,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.couTeaDetails)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -297,5 +326,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView couTeaDetails;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -14,20 +14,24 @@ namespace InstituteUserSide
         public Course()
         {
             InitializeComponent();
+            TeacherGrid();
+            getlastid();
         }
+
 
         private void CosSavebtn_Click(object sender, EventArgs e)
         {
-            InstituteService.CourseServicesClient client = new InstituteService.CourseServicesClient();
+            InstituteServices.CourseServicesClient client = new InstituteServices.CourseServicesClient();
             try
             {
-                InstituteService.Course course = new InstituteService.Course()
+               InstituteServices.Course course = new InstituteServices.Course()
                 {
                     CourseId = Convert.ToInt32(txtCoursid.Text),
                     CourseDay = Daycombo.Text,
                     CourseStartTime = StTimecombo.Text,
                     CourseEndTime = EntimeCombo.Text,
-                    CourseBatch = Convert.ToInt32(txtBatch.Text)
+                    CourseBatch = Convert.ToInt32(txtBatch.Text),
+                    CourseTeacherId=Convert.ToInt32(txtTechid.Text)
                 };
 
                 int chk = client.SaveCourse(course);
@@ -46,9 +50,9 @@ namespace InstituteUserSide
 
         private void CosUpdatebtn_Click(object sender, EventArgs e)
         {
-            InstituteService.CourseServicesClient client = new InstituteService.CourseServicesClient();
+            InstituteServices.CourseServicesClient client = new InstituteServices.CourseServicesClient();
 
-            InstituteService.Course course = new InstituteService.Course()
+             InstituteServices.Course course = new InstituteServices.Course()
             {
 
             };
@@ -68,7 +72,23 @@ namespace InstituteUserSide
 
         public void getlastid()
         {
+            InstituteServices.CourseServicesClient client = new InstituteServices.CourseServicesClient();
+            txtCoursid.Text = client.GetCourseLastId().ToString();
+        }
 
+        public void TeacherGrid()
+        {
+             InstituteServices.CourseServicesClient client = new InstituteServices.CourseServicesClient();
+
+             InstituteServices.Course course = new InstituteServices.Course();
+             DataSet set = client.GetCourseData();
+             DataTable table = set.Tables[0];
+             couTeaDetails.DataSource = table;
+        }
+
+        private void couTeaDetails_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtTechid.Text = couTeaDetails.CurrentRow.Cells[0].Value.ToString();
         }
 
     }

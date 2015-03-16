@@ -122,6 +122,21 @@ namespace InstituteServices
             throw new NotImplementedException();
         }
 
+        public DataSet GetCourseData()
+        {
+            string sql = "SELECT teaid As TeacherID,CONCAT(fname,' ',lname) As Name FROM Teachers ";
+            db = new DB();
+            DataTable table = db.SelectQuery(sql);
+            DataSet set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
+
+        public int GetCourseLastId()
+        {
+            string sql = "SELECT MAX(courseid) FROM course";
+            return new DB().GetLastIdQuery(sql);
+        }
 
         public DataSet GetEmployeeData()
         {

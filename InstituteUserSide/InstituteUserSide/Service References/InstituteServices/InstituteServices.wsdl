@@ -134,6 +134,18 @@
   <wsdl:message name="ICourseServices_GetCourseLastId_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCourseLastIdResponse" />
   </wsdl:message>
+  <wsdl:message name="ICourseServices_GetAllCourseData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCourseData" />
+  </wsdl:message>
+  <wsdl:message name="ICourseServices_GetAllCourseData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCourseDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseServices_SearchCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCourse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseServices_SearchCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCourseResponse" />
+  </wsdl:message>
   <wsdl:message name="IStudentServices_SaveStudent_InputMessage">
     <wsdl:part name="parameters" element="tns:SaveStudent" />
   </wsdl:message>
@@ -236,6 +248,14 @@
     <wsdl:operation name="GetCourseLastId">
       <wsdl:input wsaw:Action="http://tempuri.org/ICourseServices/GetCourseLastId" message="tns:ICourseServices_GetCourseLastId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICourseServices/GetCourseLastIdResponse" message="tns:ICourseServices_GetCourseLastId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCourseData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseServices/GetAllCourseData" message="tns:ICourseServices_GetAllCourseData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseServices/GetAllCourseDataResponse" message="tns:ICourseServices_GetAllCourseData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseServices/SearchCourse" message="tns:ICourseServices_SearchCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseServices/SearchCourseResponse" message="tns:ICourseServices_SearchCourse_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IStudentServices">
@@ -441,6 +461,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetCourseLastId">
       <soap:operation soapAction="http://tempuri.org/ICourseServices/GetCourseLastId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCourseData">
+      <soap:operation soapAction="http://tempuri.org/ICourseServices/GetAllCourseData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCourse">
+      <soap:operation soapAction="http://tempuri.org/ICourseServices/SearchCourse" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

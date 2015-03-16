@@ -88,6 +88,12 @@ namespace InstituteServices
 
         [OperationContract]
         int GetCourseLastId();
+
+        [OperationContract]
+        DataSet GetAllCourseData();
+
+        [OperationContract]
+        Course SearchCourse(int courseid);
     }
 
     [ServiceContract]

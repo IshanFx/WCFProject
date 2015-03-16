@@ -110,10 +110,37 @@ namespace InstituteServices
             return new DB().DMLQuery(sql);
         }
 
+        public DataSet GetAllCourseData()
+        {
+            string sql = "SELECT cls.courseid,cls.day,cls.starttime,cls.endtime,cls.batch,CONCAT(tea.fname,' ',tea.lname) As Teacher FROM Teachers tea JOIN course cls WHERE tea.teaid = cls.teachid";
+            db = new DB();
+            DataTable table = db.SelectQuery(sql);
+            DataSet set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
+
+        public Course SearchCourse(int courseid)
+        {
+            Course course = new Course();
+            string sql = "SELECT * FROM course WHERE courseid='" + courseid + "'";
+            db = new DB();
+            DataTable table = db.SelectQuery(sql);
+            
+            course.CourseDay = table.Rows[0][1].ToString();
+            course.CourseStartTime = table.Rows[0][2].ToString();
+            course.CourseEndTime = table.Rows[0][3].ToString();
+            course.CourseBatch =Convert.ToInt32(table.Rows[0][4].ToString());
+            course.CourseTeacherId = Convert.ToInt32(table.Rows[0][5].ToString());
+            
+
+            return course;
+        }
 
         public int UpdateCourse(Course course)
         {
-            throw new NotImplementedException();
+            string sql = "UPDATE course set day='" + course.CourseDay + "',startTime='"+course.CourseStartTime+"',endTime='"+course.CourseEndTime+"',batch='"+course.CourseBatch+"',teachID='"+course.CourseTeacherId+"' WHERE courseid='"+course.CourseId+"'";
+            return new DB().DMLQuery(sql);
         }
 
 

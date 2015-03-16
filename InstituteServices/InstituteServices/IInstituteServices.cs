@@ -90,6 +90,12 @@ namespace InstituteServices
 
         [OperationContract]
         int studentlastid();
+
+        [OperationContract]
+        DataSet GetStuCourseData();
+
+        [OperationContract]
+        DataSet GetAllStudentData();
     }
     [ServiceContract]
     public interface IAccount {

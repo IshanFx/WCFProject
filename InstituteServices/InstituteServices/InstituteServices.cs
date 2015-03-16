@@ -116,6 +116,26 @@ namespace InstituteServices
             return new DB().DMLQuery(sql);
         }
 
+        public DataSet GetStuCourseData()
+        {
+            string sql = "SELECT cls.courseid,cls.day,cls.starttime,cls.endtime,cls.batch,CONCAT(tea.fname,' ',tea.lname) As Teacher FROM Teachers tea JOIN course cls WHERE tea.teaid = cls.teachid";
+            db = new DB();
+            DataTable table = db.SelectQuery(sql);
+            DataSet set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
+
+        public DataSet GetAllStudentData()
+        {
+            string sql = "SELECT studentid As Id,CONCAT(fname,' ',lname)AS Name,CONCAT(address)AS Address,gender AS Gender,contact AS Contact FROM student";
+            db = new DB();
+            DataTable table = db.SelectQuery(sql);
+            DataSet set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
+
         public int SaveCourse(Course course)
         {
             string sql = "INSERT INTO course VALUES('" + course.CourseId + "','" + course.CourseDay + "','" + course.CourseStartTime + "','" + course.CourseEndTime + "','" + course.CourseBatch + "','" + course.CourseTeacherId + "')";
@@ -131,7 +151,7 @@ namespace InstituteServices
 
         public int UpdateStudent(Student student)
         {
-            string sql = "UPDATE student SET fname='"+student.stuFName+"' lname='"+student.stuLName+"' address='"+student.stuAddr+"' gender='"+student.stuGender+"','"+student.stuContact+"'";
+            string sql = "UPDATE student SET fname='"+student.stuFName+"', lname='"+student.stuLName+"', address='"+student.stuAddr+"', gender='"+student.stuGender+"', contact='"+student.stuContact+"' WHERE studentid='"+student.stuid+"'";
             return new DB().DMLQuery(sql);
         }
 

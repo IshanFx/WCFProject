@@ -15,6 +15,8 @@ namespace InstituteUserSide
         {
             InitializeComponent();
             GetlastID();
+            GridClassDetais();
+            
         }
 
         string pic;
@@ -36,43 +38,79 @@ namespace InstituteUserSide
         {
             GenderSet();
             InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
-
-            InstituteServices.Student student = new InstituteServices.Student()
+            if (txtstuid.Text == null ||
+                txtfname.Text == null ||
+                txtlname.Text == null ||
+                txtadd.Text == null ||
+                txtcont.Text == null ||
+                txtcourseid.Text == null ||
+                gender == null)
             {
-                stuid=Convert.ToInt32(txtstuid.Text),
-                stuCourseID=Convert.ToInt32(txtcourseid.Text),
-                stuFName=txtfname.Text,
-                stuLName=txtlname.Text,
-                stuAddr=txtadd.Text,
-                stuGender=gender,
-                stuContact=Convert.ToInt32(txtcont.Text),
-                stuPhoto=pic
-            };
-
-            int chk = client.SaveStudent(student);
-            if (chk == 1)
-            {
-                MessageBox.Show("Student saved","Message");
-                GetlastID();
-                clear();
+                MessageBox.Show("Please Fill All Fields ");
             }
             else
-                MessageBox.Show("Not Saved");
+            {
 
+                InstituteServices.Student student = new InstituteServices.Student()
+                {
+                    stuid = Convert.ToInt32(txtstuid.Text),
+                    stuCourseID = Convert.ToInt32(txtcourseid.Text),
+                    stuFName = txtfname.Text,
+                    stuLName = txtlname.Text,
+                    stuAddr = txtadd.Text,
+                    stuGender = gender,
+                    stuContact = Convert.ToInt32(txtcont.Text),
+                    stuPhoto = pic
+                };
+
+                int chk = client.SaveStudent(student);
+                if (chk == 1)
+                {
+                    MessageBox.Show("Student saved", "Message");
+                    GetlastID();
+                    clear();
+                }
+                else
+                    MessageBox.Show("Not Saved");
+            }
         }
 
         private void Updatebtn_Click(object sender, EventArgs e)
         {
             InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
-
+            if (txtstuid.Text == null ||
+                txtfname.Text == null ||
+                txtlname.Text == null ||
+                txtadd.Text == null ||
+                txtcont.Text == null ||
+                txtcourseid.Text == null ||
+                gender == null)
+            {
+                MessageBox.Show("Please Fill All Fields ");
+            }
+            else 
+            { 
             InstituteServices.Student student = new InstituteServices.Student()
             {
+                stuid=Convert.ToInt32(txtstuid.Text),
                 stuFName = txtfname.Text,
                 stuLName = txtlname.Text,
                 stuAddr = txtadd.Text,
                 stuGender = gender,
-                stuContact = Convert.ToInt16(txtcont.Text)
+                stuContact = Convert.ToInt32(txtcont.Text)
             };
+
+            int chk = client.UpdateStudent(student);
+            if (chk == 1)
+            {
+                MessageBox.Show("Student Updates", "Message");
+                GetlastID();
+                clear();
+            }
+            else
+                MessageBox.Show("Not Updated","Error");
+                
+            }
         }
 
         private void Clearbtn_Click(object sender, EventArgs e)
@@ -111,6 +149,14 @@ namespace InstituteUserSide
             InstituteServices.Student student = new InstituteServices.Student();
 
             txtstuid.Text = client.studentlastid().ToString();
+        
+        }
+
+        public void GridClassDetais()
+        {
+            InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
+            InstituteServices.Student student = new InstituteServices.Student();
+            StuClassGrid.DataSource = client.GetStuCourseData();
         }
 
         private void searchbtn_Click(object sender, EventArgs e)
@@ -134,6 +180,18 @@ namespace InstituteUserSide
                 radioGenM.Checked = true;
             }
             txtcont.Text =Convert.ToString(student.stuContact);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            GridClassDetais();
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+            InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
+            InstituteServices.Student student = new InstituteServices.Student();
+            StuAllGrid.DataSource = client.GetAllStudentData();
         }
     }
 }

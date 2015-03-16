@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.searchbtn = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.browsbtn = new System.Windows.Forms.Button();
@@ -68,12 +69,17 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.searchbtn = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.StuClassGrid = new System.Windows.Forms.DataGridView();
+            this.StuAllGrid = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stuImage)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StuClassGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StuAllGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -83,14 +89,16 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.tabControl1.Location = new System.Drawing.Point(12, 100);
+            this.tabControl1.Location = new System.Drawing.Point(12, 58);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(956, 562);
+            this.tabControl1.Size = new System.Drawing.Size(956, 607);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.StuClassGrid);
+            this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.searchbtn);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.button7);
@@ -117,16 +125,26 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(948, 525);
+            this.tabPage1.Size = new System.Drawing.Size(948, 570);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Register";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // searchbtn
+            // 
+            this.searchbtn.Location = new System.Drawing.Point(420, 20);
+            this.searchbtn.Name = "searchbtn";
+            this.searchbtn.Size = new System.Drawing.Size(99, 33);
+            this.searchbtn.TabIndex = 23;
+            this.searchbtn.Text = "Search";
+            this.searchbtn.UseVisualStyleBackColor = true;
+            this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(287, 379);
+            this.label13.Location = new System.Drawing.Point(288, 304);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(36, 18);
             this.label13.TabIndex = 22;
@@ -134,16 +152,17 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(420, 103);
+            this.button7.Location = new System.Drawing.Point(420, 67);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(99, 33);
             this.button7.TabIndex = 21;
             this.button7.Text = "Show";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // browsbtn
             // 
-            this.browsbtn.Location = new System.Drawing.Point(674, 286);
+            this.browsbtn.Location = new System.Drawing.Point(674, 297);
             this.browsbtn.Name = "browsbtn";
             this.browsbtn.Size = new System.Drawing.Size(179, 34);
             this.browsbtn.TabIndex = 20;
@@ -153,7 +172,8 @@
             // 
             // stuImage
             // 
-            this.stuImage.Location = new System.Drawing.Point(674, 56);
+            this.stuImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.stuImage.Location = new System.Drawing.Point(674, 67);
             this.stuImage.Name = "stuImage";
             this.stuImage.Size = new System.Drawing.Size(179, 208);
             this.stuImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -162,7 +182,7 @@
             // 
             // Clearbtn
             // 
-            this.Clearbtn.Location = new System.Drawing.Point(801, 471);
+            this.Clearbtn.Location = new System.Drawing.Point(797, 517);
             this.Clearbtn.Name = "Clearbtn";
             this.Clearbtn.Size = new System.Drawing.Size(123, 47);
             this.Clearbtn.TabIndex = 18;
@@ -172,7 +192,7 @@
             // 
             // Updatebtn
             // 
-            this.Updatebtn.Location = new System.Drawing.Point(659, 471);
+            this.Updatebtn.Location = new System.Drawing.Point(655, 517);
             this.Updatebtn.Name = "Updatebtn";
             this.Updatebtn.Size = new System.Drawing.Size(123, 47);
             this.Updatebtn.TabIndex = 17;
@@ -182,7 +202,7 @@
             // 
             // Savebtn
             // 
-            this.Savebtn.Location = new System.Drawing.Point(511, 471);
+            this.Savebtn.Location = new System.Drawing.Point(509, 517);
             this.Savebtn.Name = "Savebtn";
             this.Savebtn.Size = new System.Drawing.Size(123, 47);
             this.Savebtn.TabIndex = 16;
@@ -193,7 +213,7 @@
             // radioGenF
             // 
             this.radioGenF.AutoSize = true;
-            this.radioGenF.Location = new System.Drawing.Point(391, 436);
+            this.radioGenF.Location = new System.Drawing.Point(367, 348);
             this.radioGenF.Name = "radioGenF";
             this.radioGenF.Size = new System.Drawing.Size(41, 28);
             this.radioGenF.TabIndex = 15;
@@ -204,7 +224,7 @@
             // radioGenM
             // 
             this.radioGenM.AutoSize = true;
-            this.radioGenM.Location = new System.Drawing.Point(291, 436);
+            this.radioGenM.Location = new System.Drawing.Point(291, 348);
             this.radioGenM.Name = "radioGenM";
             this.radioGenM.Size = new System.Drawing.Size(45, 28);
             this.radioGenM.TabIndex = 14;
@@ -215,7 +235,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(58, 379);
+            this.label7.Location = new System.Drawing.Point(58, 302);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 24);
             this.label7.TabIndex = 13;
@@ -224,7 +244,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(58, 436);
+            this.label6.Location = new System.Drawing.Point(58, 352);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 24);
             this.label6.TabIndex = 12;
@@ -233,7 +253,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(58, 275);
+            this.label5.Location = new System.Drawing.Point(58, 229);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 24);
             this.label5.TabIndex = 11;
@@ -242,7 +262,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 222);
+            this.label4.Location = new System.Drawing.Point(58, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 24);
             this.label4.TabIndex = 10;
@@ -251,7 +271,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 164);
+            this.label3.Location = new System.Drawing.Point(58, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 24);
             this.label3.TabIndex = 9;
@@ -260,7 +280,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 106);
+            this.label2.Location = new System.Drawing.Point(58, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 24);
             this.label2.TabIndex = 8;
@@ -269,7 +289,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 50);
+            this.label1.Location = new System.Drawing.Point(58, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 24);
             this.label1.TabIndex = 7;
@@ -277,7 +297,7 @@
             // 
             // txtcont
             // 
-            this.txtcont.Location = new System.Drawing.Point(323, 374);
+            this.txtcont.Location = new System.Drawing.Point(330, 297);
             this.txtcont.MaxLength = 10;
             this.txtcont.Name = "txtcont";
             this.txtcont.Size = new System.Drawing.Size(121, 29);
@@ -285,7 +305,7 @@
             // 
             // txtadd
             // 
-            this.txtadd.Location = new System.Drawing.Point(291, 272);
+            this.txtadd.Location = new System.Drawing.Point(291, 201);
             this.txtadd.MaxLength = 20;
             this.txtadd.Multiline = true;
             this.txtadd.Name = "txtadd";
@@ -294,7 +314,7 @@
             // 
             // txtlname
             // 
-            this.txtlname.Location = new System.Drawing.Point(291, 215);
+            this.txtlname.Location = new System.Drawing.Point(291, 154);
             this.txtlname.MaxLength = 20;
             this.txtlname.Name = "txtlname";
             this.txtlname.Size = new System.Drawing.Size(142, 29);
@@ -302,7 +322,7 @@
             // 
             // txtfname
             // 
-            this.txtfname.Location = new System.Drawing.Point(291, 153);
+            this.txtfname.Location = new System.Drawing.Point(291, 109);
             this.txtfname.MaxLength = 20;
             this.txtfname.Name = "txtfname";
             this.txtfname.Size = new System.Drawing.Size(142, 29);
@@ -310,7 +330,7 @@
             // 
             // txtcourseid
             // 
-            this.txtcourseid.Location = new System.Drawing.Point(291, 103);
+            this.txtcourseid.Location = new System.Drawing.Point(291, 67);
             this.txtcourseid.MaxLength = 11;
             this.txtcourseid.Name = "txtcourseid";
             this.txtcourseid.Size = new System.Drawing.Size(106, 29);
@@ -318,7 +338,7 @@
             // 
             // txtstuid
             // 
-            this.txtstuid.Location = new System.Drawing.Point(291, 48);
+            this.txtstuid.Location = new System.Drawing.Point(291, 24);
             this.txtstuid.MaxLength = 11;
             this.txtstuid.Name = "txtstuid";
             this.txtstuid.Size = new System.Drawing.Size(106, 29);
@@ -342,7 +362,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(948, 525);
+            this.tabPage2.Size = new System.Drawing.Size(948, 570);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Attendane/Payment";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -456,13 +476,15 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.StuAllGrid);
             this.tabPage4.Location = new System.Drawing.Point(4, 33);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(948, 525);
+            this.tabPage4.Size = new System.Drawing.Size(948, 570);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "View";
             this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
             // tabPage5
             // 
@@ -474,21 +496,39 @@
             this.tabPage5.Text = "Attendance Report";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // searchbtn
+            // label14
             // 
-            this.searchbtn.Location = new System.Drawing.Point(420, 44);
-            this.searchbtn.Name = "searchbtn";
-            this.searchbtn.Size = new System.Drawing.Size(99, 33);
-            this.searchbtn.TabIndex = 23;
-            this.searchbtn.Text = "Search";
-            this.searchbtn.UseVisualStyleBackColor = true;
-            this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(692, 24);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(144, 24);
+            this.label14.TabIndex = 24;
+            this.label14.Text = "Student Image";
+            // 
+            // StuClassGrid
+            // 
+            this.StuClassGrid.AllowUserToAddRows = false;
+            this.StuClassGrid.AllowUserToDeleteRows = false;
+            this.StuClassGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StuClassGrid.Location = new System.Drawing.Point(62, 382);
+            this.StuClassGrid.Name = "StuClassGrid";
+            this.StuClassGrid.ReadOnly = true;
+            this.StuClassGrid.Size = new System.Drawing.Size(791, 129);
+            this.StuClassGrid.TabIndex = 25;
+            // 
+            // StuAllGrid
+            // 
+            this.StuAllGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StuAllGrid.Location = new System.Drawing.Point(20, 22);
+            this.StuAllGrid.Name = "StuAllGrid";
+            this.StuAllGrid.Size = new System.Drawing.Size(903, 519);
+            this.StuAllGrid.TabIndex = 0;
             // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 674);
+            this.ClientSize = new System.Drawing.Size(989, 676);
             this.Controls.Add(this.tabControl1);
             this.Name = "Student";
             this.Text = "Student";
@@ -499,6 +539,9 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.StuClassGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StuAllGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -546,5 +589,8 @@
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button searchbtn;
+        private System.Windows.Forms.DataGridView StuClassGrid;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataGridView StuAllGrid;
     }
 }

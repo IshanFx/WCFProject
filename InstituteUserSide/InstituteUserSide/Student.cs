@@ -145,18 +145,16 @@ namespace InstituteUserSide
         public void GetlastID()
         {
             InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
-
             InstituteServices.Student student = new InstituteServices.Student();
-
-            txtstuid.Text = client.studentlastid().ToString();
-        
+            txtstuid.Text = client.studentlastid().ToString();       
         }
 
         public void GridClassDetais()
         {
-            InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
-            InstituteServices.Student student = new InstituteServices.Student();
-            StuClassGrid.DataSource = client.GetStuCourseData();
+            InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();           
+            DataSet set = client.GetStuCourseData();
+            DataTable table = set.Tables[0];
+            StuClassGrid.DataSource = table;
         }
 
         private void searchbtn_Click(object sender, EventArgs e)
@@ -182,16 +180,17 @@ namespace InstituteUserSide
             txtcont.Text =Convert.ToString(student.stuContact);
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            GridClassDetais();
+      
+        private void tabPage4_Click(object sender, EventArgs e)
+        {           
         }
 
-        private void tabPage4_Click(object sender, EventArgs e)
+        private void tabControl1_Enter(object sender, EventArgs e)
         {
             InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
-            InstituteServices.Student student = new InstituteServices.Student();
-            StuAllGrid.DataSource = client.GetAllStudentData();
+            DataSet set = client.GetAllStudentData();
+            DataTable table = set.Tables[0];
+            StuAllGrid.DataSource = table;
         }
     }
 }

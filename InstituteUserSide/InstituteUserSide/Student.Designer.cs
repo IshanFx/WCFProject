@@ -30,9 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.StuClassGrid = new System.Windows.Forms.DataGridView();
+            this.label14 = new System.Windows.Forms.Label();
             this.searchbtn = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
             this.browsbtn = new System.Windows.Forms.Button();
             this.stuImage = new System.Windows.Forms.PictureBox();
             this.Clearbtn = new System.Windows.Forms.Button();
@@ -68,17 +69,15 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.StuClassGrid = new System.Windows.Forms.DataGridView();
             this.StuAllGrid = new System.Windows.Forms.DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StuClassGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stuImage)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StuClassGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StuAllGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,6 +93,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(956, 607);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Enter += new System.EventHandler(this.tabControl1_Enter);
             // 
             // tabPage1
             // 
@@ -101,7 +101,6 @@
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.searchbtn);
             this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.button7);
             this.tabPage1.Controls.Add(this.browsbtn);
             this.tabPage1.Controls.Add(this.stuImage);
             this.tabPage1.Controls.Add(this.Clearbtn);
@@ -130,6 +129,29 @@
             this.tabPage1.Text = "Register";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // StuClassGrid
+            // 
+            this.StuClassGrid.AllowUserToAddRows = false;
+            this.StuClassGrid.AllowUserToDeleteRows = false;
+            this.StuClassGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.StuClassGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.StuClassGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.StuClassGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StuClassGrid.Location = new System.Drawing.Point(62, 382);
+            this.StuClassGrid.Name = "StuClassGrid";
+            this.StuClassGrid.ReadOnly = true;
+            this.StuClassGrid.Size = new System.Drawing.Size(791, 129);
+            this.StuClassGrid.TabIndex = 25;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(692, 24);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(144, 24);
+            this.label14.TabIndex = 24;
+            this.label14.Text = "Student Image";
+            // 
             // searchbtn
             // 
             this.searchbtn.Location = new System.Drawing.Point(420, 20);
@@ -150,16 +172,6 @@
             this.label13.TabIndex = 22;
             this.label13.Text = "+94";
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(420, 67);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(99, 33);
-            this.button7.TabIndex = 21;
-            this.button7.Text = "Show";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // browsbtn
             // 
             this.browsbtn.Location = new System.Drawing.Point(674, 297);
@@ -172,7 +184,7 @@
             // 
             // stuImage
             // 
-            this.stuImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.stuImage.Image = global::InstituteUserSide.Properties.Resources.propic;
             this.stuImage.Location = new System.Drawing.Point(674, 67);
             this.stuImage.Name = "stuImage";
             this.stuImage.Size = new System.Drawing.Size(179, 208);
@@ -486,43 +498,26 @@
             this.tabPage4.UseVisualStyleBackColor = true;
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 33);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(948, 525);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Attendance Report";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(692, 24);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(144, 24);
-            this.label14.TabIndex = 24;
-            this.label14.Text = "Student Image";
-            // 
-            // StuClassGrid
-            // 
-            this.StuClassGrid.AllowUserToAddRows = false;
-            this.StuClassGrid.AllowUserToDeleteRows = false;
-            this.StuClassGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.StuClassGrid.Location = new System.Drawing.Point(62, 382);
-            this.StuClassGrid.Name = "StuClassGrid";
-            this.StuClassGrid.ReadOnly = true;
-            this.StuClassGrid.Size = new System.Drawing.Size(791, 129);
-            this.StuClassGrid.TabIndex = 25;
-            // 
             // StuAllGrid
             // 
+            this.StuAllGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.StuAllGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.StuAllGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.StuAllGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.StuAllGrid.Location = new System.Drawing.Point(20, 22);
             this.StuAllGrid.Name = "StuAllGrid";
             this.StuAllGrid.Size = new System.Drawing.Size(903, 519);
             this.StuAllGrid.TabIndex = 0;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 33);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(948, 570);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Attendance Report";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // Student
             // 
@@ -535,12 +530,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StuClassGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stuImage)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.StuClassGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StuAllGrid)).EndInit();
             this.ResumeLayout(false);
 
@@ -550,7 +545,6 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button browsbtn;
         private System.Windows.Forms.PictureBox stuImage;
         private System.Windows.Forms.Button Clearbtn;

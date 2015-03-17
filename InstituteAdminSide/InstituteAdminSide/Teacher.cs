@@ -26,6 +26,7 @@ namespace InstituteAdminSide
             client = new TeacherServicesClient();
             int chk = 0;
 
+            //check TextFields Values
             if (String.IsNullOrEmpty(teacherIdtxt.Text)||
                 String.IsNullOrEmpty(teacherFNametxt.Text)||
                 String.IsNullOrEmpty(teacherLNametxt.Text)||
@@ -49,6 +50,7 @@ namespace InstituteAdminSide
                 }
                              try
                             {
+                                 //pass values to service
                                 teacher = new InstituteService.Teacher()
                                 {
                                     TeacherId = int.Parse(teacherIdtxt.Text),
@@ -77,7 +79,7 @@ namespace InstituteAdminSide
                                 MessageBox.Show(exception.Message,"Teacher Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
             }
-
+            ClearFields();
             GetTeacherLastId();
         }
 
@@ -85,6 +87,8 @@ namespace InstituteAdminSide
         {
             client = new TeacherServicesClient();
             int chk = 0;
+
+            //check textfields values
            if (String.IsNullOrEmpty(teacherIdtxt.Text)||
                 String.IsNullOrEmpty(teacherFNametxt.Text)||
                 String.IsNullOrEmpty(teacherLNametxt.Text)||
@@ -108,6 +112,7 @@ namespace InstituteAdminSide
                 }
                 try
                 {
+                    //pass values to service
                     teacher = new InstituteService.Teacher()
                     {
                         TeacherId = int.Parse(teacherIdtxt.Text),
@@ -147,6 +152,7 @@ namespace InstituteAdminSide
             btnTeacherSave.Enabled = true;
         }
 
+        //clear fields 
         private void ClearFields()
         {
             teacherAddresstxt.Clear();
@@ -158,6 +164,7 @@ namespace InstituteAdminSide
             
         }
 
+        //get last saved id of teachers
         private void GetTeacherLastId()
         {
             
@@ -176,6 +183,8 @@ namespace InstituteAdminSide
             {
                 try
                 {
+                    //retrieve teachers data from service
+
                     client = new TeacherServicesClient();
                     set = client.GetTeacherData();
                     table = set.Tables[0];
@@ -199,6 +208,62 @@ namespace InstituteAdminSide
         private void Teacher_Load(object sender, EventArgs e)
         {
             GetTeacherLastId();
+            FillGridTeacher();
+        }
+
+        private void FillGridTeacher()
+        {
+            client = new TeacherServicesClient();
+            DataSet set = client.GetTeacherData();
+            DataTable table = set.Tables[0];
+            gridTeacher.DataSource = table;
+        }
+
+        private void employeePaymentSave(object sender, EventArgs e)
+        {
+            client = new TeacherServicesClient();
+            if (String.IsNullOrEmpty(txtPaymentTeaId.Text) ||
+                String.IsNullOrEmpty(txtPaymentMonth.Text) ||
+                String.IsNullOrEmpty(txtPaymentAmount.Text)||
+                String.IsNullOrEmpty(txtPaymentYear.Text)
+                )
+
+            {
+                MessageBox.Show("Please Fill all Data", "Fill Require", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+            else
+            {
+                try
+                {
+                    teacher = new InstituteService.Teacher()
+                    {
+                        TeacherId = int.Parse(txtPaymentTeaId.Text),
+                        TeacherPayDate = DateTime.Now.ToString("yyyy/MM/dd"),
+                        TeacherPayMonth = txtPaymentMonth.Text,
+                        TeacherPayYear = int.Parse(txtPaymentYear.Text),
+                        TeacherPayAmount = Double.Parse(txtPaymentAmount.Text)
+                    };
+
+                    int chk = client.SaveTeacherPayment(teacher);
+                    if (chk.Equals(1))
+                    {
+                        MessageBox.Show(String.Format("Teacher id {0} Payments Saved ",txtPaymentTeaId.Text),"Save Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(String.Format("Teacher id {0} payment not saved", txtPaymentTeaId.Text),
+                            "Teacher Message", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show(@"Can't Save Data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            }
+            
         }
     }
 }

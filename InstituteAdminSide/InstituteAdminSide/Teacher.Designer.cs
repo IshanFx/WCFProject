@@ -33,6 +33,10 @@ namespace InstituteAdminSide
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtLastId = new System.Windows.Forms.TextBox();
+            this.rbnNICV = new System.Windows.Forms.RadioButton();
+            this.rbnNICX = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnTeacherUpdate = new System.Windows.Forms.Button();
@@ -54,28 +58,24 @@ namespace InstituteAdminSide
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnEmployeePayment = new System.Windows.Forms.Button();
+            this.txtPaymentAmount = new System.Windows.Forms.TextBox();
+            this.txtPaymentYear = new System.Windows.Forms.TextBox();
+            this.txtPaymentMonth = new System.Windows.Forms.TextBox();
+            this.txtPaymentTeaId = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridTeacher = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.rbnNICV = new System.Windows.Forms.RadioButton();
-            this.rbnNICX = new System.Windows.Forms.RadioButton();
-            this.txtLastId = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTeacher)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,6 +124,47 @@ namespace InstituteAdminSide
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Register";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label14.Location = new System.Drawing.Point(80, 19);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(79, 22);
+            this.label14.TabIndex = 66;
+            this.label14.Text = "Last Id";
+            // 
+            // txtLastId
+            // 
+            this.txtLastId.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.txtLastId.Location = new System.Drawing.Point(257, 19);
+            this.txtLastId.Name = "txtLastId";
+            this.txtLastId.Size = new System.Drawing.Size(61, 26);
+            this.txtLastId.TabIndex = 65;
+            // 
+            // rbnNICV
+            // 
+            this.rbnNICV.AutoSize = true;
+            this.rbnNICV.Location = new System.Drawing.Point(415, 237);
+            this.rbnNICV.Name = "rbnNICV";
+            this.rbnNICV.Size = new System.Drawing.Size(39, 26);
+            this.rbnNICV.TabIndex = 64;
+            this.rbnNICV.TabStop = true;
+            this.rbnNICV.Text = "V";
+            this.rbnNICV.UseVisualStyleBackColor = true;
+            // 
+            // rbnNICX
+            // 
+            this.rbnNICX.AutoSize = true;
+            this.rbnNICX.Location = new System.Drawing.Point(475, 237);
+            this.rbnNICX.Name = "rbnNICX";
+            this.rbnNICX.Size = new System.Drawing.Size(40, 26);
+            this.rbnNICX.TabIndex = 63;
+            this.rbnNICX.TabStop = true;
+            this.rbnNICX.Text = "X";
+            this.rbnNICX.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -332,11 +373,11 @@ namespace InstituteAdminSide
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.textBox5);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.btnEmployeePayment);
+            this.tabPage2.Controls.Add(this.txtPaymentAmount);
+            this.tabPage2.Controls.Add(this.txtPaymentYear);
+            this.tabPage2.Controls.Add(this.txtPaymentMonth);
+            this.tabPage2.Controls.Add(this.txtPaymentTeaId);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label2);
@@ -350,49 +391,50 @@ namespace InstituteAdminSide
             this.tabPage2.Text = "Payment";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnEmployeePayment
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(490, 363);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(210, 40);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnEmployeePayment.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnEmployeePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmployeePayment.ForeColor = System.Drawing.Color.White;
+            this.btnEmployeePayment.Location = new System.Drawing.Point(490, 363);
+            this.btnEmployeePayment.Name = "btnEmployeePayment";
+            this.btnEmployeePayment.Size = new System.Drawing.Size(210, 40);
+            this.btnEmployeePayment.TabIndex = 42;
+            this.btnEmployeePayment.Text = "Save";
+            this.btnEmployeePayment.UseVisualStyleBackColor = false;
+            this.btnEmployeePayment.Click += new System.EventHandler(this.employeePaymentSave);
             // 
-            // textBox5
+            // txtPaymentAmount
             // 
-            this.textBox5.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.textBox5.Location = new System.Drawing.Point(294, 294);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(137, 26);
-            this.textBox5.TabIndex = 41;
+            this.txtPaymentAmount.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.txtPaymentAmount.Location = new System.Drawing.Point(294, 294);
+            this.txtPaymentAmount.Name = "txtPaymentAmount";
+            this.txtPaymentAmount.Size = new System.Drawing.Size(137, 26);
+            this.txtPaymentAmount.TabIndex = 41;
             // 
-            // textBox3
+            // txtPaymentYear
             // 
-            this.textBox3.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.textBox3.Location = new System.Drawing.Point(294, 218);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(137, 26);
-            this.textBox3.TabIndex = 39;
+            this.txtPaymentYear.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.txtPaymentYear.Location = new System.Drawing.Point(294, 218);
+            this.txtPaymentYear.Name = "txtPaymentYear";
+            this.txtPaymentYear.Size = new System.Drawing.Size(137, 26);
+            this.txtPaymentYear.TabIndex = 39;
             // 
-            // textBox2
+            // txtPaymentMonth
             // 
-            this.textBox2.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.textBox2.Location = new System.Drawing.Point(294, 149);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 26);
-            this.textBox2.TabIndex = 38;
+            this.txtPaymentMonth.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.txtPaymentMonth.Location = new System.Drawing.Point(294, 149);
+            this.txtPaymentMonth.Name = "txtPaymentMonth";
+            this.txtPaymentMonth.Size = new System.Drawing.Size(137, 26);
+            this.txtPaymentMonth.TabIndex = 38;
             // 
-            // textBox1
+            // txtPaymentTeaId
             // 
-            this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.textBox1.Location = new System.Drawing.Point(294, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(61, 26);
-            this.textBox1.TabIndex = 37;
+            this.txtPaymentTeaId.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.txtPaymentTeaId.Location = new System.Drawing.Point(294, 84);
+            this.txtPaymentTeaId.Name = "txtPaymentTeaId";
+            this.txtPaymentTeaId.Size = new System.Drawing.Size(61, 26);
+            this.txtPaymentTeaId.TabIndex = 37;
             // 
             // label5
             // 
@@ -440,7 +482,7 @@ namespace InstituteAdminSide
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Controls.Add(this.gridTeacher);
             this.tabPage3.Location = new System.Drawing.Point(4, 31);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -449,13 +491,13 @@ namespace InstituteAdminSide
             this.tabPage3.Text = "View";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // gridTeacher
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(809, 452);
-            this.dataGridView1.TabIndex = 0;
+            this.gridTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridTeacher.Location = new System.Drawing.Point(18, 43);
+            this.gridTeacher.Name = "gridTeacher";
+            this.gridTeacher.Size = new System.Drawing.Size(809, 452);
+            this.gridTeacher.TabIndex = 0;
             // 
             // panel1
             // 
@@ -478,47 +520,6 @@ namespace InstituteAdminSide
             this.label4.TabIndex = 63;
             this.label4.Text = "Teacher";
             // 
-            // rbnNICV
-            // 
-            this.rbnNICV.AutoSize = true;
-            this.rbnNICV.Location = new System.Drawing.Point(415, 237);
-            this.rbnNICV.Name = "rbnNICV";
-            this.rbnNICV.Size = new System.Drawing.Size(39, 26);
-            this.rbnNICV.TabIndex = 64;
-            this.rbnNICV.TabStop = true;
-            this.rbnNICV.Text = "V";
-            this.rbnNICV.UseVisualStyleBackColor = true;
-            // 
-            // rbnNICX
-            // 
-            this.rbnNICX.AutoSize = true;
-            this.rbnNICX.Location = new System.Drawing.Point(475, 237);
-            this.rbnNICX.Name = "rbnNICX";
-            this.rbnNICX.Size = new System.Drawing.Size(40, 26);
-            this.rbnNICX.TabIndex = 63;
-            this.rbnNICX.TabStop = true;
-            this.rbnNICX.Text = "X";
-            this.rbnNICX.UseVisualStyleBackColor = true;
-            // 
-            // txtLastId
-            // 
-            this.txtLastId.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.txtLastId.Location = new System.Drawing.Point(257, 19);
-            this.txtLastId.Name = "txtLastId";
-            this.txtLastId.Size = new System.Drawing.Size(61, 26);
-            this.txtLastId.TabIndex = 65;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label14.Location = new System.Drawing.Point(80, 19);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(79, 22);
-            this.label14.TabIndex = 66;
-            this.label14.Text = "Last Id";
-            // 
             // Teacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -534,7 +535,7 @@ namespace InstituteAdminSide
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTeacher)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -561,11 +562,11 @@ namespace InstituteAdminSide
         private Label label9;
         private Label label10;
         private TabPage tabPage2;
-        private Button button1;
-        private TextBox textBox5;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private Button btnEmployeePayment;
+        private TextBox txtPaymentAmount;
+        private TextBox txtPaymentYear;
+        private TextBox txtPaymentMonth;
+        private TextBox txtPaymentTeaId;
         private Label label5;
         private Label label3;
         private Label label2;
@@ -576,7 +577,7 @@ namespace InstituteAdminSide
         private Button btnTeacherUpdate;
         private Button btnTeacherSave;
         private TabPage tabPage3;
-        private DataGridView dataGridView1;
+        private DataGridView gridTeacher;
         private Panel panel1;
         private Label label4;
         private RadioButton rbnNICV;

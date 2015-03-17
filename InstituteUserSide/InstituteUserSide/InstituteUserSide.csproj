@@ -104,6 +104,9 @@
     <None Include="Service References\InstituteServices\InstituteUserSide.InstituteServices.Employee.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\InstituteServices\InstituteUserSide.InstituteServices.Student.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\InstituteServices\InstituteUserSide.InstituteServices.Teacher.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

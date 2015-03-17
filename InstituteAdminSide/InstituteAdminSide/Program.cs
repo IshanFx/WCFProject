@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace InstituteAdminSide
@@ -13,7 +15,7 @@ namespace InstituteAdminSide
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Teacher());
+            Application.Run(new Home ());
         }
     }
 }

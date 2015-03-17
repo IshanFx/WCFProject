@@ -1,14 +1,11 @@
-﻿using System.ComponentModel;
-using System.Windows.Forms;
-
-namespace InstituteAdminSide
+﻿namespace InstituteAdminSide
 {
     partial class Home
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private IContainer components = null;
+        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -62,7 +59,6 @@ namespace InstituteAdminSide
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.teacherFormShow);
             // 
             // dateShow
             // 
@@ -128,7 +124,7 @@ namespace InstituteAdminSide
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.employeeFormShow);
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             this.button5.MouseLeave += new System.EventHandler(this.button5_MouseLeave);
             this.button5.MouseHover += new System.EventHandler(this.button5_MouseHover);
             // 
@@ -148,7 +144,7 @@ namespace InstituteAdminSide
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.reportFormShow);
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel1
             // 
@@ -190,15 +186,15 @@ namespace InstituteAdminSide
 
         #endregion
 
-        private Button button2;
-        private Label dateShow;
-        private Label timeShow;
-        private Label label8;
-        private Label label1;
-        private Button button5;
-        private Button button4;
-        private Panel panel1;
-        private Timer timeMenuButton;
-        private Timer timerMenuButtonMin;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label dateShow;
+        private System.Windows.Forms.Label timeShow;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Timer timeMenuButton;
+        private System.Windows.Forms.Timer timerMenuButtonMin;
     }
 }

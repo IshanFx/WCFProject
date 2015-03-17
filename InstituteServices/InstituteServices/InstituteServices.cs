@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.IO;
 
 namespace InstituteServices
 {
@@ -17,6 +18,7 @@ namespace InstituteServices
         DB db;
         DataTable table;
         DataSet set;
+        
         public void DoWork()
         {
         }
@@ -100,8 +102,38 @@ namespace InstituteServices
 
         public int SaveStudent(Student student)
         {
-            string sql = "INSERT INTO student VALUES('" + student.stuid + "','" + student.stuCourseID + "','" + student.stuFName + "','" + student.stuLName + "','" + student.stuAddr + "','" + student.stuGender + "','" + student.stuContact + "','" + student.stuPhoto + "')";
+            FileStream fst = new FileStream(student.stuPhoto, FileMode.Open, FileAccess.Read);
+            byte[] imagebt = new byte[fst.Length];
+            fst.Read(imagebt, 0, Convert.ToInt32(fst.Length));
+            fst.Dispose();
+            new DB().cmd.Parameters.Add("@img", MySqlDbType.MediumBlob);
+            new DB().cmd.Parameters["@img"].Value = imagebt;
+            string sql = "INSERT INTO student VALUES('" + student.stuid + "','" + student.stuFName + "','" + student.stuLName + "','" + student.stuAddr + "','" + student.stuGender + "','" + student.stuContact + "',@img)";
+
+           
+            //Console.WriteLine(imagebt);
+            //Console.ReadLine();
             return new DB().DMLQuery(sql);
+        }
+
+        public DataSet GetStuCourseData()
+        {
+            string sql = "SELECT cls.courseid,cls.day,cls.starttime,cls.endtime,cls.batch,CONCAT(tea.fname,' ',tea.lname) As Teacher FROM Teachers tea JOIN course cls WHERE tea.teaid = cls.teachid";
+            db = new DB();
+            DataTable table = db.SelectQuery(sql);
+            DataSet set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
+
+        public DataSet GetAllStudentData()
+        {
+            string sql = "SELECT studentid As Id,CONCAT(fname,' ',lname)AS Name,CONCAT(address)AS Address,gender AS Gender,contact AS Contact FROM student";
+            db = new DB();
+            DataTable table = db.SelectQuery(sql);
+            DataSet set = new DataSet();
+            set.Tables.Add(table);
+            return set;
         }
 
         public int SaveCourse(Course course)
@@ -119,9 +151,39 @@ namespace InstituteServices
 
         public int UpdateStudent(Student student)
         {
-            throw new NotImplementedException();
+            string sql = "UPDATE student SET fname='"+student.stuFName+"', lname='"+student.stuLName+"', address='"+student.stuAddr+"', gender='"+student.stuGender+"', contact='"+student.stuContact+"' WHERE studentid='"+student.stuid+"'";
+            return new DB().DMLQuery(sql);
         }
 
+        public Student SearchStudentDate(int studentid)
+        {
+            Student student = student = new Student();
+            db = new DB();
+
+            string sql = "SELECT * FROM student WHERE studentid = '" + studentid + "'";
+            DataTable table = db.SelectQuery(sql);
+
+            student.stuFName = table.Rows[0][1].ToString();
+            student.stuLName = table.Rows[0][2].ToString();
+            student.stuAddr = table.Rows[0][3].ToString();
+            student.stuGender = table.Rows[0][4].ToString();
+            student.stuContact =Convert.ToInt32(table.Rows[0][5].ToString());
+
+            return student;
+        }
+
+        public int studentlastid()
+        {
+            
+            int id =new DB().GetLastIdQuery("SELECT MAX(studentid) FROM student");
+            if (id ==null){
+                 id= 1;
+            }
+            else{
+                id+= 1;           
+            }
+            return id;
+        }
 
         public DataSet GetEmployeeData()
         {

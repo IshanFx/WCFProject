@@ -8,57 +8,52 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.CodeDom.Compiler;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Channels;
-
 namespace InstituteAdminSide.InstituteService {
-    [DebuggerStepThrough()]
-    [GeneratedCode("System.Runtime.Serialization", "4.0.0.0")]
-    [DataContract(Name="Employee", Namespace="http://schemas.datacontract.org/2004/07/InstituteServices")]
-    [Serializable()]
-    public partial class Employee : object, IExtensibleDataObject, INotifyPropertyChanged {
+    using System.Runtime.Serialization;
+    using System;
+    
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Employee", Namespace="http://schemas.datacontract.org/2004/07/InstituteServices")]
+    [System.SerializableAttribute()]
+    public partial class Employee : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [NonSerialized()]
-        private ExtensionDataObject extensionDataField;
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmpAddressField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmpContactField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmpFNameField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int EmpIdField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmpLNameField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmpNICField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double EmpPayAmountField;
         
-        [OptionalField()]
-        private DateTime EmpPayDateField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime EmpPayDateField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmpPayMonthField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int EmpPayYearField;
         
-        [Browsable(false)]
-        public ExtensionDataObject ExtensionData {
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
                 return this.extensionDataField;
             }
@@ -67,46 +62,46 @@ namespace InstituteAdminSide.InstituteService {
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string EmpAddress {
             get {
                 return this.EmpAddressField;
             }
             set {
-                if ((ReferenceEquals(this.EmpAddressField, value) != true)) {
+                if ((object.ReferenceEquals(this.EmpAddressField, value) != true)) {
                     this.EmpAddressField = value;
                     this.RaisePropertyChanged("EmpAddress");
                 }
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string EmpContact {
             get {
                 return this.EmpContactField;
             }
             set {
-                if ((ReferenceEquals(this.EmpContactField, value) != true)) {
+                if ((object.ReferenceEquals(this.EmpContactField, value) != true)) {
                     this.EmpContactField = value;
                     this.RaisePropertyChanged("EmpContact");
                 }
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string EmpFName {
             get {
                 return this.EmpFNameField;
             }
             set {
-                if ((ReferenceEquals(this.EmpFNameField, value) != true)) {
+                if ((object.ReferenceEquals(this.EmpFNameField, value) != true)) {
                     this.EmpFNameField = value;
                     this.RaisePropertyChanged("EmpFName");
                 }
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int EmpId {
             get {
                 return this.EmpIdField;
@@ -119,33 +114,33 @@ namespace InstituteAdminSide.InstituteService {
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string EmpLName {
             get {
                 return this.EmpLNameField;
             }
             set {
-                if ((ReferenceEquals(this.EmpLNameField, value) != true)) {
+                if ((object.ReferenceEquals(this.EmpLNameField, value) != true)) {
                     this.EmpLNameField = value;
                     this.RaisePropertyChanged("EmpLName");
                 }
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string EmpNIC {
             get {
                 return this.EmpNICField;
             }
             set {
-                if ((ReferenceEquals(this.EmpNICField, value) != true)) {
+                if ((object.ReferenceEquals(this.EmpNICField, value) != true)) {
                     this.EmpNICField = value;
                     this.RaisePropertyChanged("EmpNIC");
                 }
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public double EmpPayAmount {
             get {
                 return this.EmpPayAmountField;
@@ -158,8 +153,8 @@ namespace InstituteAdminSide.InstituteService {
             }
         }
         
-        [DataMember()]
-        public DateTime EmpPayDate {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime EmpPayDate {
             get {
                 return this.EmpPayDateField;
             }
@@ -171,20 +166,20 @@ namespace InstituteAdminSide.InstituteService {
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string EmpPayMonth {
             get {
                 return this.EmpPayMonthField;
             }
             set {
-                if ((ReferenceEquals(this.EmpPayMonthField, value) != true)) {
+                if ((object.ReferenceEquals(this.EmpPayMonthField, value) != true)) {
                     this.EmpPayMonthField = value;
                     this.RaisePropertyChanged("EmpPayMonth");
                 }
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int EmpPayYear {
             get {
                 return this.EmpPayYearField;
@@ -197,63 +192,63 @@ namespace InstituteAdminSide.InstituteService {
             }
         }
         
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
     
-    [DebuggerStepThrough()]
-    [GeneratedCode("System.Runtime.Serialization", "4.0.0.0")]
-    [DataContract(Name="Teacher", Namespace="http://schemas.datacontract.org/2004/07/InstituteServices")]
-    [Serializable()]
-    public partial class Teacher : object, IExtensibleDataObject, INotifyPropertyChanged {
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Teacher", Namespace="http://schemas.datacontract.org/2004/07/InstituteServices")]
+    [System.SerializableAttribute()]
+    public partial class Teacher : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [NonSerialized()]
-        private ExtensionDataObject extensionDataField;
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TeacherAddressField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TeacherContactField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TeacherFNameField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int TeacherIdField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TeacherLNameField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TeacherMailField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TeacherNICField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double TeacherPayAmountField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TeacherPayDateField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TeacherPayMonthField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int TeacherPayYearField;
         
-        [OptionalField()]
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TeacherSubjectField;
         
-        [Browsable(false)]
-        public ExtensionDataObject ExtensionData {
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
                 return this.extensionDataField;
             }
@@ -262,46 +257,46 @@ namespace InstituteAdminSide.InstituteService {
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TeacherAddress {
             get {
                 return this.TeacherAddressField;
             }
             set {
-                if ((ReferenceEquals(this.TeacherAddressField, value) != true)) {
+                if ((object.ReferenceEquals(this.TeacherAddressField, value) != true)) {
                     this.TeacherAddressField = value;
                     this.RaisePropertyChanged("TeacherAddress");
                 }
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TeacherContact {
             get {
                 return this.TeacherContactField;
             }
             set {
-                if ((ReferenceEquals(this.TeacherContactField, value) != true)) {
+                if ((object.ReferenceEquals(this.TeacherContactField, value) != true)) {
                     this.TeacherContactField = value;
                     this.RaisePropertyChanged("TeacherContact");
                 }
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TeacherFName {
             get {
                 return this.TeacherFNameField;
             }
             set {
-                if ((ReferenceEquals(this.TeacherFNameField, value) != true)) {
+                if ((object.ReferenceEquals(this.TeacherFNameField, value) != true)) {
                     this.TeacherFNameField = value;
                     this.RaisePropertyChanged("TeacherFName");
                 }
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int TeacherId {
             get {
                 return this.TeacherIdField;
@@ -314,46 +309,46 @@ namespace InstituteAdminSide.InstituteService {
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TeacherLName {
             get {
                 return this.TeacherLNameField;
             }
             set {
-                if ((ReferenceEquals(this.TeacherLNameField, value) != true)) {
+                if ((object.ReferenceEquals(this.TeacherLNameField, value) != true)) {
                     this.TeacherLNameField = value;
                     this.RaisePropertyChanged("TeacherLName");
                 }
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TeacherMail {
             get {
                 return this.TeacherMailField;
             }
             set {
-                if ((ReferenceEquals(this.TeacherMailField, value) != true)) {
+                if ((object.ReferenceEquals(this.TeacherMailField, value) != true)) {
                     this.TeacherMailField = value;
                     this.RaisePropertyChanged("TeacherMail");
                 }
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TeacherNIC {
             get {
                 return this.TeacherNICField;
             }
             set {
-                if ((ReferenceEquals(this.TeacherNICField, value) != true)) {
+                if ((object.ReferenceEquals(this.TeacherNICField, value) != true)) {
                     this.TeacherNICField = value;
                     this.RaisePropertyChanged("TeacherNIC");
                 }
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public double TeacherPayAmount {
             get {
                 return this.TeacherPayAmountField;
@@ -366,33 +361,33 @@ namespace InstituteAdminSide.InstituteService {
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TeacherPayDate {
             get {
                 return this.TeacherPayDateField;
             }
             set {
-                if ((ReferenceEquals(this.TeacherPayDateField, value) != true)) {
+                if ((object.ReferenceEquals(this.TeacherPayDateField, value) != true)) {
                     this.TeacherPayDateField = value;
                     this.RaisePropertyChanged("TeacherPayDate");
                 }
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TeacherPayMonth {
             get {
                 return this.TeacherPayMonthField;
             }
             set {
-                if ((ReferenceEquals(this.TeacherPayMonthField, value) != true)) {
+                if ((object.ReferenceEquals(this.TeacherPayMonthField, value) != true)) {
                     this.TeacherPayMonthField = value;
                     this.RaisePropertyChanged("TeacherPayMonth");
                 }
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int TeacherPayYear {
             get {
                 return this.TeacherPayYearField;
@@ -405,326 +400,44 @@ namespace InstituteAdminSide.InstituteService {
             }
         }
         
-        [DataMember()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TeacherSubject {
             get {
                 return this.TeacherSubjectField;
             }
             set {
-                if ((ReferenceEquals(this.TeacherSubjectField, value) != true)) {
+                if ((object.ReferenceEquals(this.TeacherSubjectField, value) != true)) {
                     this.TeacherSubjectField = value;
                     this.RaisePropertyChanged("TeacherSubject");
                 }
             }
         }
         
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
-            PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
     
-    [DebuggerStepThrough()]
-    [GeneratedCode("System.Runtime.Serialization", "4.0.0.0")]
-    [DataContract(Name="Course", Namespace="http://schemas.datacontract.org/2004/07/InstituteServices")]
-    [Serializable()]
-    public partial class Course : object, IExtensibleDataObject, INotifyPropertyChanged {
-        
-        [NonSerialized()]
-        private ExtensionDataObject extensionDataField;
-        
-        [OptionalField()]
-        private int CourseBatchField;
-        
-        [OptionalField()]
-        private string CourseDayField;
-        
-        [OptionalField()]
-        private string CourseEndTimeField;
-        
-        [OptionalField()]
-        private int CourseIdField;
-        
-        [OptionalField()]
-        private string CourseStartTimeField;
-        
-        [OptionalField()]
-        private int CourseTeacherIdField;
-        
-        [Browsable(false)]
-        public ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [DataMember()]
-        public int CourseBatch {
-            get {
-                return this.CourseBatchField;
-            }
-            set {
-                if ((this.CourseBatchField.Equals(value) != true)) {
-                    this.CourseBatchField = value;
-                    this.RaisePropertyChanged("CourseBatch");
-                }
-            }
-        }
-        
-        [DataMember()]
-        public string CourseDay {
-            get {
-                return this.CourseDayField;
-            }
-            set {
-                if ((ReferenceEquals(this.CourseDayField, value) != true)) {
-                    this.CourseDayField = value;
-                    this.RaisePropertyChanged("CourseDay");
-                }
-            }
-        }
-        
-        [DataMember()]
-        public string CourseEndTime {
-            get {
-                return this.CourseEndTimeField;
-            }
-            set {
-                if ((ReferenceEquals(this.CourseEndTimeField, value) != true)) {
-                    this.CourseEndTimeField = value;
-                    this.RaisePropertyChanged("CourseEndTime");
-                }
-            }
-        }
-        
-        [DataMember()]
-        public int CourseId {
-            get {
-                return this.CourseIdField;
-            }
-            set {
-                if ((this.CourseIdField.Equals(value) != true)) {
-                    this.CourseIdField = value;
-                    this.RaisePropertyChanged("CourseId");
-                }
-            }
-        }
-        
-        [DataMember()]
-        public string CourseStartTime {
-            get {
-                return this.CourseStartTimeField;
-            }
-            set {
-                if ((ReferenceEquals(this.CourseStartTimeField, value) != true)) {
-                    this.CourseStartTimeField = value;
-                    this.RaisePropertyChanged("CourseStartTime");
-                }
-            }
-        }
-        
-        [DataMember()]
-        public int CourseTeacherId {
-            get {
-                return this.CourseTeacherIdField;
-            }
-            set {
-                if ((this.CourseTeacherIdField.Equals(value) != true)) {
-                    this.CourseTeacherIdField = value;
-                    this.RaisePropertyChanged("CourseTeacherId");
-                }
-            }
-        }
-        
-        public event PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [DebuggerStepThrough()]
-    [GeneratedCode("System.Runtime.Serialization", "4.0.0.0")]
-    [DataContract(Name="Student", Namespace="http://schemas.datacontract.org/2004/07/InstituteServices")]
-    [Serializable()]
-    public partial class Student : object, IExtensibleDataObject, INotifyPropertyChanged {
-        
-        [NonSerialized()]
-        private ExtensionDataObject extensionDataField;
-        
-        [OptionalField()]
-        private string stuAddrField;
-        
-        [OptionalField()]
-        private int stuContactField;
-        
-        [OptionalField()]
-        private int stuCourseIDField;
-        
-        [OptionalField()]
-        private string stuFNameField;
-        
-        [OptionalField()]
-        private string stuGenderField;
-        
-        [OptionalField()]
-        private string stuLNameField;
-        
-        [OptionalField()]
-        private string stuPhotoField;
-        
-        [OptionalField()]
-        private int stuidField;
-        
-        [Browsable(false)]
-        public ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [DataMember()]
-        public string stuAddr {
-            get {
-                return this.stuAddrField;
-            }
-            set {
-                if ((ReferenceEquals(this.stuAddrField, value) != true)) {
-                    this.stuAddrField = value;
-                    this.RaisePropertyChanged("stuAddr");
-                }
-            }
-        }
-        
-        [DataMember()]
-        public int stuContact {
-            get {
-                return this.stuContactField;
-            }
-            set {
-                if ((this.stuContactField.Equals(value) != true)) {
-                    this.stuContactField = value;
-                    this.RaisePropertyChanged("stuContact");
-                }
-            }
-        }
-        
-        [DataMember()]
-        public int stuCourseID {
-            get {
-                return this.stuCourseIDField;
-            }
-            set {
-                if ((this.stuCourseIDField.Equals(value) != true)) {
-                    this.stuCourseIDField = value;
-                    this.RaisePropertyChanged("stuCourseID");
-                }
-            }
-        }
-        
-        [DataMember()]
-        public string stuFName {
-            get {
-                return this.stuFNameField;
-            }
-            set {
-                if ((ReferenceEquals(this.stuFNameField, value) != true)) {
-                    this.stuFNameField = value;
-                    this.RaisePropertyChanged("stuFName");
-                }
-            }
-        }
-        
-        [DataMember()]
-        public string stuGender {
-            get {
-                return this.stuGenderField;
-            }
-            set {
-                if ((ReferenceEquals(this.stuGenderField, value) != true)) {
-                    this.stuGenderField = value;
-                    this.RaisePropertyChanged("stuGender");
-                }
-            }
-        }
-        
-        [DataMember()]
-        public string stuLName {
-            get {
-                return this.stuLNameField;
-            }
-            set {
-                if ((ReferenceEquals(this.stuLNameField, value) != true)) {
-                    this.stuLNameField = value;
-                    this.RaisePropertyChanged("stuLName");
-                }
-            }
-        }
-        
-        [DataMember()]
-        public string stuPhoto {
-            get {
-                return this.stuPhotoField;
-            }
-            set {
-                if ((ReferenceEquals(this.stuPhotoField, value) != true)) {
-                    this.stuPhotoField = value;
-                    this.RaisePropertyChanged("stuPhoto");
-                }
-            }
-        }
-        
-        [DataMember()]
-        public int stuid {
-            get {
-                return this.stuidField;
-            }
-            set {
-                if ((this.stuidField.Equals(value) != true)) {
-                    this.stuidField = value;
-                    this.RaisePropertyChanged("stuid");
-                }
-            }
-        }
-        
-        public event PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
-    [ServiceContract(ConfigurationName="InstituteService.IInstituteServices")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="InstituteService.IInstituteServices")]
     public interface IInstituteServices {
         
-        [OperationContract(Action="http://tempuri.org/IInstituteServices/DoWork", ReplyAction="http://tempuri.org/IInstituteServices/DoWorkResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInstituteServices/DoWork", ReplyAction="http://tempuri.org/IInstituteServices/DoWorkResponse")]
         void DoWork();
     }
     
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
-    public interface IInstituteServicesChannel : IInstituteServices, IClientChannel {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IInstituteServicesChannel : InstituteAdminSide.InstituteService.IInstituteServices, System.ServiceModel.IClientChannel {
     }
     
-    [DebuggerStepThrough()]
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
-    public partial class InstituteServicesClient : ClientBase<IInstituteServices>, IInstituteServices {
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class InstituteServicesClient : System.ServiceModel.ClientBase<InstituteAdminSide.InstituteService.IInstituteServices>, InstituteAdminSide.InstituteService.IInstituteServices {
         
         public InstituteServicesClient() {
         }
@@ -737,11 +450,11 @@ namespace InstituteAdminSide.InstituteService {
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public InstituteServicesClient(string endpointConfigurationName, EndpointAddress remoteAddress) : 
+        public InstituteServicesClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public InstituteServicesClient(Binding binding, EndpointAddress remoteAddress) : 
+        public InstituteServicesClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
@@ -750,42 +463,39 @@ namespace InstituteAdminSide.InstituteService {
         }
     }
     
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
-    [ServiceContract(ConfigurationName="InstituteService.IEmployeeServices")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="InstituteService.IEmployeeServices")]
     public interface IEmployeeServices {
         
-        [OperationContract(Action="http://tempuri.org/IEmployeeServices/SaveEmployee", ReplyAction="http://tempuri.org/IEmployeeServices/SaveEmployeeResponse")]
-        int SaveEmployee(Employee employee);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/SaveEmployee", ReplyAction="http://tempuri.org/IEmployeeServices/SaveEmployeeResponse")]
+        int SaveEmployee(InstituteAdminSide.InstituteService.Employee employee);
         
-        [OperationContract(Action="http://tempuri.org/IEmployeeServices/SearchEmployeeData", ReplyAction="http://tempuri.org/IEmployeeServices/SearchEmployeeDataResponse")]
-        Employee SearchEmployeeData(int employeeid);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/SearchEmployeeData", ReplyAction="http://tempuri.org/IEmployeeServices/SearchEmployeeDataResponse")]
+        InstituteAdminSide.InstituteService.Employee SearchEmployeeData(int employeeid);
         
-        [OperationContract(Action="http://tempuri.org/IEmployeeServices/UpdateEmployee", ReplyAction="http://tempuri.org/IEmployeeServices/UpdateEmployeeResponse")]
-        int UpdateEmployee(Employee employee);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/UpdateEmployee", ReplyAction="http://tempuri.org/IEmployeeServices/UpdateEmployeeResponse")]
+        int UpdateEmployee(InstituteAdminSide.InstituteService.Employee employee);
         
-        [OperationContract(Action="http://tempuri.org/IEmployeeServices/SaveEmployeePayments", ReplyAction="http://tempuri.org/IEmployeeServices/SaveEmployeePaymentsResponse")]
-        int SaveEmployeePayments(Employee employee);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/SaveEmployeePayments", ReplyAction="http://tempuri.org/IEmployeeServices/SaveEmployeePaymentsResponse")]
+        int SaveEmployeePayments(InstituteAdminSide.InstituteService.Employee employee);
         
-        [OperationContract(Action="http://tempuri.org/IEmployeeServices/GetEmployeeData", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeeDataResponse")]
-        DataSet GetEmployeeData();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/GetEmployeeData", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeeDataResponse")]
+        System.Data.DataSet GetEmployeeData();
         
-        [OperationContract(Action="http://tempuri.org/IEmployeeServices/GetEmployeePaymentFull", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeePaymentFullResponse")]
-        DataSet GetEmployeePaymentFull();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/GetEmployeePaymentFull", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeePaymentFullResponse")]
+        System.Data.DataSet GetEmployeePaymentFull();
         
-        [OperationContract(Action="http://tempuri.org/IEmployeeServices/GetEmployeePayment", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeePaymentResponse")]
-        DataSet GetEmployeePayment();
-        
-        [OperationContract(Action="http://tempuri.org/IEmployeeServices/GetEmployeeLastId", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeeLastIdResponse")]
-        int GetEmployeeLastId();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/GetEmployeePayment", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeePaymentResponse")]
+        System.Data.DataSet GetEmployeePayment();
     }
     
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
-    public interface IEmployeeServicesChannel : IEmployeeServices, IClientChannel {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IEmployeeServicesChannel : InstituteAdminSide.InstituteService.IEmployeeServices, System.ServiceModel.IClientChannel {
     }
     
-    [DebuggerStepThrough()]
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
-    public partial class EmployeeServicesClient : ClientBase<IEmployeeServices>, IEmployeeServices {
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class EmployeeServicesClient : System.ServiceModel.ClientBase<InstituteAdminSide.InstituteService.IEmployeeServices>, InstituteAdminSide.InstituteService.IEmployeeServices {
         
         public EmployeeServicesClient() {
         }
@@ -798,83 +508,76 @@ namespace InstituteAdminSide.InstituteService {
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public EmployeeServicesClient(string endpointConfigurationName, EndpointAddress remoteAddress) : 
+        public EmployeeServicesClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public EmployeeServicesClient(Binding binding, EndpointAddress remoteAddress) : 
+        public EmployeeServicesClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public int SaveEmployee(Employee employee) {
+        public int SaveEmployee(InstituteAdminSide.InstituteService.Employee employee) {
             return base.Channel.SaveEmployee(employee);
         }
         
-        public Employee SearchEmployeeData(int employeeid) {
+        public InstituteAdminSide.InstituteService.Employee SearchEmployeeData(int employeeid) {
             return base.Channel.SearchEmployeeData(employeeid);
         }
         
-        public int UpdateEmployee(Employee employee) {
+        public int UpdateEmployee(InstituteAdminSide.InstituteService.Employee employee) {
             return base.Channel.UpdateEmployee(employee);
         }
         
-        public int SaveEmployeePayments(Employee employee) {
+        public int SaveEmployeePayments(InstituteAdminSide.InstituteService.Employee employee) {
             return base.Channel.SaveEmployeePayments(employee);
         }
         
-        public DataSet GetEmployeeData() {
+        public System.Data.DataSet GetEmployeeData() {
             return base.Channel.GetEmployeeData();
         }
         
-        public DataSet GetEmployeePaymentFull() {
+        public System.Data.DataSet GetEmployeePaymentFull() {
             return base.Channel.GetEmployeePaymentFull();
         }
         
-        public DataSet GetEmployeePayment() {
+        public System.Data.DataSet GetEmployeePayment() {
             return base.Channel.GetEmployeePayment();
         }
-        
-        public int GetEmployeeLastId() {
-            return base.Channel.GetEmployeeLastId();
-        }
     }
     
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
-    [ServiceContract(ConfigurationName="InstituteService.ITeacherServices")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="InstituteService.ITeacherServices")]
     public interface ITeacherServices {
         
-        [OperationContract(Action="http://tempuri.org/ITeacherServices/SaveTeacher", ReplyAction="http://tempuri.org/ITeacherServices/SaveTeacherResponse")]
-        int SaveTeacher(Teacher teacher);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/SaveTeacher", ReplyAction="http://tempuri.org/ITeacherServices/SaveTeacherResponse")]
+        int SaveTeacher(InstituteAdminSide.InstituteService.Teacher teacher);
         
-        [OperationContract(Action="http://tempuri.org/ITeacherServices/SearchTeacherData", ReplyAction="http://tempuri.org/ITeacherServices/SearchTeacherDataResponse")]
-        Teacher SearchTeacherData(int teacherId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/SearchTeacherData", ReplyAction="http://tempuri.org/ITeacherServices/SearchTeacherDataResponse")]
+        InstituteAdminSide.InstituteService.Teacher SearchTeacherData(int teacherId);
         
-        [OperationContract(Action="http://tempuri.org/ITeacherServices/UpdateTeacher", ReplyAction="http://tempuri.org/ITeacherServices/UpdateTeacherResponse")]
-        int UpdateTeacher(Teacher teacher);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/UpdateTeacher", ReplyAction="http://tempuri.org/ITeacherServices/UpdateTeacherResponse")]
+        int UpdateTeacher(InstituteAdminSide.InstituteService.Teacher teacher);
         
-        [OperationContract(Action="http://tempuri.org/ITeacherServices/SaveTeacherPayment", ReplyAction="http://tempuri.org/ITeacherServices/SaveTeacherPaymentResponse")]
-        int SaveTeacherPayment(Teacher teacher);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/SaveTeacherPayment", ReplyAction="http://tempuri.org/ITeacherServices/SaveTeacherPaymentResponse")]
+        int SaveTeacherPayment(InstituteAdminSide.InstituteService.Teacher teacher);
         
-        [OperationContract(Action="http://tempuri.org/ITeacherServices/GetTeacherData", ReplyAction="http://tempuri.org/ITeacherServices/GetTeacherDataResponse")]
-        DataSet GetTeacherData();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/GetTeacherData", ReplyAction="http://tempuri.org/ITeacherServices/GetTeacherDataResponse")]
+        System.Data.DataSet GetTeacherData();
         
-        [OperationContract(Action="http://tempuri.org/ITeacherServices/GetTeachersIncome", ReplyAction="http://tempuri.org/ITeacherServices/GetTeachersIncomeResponse")]
-        DataSet GetTeachersIncome();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/GetTeachersIncome", ReplyAction="http://tempuri.org/ITeacherServices/GetTeachersIncomeResponse")]
+        System.Data.DataSet GetTeachersIncome();
         
-        [OperationContract(Action="http://tempuri.org/ITeacherServices/GetTeachersPaymentFull", ReplyAction="http://tempuri.org/ITeacherServices/GetTeachersPaymentFullResponse")]
-        DataSet GetTeachersPaymentFull();
-        
-        [OperationContract(Action="http://tempuri.org/ITeacherServices/GetTeacherLastId", ReplyAction="http://tempuri.org/ITeacherServices/GetTeacherLastIdResponse")]
-        int GetTeacherLastId();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/GetTeachersPaymentFull", ReplyAction="http://tempuri.org/ITeacherServices/GetTeachersPaymentFullResponse")]
+        System.Data.DataSet GetTeachersPaymentFull();
     }
     
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
-    public interface ITeacherServicesChannel : ITeacherServices, IClientChannel {
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ITeacherServicesChannel : InstituteAdminSide.InstituteService.ITeacherServices, System.ServiceModel.IClientChannel {
     }
     
-    [DebuggerStepThrough()]
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
-    public partial class TeacherServicesClient : ClientBase<ITeacherServices>, ITeacherServices {
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TeacherServicesClient : System.ServiceModel.ClientBase<InstituteAdminSide.InstituteService.ITeacherServices>, InstituteAdminSide.InstituteService.ITeacherServices {
         
         public TeacherServicesClient() {
         }
@@ -887,138 +590,40 @@ namespace InstituteAdminSide.InstituteService {
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public TeacherServicesClient(string endpointConfigurationName, EndpointAddress remoteAddress) : 
+        public TeacherServicesClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public TeacherServicesClient(Binding binding, EndpointAddress remoteAddress) : 
+        public TeacherServicesClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public int SaveTeacher(Teacher teacher) {
+        public int SaveTeacher(InstituteAdminSide.InstituteService.Teacher teacher) {
             return base.Channel.SaveTeacher(teacher);
         }
         
-        public Teacher SearchTeacherData(int teacherId) {
+        public InstituteAdminSide.InstituteService.Teacher SearchTeacherData(int teacherId) {
             return base.Channel.SearchTeacherData(teacherId);
         }
         
-        public int UpdateTeacher(Teacher teacher) {
+        public int UpdateTeacher(InstituteAdminSide.InstituteService.Teacher teacher) {
             return base.Channel.UpdateTeacher(teacher);
         }
         
-        public int SaveTeacherPayment(Teacher teacher) {
+        public int SaveTeacherPayment(InstituteAdminSide.InstituteService.Teacher teacher) {
             return base.Channel.SaveTeacherPayment(teacher);
         }
         
-        public DataSet GetTeacherData() {
+        public System.Data.DataSet GetTeacherData() {
             return base.Channel.GetTeacherData();
         }
         
-        public DataSet GetTeachersIncome() {
+        public System.Data.DataSet GetTeachersIncome() {
             return base.Channel.GetTeachersIncome();
         }
         
-        public DataSet GetTeachersPaymentFull() {
+        public System.Data.DataSet GetTeachersPaymentFull() {
             return base.Channel.GetTeachersPaymentFull();
-        }
-        
-        public int GetTeacherLastId() {
-            return base.Channel.GetTeacherLastId();
-        }
-    }
-    
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
-    [ServiceContract(ConfigurationName="InstituteService.ICourseServices")]
-    public interface ICourseServices {
-        
-        [OperationContract(Action="http://tempuri.org/ICourseServices/SaveCourse", ReplyAction="http://tempuri.org/ICourseServices/SaveCourseResponse")]
-        int SaveCourse(Course course);
-        
-        [OperationContract(Action="http://tempuri.org/ICourseServices/UpdateCourse", ReplyAction="http://tempuri.org/ICourseServices/UpdateCourseResponse")]
-        int UpdateCourse(Course course);
-    }
-    
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
-    public interface ICourseServicesChannel : ICourseServices, IClientChannel {
-    }
-    
-    [DebuggerStepThrough()]
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
-    public partial class CourseServicesClient : ClientBase<ICourseServices>, ICourseServices {
-        
-        public CourseServicesClient() {
-        }
-        
-        public CourseServicesClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
-        }
-        
-        public CourseServicesClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public CourseServicesClient(string endpointConfigurationName, EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public CourseServicesClient(Binding binding, EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
-        }
-        
-        public int SaveCourse(Course course) {
-            return base.Channel.SaveCourse(course);
-        }
-        
-        public int UpdateCourse(Course course) {
-            return base.Channel.UpdateCourse(course);
-        }
-    }
-    
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
-    [ServiceContract(ConfigurationName="InstituteService.IStudentServices")]
-    public interface IStudentServices {
-        
-        [OperationContract(Action="http://tempuri.org/IStudentServices/SaveStudent", ReplyAction="http://tempuri.org/IStudentServices/SaveStudentResponse")]
-        int SaveStudent(Student student);
-        
-        [OperationContract(Action="http://tempuri.org/IStudentServices/UpdateStudent", ReplyAction="http://tempuri.org/IStudentServices/UpdateStudentResponse")]
-        int UpdateStudent(Student student);
-    }
-    
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
-    public interface IStudentServicesChannel : IStudentServices, IClientChannel {
-    }
-    
-    [DebuggerStepThrough()]
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
-    public partial class StudentServicesClient : ClientBase<IStudentServices>, IStudentServices {
-        
-        public StudentServicesClient() {
-        }
-        
-        public StudentServicesClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
-        }
-        
-        public StudentServicesClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public StudentServicesClient(string endpointConfigurationName, EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public StudentServicesClient(Binding binding, EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
-        }
-        
-        public int SaveStudent(Student student) {
-            return base.Channel.SaveStudent(student);
-        }
-        
-        public int UpdateStudent(Student student) {
-            return base.Channel.UpdateStudent(student);
         }
     }
 }

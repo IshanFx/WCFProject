@@ -1,15 +1,11 @@
-﻿using System.ComponentModel;
-using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
-
-namespace InstituteAdminSide
+﻿namespace InstituteAdminSide
 {
     partial class Reports
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private IContainer components = null;
+        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -421,33 +417,33 @@ namespace InstituteAdminSide
 
         #endregion
 
-        private TabControl reportTab;
-        private TabPage tabPage3;
-        private Button stuAllPay;
-        private DataGridView stuPayTable;
-        private TabPage tabPage4;
-        private TextBox tyear;
-        private Label label1;
-        private Button tsearchbtn;
-        private DataGridView teachPayTable;
-        private Label label4;
-        private ComboBox tcomb;
-        private TabPage tabPage5;
-        private TextBox empPayYear;
-        private Label label2;
-        private Button button3;
-        private Button eserchbtn;
-        private DataGridView empPayTable;
-        private Label label5;
-        private ComboBox empMonth;
-        private Panel panel1;
-        private Label label6;
-        private Button button1;
-        private Button button2;
-        private Button button4;
-        private TabPage tabPage1;
-        private Chart chart1;
-        private Button button5;
-        private Button button6;
+        private System.Windows.Forms.TabControl reportTab;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button stuAllPay;
+        private System.Windows.Forms.DataGridView stuPayTable;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TextBox tyear;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button tsearchbtn;
+        private System.Windows.Forms.DataGridView teachPayTable;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox tcomb;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TextBox empPayYear;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button eserchbtn;
+        private System.Windows.Forms.DataGridView empPayTable;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox empMonth;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }

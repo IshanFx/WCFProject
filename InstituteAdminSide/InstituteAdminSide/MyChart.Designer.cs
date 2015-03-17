@@ -1,15 +1,11 @@
-﻿using System.ComponentModel;
-using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
-
-namespace InstituteAdminSide
+﻿namespace InstituteAdminSide
 {
     partial class MyChart
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private IContainer components = null;
+        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -101,8 +97,8 @@ namespace InstituteAdminSide
 
         #endregion
 
-        private Chart chart1;
-        private Panel panel1;
-        private Label label6;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
     }
 }

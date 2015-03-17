@@ -1,14 +1,11 @@
-﻿using System.ComponentModel;
-using System.Windows.Forms;
-
-namespace InstituteAdminSide
+﻿namespace InstituteAdminSide
 {
     partial class LogIn
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private IContainer components = null;
+        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -34,7 +31,7 @@ namespace InstituteAdminSide
             this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txtForgetMail = new System.Windows.Forms.TextBox();
+            this.forgetMailtxt = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,13 +56,13 @@ namespace InstituteAdminSide
             this.textBox2.Size = new System.Drawing.Size(212, 32);
             this.textBox2.TabIndex = 1;
             // 
-            // txtForgetMail
+            // forgetMailtxt
             // 
-            this.txtForgetMail.Font = new System.Drawing.Font("Lucida Bright", 15.75F);
-            this.txtForgetMail.Location = new System.Drawing.Point(33, 54);
-            this.txtForgetMail.Name = "txtForgetMail";
-            this.txtForgetMail.Size = new System.Drawing.Size(245, 32);
-            this.txtForgetMail.TabIndex = 2;
+            this.forgetMailtxt.Font = new System.Drawing.Font("Lucida Bright", 15.75F);
+            this.forgetMailtxt.Location = new System.Drawing.Point(33, 54);
+            this.forgetMailtxt.Name = "forgetMailtxt";
+            this.forgetMailtxt.Size = new System.Drawing.Size(245, 32);
+            this.forgetMailtxt.TabIndex = 2;
             // 
             // button1
             // 
@@ -117,7 +114,7 @@ namespace InstituteAdminSide
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Crimson;
-            this.panel1.Controls.Add(this.txtForgetMail);
+            this.panel1.Controls.Add(this.forgetMailtxt);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(1, 305);
             this.panel1.Name = "panel1";
@@ -147,13 +144,13 @@ namespace InstituteAdminSide
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox txtForgetMail;
-        private Button button1;
-        private Button button2;
-        private Label label1;
-        private Timer timer1;
-        private Panel panel1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox forgetMailtxt;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -1,14 +1,11 @@
-﻿using System.ComponentModel;
-using System.Windows.Forms;
-
-namespace InstituteAdminSide
+﻿namespace InstituteAdminSide
 {
     partial class Teacher
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private IContainer components = null;
+        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -35,8 +32,8 @@ namespace InstituteAdminSide
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnTeacherUpdate = new System.Windows.Forms.Button();
-            this.btnTeacherSave = new System.Windows.Forms.Button();
+            this.teacherUpdatebtn = new System.Windows.Forms.Button();
+            this.teacherSavebtn = new System.Windows.Forms.Button();
             this.teacherSubjectcmd = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -67,10 +64,6 @@ namespace InstituteAdminSide
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.rbnNICV = new System.Windows.Forms.RadioButton();
-            this.rbnNICX = new System.Windows.Forms.RadioButton();
-            this.txtLastId = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -93,14 +86,10 @@ namespace InstituteAdminSide
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.txtLastId);
-            this.tabPage1.Controls.Add(this.rbnNICV);
-            this.tabPage1.Controls.Add(this.rbnNICX);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.btnTeacherUpdate);
-            this.tabPage1.Controls.Add(this.btnTeacherSave);
+            this.tabPage1.Controls.Add(this.teacherUpdatebtn);
+            this.tabPage1.Controls.Add(this.teacherSavebtn);
             this.tabPage1.Controls.Add(this.teacherSubjectcmd);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.label12);
@@ -130,13 +119,12 @@ namespace InstituteAdminSide
             this.button3.BackColor = System.Drawing.Color.DarkGreen;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(415, 19);
+            this.button3.Location = new System.Drawing.Point(415, 57);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 40);
             this.button3.TabIndex = 62;
             this.button3.Text = "Search";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -149,33 +137,31 @@ namespace InstituteAdminSide
             this.button2.TabIndex = 61;
             this.button2.Text = "Clear";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.clearFields);
             // 
-            // btnTeacherUpdate
+            // teacherUpdatebtn
             // 
-            this.btnTeacherUpdate.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnTeacherUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTeacherUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnTeacherUpdate.Location = new System.Drawing.Point(590, 514);
-            this.btnTeacherUpdate.Name = "btnTeacherUpdate";
-            this.btnTeacherUpdate.Size = new System.Drawing.Size(110, 40);
-            this.btnTeacherUpdate.TabIndex = 60;
-            this.btnTeacherUpdate.Text = "Update";
-            this.btnTeacherUpdate.UseVisualStyleBackColor = false;
-            this.btnTeacherUpdate.Click += new System.EventHandler(this.updateTeacher);
+            this.teacherUpdatebtn.BackColor = System.Drawing.Color.DarkGreen;
+            this.teacherUpdatebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.teacherUpdatebtn.ForeColor = System.Drawing.Color.White;
+            this.teacherUpdatebtn.Location = new System.Drawing.Point(590, 514);
+            this.teacherUpdatebtn.Name = "teacherUpdatebtn";
+            this.teacherUpdatebtn.Size = new System.Drawing.Size(110, 40);
+            this.teacherUpdatebtn.TabIndex = 60;
+            this.teacherUpdatebtn.Text = "Update";
+            this.teacherUpdatebtn.UseVisualStyleBackColor = false;
             // 
-            // btnTeacherSave
+            // teacherSavebtn
             // 
-            this.btnTeacherSave.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnTeacherSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTeacherSave.ForeColor = System.Drawing.Color.White;
-            this.btnTeacherSave.Location = new System.Drawing.Point(454, 514);
-            this.btnTeacherSave.Name = "btnTeacherSave";
-            this.btnTeacherSave.Size = new System.Drawing.Size(110, 40);
-            this.btnTeacherSave.TabIndex = 59;
-            this.btnTeacherSave.Text = "Save";
-            this.btnTeacherSave.UseVisualStyleBackColor = false;
-            this.btnTeacherSave.Click += new System.EventHandler(this.teacherSavebtn_Click);
+            this.teacherSavebtn.BackColor = System.Drawing.Color.DarkGreen;
+            this.teacherSavebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.teacherSavebtn.ForeColor = System.Drawing.Color.White;
+            this.teacherSavebtn.Location = new System.Drawing.Point(454, 514);
+            this.teacherSavebtn.Name = "teacherSavebtn";
+            this.teacherSavebtn.Size = new System.Drawing.Size(110, 40);
+            this.teacherSavebtn.TabIndex = 59;
+            this.teacherSavebtn.Text = "Save";
+            this.teacherSavebtn.UseVisualStyleBackColor = false;
+            this.teacherSavebtn.Click += new System.EventHandler(this.teacherSavebtn_Click);
             // 
             // teacherSubjectcmd
             // 
@@ -256,7 +242,7 @@ namespace InstituteAdminSide
             this.teacherLNametxt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.teacherLNametxt.Location = new System.Drawing.Point(257, 176);
             this.teacherLNametxt.Name = "teacherLNametxt";
-            this.teacherLNametxt.Size = new System.Drawing.Size(137, 26);
+            this.teacherLNametxt.Size = new System.Drawing.Size(112, 26);
             this.teacherLNametxt.TabIndex = 49;
             // 
             // teacherFNametxt
@@ -264,7 +250,7 @@ namespace InstituteAdminSide
             this.teacherFNametxt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.teacherFNametxt.Location = new System.Drawing.Point(257, 118);
             this.teacherFNametxt.Name = "teacherFNametxt";
-            this.teacherFNametxt.Size = new System.Drawing.Size(137, 26);
+            this.teacherFNametxt.Size = new System.Drawing.Size(112, 26);
             this.teacherFNametxt.TabIndex = 48;
             // 
             // teacherIdtxt
@@ -478,47 +464,6 @@ namespace InstituteAdminSide
             this.label4.TabIndex = 63;
             this.label4.Text = "Teacher";
             // 
-            // rbnNICV
-            // 
-            this.rbnNICV.AutoSize = true;
-            this.rbnNICV.Location = new System.Drawing.Point(415, 237);
-            this.rbnNICV.Name = "rbnNICV";
-            this.rbnNICV.Size = new System.Drawing.Size(39, 26);
-            this.rbnNICV.TabIndex = 64;
-            this.rbnNICV.TabStop = true;
-            this.rbnNICV.Text = "V";
-            this.rbnNICV.UseVisualStyleBackColor = true;
-            // 
-            // rbnNICX
-            // 
-            this.rbnNICX.AutoSize = true;
-            this.rbnNICX.Location = new System.Drawing.Point(475, 237);
-            this.rbnNICX.Name = "rbnNICX";
-            this.rbnNICX.Size = new System.Drawing.Size(40, 26);
-            this.rbnNICX.TabIndex = 63;
-            this.rbnNICX.TabStop = true;
-            this.rbnNICX.Text = "X";
-            this.rbnNICX.UseVisualStyleBackColor = true;
-            // 
-            // txtLastId
-            // 
-            this.txtLastId.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.txtLastId.Location = new System.Drawing.Point(257, 19);
-            this.txtLastId.Name = "txtLastId";
-            this.txtLastId.Size = new System.Drawing.Size(61, 26);
-            this.txtLastId.TabIndex = 65;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label14.Location = new System.Drawing.Point(80, 19);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(79, 22);
-            this.label14.TabIndex = 66;
-            this.label14.Text = "Last Id";
-            // 
             // Teacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -527,7 +472,6 @@ namespace InstituteAdminSide
             this.Controls.Add(this.panel1);
             this.Name = "Teacher";
             this.Text = "Teacher";
-            this.Load += new System.EventHandler(this.Teacher_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -543,45 +487,41 @@ namespace InstituteAdminSide
 
         #endregion
 
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private Label label13;
-        private Label label12;
-        private Label label11;
-        private TextBox teacherMailtxt;
-        private TextBox teacherAddresstxt;
-        private TextBox teacherContacttxt;
-        private TextBox teacherNICtxt;
-        private TextBox teacherLNametxt;
-        private TextBox teacherFNametxt;
-        private TextBox teacherIdtxt;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label label10;
-        private TabPage tabPage2;
-        private Button button1;
-        private TextBox textBox5;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Label label5;
-        private Label label3;
-        private Label label2;
-        private Label label1;
-        private ComboBox teacherSubjectcmd;
-        private Button button3;
-        private Button button2;
-        private Button btnTeacherUpdate;
-        private Button btnTeacherSave;
-        private TabPage tabPage3;
-        private DataGridView dataGridView1;
-        private Panel panel1;
-        private Label label4;
-        private RadioButton rbnNICV;
-        private RadioButton rbnNICX;
-        private Label label14;
-        private TextBox txtLastId;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox teacherMailtxt;
+        private System.Windows.Forms.TextBox teacherAddresstxt;
+        private System.Windows.Forms.TextBox teacherContacttxt;
+        private System.Windows.Forms.TextBox teacherNICtxt;
+        private System.Windows.Forms.TextBox teacherLNametxt;
+        private System.Windows.Forms.TextBox teacherFNametxt;
+        private System.Windows.Forms.TextBox teacherIdtxt;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox teacherSubjectcmd;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button teacherUpdatebtn;
+        private System.Windows.Forms.Button teacherSavebtn;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -18,23 +18,23 @@ namespace InstituteUserSide
             getlastid();
             fillReport();
         }
-
+        bool isRunning= false;
 
         private void CosSavebtn_Click(object sender, EventArgs e)
         {
-            InstituteServices.CourseServicesClient client = new InstituteServices.CourseServicesClient();
-
-            if (txtCoursid.Text == null ||
-                Daycombo.SelectedIndex == null ||
-                StTimecombo.SelectedIndex == null ||
-                EntimeCombo.SelectedIndex == null ||
-                txtBatch.Text == null ||
-                txtTechid.Text == null)
+            if (txtTechid.Text==""||
+                txtCoursid.Text ==""||
+                Daycombo.Text ==""||
+                StTimecombo.Text ==""||
+                EntimeCombo.Text ==""||
+                txtBatch.Text ==""||
+                txtTechid.Text =="")
             {
-                MessageBox.Show("Please Fill All Filds", "Meassge");
+                MessageBox.Show("Please Fill All Filds", "Meassge",MessageBoxButtons.OKCancel,MessageBoxIcon.Exclamation);
             }
             else
             {
+                InstituteServices.CourseServicesClient client = new InstituteServices.CourseServicesClient();
                 try
                 {
                     InstituteServices.Course course = new InstituteServices.Course()
@@ -57,7 +57,60 @@ namespace InstituteUserSide
                     }
                     else
                     {
-                        MessageBox.Show("Course Not Saved");
+                        MessageBox.Show("Course Not Saved","Error",MessageBoxButtons.OKCancel,MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Some Problem Of Server","Message",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void CosUpdatebtn_Click(object sender, EventArgs e)
+        {
+            if (isRunning== false)
+            {
+                MessageBox.Show("Search Before Update","Message",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning);
+            } 
+            else{
+            if (txtTechid.Text == ""||
+                txtCoursid.Text == ""||
+                Daycombo.Text == ""||
+                StTimecombo.Text == ""||
+                EntimeCombo.Text == ""||
+                txtBatch.Text == ""||
+                txtTechid.Text == "")
+            {
+                MessageBox.Show("Please Fill All Filds", "Meassge", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+
+                InstituteServices.CourseServicesClient client = new InstituteServices.CourseServicesClient();
+                try
+                {
+                    InstituteServices.Course course = new InstituteServices.Course()
+                    {
+                        CourseId = Convert.ToInt32(txtCoursid.Text),
+                        CourseDay = Daycombo.Text,
+                        CourseStartTime = StTimecombo.Text,
+                        CourseEndTime = EntimeCombo.Text,
+                        CourseBatch = Convert.ToInt32(txtBatch.Text),
+                        CourseTeacherId = Convert.ToInt32(txtTechid.Text)
+                    };
+
+                    int chk = client.UpdateCourse(course);
+                    if (chk == 1)
+                    {
+                        MessageBox.Show("Course Updated", "Message");
+                        clear();
+                        getlastid();
+                        fillReport();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Course Not Saved", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
@@ -65,40 +118,6 @@ namespace InstituteUserSide
                     MessageBox.Show(ex.Message);
                 }
             }
-        }
-
-        private void CosUpdatebtn_Click(object sender, EventArgs e)
-        {
-            InstituteServices.CourseServicesClient client = new InstituteServices.CourseServicesClient();
-
-            try
-            {
-                InstituteServices.Course course = new InstituteServices.Course()
-                {
-                    CourseId = Convert.ToInt32(txtCoursid.Text),
-                    CourseDay = Daycombo.Text,
-                    CourseStartTime = StTimecombo.Text,
-                    CourseEndTime = EntimeCombo.Text,
-                    CourseBatch = Convert.ToInt32(txtBatch.Text),
-                    CourseTeacherId = Convert.ToInt32(txtTechid.Text)
-                };
-
-                int chk = client.UpdateCourse(course);
-                if (chk == 1)
-                {
-                    MessageBox.Show("Course Updated", "Message");
-                    clear();
-                    getlastid();
-                    fillReport();
-                }
-                else
-                {
-                    MessageBox.Show("Course Not Saved");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -110,8 +129,14 @@ namespace InstituteUserSide
         public void clear()
         {
             txtBatch.Clear();
-            txtCoursid.Clear();
-            txtCoursid.Clear();
+            getlastid();
+            txtTechid.Clear();
+            StTimecombo.Text = "---Select---";
+            EntimeCombo.Text = "---Select---";
+            Daycombo.Text = "---Select---";
+            isRunning = false;
+            CosSavebtn.Enabled = true;
+            
         }
 
         public void getlastid()
@@ -143,17 +168,28 @@ namespace InstituteUserSide
             txtTechid.Text = couTeaDetails.CurrentRow.Cells[0].Value.ToString();
         }
 
+
         private void CosSearchBtn_Click(object sender, EventArgs e)
         {
             InstituteServices.CourseServicesClient client = new InstituteServices.CourseServicesClient();
-
-            InstituteServices.Course course = new InstituteServices.Course();
-            course = client.SearchCourse(Convert.ToInt32(txtCoursid.Text));
-            txtTechid.Text = course.CourseTeacherId.ToString();
-            Daycombo.Text = course.CourseDay;
-            StTimecombo.Text = course.CourseStartTime;
-            EntimeCombo.Text = course.CourseEndTime;
-            txtBatch.Text = course.CourseBatch.ToString();
+            int id = Convert.ToInt32(txtCoursid.Text);
+            if (id == client.GetCourseLastId())
+            {
+                MessageBox.Show("Please Enter Valid Course ID", "Meassge", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+                CosSavebtn.Enabled = false;
+                
+                InstituteServices.Course course = new InstituteServices.Course();
+                course = client.SearchCourse(Convert.ToInt32(txtCoursid.Text));
+                txtTechid.Text = course.CourseTeacherId.ToString();
+                Daycombo.Text = course.CourseDay;
+                StTimecombo.Text = course.CourseStartTime;
+                EntimeCombo.Text = course.CourseEndTime;
+                txtBatch.Text = course.CourseBatch.ToString();
+                isRunning = true;
+            }
         }
 
     }

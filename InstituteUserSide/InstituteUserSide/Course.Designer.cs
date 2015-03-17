@@ -96,9 +96,9 @@
             // 
             // CosSearchBtn
             // 
-            this.CosSearchBtn.Location = new System.Drawing.Point(351, 108);
+            this.CosSearchBtn.Location = new System.Drawing.Point(351, 100);
             this.CosSearchBtn.Name = "CosSearchBtn";
-            this.CosSearchBtn.Size = new System.Drawing.Size(99, 29);
+            this.CosSearchBtn.Size = new System.Drawing.Size(86, 37);
             this.CosSearchBtn.TabIndex = 25;
             this.CosSearchBtn.Text = "Search";
             this.CosSearchBtn.UseVisualStyleBackColor = true;
@@ -110,6 +110,7 @@
             this.couTeaDetails.AllowUserToDeleteRows = false;
             this.couTeaDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.couTeaDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.couTeaDetails.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.couTeaDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.couTeaDetails.Location = new System.Drawing.Point(484, 50);
             this.couTeaDetails.Name = "couTeaDetails";
@@ -185,6 +186,7 @@
             this.EntimeCombo.Name = "EntimeCombo";
             this.EntimeCombo.Size = new System.Drawing.Size(146, 32);
             this.EntimeCombo.TabIndex = 17;
+            this.EntimeCombo.Text = "  ---Select---";
             // 
             // StTimecombo
             // 
@@ -200,6 +202,7 @@
             this.StTimecombo.Name = "StTimecombo";
             this.StTimecombo.Size = new System.Drawing.Size(146, 32);
             this.StTimecombo.TabIndex = 16;
+            this.StTimecombo.Text = "  ---Select---";
             // 
             // Daycombo
             // 
@@ -216,6 +219,7 @@
             this.Daycombo.Name = "Daycombo";
             this.Daycombo.Size = new System.Drawing.Size(146, 32);
             this.Daycombo.TabIndex = 15;
+            this.Daycombo.Text = "  ---Select---";
             // 
             // label5
             // 

@@ -46,6 +46,14 @@ namespace InstituteServices
             conn.Open();
             int lastId =int.Parse( cmd.ExecuteScalar().ToString());
             conn.Close();
+            if(lastId==0)
+            {
+                lastId = 1;
+            }
+            else
+            {
+                lastId += 1;
+            }
             return lastId;
 
         }

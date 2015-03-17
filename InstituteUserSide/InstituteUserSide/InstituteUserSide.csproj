@@ -101,6 +101,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Service References\InstituteServices\InstituteServices.wsdl" />
+    <None Include="Service References\InstituteServices\InstituteUserSide.InstituteServices.Course.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\InstituteServices\InstituteUserSide.InstituteServices.Employee.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

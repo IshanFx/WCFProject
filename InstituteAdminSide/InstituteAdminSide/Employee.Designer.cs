@@ -33,6 +33,7 @@ namespace InstituteAdminSide
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
             this.rbnNICY = new System.Windows.Forms.RadioButton();
             this.rbnNICX = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
@@ -63,15 +64,18 @@ namespace InstituteAdminSide
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.empAlldatagrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.listEmployeeData = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.empAlldatagrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,6 +121,17 @@ namespace InstituteAdminSide
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Register";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Maroon;
+            this.label7.Location = new System.Drawing.Point(57, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 22);
+            this.label7.TabIndex = 44;
+            this.label7.Text = "Last Id";
             // 
             // rbnNICY
             // 
@@ -364,9 +379,9 @@ namespace InstituteAdminSide
             this.btnEmployeePayment.FlatAppearance.BorderSize = 0;
             this.btnEmployeePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeePayment.ForeColor = System.Drawing.Color.White;
-            this.btnEmployeePayment.Location = new System.Drawing.Point(572, 359);
+            this.btnEmployeePayment.Location = new System.Drawing.Point(552, 392);
             this.btnEmployeePayment.Name = "btnEmployeePayment";
-            this.btnEmployeePayment.Size = new System.Drawing.Size(145, 47);
+            this.btnEmployeePayment.Size = new System.Drawing.Size(148, 45);
             this.btnEmployeePayment.TabIndex = 19;
             this.btnEmployeePayment.Text = "Save";
             this.btnEmployeePayment.UseVisualStyleBackColor = false;
@@ -458,7 +473,7 @@ namespace InstituteAdminSide
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
-            this.tabPage3.Controls.Add(this.empAlldatagrid);
+            this.tabPage3.Controls.Add(this.listEmployeeData);
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -466,14 +481,6 @@ namespace InstituteAdminSide
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "View";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
-            // empAlldatagrid
-            // 
-            this.empAlldatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.empAlldatagrid.Location = new System.Drawing.Point(6, 29);
-            this.empAlldatagrid.Name = "empAlldatagrid";
-            this.empAlldatagrid.Size = new System.Drawing.Size(870, 481);
-            this.empAlldatagrid.TabIndex = 0;
             // 
             // panel1
             // 
@@ -496,16 +503,47 @@ namespace InstituteAdminSide
             this.label6.TabIndex = 42;
             this.label6.Text = "Employee ";
             // 
-            // label7
+            // listEmployeeData
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Maroon;
-            this.label7.Location = new System.Drawing.Point(57, 18);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 22);
-            this.label7.TabIndex = 44;
-            this.label7.Text = "Last Id";
+            this.listEmployeeData.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.listEmployeeData.Font = new System.Drawing.Font("Adobe Hebrew", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listEmployeeData.GridLines = true;
+            this.listEmployeeData.Location = new System.Drawing.Point(19, 21);
+            this.listEmployeeData.Name = "listEmployeeData";
+            this.listEmployeeData.Size = new System.Drawing.Size(848, 477);
+            this.listEmployeeData.TabIndex = 1;
+            this.listEmployeeData.UseCompatibleStateImageBehavior = false;
+            this.listEmployeeData.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Id";
+            this.columnHeader1.Width = 71;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Name";
+            this.columnHeader2.Width = 162;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Nic";
+            this.columnHeader3.Width = 136;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Address";
+            this.columnHeader4.Width = 257;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Contact";
+            this.columnHeader5.Width = 152;
             // 
             // Employee
             // 
@@ -522,7 +560,6 @@ namespace InstituteAdminSide
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.empAlldatagrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -560,13 +597,18 @@ namespace InstituteAdminSide
         private Label label12;
         private Label label13;
         private TabPage tabPage3;
-        private DataGridView empAlldatagrid;
         private Panel panel1;
         private Label label6;
         private TextBox empPayID;
         private RadioButton rbnNICY;
         private RadioButton rbnNICX;
         private Label label7;
+        private ListView listEmployeeData;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader5;
     }
 }
 

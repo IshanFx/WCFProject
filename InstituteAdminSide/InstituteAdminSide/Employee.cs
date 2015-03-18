@@ -1,5 +1,7 @@
 ﻿using System;
+using System.CodeDom;
 using System.Data;
+using System.ServiceModel;
 using System.Windows.Forms;
 using InstituteAdminSide.InstituteService;
 
@@ -25,13 +27,13 @@ namespace InstituteAdminSide
                 String.IsNullOrEmpty(empAdd1txt.Text)
                 )
             {
-                MessageBox.Show("Please Fill Form");
+                MessageBox.Show("Please Fill Form","Fill Form",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
             }
 
             
    
             else if (!employeeNIC.Length.Equals(9)) {
-                MessageBox.Show("Please check NIC. It should be 9 Characters");
+                MessageBox.Show("Please check NIC. It should be 9 Characters","Check NIC",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
             
             }
             else
@@ -64,7 +66,7 @@ namespace InstituteAdminSide
                 }
                 catch (FormatException ex)
                 {
-                    MessageBox.Show("Please check Employee id");
+                    MessageBox.Show("Please check Employee id","Id Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {
@@ -78,43 +80,56 @@ namespace InstituteAdminSide
         private void empModbtn_Click(object sender, EventArgs e)
         {
            client = new EmployeeServicesClient();
-           try
-           {
-               if (String.IsNullOrEmpty(empIdtxt.Text) ||
-                   String.IsNullOrEmpty(empFNametxt.Text) ||
-                   String.IsNullOrEmpty(empLNametxt.Text) ||
-                   String.IsNullOrEmpty(empNICtxt.Text) ||
-                   String.IsNullOrEmpty(empAdd1txt.Text))
-               {
-                   employee = new InstituteService.Employee()
-                   {
-                       EmpId = int.Parse(empIdtxt.Text),
-                       EmpFName = empFNametxt.Text,
-                       EmpLName = empLNametxt.Text,
-                       EmpContact = empContacttxt.Text,
-                       EmpAddress = empAdd1txt.Text,
-                       EmpNIC = empNICtxt.Text
+            try
+            {
+                if (String.IsNullOrEmpty(empIdtxt.Text) ||
+                    String.IsNullOrEmpty(empFNametxt.Text) ||
+                    String.IsNullOrEmpty(empLNametxt.Text) ||
+                    String.IsNullOrEmpty(empNICtxt.Text) ||
+                    String.IsNullOrEmpty(empAdd1txt.Text))
+                {
+                    MessageBox.Show("Please Fill All Data", "Fill data", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else if (int.Parse(empIdtxt.Text) <= client.GetEmployeeLastId())
+                {
+                    MessageBox.Show("Please Enter Id Greater then Last Id", "Enter Id", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    employee = new InstituteService.Employee()
+                    {
+                        EmpId = int.Parse(empIdtxt.Text),
+                        EmpFName = empFNametxt.Text,
+                        EmpLName = empLNametxt.Text,
+                        EmpContact = empContacttxt.Text,
+                        EmpAddress = empAdd1txt.Text,
+                        EmpNIC = empNICtxt.Text
 
-                   };
-               }
-               else
-               {
-                   int chk = client.UpdateEmployee(employee);
-                   if (chk.Equals(1))
-                   {
-                       MessageBox.Show(String.Format("Employee Id {0} Updated ",empIdtxt.Text) , "Employee Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                       RegisterFieldClear();
-                   }
-               }
-           }
-           catch (FormatException ex)
-           {
-               MessageBox.Show("Please Check Employee ID");
-           }
-           catch (Exception ex) 
-           {
-               MessageBox.Show(ex.Message);
-           }
+                    };
+                    int chk = client.UpdateEmployee(employee);
+                    if (chk.Equals(1))
+                    {
+                        MessageBox.Show(String.Format("Employee Id {0} Updated ", empIdtxt.Text), "Employee Message",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RegisterFieldClear();
+                    }
+                }
+            }
+            catch (TimeoutException timeout)
+            {
+                MessageBox.Show("Requesting time was out,Try again ", "Time out", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (FormatException formatException)
+            {
+                MessageBox.Show("Please Check Employee ID","Id Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -129,15 +144,29 @@ namespace InstituteAdminSide
 
                 empLNametxt.Text = employee.EmpLName;
                 empFNametxt.Text = employee.EmpFName;
-                empNICtxt.Text = employee.EmpNIC;
+                String NICType = employee.EmpNIC[9].ToString();
+                if (NICType.Equals("V"))
+                {
+                    rbnNICY.Checked = true;
+                }
+                else
+                {
+                    rbnNICX.Checked = true;
+                }
+                String NICRemoved = employee.EmpNIC.Remove(9);
+                empNICtxt.Text = NICRemoved;
                 empAdd1txt.Text = employee.EmpAddress;
                 empContacttxt.Text = employee.EmpContact;
                 btnEmployeeSave.Enabled = false;
 
             }
+            catch (TimeoutException timeout)
+            {
+                MessageBox.Show("Requesting time was out,Try again ", "Time out", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -162,18 +191,18 @@ namespace InstituteAdminSide
 
                     if (chk == 1)
                     {
-                        MessageBox.Show("Employee Payment saved");
+                        MessageBox.Show("Employee Payment saved","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
 
                     else
-                        MessageBox.Show("Not Saved");
+                        MessageBox.Show("payment Not Saved", "Not Saved", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (FormatException ex)
                 {
-                    MessageBox.Show("Please check Entered data");
+                    MessageBox.Show("Please check Entered data","Id Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                 catch (Exception ex) {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 GetEmployeeLastId();
         }
@@ -186,10 +215,20 @@ namespace InstituteAdminSide
                 InstituteService.Employee emploee = new InstituteService.Employee();
                 DataSet set = client.GetEmployeeData();
                 DataTable table = set.Tables[0];
-                empAlldatagrid.DataSource = table;
+                ListViewItem list = null;
+                for (int i = 0; i < table.Columns.Count; i++)
+                {
+                    list = new ListViewItem(table.Rows[i][0].ToString());
+                    list.SubItems.Add(table.Rows[i][1].ToString()+" "+table.Rows[i][2].ToString());
+                    list.SubItems.Add(table.Rows[i][3].ToString());
+                    list.SubItems.Add(table.Rows[i][4].ToString());
+                    list.SubItems.Add(table.Rows[i][5].ToString());
+                    listEmployeeData.Items.Add(list);
+                }
+                
             }
             catch (Exception ex) {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             GetEmployeeLastId();
         }
@@ -215,9 +254,17 @@ namespace InstituteAdminSide
 
         }
         private void GetEmployeeLastId() {
-            client = new EmployeeServicesClient();
-            empLastIdlbl.Text = client.GetEmployeeLastId().ToString();
+            try
+            {
+                client = new EmployeeServicesClient();
+                empLastIdlbl.Text = client.GetEmployeeLastId().ToString();
         
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Cannot get Id", "Id error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void tabPage1_Click(object sender, EventArgs e)

@@ -31,16 +31,16 @@ namespace InstituteServices
 
         public Employee SearchEmployeeData(int employeeid)
         {
-                Employee employee = employee = new Employee();
+                Employee employee = new Employee();
                 db = new DB();
                 
                 string sql = "SELECT * FROM Employee WHERE empid = '"+employeeid+"'";
                 DataTable table = db.SelectQuery(sql);             
                      employee.EmpFName = table.Rows[0][1].ToString();
-                     employee.EmpLName = table.Rows[0][1].ToString();
-                     employee.EmpNIC = table.Rows[0][1].ToString();
-                     employee.EmpAddress = table.Rows[0][1].ToString();
-                     employee.EmpContact = table.Rows[0][1].ToString();
+                     employee.EmpLName = table.Rows[0][2].ToString();
+                     employee.EmpNIC = table.Rows[0][3].ToString();
+                     employee.EmpAddress = table.Rows[0][4].ToString();
+                     employee.EmpContact = table.Rows[0][5].ToString();
 
             return employee;
         }

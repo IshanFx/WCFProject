@@ -25,3 +25,4 @@ E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\obj\Deb
 E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.Teacher.resources
 E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.csproj.GenerateResource.Cache
 E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.LogIn.resources
+E:\Software Projects\gitWCFproject\InstituteAdminSide\InstituteAdminSide\obj\Debug\InstituteAdminSide.Email.resources

@@ -32,9 +32,9 @@ namespace InstituteAdminSide
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.reportTab = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
@@ -42,6 +42,7 @@ namespace InstituteAdminSide
             this.stuAllPay = new System.Windows.Forms.Button();
             this.stuPayTable = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tyear = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@ namespace InstituteAdminSide
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.reportTab.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stuPayTable)).BeginInit();
@@ -81,7 +81,7 @@ namespace InstituteAdminSide
             this.reportTab.Controls.Add(this.tabPage4);
             this.reportTab.Controls.Add(this.tabPage5);
             this.reportTab.Controls.Add(this.tabPage1);
-            this.reportTab.Font = new System.Drawing.Font("Stencil Std", 14.25F, System.Drawing.FontStyle.Bold);
+            this.reportTab.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportTab.ItemSize = new System.Drawing.Size(119, 28);
             this.reportTab.Location = new System.Drawing.Point(14, 88);
             this.reportTab.Multiline = true;
@@ -103,7 +103,7 @@ namespace InstituteAdminSide
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1007, 505);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Student";
+            this.tabPage3.Text = "Student Payment";
             // 
             // button4
             // 
@@ -162,7 +162,20 @@ namespace InstituteAdminSide
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(1007, 505);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Teacher";
+            this.tabPage4.Text = "Teacher Payment";
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.SaddleBrown;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(551, 34);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(132, 35);
+            this.button6.TabIndex = 18;
+            this.button6.Text = "All";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button2
             // 
@@ -249,7 +262,7 @@ namespace InstituteAdminSide
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(1007, 505);
             this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Employee";
+            this.tabPage5.Text = "Employee payment";
             // 
             // button5
             // 
@@ -265,7 +278,7 @@ namespace InstituteAdminSide
             // 
             this.empPayYear.Location = new System.Drawing.Point(218, 43);
             this.empPayYear.Name = "empPayYear";
-            this.empPayYear.Size = new System.Drawing.Size(121, 33);
+            this.empPayYear.Size = new System.Drawing.Size(121, 26);
             this.empPayYear.TabIndex = 18;
             // 
             // label2
@@ -284,9 +297,9 @@ namespace InstituteAdminSide
             this.button3.BackColor = System.Drawing.Color.SaddleBrown;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(707, 43);
+            this.button3.Location = new System.Drawing.Point(592, 39);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(85, 33);
+            this.button3.Size = new System.Drawing.Size(114, 33);
             this.button3.TabIndex = 15;
             this.button3.Text = "All";
             this.button3.UseVisualStyleBackColor = false;
@@ -297,7 +310,7 @@ namespace InstituteAdminSide
             this.eserchbtn.BackColor = System.Drawing.Color.SaddleBrown;
             this.eserchbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eserchbtn.ForeColor = System.Drawing.Color.White;
-            this.eserchbtn.Location = new System.Drawing.Point(358, 43);
+            this.eserchbtn.Location = new System.Drawing.Point(370, 39);
             this.eserchbtn.Name = "eserchbtn";
             this.eserchbtn.Size = new System.Drawing.Size(135, 33);
             this.eserchbtn.TabIndex = 14;
@@ -345,16 +358,16 @@ namespace InstituteAdminSide
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(28, 20);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(880, 442);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -380,19 +393,6 @@ namespace InstituteAdminSide
             this.label6.Size = new System.Drawing.Size(179, 49);
             this.label6.TabIndex = 16;
             this.label6.Text = "Report";
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.SaddleBrown;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(551, 34);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(132, 35);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "All";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Reports
             // 

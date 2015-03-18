@@ -212,7 +212,7 @@ namespace InstituteServices
         public DataSet GetTeacherData()
         {
             string sql = "SELECT * FROM teachers";
-            table = db.SelectQuery(sql);
+            table = new DB().SelectQuery(sql);
             set = new DataSet();
             set.Tables.Add(table);
             return set;

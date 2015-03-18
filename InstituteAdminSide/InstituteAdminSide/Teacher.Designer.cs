@@ -184,7 +184,7 @@ namespace InstituteAdminSide
             this.button2.BackColor = System.Drawing.Color.DarkGreen;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(751, 514);
+            this.button2.Location = new System.Drawing.Point(755, 514);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 40);
             this.button2.TabIndex = 61;
@@ -396,9 +396,9 @@ namespace InstituteAdminSide
             this.btnEmployeePayment.BackColor = System.Drawing.Color.DarkGreen;
             this.btnEmployeePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeePayment.ForeColor = System.Drawing.Color.White;
-            this.btnEmployeePayment.Location = new System.Drawing.Point(490, 363);
+            this.btnEmployeePayment.Location = new System.Drawing.Point(265, 357);
             this.btnEmployeePayment.Name = "btnEmployeePayment";
-            this.btnEmployeePayment.Size = new System.Drawing.Size(210, 40);
+            this.btnEmployeePayment.Size = new System.Drawing.Size(194, 37);
             this.btnEmployeePayment.TabIndex = 42;
             this.btnEmployeePayment.Text = "Save";
             this.btnEmployeePayment.UseVisualStyleBackColor = false;
@@ -407,7 +407,7 @@ namespace InstituteAdminSide
             // txtPaymentAmount
             // 
             this.txtPaymentAmount.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.txtPaymentAmount.Location = new System.Drawing.Point(294, 294);
+            this.txtPaymentAmount.Location = new System.Drawing.Point(265, 274);
             this.txtPaymentAmount.Name = "txtPaymentAmount";
             this.txtPaymentAmount.Size = new System.Drawing.Size(137, 26);
             this.txtPaymentAmount.TabIndex = 41;
@@ -415,7 +415,7 @@ namespace InstituteAdminSide
             // txtPaymentYear
             // 
             this.txtPaymentYear.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.txtPaymentYear.Location = new System.Drawing.Point(294, 218);
+            this.txtPaymentYear.Location = new System.Drawing.Point(265, 198);
             this.txtPaymentYear.Name = "txtPaymentYear";
             this.txtPaymentYear.Size = new System.Drawing.Size(137, 26);
             this.txtPaymentYear.TabIndex = 39;
@@ -423,7 +423,7 @@ namespace InstituteAdminSide
             // txtPaymentMonth
             // 
             this.txtPaymentMonth.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.txtPaymentMonth.Location = new System.Drawing.Point(294, 149);
+            this.txtPaymentMonth.Location = new System.Drawing.Point(265, 129);
             this.txtPaymentMonth.Name = "txtPaymentMonth";
             this.txtPaymentMonth.Size = new System.Drawing.Size(137, 26);
             this.txtPaymentMonth.TabIndex = 38;
@@ -431,7 +431,7 @@ namespace InstituteAdminSide
             // txtPaymentTeaId
             // 
             this.txtPaymentTeaId.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.txtPaymentTeaId.Location = new System.Drawing.Point(294, 84);
+            this.txtPaymentTeaId.Location = new System.Drawing.Point(265, 64);
             this.txtPaymentTeaId.Name = "txtPaymentTeaId";
             this.txtPaymentTeaId.Size = new System.Drawing.Size(61, 26);
             this.txtPaymentTeaId.TabIndex = 37;
@@ -441,7 +441,7 @@ namespace InstituteAdminSide
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label5.Location = new System.Drawing.Point(117, 294);
+            this.label5.Location = new System.Drawing.Point(88, 274);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 22);
             this.label5.TabIndex = 36;
@@ -452,7 +452,7 @@ namespace InstituteAdminSide
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label3.Location = new System.Drawing.Point(117, 222);
+            this.label3.Location = new System.Drawing.Point(88, 202);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 22);
             this.label3.TabIndex = 34;
@@ -463,7 +463,7 @@ namespace InstituteAdminSide
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label2.Location = new System.Drawing.Point(117, 153);
+            this.label2.Location = new System.Drawing.Point(88, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 22);
             this.label2.TabIndex = 33;
@@ -474,7 +474,7 @@ namespace InstituteAdminSide
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label1.Location = new System.Drawing.Point(117, 88);
+            this.label1.Location = new System.Drawing.Point(88, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 22);
             this.label1.TabIndex = 32;
@@ -494,9 +494,9 @@ namespace InstituteAdminSide
             // gridTeacher
             // 
             this.gridTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridTeacher.Location = new System.Drawing.Point(18, 43);
+            this.gridTeacher.Location = new System.Drawing.Point(14, 21);
             this.gridTeacher.Name = "gridTeacher";
-            this.gridTeacher.Size = new System.Drawing.Size(809, 452);
+            this.gridTeacher.Size = new System.Drawing.Size(855, 518);
             this.gridTeacher.TabIndex = 0;
             // 
             // panel1

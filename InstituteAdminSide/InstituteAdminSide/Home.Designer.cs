@@ -43,6 +43,7 @@ namespace InstituteAdminSide
             this.panel1 = new System.Windows.Forms.Panel();
             this.timeMenuButton = new System.Windows.Forms.Timer(this.components);
             this.timerMenuButtonMin = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,9 +55,9 @@ namespace InstituteAdminSide
             this.button2.Font = new System.Drawing.Font("Stencil Std", 26.25F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.LimeGreen;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(429, 216);
+            this.button2.Location = new System.Drawing.Point(291, 180);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(303, 303);
+            this.button2.Size = new System.Drawing.Size(249, 248);
             this.button2.TabIndex = 17;
             this.button2.Text = "Teachers";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -94,7 +95,7 @@ namespace InstituteAdminSide
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Stencil Std", 26.25F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label8.Location = new System.Drawing.Point(84, 126);
+            this.label8.Location = new System.Drawing.Point(93, 113);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(659, 46);
             this.label8.TabIndex = 12;
@@ -120,9 +121,9 @@ namespace InstituteAdminSide
             this.button5.Font = new System.Drawing.Font("Stencil Std", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Tomato;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(49, 216);
+            this.button5.Location = new System.Drawing.Point(20, 180);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(303, 303);
+            this.button5.Size = new System.Drawing.Size(249, 248);
             this.button5.TabIndex = 16;
             this.button5.Text = "Employee";
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -140,9 +141,9 @@ namespace InstituteAdminSide
             this.button4.Font = new System.Drawing.Font("Stencil Std", 26.25F, System.Drawing.FontStyle.Bold);
             this.button4.ForeColor = System.Drawing.Color.SaddleBrown;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(793, 216);
+            this.button4.Location = new System.Drawing.Point(564, 180);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(304, 303);
+            this.button4.Size = new System.Drawing.Size(250, 248);
             this.button4.TabIndex = 15;
             this.button4.Text = "Report";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -153,6 +154,7 @@ namespace InstituteAdminSide
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label1);
@@ -172,11 +174,28 @@ namespace InstituteAdminSide
             // 
             this.timerMenuButtonMin.Tick += new System.EventHandler(this.timerMenuButtonMin_Tick);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkBlue;
+            this.button1.FlatAppearance.BorderSize = 3;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Stencil Std", 26.25F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(837, 180);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(250, 248);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Email";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1161, 603);
+            this.ClientSize = new System.Drawing.Size(1101, 603);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateShow);
             this.Controls.Add(this.timeShow);
@@ -200,5 +219,6 @@ namespace InstituteAdminSide
         private Panel panel1;
         private Timer timeMenuButton;
         private Timer timerMenuButtonMin;
+        private Button button1;
     }
 }

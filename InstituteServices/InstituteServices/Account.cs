@@ -5,7 +5,7 @@ using System.Text;
 
 namespace InstituteServices
 {
-    public class Account
+    class Account
     {
         private string eMail;
 

@@ -1,18 +1,9 @@
-E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServiceHost.exe.config
-E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServiceHost.exe
-E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServiceHost.pdb
-E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServices.dll
-E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\bin\Debug\MySql.Data.dll
-E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServices.pdb
-E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\obj\Debug\InstituteServiceHost.csprojResolveAssemblyReference.cache
-E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\obj\Debug\InstituteServiceHost.exe
-E:\Software Projects\Intergrated\InstituteServices\InstituteServiceHost\obj\Debug\InstituteServiceHost.pdb
-E:\Software Projects\gitWCFproject\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServiceHost.exe.config
-E:\Software Projects\gitWCFproject\InstituteServices\InstituteServiceHost\obj\Debug\InstituteServiceHost.exe
-E:\Software Projects\gitWCFproject\InstituteServices\InstituteServiceHost\obj\Debug\InstituteServiceHost.pdb
-E:\Software Projects\gitWCFproject\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServiceHost.exe
-E:\Software Projects\gitWCFproject\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServiceHost.pdb
-E:\Software Projects\gitWCFproject\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServices.dll
-E:\Software Projects\gitWCFproject\InstituteServices\InstituteServiceHost\bin\Debug\MySql.Data.dll
-E:\Software Projects\gitWCFproject\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServices.pdb
-E:\Software Projects\gitWCFproject\InstituteServices\InstituteServiceHost\obj\Debug\InstituteServiceHost.csprojResolveAssemblyReference.cache
+E:\My Development\c# wcf shalloma\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServiceHost.exe.config
+E:\My Development\c# wcf shalloma\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServiceHost.exe
+E:\My Development\c# wcf shalloma\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServiceHost.pdb
+E:\My Development\c# wcf shalloma\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServices.dll
+E:\My Development\c# wcf shalloma\InstituteServices\InstituteServiceHost\bin\Debug\MySql.Data.dll
+E:\My Development\c# wcf shalloma\InstituteServices\InstituteServiceHost\bin\Debug\InstituteServices.pdb
+E:\My Development\c# wcf shalloma\InstituteServices\InstituteServiceHost\obj\Debug\InstituteServiceHost.csprojResolveAssemblyReference.cache
+E:\My Development\c# wcf shalloma\InstituteServices\InstituteServiceHost\obj\Debug\InstituteServiceHost.exe
+E:\My Development\c# wcf shalloma\InstituteServices\InstituteServiceHost\obj\Debug\InstituteServiceHost.pdb

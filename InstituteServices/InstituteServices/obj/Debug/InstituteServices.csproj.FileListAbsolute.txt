@@ -1,7 +1,14 @@
-E:\My Development\c# wcf shalloma\InstituteServices\InstituteServices\bin\Debug\InstituteServices.dll.config
-E:\My Development\c# wcf shalloma\InstituteServices\InstituteServices\bin\Debug\InstituteServices.dll
-E:\My Development\c# wcf shalloma\InstituteServices\InstituteServices\bin\Debug\InstituteServices.pdb
-E:\My Development\c# wcf shalloma\InstituteServices\InstituteServices\bin\Debug\MySql.Data.dll
-E:\My Development\c# wcf shalloma\InstituteServices\InstituteServices\obj\Debug\InstituteServices.csprojResolveAssemblyReference.cache
-E:\My Development\c# wcf shalloma\InstituteServices\InstituteServices\obj\Debug\InstituteServices.dll
-E:\My Development\c# wcf shalloma\InstituteServices\InstituteServices\obj\Debug\InstituteServices.pdb
+E:\Software Projects\Intergrated\InstituteServices\InstituteServices\bin\Debug\InstituteServices.dll.config
+E:\Software Projects\Intergrated\InstituteServices\InstituteServices\bin\Debug\InstituteServices.dll
+E:\Software Projects\Intergrated\InstituteServices\InstituteServices\bin\Debug\InstituteServices.pdb
+E:\Software Projects\Intergrated\InstituteServices\InstituteServices\bin\Debug\MySql.Data.dll
+E:\Software Projects\Intergrated\InstituteServices\InstituteServices\obj\Debug\InstituteServices.dll
+E:\Software Projects\Intergrated\InstituteServices\InstituteServices\obj\Debug\InstituteServices.pdb
+E:\Software Projects\Intergrated\InstituteServices\InstituteServices\obj\Debug\InstituteServices.csprojResolveAssemblyReference.cache
+E:\Software Projects\gitWCFproject\InstituteServices\InstituteServices\bin\Debug\InstituteServices.dll.config
+E:\Software Projects\gitWCFproject\InstituteServices\InstituteServices\bin\Debug\InstituteServices.dll
+E:\Software Projects\gitWCFproject\InstituteServices\InstituteServices\bin\Debug\InstituteServices.pdb
+E:\Software Projects\gitWCFproject\InstituteServices\InstituteServices\bin\Debug\MySql.Data.dll
+E:\Software Projects\gitWCFproject\InstituteServices\InstituteServices\obj\Debug\InstituteServices.csprojResolveAssemblyReference.cache
+E:\Software Projects\gitWCFproject\InstituteServices\InstituteServices\obj\Debug\InstituteServices.dll
+E:\Software Projects\gitWCFproject\InstituteServices\InstituteServices\obj\Debug\InstituteServices.pdb

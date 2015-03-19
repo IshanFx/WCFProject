@@ -85,6 +85,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Student.resx">
       <DependentUpon>Student.cs</DependentUpon>
@@ -102,9 +103,6 @@
     </Compile>
     <None Include="Service References\InstituteServices\InstituteServices.wsdl" />
     <None Include="Service References\InstituteServices\InstituteUserSide.InstituteServices.Employee.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\InstituteServices\InstituteUserSide.InstituteServices.Student.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\InstituteServices\InstituteUserSide.InstituteServices.Teacher.datasource">
@@ -125,6 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\propic1.gif" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\InstituteServices\" />

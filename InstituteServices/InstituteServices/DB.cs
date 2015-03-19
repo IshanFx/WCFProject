@@ -11,23 +11,21 @@ namespace InstituteServices
     public class DB
     {
         string con = ConfigurationManager.ConnectionStrings["Studb"].ConnectionString;
-        public MySqlConnection conn;
-        public MySqlCommand cmd;
+        MySqlConnection conn;
+        MySqlCommand cmd;
         public DB()
         {
             conn = new MySqlConnection(con);
 
         }
-        int chk;
+
         public int DMLQuery(string sql)
         {
-            
-                chk = 0;
-                cmd = new MySqlCommand(sql, conn);
-                conn.Open();
-                chk = cmd.ExecuteNonQuery();
-                conn.Close();
-          
+            int chk = 0;
+            cmd = new MySqlCommand(sql, conn);
+            conn.Open();
+            chk = cmd.ExecuteNonQuery();
+            conn.Close();
             return chk;
 
         }
@@ -48,9 +46,16 @@ namespace InstituteServices
             conn.Open();
             int lastId =int.Parse( cmd.ExecuteScalar().ToString());
             conn.Close();
+            if(lastId==0)
+            {
+                lastId = 1;
+            }
+            else
+            {
+                lastId += 1;
+            }
             return lastId;
 
         }
-
     }
 }

@@ -38,7 +38,9 @@ namespace InstituteServices
 
         [OperationContract]
         DataSet GetEmployeePayment();
-        
+
+        [OperationContract]
+        int GetEmployeeLastId();
         }
 
     [ServiceContract]
@@ -63,6 +65,12 @@ namespace InstituteServices
 
         [OperationContract]
         DataSet GetTeachersPaymentFull();
+
+        [OperationContract]
+        int GetTeacherLastId(); 
+            
+        
+        
     }
 
 
@@ -74,6 +82,18 @@ namespace InstituteServices
 
         [OperationContract]
         int UpdateCourse(Course course);
+
+        [OperationContract]
+        DataSet GetCourseData();
+
+        [OperationContract]
+        int GetCourseLastId();
+
+        [OperationContract]
+        DataSet GetAllCourseData();
+
+        [OperationContract]
+        Course SearchCourse(int courseid);
     }
 
     [ServiceContract]

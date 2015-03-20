@@ -30,34 +30,37 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.CosSearchBtn = new System.Windows.Forms.Button();
+            this.couTeaDetails = new System.Windows.Forms.DataGridView();
+            this.CosClearbtn = new System.Windows.Forms.Button();
+            this.CosUpdatebtn = new System.Windows.Forms.Button();
+            this.CosSavebtn = new System.Windows.Forms.Button();
+            this.txtBatch = new System.Windows.Forms.TextBox();
+            this.txtTechid = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.EntimeCombo = new System.Windows.Forms.ComboBox();
+            this.StTimecombo = new System.Windows.Forms.ComboBox();
+            this.Daycombo = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCoursid = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.CoursDataGrid = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.couTeaDetails)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CoursDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Stencil Std", 14.25F, System.Drawing.FontStyle.Bold);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.tabControl1.Location = new System.Drawing.Point(12, 76);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -66,173 +69,233 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.CosSearchBtn);
+            this.tabPage1.Controls.Add(this.couTeaDetails);
+            this.tabPage1.Controls.Add(this.CosClearbtn);
+            this.tabPage1.Controls.Add(this.CosUpdatebtn);
+            this.tabPage1.Controls.Add(this.CosSavebtn);
+            this.tabPage1.Controls.Add(this.txtBatch);
+            this.tabPage1.Controls.Add(this.txtTechid);
             this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.comboBox3);
-            this.tabPage1.Controls.Add(this.comboBox2);
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.EntimeCombo);
+            this.tabPage1.Controls.Add(this.StTimecombo);
+            this.tabPage1.Controls.Add(this.Daycombo);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Controls.Add(this.txtCoursid);
+            this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(889, 496);
+            this.tabPage1.Size = new System.Drawing.Size(889, 497);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Register";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // CosSearchBtn
             // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(889, 496);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "View";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.CosSearchBtn.Location = new System.Drawing.Point(351, 100);
+            this.CosSearchBtn.Name = "CosSearchBtn";
+            this.CosSearchBtn.Size = new System.Drawing.Size(86, 37);
+            this.CosSearchBtn.TabIndex = 25;
+            this.CosSearchBtn.Text = "Search";
+            this.CosSearchBtn.UseVisualStyleBackColor = true;
+            this.CosSearchBtn.Click += new System.EventHandler(this.CosSearchBtn_Click);
             // 
-            // textBox1
+            // couTeaDetails
             // 
-            this.textBox1.Location = new System.Drawing.Point(216, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 33);
-            this.textBox1.TabIndex = 0;
+            this.couTeaDetails.AllowUserToAddRows = false;
+            this.couTeaDetails.AllowUserToDeleteRows = false;
+            this.couTeaDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.couTeaDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.couTeaDetails.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.couTeaDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.couTeaDetails.Location = new System.Drawing.Point(484, 50);
+            this.couTeaDetails.Name = "couTeaDetails";
+            this.couTeaDetails.ReadOnly = true;
+            this.couTeaDetails.Size = new System.Drawing.Size(366, 283);
+            this.couTeaDetails.TabIndex = 24;
+            this.couTeaDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.couTeaDetails_CellClick);
             // 
-            // label2
+            // CosClearbtn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 116);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 25);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Course Id";
+            this.CosClearbtn.Location = new System.Drawing.Point(728, 436);
+            this.CosClearbtn.Name = "CosClearbtn";
+            this.CosClearbtn.Size = new System.Drawing.Size(135, 37);
+            this.CosClearbtn.TabIndex = 23;
+            this.CosClearbtn.Text = "Clear";
+            this.CosClearbtn.UseVisualStyleBackColor = true;
+            this.CosClearbtn.Click += new System.EventHandler(this.CosClearbtn_Click);
             // 
-            // label1
+            // CosUpdatebtn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 179);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 25);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Day";
+            this.CosUpdatebtn.Location = new System.Drawing.Point(573, 436);
+            this.CosUpdatebtn.Name = "CosUpdatebtn";
+            this.CosUpdatebtn.Size = new System.Drawing.Size(135, 37);
+            this.CosUpdatebtn.TabIndex = 22;
+            this.CosUpdatebtn.Text = "Update";
+            this.CosUpdatebtn.UseVisualStyleBackColor = true;
+            this.CosUpdatebtn.Click += new System.EventHandler(this.CosUpdatebtn_Click);
             // 
-            // label3
+            // CosSavebtn
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 246);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 25);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Start Time";
+            this.CosSavebtn.Location = new System.Drawing.Point(414, 436);
+            this.CosSavebtn.Name = "CosSavebtn";
+            this.CosSavebtn.Size = new System.Drawing.Size(135, 37);
+            this.CosSavebtn.TabIndex = 21;
+            this.CosSavebtn.Text = "Save";
+            this.CosSavebtn.UseVisualStyleBackColor = true;
+            this.CosSavebtn.Click += new System.EventHandler(this.CosSavebtn_Click);
             // 
-            // label4
+            // txtBatch
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(46, 315);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 25);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "End Time";
+            this.txtBatch.Location = new System.Drawing.Point(216, 380);
+            this.txtBatch.Name = "txtBatch";
+            this.txtBatch.Size = new System.Drawing.Size(146, 29);
+            this.txtBatch.TabIndex = 20;
             // 
-            // label5
+            // txtTechid
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(46, 383);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 25);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Batch";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(216, 171);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(146, 33);
-            this.comboBox1.TabIndex = 15;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(216, 238);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(146, 33);
-            this.comboBox2.TabIndex = 16;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(216, 307);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(146, 33);
-            this.comboBox3.TabIndex = 17;
+            this.txtTechid.Location = new System.Drawing.Point(216, 47);
+            this.txtTechid.Name = "txtTechid";
+            this.txtTechid.Size = new System.Drawing.Size(100, 29);
+            this.txtTechid.TabIndex = 19;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(46, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 25);
+            this.label6.Size = new System.Drawing.Size(113, 24);
             this.label6.TabIndex = 18;
             this.label6.Text = "Teacher ID";
             // 
-            // textBox2
+            // EntimeCombo
             // 
-            this.textBox2.Location = new System.Drawing.Point(216, 47);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 33);
-            this.textBox2.TabIndex = 19;
+            this.EntimeCombo.FormattingEnabled = true;
+            this.EntimeCombo.Items.AddRange(new object[] {
+            "8.00 AM",
+            "10.00 AM",
+            "12.00 Am",
+            "2.00 PM",
+            "4.00 PM",
+            "6.00 PM"});
+            this.EntimeCombo.Location = new System.Drawing.Point(216, 307);
+            this.EntimeCombo.Name = "EntimeCombo";
+            this.EntimeCombo.Size = new System.Drawing.Size(146, 32);
+            this.EntimeCombo.TabIndex = 17;
+            this.EntimeCombo.Text = "  ---Select---";
             // 
-            // textBox3
+            // StTimecombo
             // 
-            this.textBox3.Location = new System.Drawing.Point(216, 380);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(146, 33);
-            this.textBox3.TabIndex = 20;
+            this.StTimecombo.FormattingEnabled = true;
+            this.StTimecombo.Items.AddRange(new object[] {
+            "8.00 AM",
+            "10.00 AM",
+            "12.00 Am",
+            "2.00 PM",
+            "4.00 PM",
+            "6.00 PM"});
+            this.StTimecombo.Location = new System.Drawing.Point(216, 238);
+            this.StTimecombo.Name = "StTimecombo";
+            this.StTimecombo.Size = new System.Drawing.Size(146, 32);
+            this.StTimecombo.TabIndex = 16;
+            this.StTimecombo.Text = "  ---Select---";
             // 
-            // button1
+            // Daycombo
             // 
-            this.button1.Location = new System.Drawing.Point(414, 436);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 37);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Daycombo.FormattingEnabled = true;
+            this.Daycombo.Items.AddRange(new object[] {
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"});
+            this.Daycombo.Location = new System.Drawing.Point(216, 171);
+            this.Daycombo.Name = "Daycombo";
+            this.Daycombo.Size = new System.Drawing.Size(146, 32);
+            this.Daycombo.TabIndex = 15;
+            this.Daycombo.Text = "  ---Select---";
             // 
-            // button2
+            // label5
             // 
-            this.button2.Location = new System.Drawing.Point(573, 436);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 37);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(46, 383);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 24);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Batch";
             // 
-            // button3
+            // label4
             // 
-            this.button3.Location = new System.Drawing.Point(728, 436);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(135, 37);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Clear";
-            this.button3.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(46, 315);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 24);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "End Time";
             // 
-            // dataGridView1
+            // label3
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 25);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(842, 452);
-            this.dataGridView1.TabIndex = 0;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(46, 246);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 24);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Start Time";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(46, 179);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 24);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Day";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(46, 116);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 24);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Course Id";
+            // 
+            // txtCoursid
+            // 
+            this.txtCoursid.Location = new System.Drawing.Point(216, 108);
+            this.txtCoursid.Name = "txtCoursid";
+            this.txtCoursid.Size = new System.Drawing.Size(100, 29);
+            this.txtCoursid.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.CoursDataGrid);
+            this.tabPage2.Location = new System.Drawing.Point(4, 33);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(889, 497);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "View";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // CoursDataGrid
+            // 
+            this.CoursDataGrid.AllowUserToAddRows = false;
+            this.CoursDataGrid.AllowUserToDeleteRows = false;
+            this.CoursDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.CoursDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.CoursDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CoursDataGrid.Location = new System.Drawing.Point(23, 25);
+            this.CoursDataGrid.Name = "CoursDataGrid";
+            this.CoursDataGrid.ReadOnly = true;
+            this.CoursDataGrid.Size = new System.Drawing.Size(842, 452);
+            this.CoursDataGrid.TabIndex = 0;
             // 
             // Course
             // 
@@ -245,8 +308,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.couTeaDetails)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CoursDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -256,21 +320,23 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCoursid;
+        private System.Windows.Forms.Button CosClearbtn;
+        private System.Windows.Forms.Button CosUpdatebtn;
+        private System.Windows.Forms.Button CosSavebtn;
+        private System.Windows.Forms.TextBox txtBatch;
+        private System.Windows.Forms.TextBox txtTechid;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox EntimeCombo;
+        private System.Windows.Forms.ComboBox StTimecombo;
+        private System.Windows.Forms.ComboBox Daycombo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView CoursDataGrid;
+        private System.Windows.Forms.DataGridView couTeaDetails;
+        private System.Windows.Forms.Button CosSearchBtn;
     }
 }

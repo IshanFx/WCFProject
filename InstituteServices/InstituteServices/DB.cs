@@ -40,5 +40,22 @@ namespace InstituteServices
             return table;
 
         }
+
+        public int GetLastIdQuery(string sql) {
+            cmd = new MySqlCommand(sql, conn);
+            conn.Open();
+            int lastId =int.Parse( cmd.ExecuteScalar().ToString());
+            conn.Close();
+            if(lastId==0)
+            {
+                lastId = 1;
+            }
+            else
+            {
+                lastId += 1;
+            }
+            return lastId;
+
+        }
     }
 }

@@ -23,7 +23,9 @@ namespace InstituteServices
 
         public int SaveEmployee(Employee employee)
         {
-            string sql = "INSERT INTO Employee VALUES('" + employee.EmpId + "','" + employee.EmpFName + "','" + employee.EmpLName + "','" + employee.EmpNIC + "','" + employee.EmpAddress + "','" + employee .EmpContact+ "')";           
+            MySqlCommand cmd = new MySqlCommand();
+            string sql = "INSERT INTO Employee VALUES('" + employee.EmpId + "','" + employee.EmpFName + "','" + employee.EmpLName + "','" + employee.EmpNIC + "','" + employee.EmpAddress + "','" + employee .EmpContact+ "')";     
+      
             return new DB().DMLQuery(sql);
         }
 
@@ -98,18 +100,47 @@ namespace InstituteServices
 
         public int SaveStudent(Student student)
         {
-            throw new NotImplementedException();
+            string sql = "INSERT INTO student VALUES('" + student.stuid + "','" + student.stuCourseID + "','" + student.stuFName + "','" + student.stuLName + "','" + student.stuAddr + "','" + student.stuGender + "','" + student.stuContact + "','" + student.stuPhoto + "')";
+            return new DB().DMLQuery(sql);
         }
 
         public int SaveCourse(Course course)
         {
-            throw new NotImplementedException();
+            string sql = "INSERT INTO course VALUES('" + course.CourseId + "','" + course.CourseDay + "','" + course.CourseStartTime + "','" + course.CourseEndTime + "','" + course.CourseBatch + "','" + course.CourseTeacherId + "')";
+            return new DB().DMLQuery(sql);
         }
 
+        public DataSet GetAllCourseData()
+        {
+            string sql = "SELECT cls.courseid,cls.day,cls.starttime,cls.endtime,cls.batch,CONCAT(tea.fname,' ',tea.lname) As Teacher FROM Teachers tea JOIN course cls WHERE tea.teaid = cls.teachid";
+            db = new DB();
+            DataTable table = db.SelectQuery(sql);
+            DataSet set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
+
+        public Course SearchCourse(int courseid)
+        {
+            Course course = new Course();
+            string sql = "SELECT * FROM course WHERE courseid='" + courseid + "'";
+            db = new DB();
+            DataTable table = db.SelectQuery(sql);
+            
+            course.CourseDay = table.Rows[0][1].ToString();
+            course.CourseStartTime = table.Rows[0][2].ToString();
+            course.CourseEndTime = table.Rows[0][3].ToString();
+            course.CourseBatch =Convert.ToInt32(table.Rows[0][4].ToString());
+            course.CourseTeacherId = Convert.ToInt32(table.Rows[0][5].ToString());
+            
+
+            return course;
+        }
 
         public int UpdateCourse(Course course)
         {
-            throw new NotImplementedException();
+            string sql = "UPDATE course set day='" + course.CourseDay + "',startTime='"+course.CourseStartTime+"',endTime='"+course.CourseEndTime+"',batch='"+course.CourseBatch+"',teachID='"+course.CourseTeacherId+"' WHERE courseid='"+course.CourseId+"'";
+            return new DB().DMLQuery(sql);
         }
 
 
@@ -118,6 +149,21 @@ namespace InstituteServices
             throw new NotImplementedException();
         }
 
+        public DataSet GetCourseData()
+        {
+            string sql = "SELECT teaid As TeacherID,CONCAT(fname,' ',lname) As Name FROM Teachers ";
+            db = new DB();
+            DataTable table = db.SelectQuery(sql);
+            DataSet set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
+
+        public int GetCourseLastId()
+        {
+            string sql = "SELECT MAX(courseid) FROM course";
+            return new DB().GetLastIdQuery(sql);
+        }
 
         public DataSet GetEmployeeData()
         {
@@ -181,6 +227,20 @@ namespace InstituteServices
             set = new DataSet();
             set.Tables.Add(table);
             return set;
+        }
+
+
+        public int GetEmployeeLastId()
+        {
+            string sql = "SELECT MAX(empid) FROM employee";
+            return new DB().GetLastIdQuery(sql);
+        }
+
+
+        public int GetTeacherLastId()
+        {
+            string sql = "SELECT MAX(teaid) FROM teachers";
+            return new DB().GetLastIdQuery(sql);
         }
     }
 }

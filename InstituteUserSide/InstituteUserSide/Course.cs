@@ -173,7 +173,7 @@ namespace InstituteUserSide
         {
             InstituteServices.CourseServicesClient client = new InstituteServices.CourseServicesClient();
             int id = Convert.ToInt32(txtCoursid.Text);
-            if (id == client.GetCourseLastId())
+            if (id >= client.GetCourseLastId())
             {
                 MessageBox.Show("Please Enter Valid Course ID", "Meassge", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
             }

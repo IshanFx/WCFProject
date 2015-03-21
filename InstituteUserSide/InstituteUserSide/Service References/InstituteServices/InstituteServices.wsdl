@@ -188,6 +188,24 @@
   <wsdl:message name="IStudentServices_StudentClassSave_OutputMessage">
     <wsdl:part name="parameters" element="tns:StudentClassSaveResponse" />
   </wsdl:message>
+  <wsdl:message name="IStudentServices_StudentAttenSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:StudentAttenSave" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_StudentAttenSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StudentAttenSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_stupaymentcheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:stupaymentcheck" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_stupaymentcheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:stupaymentcheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_StudentPaySave_InputMessage">
+    <wsdl:part name="parameters" element="tns:StudentPaySave" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_StudentPaySave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StudentPaySaveResponse" />
+  </wsdl:message>
   <wsdl:portType name="IInstituteServices">
     <wsdl:operation name="DoWork">
       <wsdl:input wsaw:Action="http://tempuri.org/IInstituteServices/DoWork" message="tns:IInstituteServices_DoWork_InputMessage" />
@@ -316,6 +334,18 @@
     <wsdl:operation name="StudentClassSave">
       <wsdl:input wsaw:Action="http://tempuri.org/IStudentServices/StudentClassSave" message="tns:IStudentServices_StudentClassSave_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IStudentServices/StudentClassSaveResponse" message="tns:IStudentServices_StudentClassSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StudentAttenSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentServices/StudentAttenSave" message="tns:IStudentServices_StudentAttenSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentServices/StudentAttenSaveResponse" message="tns:IStudentServices_StudentAttenSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="stupaymentcheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentServices/stupaymentcheck" message="tns:IStudentServices_stupaymentcheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentServices/stupaymentcheckResponse" message="tns:IStudentServices_stupaymentcheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StudentPaySave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentServices/StudentPaySave" message="tns:IStudentServices_StudentPaySave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentServices/StudentPaySaveResponse" message="tns:IStudentServices_StudentPaySave_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IInstituteServices" type="tns:IInstituteServices">
@@ -595,6 +625,33 @@
     </wsdl:operation>
     <wsdl:operation name="StudentClassSave">
       <soap:operation soapAction="http://tempuri.org/IStudentServices/StudentClassSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentAttenSave">
+      <soap:operation soapAction="http://tempuri.org/IStudentServices/StudentAttenSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stupaymentcheck">
+      <soap:operation soapAction="http://tempuri.org/IStudentServices/stupaymentcheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentPaySave">
+      <soap:operation soapAction="http://tempuri.org/IStudentServices/StudentPaySave" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

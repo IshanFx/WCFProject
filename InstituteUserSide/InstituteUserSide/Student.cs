@@ -16,6 +16,7 @@ namespace InstituteUserSide
             InitializeComponent();
             GetCourseData();
             GetLastId();
+            txtstuPayFee.Text = DateTime.Now.Date.ToString("MMMM");
         }
 
         string gender;
@@ -84,8 +85,7 @@ namespace InstituteUserSide
                 {
                     GenRadioChk();
                     InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
-                    InstituteServices.Student student = new InstituteServices.Student();
-                    new InstituteServices.Student()
+                    InstituteServices.Student student = new InstituteServices.Student()
                     {
                         stuid = Convert.ToInt32(txtstuid.Text),
                         stuCourseID = Convert.ToInt32(txtcourseid.Text),
@@ -168,6 +168,8 @@ namespace InstituteUserSide
             txtcont.Text = "";
             radioGenF.Checked = false;
             radioGenM.Checked = false;
+            txtStuAttenCosID.Text = "";
+            txtStuAttenStuID.Text = "";
         }
 
         public void GetLastId()
@@ -210,6 +212,82 @@ namespace InstituteUserSide
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StuPaymentChkBtn_Click(object sender, EventArgs e)
+        {
+            string status;
+            try
+            {
+                InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
+                status=client.stupaymentcheck(Convert.ToInt32(txtStuAttenStuID.Text),Convert.ToInt32(txtStuAttenCosID.Text));
+                if(status!=null)
+                {
+                    StuMrkAtnBtn.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Student Is Not Payment For This Month", "Message");
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+        }
+
+        private void StuMrkAtnBtn_Click(object sender, EventArgs e)
+        {
+            InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
+            InstituteServices.Student student = new InstituteServices.Student()
+            {
+                stuid = Convert.ToInt32(txtStuAttenStuID.Text),
+                stuCourseID = Convert.ToInt32(txtStuAttenCosID.Text)
+            };
+            int month =Convert.ToInt32(DateTime.Now.Date.ToString("MM"));
+            int year=Convert.ToInt32(DateTime.Now.Year.ToString());
+            int day =Convert.ToInt32(DateTime.Now.Date.ToString("dd"));
+
+            int chk = client.StudentAttenSave(student, month, year, day);
+            if (chk > 0)
+            {
+                MessageBox.Show("Student Attendance Save");
+                clear();
+            }
+            else
+            {
+                MessageBox.Show("Student Attendance Not Save");
+            }
+
+        }
+
+        private void StuPayBtn_Click(object sender, EventArgs e)
+        {
+            InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
+            InstituteServices.Student student = new InstituteServices.Student()
+            {
+                stuid = Convert.ToInt32(txtStuAttenStuID.Text),
+                stuCourseID = Convert.ToInt32(txtStuAttenCosID.Text)
+            };
+            string month = StuAttenMonth.Text;
+            int year = Convert.ToInt32(txtStuAtenYear.Text);
+            int amount = Convert.ToInt32(txtstuPayFee.Text);
+
+            int chk = client.StudentPaySave(student,month,year,amount);
+            if (chk > 0)
+            {
+                MessageBox.Show("Student Attendance Save");
+                clear();
+            }
+            else
+            {
+                MessageBox.Show("Student Attendance Not Save");
+            }
         }
 
     }

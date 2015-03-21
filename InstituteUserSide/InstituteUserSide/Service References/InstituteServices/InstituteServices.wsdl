@@ -158,6 +158,36 @@
   <wsdl:message name="IStudentServices_UpdateStudent_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateStudentResponse" />
   </wsdl:message>
+  <wsdl:message name="IStudentServices_SearchStudentDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchStudentDate" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_SearchStudentDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchStudentDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_studentlastid_InputMessage">
+    <wsdl:part name="parameters" element="tns:studentlastid" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_studentlastid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:studentlastidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_GetStuCourseData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStuCourseData" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_GetStuCourseData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStuCourseDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_GetAllStudentData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStudentData" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_GetAllStudentData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStudentDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_StudentClassSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:StudentClassSave" />
+  </wsdl:message>
+  <wsdl:message name="IStudentServices_StudentClassSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StudentClassSaveResponse" />
+  </wsdl:message>
   <wsdl:portType name="IInstituteServices">
     <wsdl:operation name="DoWork">
       <wsdl:input wsaw:Action="http://tempuri.org/IInstituteServices/DoWork" message="tns:IInstituteServices_DoWork_InputMessage" />
@@ -266,6 +296,26 @@
     <wsdl:operation name="UpdateStudent">
       <wsdl:input wsaw:Action="http://tempuri.org/IStudentServices/UpdateStudent" message="tns:IStudentServices_UpdateStudent_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IStudentServices/UpdateStudentResponse" message="tns:IStudentServices_UpdateStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchStudentDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentServices/SearchStudentDate" message="tns:IStudentServices_SearchStudentDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentServices/SearchStudentDateResponse" message="tns:IStudentServices_SearchStudentDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="studentlastid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentServices/studentlastid" message="tns:IStudentServices_studentlastid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentServices/studentlastidResponse" message="tns:IStudentServices_studentlastid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStuCourseData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentServices/GetStuCourseData" message="tns:IStudentServices_GetStuCourseData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentServices/GetStuCourseDataResponse" message="tns:IStudentServices_GetStuCourseData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStudentData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentServices/GetAllStudentData" message="tns:IStudentServices_GetAllStudentData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentServices/GetAllStudentDataResponse" message="tns:IStudentServices_GetAllStudentData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StudentClassSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentServices/StudentClassSave" message="tns:IStudentServices_StudentClassSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentServices/StudentClassSaveResponse" message="tns:IStudentServices_StudentClassSave_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IInstituteServices" type="tns:IInstituteServices">
@@ -500,6 +550,51 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateStudent">
       <soap:operation soapAction="http://tempuri.org/IStudentServices/UpdateStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchStudentDate">
+      <soap:operation soapAction="http://tempuri.org/IStudentServices/SearchStudentDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="studentlastid">
+      <soap:operation soapAction="http://tempuri.org/IStudentServices/studentlastid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStuCourseData">
+      <soap:operation soapAction="http://tempuri.org/IStudentServices/GetStuCourseData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStudentData">
+      <soap:operation soapAction="http://tempuri.org/IStudentServices/GetAllStudentData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentClassSave">
+      <soap:operation soapAction="http://tempuri.org/IStudentServices/StudentClassSave" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

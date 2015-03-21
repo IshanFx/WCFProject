@@ -104,6 +104,21 @@ namespace InstituteServices
 
         [OperationContract]
         int UpdateStudent(Student student);
+
+        [OperationContract]
+        Student SearchStudentDate(int studentid);
+
+        [OperationContract]
+        int studentlastid();
+
+        [OperationContract]
+        DataSet GetStuCourseData();
+
+        [OperationContract]
+        DataSet GetAllStudentData();
+
+        [OperationContract]
+        int StudentClassSave(Student student);
     }
     [ServiceContract]
     public interface IAccount {

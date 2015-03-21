@@ -18,7 +18,8 @@ namespace InstituteServices
         DB db;
         DataTable table;
         DataSet set;
-       
+        MySqlDataReader read;
+        MySqlCommand cmd;
         public void DoWork()
         {
         }
@@ -174,6 +175,43 @@ namespace InstituteServices
 
             int id = new DB().GetLastIdQuery("SELECT MAX(studentid) FROM student");
             return id;
+        }
+
+        public int StudentAttenSave(Student student, int month, int day, int year)
+        {
+            int maxid = new DB().GetLastIdQuery("SELECT MAX(attenID) FROM attendance");
+            string sql = "INSERT INTO attendance VALUES('" + maxid + "','" + month + "','" + year + "','" + day + "','" + student.stuid + "','" + student.stuCourseID + "')";
+            return new DB().DMLQuery(sql);
+
+            
+        }
+
+        string status = "false";
+        public string stupaymentcheck(int stuid, int courseid)
+        {
+            
+                status = null;
+                object a;
+                string sql = "SELECT month FROM studentpayments WHERE studentID='" + stuid + "' AND courseid='" + courseid + "' AND month='" + DateTime.Now.Date.ToString("MMMM") + "' ";
+                DataTable table =new DB().SelectQuery(sql); 
+                a=table.Rows[0][0]; 
+                if (a==DBNull.Value)
+                {
+                    status = null;
+                }
+                else
+                {
+                    return status="true";
+                }
+
+            return status; 
+        }
+
+        public int StudentPaySave(Student student,string month,int year,int amount)
+        {
+            int maxid=new DB().GetLastIdQuery("SELECT MAX(stuPayID) FROM studentpayments");
+            string sql = "INSERT INTO studentpayments VALUES('" + maxid + "','" + month + "','" + year + "','" + amount + "','" + student.stuid + "','" + student.stuCourseID + "')";
+            return new DB().DMLQuery(sql);
         }
 
         public int SaveCourse(Course course)

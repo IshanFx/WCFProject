@@ -1007,6 +1007,21 @@ namespace InstituteUserSide.InstituteServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/UpdateStudent", ReplyAction="http://tempuri.org/IStudentServices/UpdateStudentResponse")]
         int UpdateStudent(InstituteUserSide.InstituteServices.Student student);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/SearchStudentDate", ReplyAction="http://tempuri.org/IStudentServices/SearchStudentDateResponse")]
+        InstituteUserSide.InstituteServices.Student SearchStudentDate(int studentid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/studentlastid", ReplyAction="http://tempuri.org/IStudentServices/studentlastidResponse")]
+        int studentlastid();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/GetStuCourseData", ReplyAction="http://tempuri.org/IStudentServices/GetStuCourseDataResponse")]
+        System.Data.DataSet GetStuCourseData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/GetAllStudentData", ReplyAction="http://tempuri.org/IStudentServices/GetAllStudentDataResponse")]
+        System.Data.DataSet GetAllStudentData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/StudentClassSave", ReplyAction="http://tempuri.org/IStudentServices/StudentClassSaveResponse")]
+        int StudentClassSave(InstituteUserSide.InstituteServices.Student student);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1042,6 +1057,26 @@ namespace InstituteUserSide.InstituteServices {
         
         public int UpdateStudent(InstituteUserSide.InstituteServices.Student student) {
             return base.Channel.UpdateStudent(student);
+        }
+        
+        public InstituteUserSide.InstituteServices.Student SearchStudentDate(int studentid) {
+            return base.Channel.SearchStudentDate(studentid);
+        }
+        
+        public int studentlastid() {
+            return base.Channel.studentlastid();
+        }
+        
+        public System.Data.DataSet GetStuCourseData() {
+            return base.Channel.GetStuCourseData();
+        }
+        
+        public System.Data.DataSet GetAllStudentData() {
+            return base.Channel.GetAllStudentData();
+        }
+        
+        public int StudentClassSave(InstituteUserSide.InstituteServices.Student student) {
+            return base.Channel.StudentClassSave(student);
         }
     }
 }

@@ -32,9 +32,9 @@ namespace InstituteAdminSide
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reports));
             this.reportTab = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -74,7 +74,7 @@ namespace InstituteAdminSide
             this.label4 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartIncome = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -82,6 +82,7 @@ namespace InstituteAdminSide
             this.label15 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.reportTab.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -89,7 +90,7 @@ namespace InstituteAdminSide
             this.tabPage5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartIncome)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -408,6 +409,7 @@ namespace InstituteAdminSide
             this.txtEmployeeYear.Name = "txtEmployeeYear";
             this.txtEmployeeYear.Size = new System.Drawing.Size(118, 25);
             this.txtEmployeeYear.TabIndex = 16;
+            this.txtEmployeeYear.TextChanged += new System.EventHandler(this.txtEmployeeYear_TextChanged);
             this.txtEmployeeYear.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEmployeeYear_KeyDown);
             // 
             // label1
@@ -455,7 +457,8 @@ namespace InstituteAdminSide
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.chart1);
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.chartIncome);
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -464,22 +467,22 @@ namespace InstituteAdminSide
             this.tabPage1.Text = "Total Income";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // chart1
+            // chartIncome
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(28, 20);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(880, 442);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            chartArea1.Name = "ChartArea1";
+            this.chartIncome.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartIncome.Legends.Add(legend1);
+            this.chartIncome.Location = new System.Drawing.Point(28, 39);
+            this.chartIncome.Name = "chartIncome";
+            this.chartIncome.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Income";
+            this.chartIncome.Series.Add(series1);
+            this.chartIncome.Size = new System.Drawing.Size(880, 423);
+            this.chartIncome.TabIndex = 0;
+            this.chartIncome.Text = "chart1";
             // 
             // panel1
             // 
@@ -552,6 +555,18 @@ namespace InstituteAdminSide
             this.label6.TabIndex = 16;
             this.label6.Text = "Report";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Peru;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(28, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(207, 36);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Refresh";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -560,6 +575,7 @@ namespace InstituteAdminSide
             this.Controls.Add(this.panel1);
             this.Name = "Reports";
             this.Text = "Reports";
+            this.Load += new System.EventHandler(this.Reports_Load);
             this.reportTab.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
@@ -569,7 +585,7 @@ namespace InstituteAdminSide
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartIncome)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -589,7 +605,7 @@ namespace InstituteAdminSide
         private Button btnTeacherIncomeChart;
         private Button button4;
         private TabPage tabPage1;
-        private Chart chart1;
+        private Chart chartIncome;
         private Button button5;
         private RadioButton rbnEmployeeAllPay;
         private GroupBox groupBox4;
@@ -625,5 +641,6 @@ namespace InstituteAdminSide
         private Label label2;
         private ComboBox cmbTeacherMonth;
         private Label label3;
+        private Button button2;
     }
 }

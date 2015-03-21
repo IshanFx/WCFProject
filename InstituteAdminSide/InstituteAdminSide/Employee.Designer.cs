@@ -72,12 +72,12 @@ namespace InstituteAdminSide
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -91,7 +91,7 @@ namespace InstituteAdminSide
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Font = new System.Drawing.Font("Stencil Std", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(18, 16);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -121,10 +121,11 @@ namespace InstituteAdminSide
             this.tabPage1.Controls.Add(this.empNICtxt);
             this.tabPage1.Controls.Add(this.empFNametxt);
             this.tabPage1.Controls.Add(this.empLNametxt);
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(882, 517);
+            this.tabPage1.Size = new System.Drawing.Size(882, 520);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Register";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -132,20 +133,21 @@ namespace InstituteAdminSide
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Maroon;
             this.label7.Location = new System.Drawing.Point(57, 18);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 22);
+            this.label7.Size = new System.Drawing.Size(67, 19);
             this.label7.TabIndex = 44;
             this.label7.Text = "Last Id";
             // 
             // rbnNICY
             // 
             this.rbnNICY.AutoSize = true;
+            this.rbnNICY.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbnNICY.Location = new System.Drawing.Point(395, 218);
             this.rbnNICY.Name = "rbnNICY";
-            this.rbnNICY.Size = new System.Drawing.Size(43, 29);
+            this.rbnNICY.Size = new System.Drawing.Size(37, 23);
             this.rbnNICY.TabIndex = 43;
             this.rbnNICY.TabStop = true;
             this.rbnNICY.Text = "V";
@@ -154,9 +156,10 @@ namespace InstituteAdminSide
             // rbnNICX
             // 
             this.rbnNICX.AutoSize = true;
+            this.rbnNICX.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbnNICX.Location = new System.Drawing.Point(455, 218);
             this.rbnNICX.Name = "rbnNICX";
-            this.rbnNICX.Size = new System.Drawing.Size(43, 29);
+            this.rbnNICX.Size = new System.Drawing.Size(37, 23);
             this.rbnNICX.TabIndex = 42;
             this.rbnNICX.TabStop = true;
             this.rbnNICX.Text = "X";
@@ -168,6 +171,7 @@ namespace InstituteAdminSide
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatAppearance.BorderSize = 3;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Crimson;
             this.btnClear.Location = new System.Drawing.Point(744, 459);
             this.btnClear.Name = "btnClear";
@@ -181,18 +185,18 @@ namespace InstituteAdminSide
             // 
             this.empLastIdlbl.AutoSize = true;
             this.empLastIdlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.empLastIdlbl.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.empLastIdlbl.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.empLastIdlbl.ForeColor = System.Drawing.Color.Black;
             this.empLastIdlbl.Location = new System.Drawing.Point(230, 15);
             this.empLastIdlbl.Name = "empLastIdlbl";
-            this.empLastIdlbl.Size = new System.Drawing.Size(33, 25);
+            this.empLastIdlbl.Size = new System.Drawing.Size(27, 21);
             this.empLastIdlbl.TabIndex = 40;
             this.empLastIdlbl.Text = "ID";
             // 
             // empIdtxt
             // 
             this.empIdtxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.empIdtxt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.empIdtxt.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.empIdtxt.Location = new System.Drawing.Point(230, 60);
             this.empIdtxt.Name = "empIdtxt";
             this.empIdtxt.Size = new System.Drawing.Size(100, 26);
@@ -204,6 +208,7 @@ namespace InstituteAdminSide
             this.btnEmployeeSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEmployeeSearch.FlatAppearance.BorderSize = 0;
             this.btnEmployeeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmployeeSearch.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployeeSearch.ForeColor = System.Drawing.Color.White;
             this.btnEmployeeSearch.Location = new System.Drawing.Point(413, 53);
             this.btnEmployeeSearch.Name = "btnEmployeeSearch";
@@ -219,6 +224,7 @@ namespace InstituteAdminSide
             this.btnEmployeeUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEmployeeUpdate.FlatAppearance.BorderSize = 0;
             this.btnEmployeeUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmployeeUpdate.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployeeUpdate.ForeColor = System.Drawing.Color.White;
             this.btnEmployeeUpdate.Location = new System.Drawing.Point(517, 459);
             this.btnEmployeeUpdate.Name = "btnEmployeeUpdate";
@@ -234,6 +240,7 @@ namespace InstituteAdminSide
             this.btnEmployeeSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEmployeeSave.FlatAppearance.BorderSize = 0;
             this.btnEmployeeSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmployeeSave.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployeeSave.ForeColor = System.Drawing.Color.White;
             this.btnEmployeeSave.Location = new System.Drawing.Point(375, 459);
             this.btnEmployeeSave.Name = "btnEmployeeSave";
@@ -246,50 +253,50 @@ namespace InstituteAdminSide
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
             this.label1.Location = new System.Drawing.Point(57, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 22);
+            this.label1.Size = new System.Drawing.Size(108, 19);
             this.label1.TabIndex = 20;
             this.label1.Text = "Employee ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
             this.label2.Location = new System.Drawing.Point(57, 107);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 22);
+            this.label2.Size = new System.Drawing.Size(101, 19);
             this.label2.TabIndex = 21;
             this.label2.Text = "First Name";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Maroon;
             this.label3.Location = new System.Drawing.Point(57, 165);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 22);
+            this.label3.Size = new System.Drawing.Size(94, 19);
             this.label3.TabIndex = 22;
             this.label3.Text = "Last Name";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Maroon;
             this.label4.Location = new System.Drawing.Point(57, 284);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 22);
+            this.label4.Size = new System.Drawing.Size(77, 19);
             this.label4.TabIndex = 23;
             this.label4.Text = "Address";
             // 
             // empContacttxt
             // 
-            this.empContacttxt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.empContacttxt.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.empContacttxt.Location = new System.Drawing.Point(230, 389);
             this.empContacttxt.MaxLength = 10;
             this.empContacttxt.Name = "empContacttxt";
@@ -299,17 +306,17 @@ namespace InstituteAdminSide
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Maroon;
             this.label5.Location = new System.Drawing.Point(57, 390);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 22);
+            this.label5.Size = new System.Drawing.Size(78, 19);
             this.label5.TabIndex = 24;
             this.label5.Text = "Contact";
             // 
             // empAdd1txt
             // 
-            this.empAdd1txt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.empAdd1txt.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.empAdd1txt.Location = new System.Drawing.Point(230, 284);
             this.empAdd1txt.Multiline = true;
             this.empAdd1txt.Name = "empAdd1txt";
@@ -319,17 +326,17 @@ namespace InstituteAdminSide
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Maroon;
             this.label8.Location = new System.Drawing.Point(57, 221);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 22);
+            this.label8.Size = new System.Drawing.Size(35, 19);
             this.label8.TabIndex = 27;
             this.label8.Text = "NIC";
             // 
             // empNICtxt
             // 
-            this.empNICtxt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.empNICtxt.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.empNICtxt.Location = new System.Drawing.Point(230, 221);
             this.empNICtxt.MaxLength = 10;
             this.empNICtxt.Name = "empNICtxt";
@@ -338,7 +345,7 @@ namespace InstituteAdminSide
             // 
             // empFNametxt
             // 
-            this.empFNametxt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.empFNametxt.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.empFNametxt.Location = new System.Drawing.Point(230, 106);
             this.empFNametxt.Name = "empFNametxt";
             this.empFNametxt.Size = new System.Drawing.Size(159, 26);
@@ -346,7 +353,7 @@ namespace InstituteAdminSide
             // 
             // empLNametxt
             // 
-            this.empLNametxt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.empLNametxt.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.empLNametxt.Location = new System.Drawing.Point(230, 164);
             this.empLNametxt.Name = "empLNametxt";
             this.empLNametxt.Size = new System.Drawing.Size(159, 26);
@@ -364,10 +371,10 @@ namespace InstituteAdminSide
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(882, 517);
+            this.tabPage2.Size = new System.Drawing.Size(882, 520);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Payments";
             // 
@@ -481,10 +488,10 @@ namespace InstituteAdminSide
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
             this.tabPage3.Controls.Add(this.listEmployeeData);
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
+            this.tabPage3.Location = new System.Drawing.Point(4, 31);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(882, 517);
+            this.tabPage3.Size = new System.Drawing.Size(882, 520);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "View";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
@@ -545,16 +552,14 @@ namespace InstituteAdminSide
             this.panel1.Size = new System.Drawing.Size(925, 672);
             this.panel1.TabIndex = 23;
             // 
-            // label6
+            // panel2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Stencil", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(11, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(222, 44);
-            this.label6.TabIndex = 42;
-            this.label6.Text = "Employee ";
+            this.panel2.BackColor = System.Drawing.Color.DimGray;
+            this.panel2.Controls.Add(this.tabControl1);
+            this.panel2.Location = new System.Drawing.Point(0, 81);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(925, 591);
+            this.panel2.TabIndex = 78;
             // 
             // label9
             // 
@@ -592,14 +597,16 @@ namespace InstituteAdminSide
             this.label16.Size = new System.Drawing.Size(63, 60);
             this.label16.TabIndex = 74;
             // 
-            // panel2
+            // label6
             // 
-            this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.Controls.Add(this.tabControl1);
-            this.panel2.Location = new System.Drawing.Point(0, 81);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(925, 591);
-            this.panel2.TabIndex = 78;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Stencil", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(11, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(222, 44);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "Employee ";
             // 
             // Employee
             // 

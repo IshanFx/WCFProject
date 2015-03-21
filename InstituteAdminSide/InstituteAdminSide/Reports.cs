@@ -45,17 +45,26 @@ namespace InstituteAdminSide
         }
         private void TeacherAllPay_Rbn(object sender, EventArgs e)
         {
-            if (rbnTeacherAllPay.Checked)
+            try
             {
-               teacherServices  = new TeacherServicesClient();
-           
-               dataSet = teacherServices.GetTeacherAllPaymentReport();
-               table = dataSet.Tables[0];
-               ClearListView(listTeacherPayment);
-               FillListView(table,listTeacherPayment);
-              
+                if (rbnTeacherAllPay.Checked)
+                {
+                    teacherServices = new TeacherServicesClient();
 
+                    dataSet = teacherServices.GetTeacherAllPaymentReport();
+                    table = dataSet.Tables[0];
+                    ClearListView(listTeacherPayment);
+                    FillListView(table, listTeacherPayment);
+
+
+                }
             }
+            catch (Exception exception)
+            {
+
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void FillListView(DataTable table,ListView listViewName)

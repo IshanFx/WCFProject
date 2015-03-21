@@ -31,6 +31,7 @@ namespace InstituteAdminSide
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Teacher));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
@@ -71,12 +72,18 @@ namespace InstituteAdminSide
             this.gridTeacher = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTeacher)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -85,10 +92,10 @@ namespace InstituteAdminSide
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Stencil", 14.25F);
-            this.tabControl1.Location = new System.Drawing.Point(14, 94);
+            this.tabControl1.Location = new System.Drawing.Point(9, 18);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(902, 617);
+            this.tabControl1.Size = new System.Drawing.Size(902, 601);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -120,7 +127,7 @@ namespace InstituteAdminSide
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(894, 582);
+            this.tabPage1.Size = new System.Drawing.Size(894, 566);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Register";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -502,8 +509,12 @@ namespace InstituteAdminSide
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkGreen;
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.tabControl1);
             this.panel1.Location = new System.Drawing.Point(-2, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(928, 714);
@@ -519,6 +530,51 @@ namespace InstituteAdminSide
             this.label4.Size = new System.Drawing.Size(185, 44);
             this.label4.TabIndex = 63;
             this.label4.Text = "Teacher";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DimGray;
+            this.panel2.Controls.Add(this.tabControl1);
+            this.panel2.Location = new System.Drawing.Point(3, 81);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(925, 630);
+            this.panel2.TabIndex = 64;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Image = ((System.Drawing.Image)(resources.GetObject("label18.Image")));
+            this.label18.Location = new System.Drawing.Point(640, 6);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(63, 60);
+            this.label18.TabIndex = 78;
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Image = ((System.Drawing.Image)(resources.GetObject("label17.Image")));
+            this.label17.Location = new System.Drawing.Point(847, 10);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(63, 60);
+            this.label17.TabIndex = 77;
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Image = ((System.Drawing.Image)(resources.GetObject("label16.Image")));
+            this.label16.Location = new System.Drawing.Point(778, 10);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(63, 60);
+            this.label16.TabIndex = 76;
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Image = ((System.Drawing.Image)(resources.GetObject("label15.Image")));
+            this.label15.Location = new System.Drawing.Point(709, 10);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(63, 60);
+            this.label15.TabIndex = 75;
             // 
             // Teacher
             // 
@@ -538,6 +594,7 @@ namespace InstituteAdminSide
             ((System.ComponentModel.ISupportInitialize)(this.gridTeacher)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -584,5 +641,10 @@ namespace InstituteAdminSide
         private RadioButton rbnNICX;
         private Label label14;
         private TextBox txtLastId;
+        private Label label18;
+        private Label label17;
+        private Label label16;
+        private Label label15;
+        private Panel panel2;
     }
 }

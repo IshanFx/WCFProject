@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Email));
             this.btnSend = new System.Windows.Forms.Button();
             this.txtTo = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkAllMail = new System.Windows.Forms.CheckBox();
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.txtTopic = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +47,10 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.chkAllMail = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -97,10 +102,23 @@
             this.panel1.Controls.Add(this.txtTo);
             this.panel1.Controls.Add(this.btnSend);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(-2, 70);
+            this.panel1.Location = new System.Drawing.Point(9, 22);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(478, 532);
             this.panel1.TabIndex = 51;
+            // 
+            // chkAllMail
+            // 
+            this.chkAllMail.AutoSize = true;
+            this.chkAllMail.Font = new System.Drawing.Font("Stencil", 14.25F);
+            this.chkAllMail.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.chkAllMail.Location = new System.Drawing.Point(22, 137);
+            this.chkAllMail.Name = "chkAllMail";
+            this.chkAllMail.Size = new System.Drawing.Size(61, 26);
+            this.chkAllMail.TabIndex = 59;
+            this.chkAllMail.Text = "All";
+            this.chkAllMail.UseVisualStyleBackColor = true;
+            this.chkAllMail.CheckedChanged += new System.EventHandler(this.chkAllMail_CheckedChanged);
             // 
             // txtMessage
             // 
@@ -166,11 +184,12 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel2.BackColor = System.Drawing.Color.DimGray;
             this.panel2.Controls.Add(this.dataList);
-            this.panel2.Location = new System.Drawing.Point(478, 64);
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Location = new System.Drawing.Point(0, 64);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(384, 538);
+            this.panel2.Size = new System.Drawing.Size(886, 568);
             this.panel2.TabIndex = 52;
             // 
             // dataList
@@ -180,9 +199,9 @@
             this.columnHeader1,
             this.columnHeader2});
             this.dataList.GridLines = true;
-            this.dataList.Location = new System.Drawing.Point(9, 16);
+            this.dataList.Location = new System.Drawing.Point(498, 22);
             this.dataList.Name = "dataList";
-            this.dataList.Size = new System.Drawing.Size(364, 510);
+            this.dataList.Size = new System.Drawing.Size(377, 530);
             this.dataList.TabIndex = 0;
             this.dataList.UseCompatibleStateImageBehavior = false;
             this.dataList.View = System.Windows.Forms.View.Details;
@@ -196,20 +215,24 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Name";
-            this.columnHeader1.Width = 100;
+            this.columnHeader1.Width = 107;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Email";
-            this.columnHeader2.Width = 165;
+            this.columnHeader2.Width = 183;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label18);
+            this.panel3.Controls.Add(this.label17);
+            this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(0, -3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(862, 77);
+            this.panel3.Size = new System.Drawing.Size(886, 77);
             this.panel3.TabIndex = 53;
             // 
             // label3
@@ -223,27 +246,49 @@
             this.label3.TabIndex = 59;
             this.label3.Text = "E -Mail";
             // 
-            // chkAllMail
+            // label4
             // 
-            this.chkAllMail.AutoSize = true;
-            this.chkAllMail.Font = new System.Drawing.Font("Stencil", 14.25F);
-            this.chkAllMail.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.chkAllMail.Location = new System.Drawing.Point(22, 137);
-            this.chkAllMail.Name = "chkAllMail";
-            this.chkAllMail.Size = new System.Drawing.Size(61, 26);
-            this.chkAllMail.TabIndex = 59;
-            this.chkAllMail.Text = "All";
-            this.chkAllMail.UseVisualStyleBackColor = true;
-            this.chkAllMail.CheckedChanged += new System.EventHandler(this.chkAllMail_CheckedChanged);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
+            this.label4.Location = new System.Drawing.Point(600, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 60);
+            this.label4.TabIndex = 78;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Image = ((System.Drawing.Image)(resources.GetObject("label18.Image")));
+            this.label18.Location = new System.Drawing.Point(807, 9);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(63, 60);
+            this.label18.TabIndex = 77;
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Image = ((System.Drawing.Image)(resources.GetObject("label17.Image")));
+            this.label17.Location = new System.Drawing.Point(738, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(63, 60);
+            this.label17.TabIndex = 76;
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Image = ((System.Drawing.Image)(resources.GetObject("label15.Image")));
+            this.label15.Location = new System.Drawing.Point(669, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(63, 60);
+            this.label15.TabIndex = 75;
             // 
             // Email
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 602);
+            this.ClientSize = new System.Drawing.Size(887, 628);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Name = "Email";
             this.Text = "Email";
             this.panel1.ResumeLayout(false);
@@ -277,5 +322,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.CheckBox chkAllMail;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label15;
     }
 }

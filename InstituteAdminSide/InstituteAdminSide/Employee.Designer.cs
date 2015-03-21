@@ -31,6 +31,7 @@ namespace InstituteAdminSide
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employee));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
@@ -64,19 +65,25 @@ namespace InstituteAdminSide
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.listEmployeeData = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -85,7 +92,7 @@ namespace InstituteAdminSide
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Stencil Std", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(11, 91);
+            this.tabControl1.Location = new System.Drawing.Point(18, 16);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(890, 555);
@@ -482,27 +489,6 @@ namespace InstituteAdminSide
             this.tabPage3.Text = "View";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Brown;
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.tabControl1);
-            this.panel1.Location = new System.Drawing.Point(1, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(925, 672);
-            this.panel1.TabIndex = 23;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Stencil", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(11, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(222, 44);
-            this.label6.TabIndex = 42;
-            this.label6.Text = "Employee ";
-            // 
             // listEmployeeData
             // 
             this.listEmployeeData.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -545,6 +531,76 @@ namespace InstituteAdminSide
             this.columnHeader5.Text = "Contact";
             this.columnHeader5.Width = 152;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SaddleBrown;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(925, 672);
+            this.panel1.TabIndex = 23;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Stencil", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(11, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(222, 44);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "Employee ";
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Image = ((System.Drawing.Image)(resources.GetObject("label9.Image")));
+            this.label9.Location = new System.Drawing.Point(634, 8);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 60);
+            this.label9.TabIndex = 77;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Image = ((System.Drawing.Image)(resources.GetObject("label18.Image")));
+            this.label18.Location = new System.Drawing.Point(704, 8);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(63, 60);
+            this.label18.TabIndex = 76;
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Image = ((System.Drawing.Image)(resources.GetObject("label17.Image")));
+            this.label17.Location = new System.Drawing.Point(841, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(63, 60);
+            this.label17.TabIndex = 75;
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Image = ((System.Drawing.Image)(resources.GetObject("label16.Image")));
+            this.label16.Location = new System.Drawing.Point(773, 9);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(63, 60);
+            this.label16.TabIndex = 74;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DimGray;
+            this.panel2.Controls.Add(this.tabControl1);
+            this.panel2.Location = new System.Drawing.Point(0, 81);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(925, 591);
+            this.panel2.TabIndex = 78;
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -562,6 +618,7 @@ namespace InstituteAdminSide
             this.tabPage3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -609,6 +666,11 @@ namespace InstituteAdminSide
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
+        private Panel panel2;
+        private Label label9;
+        private Label label18;
+        private Label label17;
+        private Label label16;
     }
 }
 

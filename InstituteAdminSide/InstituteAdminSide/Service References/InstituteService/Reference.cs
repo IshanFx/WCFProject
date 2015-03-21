@@ -772,6 +772,12 @@ namespace InstituteAdminSide.InstituteService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/GetEmployeeLastId", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeeLastIdResponse")]
         int GetEmployeeLastId();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/GetEmployeeAllPaymentReport", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeeAllPaymentReportResponse")]
+        System.Data.DataSet GetEmployeeAllPaymentReport();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/GetEmployeeMonthYearpaymentReport", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeeMonthYearpaymentReportResponse")]
+        System.Data.DataSet GetEmployeeMonthYearpaymentReport(InstituteAdminSide.InstituteService.Employee employee);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -832,6 +838,14 @@ namespace InstituteAdminSide.InstituteService {
         public int GetEmployeeLastId() {
             return base.Channel.GetEmployeeLastId();
         }
+        
+        public System.Data.DataSet GetEmployeeAllPaymentReport() {
+            return base.Channel.GetEmployeeAllPaymentReport();
+        }
+        
+        public System.Data.DataSet GetEmployeeMonthYearpaymentReport(InstituteAdminSide.InstituteService.Employee employee) {
+            return base.Channel.GetEmployeeMonthYearpaymentReport(employee);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -861,6 +875,12 @@ namespace InstituteAdminSide.InstituteService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/GetTeacherLastId", ReplyAction="http://tempuri.org/ITeacherServices/GetTeacherLastIdResponse")]
         int GetTeacherLastId();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/GetTeacherAllPaymentReport", ReplyAction="http://tempuri.org/ITeacherServices/GetTeacherAllPaymentReportResponse")]
+        System.Data.DataSet GetTeacherAllPaymentReport();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/GetTeacherMonthYearpaymentReport", ReplyAction="http://tempuri.org/ITeacherServices/GetTeacherMonthYearpaymentReportResponse")]
+        System.Data.DataSet GetTeacherMonthYearpaymentReport(InstituteAdminSide.InstituteService.Teacher teacher);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -921,6 +941,14 @@ namespace InstituteAdminSide.InstituteService {
         public int GetTeacherLastId() {
             return base.Channel.GetTeacherLastId();
         }
+        
+        public System.Data.DataSet GetTeacherAllPaymentReport() {
+            return base.Channel.GetTeacherAllPaymentReport();
+        }
+        
+        public System.Data.DataSet GetTeacherMonthYearpaymentReport(InstituteAdminSide.InstituteService.Teacher teacher) {
+            return base.Channel.GetTeacherMonthYearpaymentReport(teacher);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -932,6 +960,18 @@ namespace InstituteAdminSide.InstituteService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseServices/UpdateCourse", ReplyAction="http://tempuri.org/ICourseServices/UpdateCourseResponse")]
         int UpdateCourse(InstituteAdminSide.InstituteService.Course course);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseServices/GetCourseData", ReplyAction="http://tempuri.org/ICourseServices/GetCourseDataResponse")]
+        System.Data.DataSet GetCourseData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseServices/GetCourseLastId", ReplyAction="http://tempuri.org/ICourseServices/GetCourseLastIdResponse")]
+        int GetCourseLastId();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseServices/GetAllCourseData", ReplyAction="http://tempuri.org/ICourseServices/GetAllCourseDataResponse")]
+        System.Data.DataSet GetAllCourseData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICourseServices/SearchCourse", ReplyAction="http://tempuri.org/ICourseServices/SearchCourseResponse")]
+        InstituteAdminSide.InstituteService.Course SearchCourse(int courseid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -967,6 +1007,22 @@ namespace InstituteAdminSide.InstituteService {
         
         public int UpdateCourse(InstituteAdminSide.InstituteService.Course course) {
             return base.Channel.UpdateCourse(course);
+        }
+        
+        public System.Data.DataSet GetCourseData() {
+            return base.Channel.GetCourseData();
+        }
+        
+        public int GetCourseLastId() {
+            return base.Channel.GetCourseLastId();
+        }
+        
+        public System.Data.DataSet GetAllCourseData() {
+            return base.Channel.GetAllCourseData();
+        }
+        
+        public InstituteAdminSide.InstituteService.Course SearchCourse(int courseid) {
+            return base.Channel.SearchCourse(courseid);
         }
     }
     

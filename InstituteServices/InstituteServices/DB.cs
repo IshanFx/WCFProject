@@ -11,8 +11,8 @@ namespace InstituteServices
     public class DB
     {
         string con = ConfigurationManager.ConnectionStrings["Studb"].ConnectionString;
-        MySqlConnection conn;
-        MySqlCommand cmd;
+        public MySqlConnection conn;
+        public MySqlCommand cmd;
         public DB()
         {
             conn = new MySqlConnection(con);

@@ -122,20 +122,29 @@ namespace InstituteAdminSide
 
         private void txtEmployeeYear_KeyDown(object sender, KeyEventArgs e)
         {
-            if (rbnEmployeeSearchPay.Checked && !String.IsNullOrEmpty(cmbEmployeeMonth.Text) && !String.IsNullOrEmpty(txtEmployeeYear.Text) && (e.KeyCode == Keys.Enter))
+            try
             {
-                employeeServices = new EmployeeServicesClient() ;
-                var employee = new InstituteService.Employee
+                if (rbnEmployeeSearchPay.Checked && !String.IsNullOrEmpty(cmbEmployeeMonth.Text) && !String.IsNullOrEmpty(txtEmployeeYear.Text) && (e.KeyCode == Keys.Enter))
                 {
-                    EmpPayMonth = cmbEmployeeMonth.Text ,
-                    EmpPayYear = int.Parse(txtEmployeeYear.Text) 
+                    employeeServices = new EmployeeServicesClient();
+                    var employee = new InstituteService.Employee
+                    {
+                        EmpPayMonth = cmbEmployeeMonth.Text,
+                        EmpPayYear = int.Parse(txtEmployeeYear.Text)
 
-                };
-                dataSet = employeeServices.GetEmployeeMonthYearpaymentReport(employee);
-                ClearListView(listEmployeepayment);
-                table = dataSet.Tables[0];
-                FillListView(table,listEmployeepayment);
+                    };
+                    dataSet = employeeServices.GetEmployeeMonthYearpaymentReport(employee);
+                    ClearListView(listEmployeepayment);
+                    table = dataSet.Tables[0];
+                    FillListView(table, listEmployeepayment);
+                }
             }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+            
         }
     }
 }

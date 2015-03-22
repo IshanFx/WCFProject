@@ -41,7 +41,13 @@ namespace InstituteServices
 
         [OperationContract]
         int GetEmployeeLastId();
-        }
+
+        [OperationContract]
+        DataSet GetEmployeeAllPaymentReport();
+
+        [OperationContract]
+        DataSet GetEmployeeMonthYearpaymentReport(Employee employee);
+    }
 
     [ServiceContract]
     public interface ITeacherServices {
@@ -67,10 +73,14 @@ namespace InstituteServices
         DataSet GetTeachersPaymentFull();
 
         [OperationContract]
-        int GetTeacherLastId(); 
-            
-        
-        
+        int GetTeacherLastId();
+
+        [OperationContract]
+        DataSet GetTeacherAllPaymentReport();
+
+        [OperationContract]
+        DataSet GetTeacherMonthYearpaymentReport(Teacher teacher);
+
     }
 
 
@@ -135,4 +145,7 @@ namespace InstituteServices
         int CheckLogIn(Account account);
     
     }
+
+
+    
 }

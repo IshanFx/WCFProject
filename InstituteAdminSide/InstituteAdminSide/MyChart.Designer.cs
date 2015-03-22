@@ -38,8 +38,10 @@ namespace InstituteAdminSide
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // chart1
@@ -48,7 +50,7 @@ namespace InstituteAdminSide
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(13, 109);
+            this.chart1.Location = new System.Drawing.Point(12, 36);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
             series1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
@@ -65,8 +67,8 @@ namespace InstituteAdminSide
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.chart1);
             this.panel1.Location = new System.Drawing.Point(-1, -3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1010, 583);
@@ -83,6 +85,15 @@ namespace InstituteAdminSide
             this.label6.TabIndex = 43;
             this.label6.Text = "Income Chart";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DimGray;
+            this.panel2.Controls.Add(this.chart1);
+            this.panel2.Location = new System.Drawing.Point(1, 72);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(946, 511);
+            this.panel2.TabIndex = 44;
+            // 
             // MyChart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -95,6 +106,7 @@ namespace InstituteAdminSide
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -104,5 +116,6 @@ namespace InstituteAdminSide
         private Chart chart1;
         private Panel panel1;
         private Label label6;
+        private Panel panel2;
     }
 }

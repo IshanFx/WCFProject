@@ -62,6 +62,18 @@
   <wsdl:message name="IEmployeeServices_GetEmployeeLastId_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetEmployeeLastIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IEmployeeServices_GetEmployeeAllPaymentReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeAllPaymentReport" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_GetEmployeeAllPaymentReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeAllPaymentReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_GetEmployeeMonthYearpaymentReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeMonthYearpaymentReport" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_GetEmployeeMonthYearpaymentReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeMonthYearpaymentReportResponse" />
+  </wsdl:message>
   <wsdl:message name="ITeacherServices_SaveTeacher_InputMessage">
     <wsdl:part name="parameters" element="tns:SaveTeacher" />
   </wsdl:message>
@@ -110,6 +122,18 @@
   <wsdl:message name="ITeacherServices_GetTeacherLastId_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTeacherLastIdResponse" />
   </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeacherAllPaymentReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherAllPaymentReport" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeacherAllPaymentReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherAllPaymentReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeacherMonthYearpaymentReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherMonthYearpaymentReport" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_GetTeacherMonthYearpaymentReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeacherMonthYearpaymentReportResponse" />
+  </wsdl:message>
   <wsdl:message name="ICourseServices_SaveCourse_InputMessage">
     <wsdl:part name="parameters" element="tns:SaveCourse" />
   </wsdl:message>
@@ -121,6 +145,30 @@
   </wsdl:message>
   <wsdl:message name="ICourseServices_UpdateCourse_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseServices_GetCourseData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCourseData" />
+  </wsdl:message>
+  <wsdl:message name="ICourseServices_GetCourseData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCourseDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseServices_GetCourseLastId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCourseLastId" />
+  </wsdl:message>
+  <wsdl:message name="ICourseServices_GetCourseLastId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCourseLastIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseServices_GetAllCourseData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCourseData" />
+  </wsdl:message>
+  <wsdl:message name="ICourseServices_GetAllCourseData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCourseDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseServices_SearchCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCourse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseServices_SearchCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCourseResponse" />
   </wsdl:message>
   <wsdl:message name="IStudentServices_SaveStudent_InputMessage">
     <wsdl:part name="parameters" element="tns:SaveStudent" />
@@ -173,6 +221,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeeLastId" message="tns:IEmployeeServices_GetEmployeeLastId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeeLastIdResponse" message="tns:IEmployeeServices_GetEmployeeLastId_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetEmployeeAllPaymentReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeeAllPaymentReport" message="tns:IEmployeeServices_GetEmployeeAllPaymentReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeeAllPaymentReportResponse" message="tns:IEmployeeServices_GetEmployeeAllPaymentReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeMonthYearpaymentReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeeMonthYearpaymentReport" message="tns:IEmployeeServices_GetEmployeeMonthYearpaymentReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeeMonthYearpaymentReportResponse" message="tns:IEmployeeServices_GetEmployeeMonthYearpaymentReport_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ITeacherServices">
     <wsdl:operation name="SaveTeacher">
@@ -207,6 +263,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/GetTeacherLastId" message="tns:ITeacherServices_GetTeacherLastId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/GetTeacherLastIdResponse" message="tns:ITeacherServices_GetTeacherLastId_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetTeacherAllPaymentReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/GetTeacherAllPaymentReport" message="tns:ITeacherServices_GetTeacherAllPaymentReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/GetTeacherAllPaymentReportResponse" message="tns:ITeacherServices_GetTeacherAllPaymentReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherMonthYearpaymentReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/GetTeacherMonthYearpaymentReport" message="tns:ITeacherServices_GetTeacherMonthYearpaymentReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/GetTeacherMonthYearpaymentReportResponse" message="tns:ITeacherServices_GetTeacherMonthYearpaymentReport_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ICourseServices">
     <wsdl:operation name="SaveCourse">
@@ -216,6 +280,22 @@
     <wsdl:operation name="UpdateCourse">
       <wsdl:input wsaw:Action="http://tempuri.org/ICourseServices/UpdateCourse" message="tns:ICourseServices_UpdateCourse_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICourseServices/UpdateCourseResponse" message="tns:ICourseServices_UpdateCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseServices/GetCourseData" message="tns:ICourseServices_GetCourseData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseServices/GetCourseDataResponse" message="tns:ICourseServices_GetCourseData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseLastId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseServices/GetCourseLastId" message="tns:ICourseServices_GetCourseLastId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseServices/GetCourseLastIdResponse" message="tns:ICourseServices_GetCourseLastId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCourseData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseServices/GetAllCourseData" message="tns:ICourseServices_GetAllCourseData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseServices/GetAllCourseDataResponse" message="tns:ICourseServices_GetAllCourseData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseServices/SearchCourse" message="tns:ICourseServices_SearchCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseServices/SearchCourseResponse" message="tns:ICourseServices_SearchCourse_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IStudentServices">
@@ -314,6 +394,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetEmployeeAllPaymentReport">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/GetEmployeeAllPaymentReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeMonthYearpaymentReport">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/GetEmployeeMonthYearpaymentReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_ITeacherServices" type="tns:ITeacherServices">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -389,6 +487,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetTeacherAllPaymentReport">
+      <soap:operation soapAction="http://tempuri.org/ITeacherServices/GetTeacherAllPaymentReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeacherMonthYearpaymentReport">
+      <soap:operation soapAction="http://tempuri.org/ITeacherServices/GetTeacherMonthYearpaymentReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_ICourseServices" type="tns:ICourseServices">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -403,6 +519,42 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateCourse">
       <soap:operation soapAction="http://tempuri.org/ICourseServices/UpdateCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseData">
+      <soap:operation soapAction="http://tempuri.org/ICourseServices/GetCourseData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseLastId">
+      <soap:operation soapAction="http://tempuri.org/ICourseServices/GetCourseLastId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCourseData">
+      <soap:operation soapAction="http://tempuri.org/ICourseServices/GetAllCourseData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCourse">
+      <soap:operation soapAction="http://tempuri.org/ICourseServices/SearchCourse" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

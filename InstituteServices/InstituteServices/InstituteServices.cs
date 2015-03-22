@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -34,16 +35,16 @@ namespace InstituteServices
 
         public Employee SearchEmployeeData(int employeeid)
         {
-                Employee employee = employee = new Employee();
+                Employee employee = new Employee();
                 db = new DB();
                 
                 string sql = "SELECT * FROM Employee WHERE empid = '"+employeeid+"'";
                 DataTable table = db.SelectQuery(sql);             
                      employee.EmpFName = table.Rows[0][1].ToString();
-                     employee.EmpLName = table.Rows[0][1].ToString();
-                     employee.EmpNIC = table.Rows[0][1].ToString();
-                     employee.EmpAddress = table.Rows[0][1].ToString();
-                     employee.EmpContact = table.Rows[0][1].ToString();
+                     employee.EmpLName = table.Rows[0][2].ToString();
+                     employee.EmpNIC = table.Rows[0][3].ToString();
+                     employee.EmpAddress = table.Rows[0][4].ToString();
+                     employee.EmpContact = table.Rows[0][5].ToString();
 
             return employee;
         }
@@ -346,5 +347,46 @@ namespace InstituteServices
             string sql = "SELECT MAX(teaid) FROM teachers";
             return new DB().GetLastIdQuery(sql);
         }
+
+
+        public DataSet GetEmployeeAllPaymentReport()
+        {
+            string sql= "SELECT E.EMPID,E.FNAME,E.LNAME,EP.YEAR,EP.MONTH,EP.PAYDATE,EP.AMOUNT FROM EMPLOYEE E JOIN EMPPAYMENTS EP ON E.EMPID=EP.EMPID";
+            table = new DB().SelectQuery(sql);
+            set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
+
+
+        public DataSet GetEmployeeMonthYearpaymentReport(Employee employee)
+        {
+            string sql = "SELECT E.EMPID,E.FNAME,E.LNAME,EP.YEAR,EP.MONTH,EP.PAYDATE,EP.AMOUNT FROM EMPLOYEE E JOIN EMPPAYMENTS EP ON E.EMPID=EP.EMPID WHERE EP.MONTH='"+employee.EmpPayMonth+"' AND EP.YEAR='"+employee.EmpPayYear+"'";
+            table = new DB().SelectQuery(sql);
+            set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
+
+
+        public DataSet GetTeacherAllPaymentReport()
+        {
+            string sql = "SELECT T.TEAID,T.FNAME,T.LNAME,TP.YEAR,TP.MONTH,TP.DATE,TP.AMOUNT FROM TEACHERS T JOIN TEACHERSPAYMENTS TP ON TP.TEACID=T.TEAID";
+            table = new DB().SelectQuery(sql);
+            set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
+
+        public DataSet GetTeacherMonthYearpaymentReport(Teacher teacher)
+        {
+            string sql = "SELECT T.TEAID,T.FNAME,T.LNAME,TP.YEAR,TP.MONTH,TP.DATE,TP.AMOUNT FROM TEACHERS T JOIN TEACHERSPAYMENTS TP ON TP.TEACID=T.TEAID WHERE TP.MONTH='"+teacher.TeacherPayMonth+"' AND TP.YEAR='"+teacher.TeacherPayYear+"'";
+            table = new DB().SelectQuery(sql);
+            set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
+
+        
     }
 }

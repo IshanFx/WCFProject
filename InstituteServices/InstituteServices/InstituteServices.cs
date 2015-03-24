@@ -9,6 +9,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.IO;
+using System.Drawing;
 
 namespace InstituteServices
 {
@@ -104,19 +105,10 @@ namespace InstituteServices
 
         public int SaveStudent(Student student)
         {
-            FileStream fst = new FileStream(student.stuPhoto, FileMode.Open, FileAccess.Read);
-            byte[] imagebt = new byte[fst.Length];
-            fst.Read(imagebt, 0, Convert.ToInt32(fst.Length));
-            fst.Dispose();
+            string sql = "INSERT INTO student VALUES('" + student.stuid + "','" + student.stuFName + "','" + student.stuLName + "','" + student.stuAddr + "','" + student.stuGender + "','" + student.stuContact + "',?pic)";
 
-            new DB().cmd.Parameters.Add("@img", MySqlDbType.MediumBlob);
-            new DB().cmd.Parameters["@img"].Value = imagebt;
-            string sql = "INSERT INTO student VALUES('" + student.stuid + "','" + student.stuFName + "','" + student.stuLName + "','" + student.stuAddr + "','" + student.stuGender + "','" + student.stuContact + "',@img)";
-            
-            new DB().DMLQuery(sql);
+            new DB().ImageSave(student.stuPhoto,sql);
 
-            //Console.WriteLine(imagebt);
-            //Console.ReadLine();
             return StudentClassSave(student);
         }
 
@@ -129,6 +121,16 @@ namespace InstituteServices
         public DataSet GetStuCourseData()
         {
             string sql = "SELECT cls.courseid,cls.day,cls.starttime,cls.endtime,cls.batch,CONCAT(tea.fname,' ',tea.lname) As Teacher FROM Teachers tea JOIN course cls WHERE tea.teaid = cls.teachid";
+            db = new DB();
+            DataTable table = db.SelectQuery(sql);
+            DataSet set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
+
+        public DataSet GetStuAttenReport()
+        {
+            string sql = "SELECT CONCAT(s.fname,' ',s.lname)AS Name,a.year AS Year,a.month AS Month,a.courseid AS COURSE_ID FROM student s,attendance a WHERE s.studentid=a.studentid AND a.attenID";
             db = new DB();
             DataTable table = db.SelectQuery(sql);
             DataSet set = new DataSet();
@@ -169,8 +171,8 @@ namespace InstituteServices
 
             return student;
         }
+        
 
-       
         public int studentlastid()
         {
 
@@ -187,25 +189,11 @@ namespace InstituteServices
             
         }
 
-        string status = "false";
+        
         public string stupaymentcheck(int stuid, int courseid)
         {
-            
-                status = null;
-                object a;
-                string sql = "SELECT month FROM studentpayments WHERE studentID='" + stuid + "' AND courseid='" + courseid + "' AND month='" + DateTime.Now.Date.ToString("MMMM") + "' ";
-                DataTable table =new DB().SelectQuery(sql); 
-                a=table.Rows[0][0]; 
-                if (a==DBNull.Value)
-                {
-                    status = null;
-                }
-                else
-                {
-                    return status="true";
-                }
-
-            return status; 
+            string sql = "SELECT month FROM studentpayments WHERE studentID='" + stuid + "' AND courseid='" + courseid + "' AND month='" + DateTime.Now.Date.ToString("MMMM") + "' ";
+            return new DB().GetData(sql); 
         }
 
         public int StudentPaySave(Student student,string month,int year,int amount)

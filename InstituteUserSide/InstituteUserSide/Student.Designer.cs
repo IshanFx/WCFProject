@@ -73,12 +73,12 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.StuAlDataGrid = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.StuAttenDataGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StuCosGrid)).BeginInit();
@@ -88,7 +88,7 @@
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StuAlDataGrid)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StuAttenDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -576,6 +576,7 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "View";
             this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Enter += new System.EventHandler(this.tabPage4_Enter);
             // 
             // StuAlDataGrid
             // 
@@ -593,7 +594,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.dataGridView1);
+            this.tabPage5.Controls.Add(this.StuAttenDataGrid);
             this.tabPage5.Location = new System.Drawing.Point(4, 28);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -601,17 +602,21 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Attendance Report";
             this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabPage5.Enter += new System.EventHandler(this.tabPage5_Enter);
             // 
-            // dataGridView1
+            // StuAttenDataGrid
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 27);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(913, 561);
-            this.dataGridView1.TabIndex = 0;
+            this.StuAttenDataGrid.AllowUserToAddRows = false;
+            this.StuAttenDataGrid.AllowUserToDeleteRows = false;
+            this.StuAttenDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.StuAttenDataGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.StuAttenDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.StuAttenDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StuAttenDataGrid.Location = new System.Drawing.Point(17, 27);
+            this.StuAttenDataGrid.Name = "StuAttenDataGrid";
+            this.StuAttenDataGrid.ReadOnly = true;
+            this.StuAttenDataGrid.Size = new System.Drawing.Size(913, 561);
+            this.StuAttenDataGrid.TabIndex = 0;
             // 
             // panel1
             // 
@@ -633,17 +638,6 @@
             this.panel2.Size = new System.Drawing.Size(997, 74);
             this.panel2.TabIndex = 2;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Stencil", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(11, 12);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(188, 44);
-            this.label15.TabIndex = 43;
-            this.label15.Text = "Student";
-            // 
             // label16
             // 
             this.label16.BackColor = System.Drawing.Color.Transparent;
@@ -661,6 +655,17 @@
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(63, 60);
             this.label18.TabIndex = 78;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Stencil", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(11, 12);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(188, 44);
+            this.label15.TabIndex = 43;
+            this.label15.Text = "Student";
             // 
             // Student
             // 
@@ -683,7 +688,7 @@
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.StuAlDataGrid)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StuAttenDataGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -737,7 +742,7 @@
         private System.Windows.Forms.TextBox txtStuAttenStuID;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button StuPaymentChkBtn;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView StuAttenDataGrid;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label15;

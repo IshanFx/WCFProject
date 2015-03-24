@@ -558,6 +558,9 @@ namespace InstituteUserSide.InstituteServices {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Drawing.Image getImgField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string stuAddrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -588,6 +591,19 @@ namespace InstituteUserSide.InstituteServices {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Drawing.Image getImg {
+            get {
+                return this.getImgField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.getImgField, value) != true)) {
+                    this.getImgField = value;
+                    this.RaisePropertyChanged("getImg");
+                }
             }
         }
         
@@ -772,6 +788,12 @@ namespace InstituteUserSide.InstituteServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/GetEmployeeLastId", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeeLastIdResponse")]
         int GetEmployeeLastId();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/GetEmployeeAllPaymentReport", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeeAllPaymentReportResponse")]
+        System.Data.DataSet GetEmployeeAllPaymentReport();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/GetEmployeeMonthYearpaymentReport", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeeMonthYearpaymentReportResponse")]
+        System.Data.DataSet GetEmployeeMonthYearpaymentReport(InstituteUserSide.InstituteServices.Employee employee);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -832,6 +854,14 @@ namespace InstituteUserSide.InstituteServices {
         public int GetEmployeeLastId() {
             return base.Channel.GetEmployeeLastId();
         }
+        
+        public System.Data.DataSet GetEmployeeAllPaymentReport() {
+            return base.Channel.GetEmployeeAllPaymentReport();
+        }
+        
+        public System.Data.DataSet GetEmployeeMonthYearpaymentReport(InstituteUserSide.InstituteServices.Employee employee) {
+            return base.Channel.GetEmployeeMonthYearpaymentReport(employee);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -861,6 +891,12 @@ namespace InstituteUserSide.InstituteServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/GetTeacherLastId", ReplyAction="http://tempuri.org/ITeacherServices/GetTeacherLastIdResponse")]
         int GetTeacherLastId();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/GetTeacherAllPaymentReport", ReplyAction="http://tempuri.org/ITeacherServices/GetTeacherAllPaymentReportResponse")]
+        System.Data.DataSet GetTeacherAllPaymentReport();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/GetTeacherMonthYearpaymentReport", ReplyAction="http://tempuri.org/ITeacherServices/GetTeacherMonthYearpaymentReportResponse")]
+        System.Data.DataSet GetTeacherMonthYearpaymentReport(InstituteUserSide.InstituteServices.Teacher teacher);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -920,6 +956,14 @@ namespace InstituteUserSide.InstituteServices {
         
         public int GetTeacherLastId() {
             return base.Channel.GetTeacherLastId();
+        }
+        
+        public System.Data.DataSet GetTeacherAllPaymentReport() {
+            return base.Channel.GetTeacherAllPaymentReport();
+        }
+        
+        public System.Data.DataSet GetTeacherMonthYearpaymentReport(InstituteUserSide.InstituteServices.Teacher teacher) {
+            return base.Channel.GetTeacherMonthYearpaymentReport(teacher);
         }
     }
     
@@ -1031,6 +1075,9 @@ namespace InstituteUserSide.InstituteServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/StudentPaySave", ReplyAction="http://tempuri.org/IStudentServices/StudentPaySaveResponse")]
         int StudentPaySave(InstituteUserSide.InstituteServices.Student student, string month, int year, int amount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/GetStuAttenReport", ReplyAction="http://tempuri.org/IStudentServices/GetStuAttenReportResponse")]
+        System.Data.DataSet GetStuAttenReport();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1098,6 +1145,10 @@ namespace InstituteUserSide.InstituteServices {
         
         public int StudentPaySave(InstituteUserSide.InstituteServices.Student student, string month, int year, int amount) {
             return base.Channel.StudentPaySave(student, month, year, amount);
+        }
+        
+        public System.Data.DataSet GetStuAttenReport() {
+            return base.Channel.GetStuAttenReport();
         }
     }
 }

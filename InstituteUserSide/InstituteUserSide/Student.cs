@@ -16,19 +16,19 @@ namespace InstituteUserSide
             InitializeComponent();
             GetCourseData();
             GetLastId();
-            txtstuPayFee.Text = DateTime.Now.Date.ToString("MMMM");
+            StuMrkAtnBtn.Enabled = false;
         }
 
         string gender;
         string pic;
         string filename;
         bool IsClick=false;
+        bool IsNotPay = false;
 
         
         
         private void button4_Click(object sender, EventArgs e)
         {
-
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "JPG Files(*.jpg)|*.jpg|PNG Files(*.png)|*.png|All Files(*.*)|*.*";
 
@@ -153,6 +153,7 @@ namespace InstituteUserSide
                 {
                     radioGenM.Checked = true;
                 }
+
             }
         }
 
@@ -160,6 +161,7 @@ namespace InstituteUserSide
         {
             GetLastId();
             IsClick = false;
+            IsNotPay = false;
             Savebtn.Enabled = true;
             txtcourseid.Text = "";
             txtfname.Text = "";
@@ -174,8 +176,8 @@ namespace InstituteUserSide
 
         public void GetLastId()
         {
-            InstituteServices.StudentServicesClient  client=new InstituteServices.StudentServicesClient();
-            txtstuid.Text=client.studentlastid().ToString();
+            InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
+            txtstuid.Text = client.studentlastid().ToString();
         }
 
         public void GenRadioChk()
@@ -191,7 +193,7 @@ namespace InstituteUserSide
         public void GetCourseData()
         {
             InstituteServices.StudentServicesClient  client=new InstituteServices.StudentServicesClient();
-            DataSet set =client.GetStuCourseData();
+            DataSet set = client.GetStuCourseData();
             DataTable table = set.Tables[0];
             StuCosGrid.DataSource = table;
         }
@@ -204,9 +206,17 @@ namespace InstituteUserSide
             StuAlDataGrid.DataSource = table;
         }
 
+        public void StuAttenReport()
+        {
+            InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
+            DataSet set = client.GetStuAttenReport();
+            DataTable table = set.Tables[0];
+            StuAttenDataGrid.DataSource = table;
+        }
+
         private void tabControl1_Enter(object sender, EventArgs e)
         {
-            stuAllData();
+          
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -224,20 +234,28 @@ namespace InstituteUserSide
             string status;
             try
             {
-                InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
-                status=client.stupaymentcheck(Convert.ToInt32(txtStuAttenStuID.Text),Convert.ToInt32(txtStuAttenCosID.Text));
-                if(status!=null)
+                if (txtStuAttenStuID.Text == "" || txtStuAttenCosID.Text == "")
                 {
-                    StuMrkAtnBtn.Enabled = true;
+                    MessageBox.Show("Enter Both ID", "Message");
                 }
                 else
                 {
-                    MessageBox.Show("Student Is Not Payment For This Month", "Message");
+                    InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
+                    status = client.stupaymentcheck(Convert.ToInt32(txtStuAttenStuID.Text), Convert.ToInt32(txtStuAttenCosID.Text));
+                    if (status != null)
+                    {
+                        StuMrkAtnBtn.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Student Is Not Payment For This Month", "Message");
+                        IsNotPay = true;
+                    }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -268,31 +286,66 @@ namespace InstituteUserSide
 
         private void StuPayBtn_Click(object sender, EventArgs e)
         {
-            InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
-            InstituteServices.Student student = new InstituteServices.Student()
+            if (StuAttenMonth.Text == "" || txtStuAtenYear.Text == "" || txtstuPayFee.Text == "")
             {
-                stuid = Convert.ToInt32(txtStuAttenStuID.Text),
-                stuCourseID = Convert.ToInt32(txtStuAttenCosID.Text)
-            };
-            string month = StuAttenMonth.Text;
-            int year = Convert.ToInt32(txtStuAtenYear.Text);
-            int amount = Convert.ToInt32(txtstuPayFee.Text);
-
-            int chk = client.StudentPaySave(student,month,year,amount);
-            if (chk > 0)
-            {
-                MessageBox.Show("Student Attendance Save");
-                clear();
+                MessageBox.Show("Fill All The Filds", "Message");
             }
             else
             {
-                MessageBox.Show("Student Attendance Not Save");
+                if (txtStuAttenCosID.Text == "" || txtStuAttenStuID.Text == "")
+                {
+                    MessageBox.Show("Fill Student ID & Course ID", "Message");
+                }
+                else
+                {
+                    InstituteServices.StudentServicesClient client = new InstituteServices.StudentServicesClient();
+                    InstituteServices.Student student = new InstituteServices.Student()
+                    {
+                        stuid = Convert.ToInt32(txtStuAttenStuID.Text),
+                        stuCourseID = Convert.ToInt32(txtStuAttenCosID.Text)
+                    };
+                    string month = StuAttenMonth.Text;
+                    int year = Convert.ToInt32(txtStuAtenYear.Text);
+                    int amount = Convert.ToInt32(txtstuPayFee.Text);
+
+                    int chk = client.StudentPaySave(student, month, year, amount);
+                    if (chk > 0)
+                    {
+                        MessageBox.Show("Student Payment Save", "Message");
+                        if (IsNotPay == true)
+                        {
+                            StuMrkAtnBtn.Enabled = true;
+                            StuAttenMonth.Text = "";
+                            txtStuAtenYear.Text = "";
+                            txtstuPayFee.Text = "";
+                        }
+                        else
+                        {
+                            clear();
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Student Attendance Not Save");
+                    }
+                }
             }
         }
 
         private void Student_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabPage4_Enter(object sender, EventArgs e)
+        {
+            stuAllData();
+        }
+
+        private void tabPage5_Enter(object sender, EventArgs e)
+        {
+            StuAttenReport();
         }
 
     }

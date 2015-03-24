@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace InstituteServices
 {
@@ -68,6 +69,7 @@ namespace InstituteServices
             set { StuCourseID = value; }
         }
 
+<<<<<<< HEAD
         public string StudentPayMonth
         {
             get { return studentPayMonth; }
@@ -79,5 +81,15 @@ namespace InstituteServices
             get { return studentPayYear; }
             set { studentPayYear = value; }
         }
+=======
+        private Image GetImg;
+
+        public Image getImg
+        {
+            get { return GetImg; }
+            set { GetImg = value; }
+        }
+        
+>>>>>>> 302ef7dee05757b62637807232a0af22fe5a3dd7
     }
 }

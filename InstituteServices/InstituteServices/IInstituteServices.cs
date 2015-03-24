@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Drawing;
 
 namespace InstituteServices
 {
@@ -138,6 +139,10 @@ namespace InstituteServices
 
         [OperationContract]
         int StudentPaySave(Student student,string month,int year,int amount);
+
+        [OperationContract]
+        DataSet GetStuAttenReport();
+
     
     }
     [ServiceContract]

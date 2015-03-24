@@ -92,6 +92,7 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Drawing.Image.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -128,6 +129,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\propic.gif" />
+  </ItemGroup>
+  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
@@ -143,13 +147,13 @@
     <None Include="Service References\InstituteServices\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\InstituteServices\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\InstituteServices\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\propic.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

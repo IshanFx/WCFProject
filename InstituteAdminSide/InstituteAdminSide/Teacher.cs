@@ -213,7 +213,20 @@ namespace InstituteAdminSide
 
         private void FillGridTeacher()
         {
-            
+            client = new TeacherServicesClient();
+            DataSet set = client.GetTeacherData();
+            DataTable table = set.Tables[0];
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                ListViewItem listView = new ListViewItem(table.Rows[i][0].ToString());
+                listView.SubItems.Add(table.Rows[i][1] + " " + table.Rows[i][2]);
+                listView.SubItems.Add(table.Rows[i][3].ToString());
+                listView.SubItems.Add(table.Rows[i][4].ToString());
+                listView.SubItems.Add(table.Rows[i][5].ToString());
+                listView.SubItems.Add(table.Rows[i][6].ToString());
+                listView.SubItems.Add(table.Rows[i][7].ToString());
+                listTeacherData.Items.Add(listView);
+            }
            
         }
 

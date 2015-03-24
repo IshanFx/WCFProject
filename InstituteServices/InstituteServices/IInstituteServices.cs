@@ -141,7 +141,6 @@ namespace InstituteServices
         int StudentPaySave(Student student,string month,int year,int amount);
 
         [OperationContract]
-<<<<<<< HEAD
         DataSet GetStudentIncomeReport();
 
         [OperationContract]
@@ -150,12 +149,10 @@ namespace InstituteServices
         [OperationContract]
         DataSet GetStudentYearpaymentReport(Student student);
 
-=======
         DataSet GetStuAttenReport();
 
-    
->>>>>>> 302ef7dee05757b62637807232a0af22fe5a3dd7
     }
+
     [ServiceContract]
     public interface IAccount {
         int CheckLogIn(Account account);

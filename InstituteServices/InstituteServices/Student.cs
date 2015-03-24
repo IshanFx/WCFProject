@@ -7,6 +7,9 @@ namespace InstituteServices
 {
     public class Student
     {
+        private string studentPayMonth;
+        private int studentPayYear;
+
         private int Stuid;
 
         public int stuid
@@ -64,7 +67,17 @@ namespace InstituteServices
             get { return StuCourseID; }
             set { StuCourseID = value; }
         }
-        
-        
+
+        public string StudentPayMonth
+        {
+            get { return studentPayMonth; }
+            set { studentPayMonth = value; }
+        }
+
+        public int StudentPayYear
+        {
+            get { return studentPayYear; }
+            set { studentPayYear = value; }
+        }
     }
 }

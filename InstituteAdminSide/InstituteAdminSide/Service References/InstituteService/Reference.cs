@@ -558,6 +558,12 @@ namespace InstituteAdminSide.InstituteService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StudentPayMonthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StudentPayYearField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string stuAddrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -588,6 +594,32 @@ namespace InstituteAdminSide.InstituteService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StudentPayMonth {
+            get {
+                return this.StudentPayMonthField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StudentPayMonthField, value) != true)) {
+                    this.StudentPayMonthField = value;
+                    this.RaisePropertyChanged("StudentPayMonth");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int StudentPayYear {
+            get {
+                return this.StudentPayYearField;
+            }
+            set {
+                if ((this.StudentPayYearField.Equals(value) != true)) {
+                    this.StudentPayYearField = value;
+                    this.RaisePropertyChanged("StudentPayYear");
+                }
             }
         }
         
@@ -1035,6 +1067,39 @@ namespace InstituteAdminSide.InstituteService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/UpdateStudent", ReplyAction="http://tempuri.org/IStudentServices/UpdateStudentResponse")]
         int UpdateStudent(InstituteAdminSide.InstituteService.Student student);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/SearchStudentDate", ReplyAction="http://tempuri.org/IStudentServices/SearchStudentDateResponse")]
+        InstituteAdminSide.InstituteService.Student SearchStudentDate(int studentid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/studentlastid", ReplyAction="http://tempuri.org/IStudentServices/studentlastidResponse")]
+        int studentlastid();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/GetStuCourseData", ReplyAction="http://tempuri.org/IStudentServices/GetStuCourseDataResponse")]
+        System.Data.DataSet GetStuCourseData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/GetAllStudentData", ReplyAction="http://tempuri.org/IStudentServices/GetAllStudentDataResponse")]
+        System.Data.DataSet GetAllStudentData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/StudentClassSave", ReplyAction="http://tempuri.org/IStudentServices/StudentClassSaveResponse")]
+        int StudentClassSave(InstituteAdminSide.InstituteService.Student student);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/StudentAttenSave", ReplyAction="http://tempuri.org/IStudentServices/StudentAttenSaveResponse")]
+        int StudentAttenSave(InstituteAdminSide.InstituteService.Student student, int month, int day, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/stupaymentcheck", ReplyAction="http://tempuri.org/IStudentServices/stupaymentcheckResponse")]
+        string stupaymentcheck(int stuid, int classid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/StudentPaySave", ReplyAction="http://tempuri.org/IStudentServices/StudentPaySaveResponse")]
+        int StudentPaySave(InstituteAdminSide.InstituteService.Student student, string month, int year, int amount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/GetStudentIncomeReport", ReplyAction="http://tempuri.org/IStudentServices/GetStudentIncomeReportResponse")]
+        System.Data.DataSet GetStudentIncomeReport();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/GetStudentPaymentReport", ReplyAction="http://tempuri.org/IStudentServices/GetStudentPaymentReportResponse")]
+        System.Data.DataSet GetStudentPaymentReport();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentServices/GetStudentYearpaymentReport", ReplyAction="http://tempuri.org/IStudentServices/GetStudentYearpaymentReportResponse")]
+        System.Data.DataSet GetStudentYearpaymentReport(InstituteAdminSide.InstituteService.Student student);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1070,6 +1135,50 @@ namespace InstituteAdminSide.InstituteService {
         
         public int UpdateStudent(InstituteAdminSide.InstituteService.Student student) {
             return base.Channel.UpdateStudent(student);
+        }
+        
+        public InstituteAdminSide.InstituteService.Student SearchStudentDate(int studentid) {
+            return base.Channel.SearchStudentDate(studentid);
+        }
+        
+        public int studentlastid() {
+            return base.Channel.studentlastid();
+        }
+        
+        public System.Data.DataSet GetStuCourseData() {
+            return base.Channel.GetStuCourseData();
+        }
+        
+        public System.Data.DataSet GetAllStudentData() {
+            return base.Channel.GetAllStudentData();
+        }
+        
+        public int StudentClassSave(InstituteAdminSide.InstituteService.Student student) {
+            return base.Channel.StudentClassSave(student);
+        }
+        
+        public int StudentAttenSave(InstituteAdminSide.InstituteService.Student student, int month, int day, int year) {
+            return base.Channel.StudentAttenSave(student, month, day, year);
+        }
+        
+        public string stupaymentcheck(int stuid, int classid) {
+            return base.Channel.stupaymentcheck(stuid, classid);
+        }
+        
+        public int StudentPaySave(InstituteAdminSide.InstituteService.Student student, string month, int year, int amount) {
+            return base.Channel.StudentPaySave(student, month, year, amount);
+        }
+        
+        public System.Data.DataSet GetStudentIncomeReport() {
+            return base.Channel.GetStudentIncomeReport();
+        }
+        
+        public System.Data.DataSet GetStudentPaymentReport() {
+            return base.Channel.GetStudentPaymentReport();
+        }
+        
+        public System.Data.DataSet GetStudentYearpaymentReport(InstituteAdminSide.InstituteService.Student student) {
+            return base.Channel.GetStudentYearpaymentReport(student);
         }
     }
 }

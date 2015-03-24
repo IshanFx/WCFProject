@@ -213,10 +213,8 @@ namespace InstituteAdminSide
 
         private void FillGridTeacher()
         {
-            client = new TeacherServicesClient();
-            DataSet set = client.GetTeacherData();
-            DataTable table = set.Tables[0];
-            gridTeacher.DataSource = table;
+            
+           
         }
 
         private void employeePaymentSave(object sender, EventArgs e)

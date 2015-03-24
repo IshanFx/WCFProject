@@ -28,9 +28,10 @@ namespace InstituteAdminSide
        
         private void Chart_Load(object sender, EventArgs e)
         {
+            chartTitle.Text = formName;
             if (type.Equals(1))
             {
-                chartTitle.Text = formName;
+                
                 Hashtable teacherHashtable = new Hashtable();
                 Reports.AddTeacherToHashtable(table, teacherHashtable);
 
@@ -42,7 +43,7 @@ namespace InstituteAdminSide
             }
             if (type.Equals(2))
             {
-                chartTitle.Text = formName;
+              
                 Hashtable employeeHashtable = new Hashtable();
                 Reports.AddEmployeeToHashtable(table, employeeHashtable);
 
@@ -52,6 +53,17 @@ namespace InstituteAdminSide
                 }
             }
 
+            if (type.Equals(3))
+            {
+               
+                Hashtable studentHashtable = new Hashtable();
+                Reports.AddStudentToHashtable(table, studentHashtable);
+
+                for (int i = 1; i < 13; i++)
+                {
+                    chartIncomePart.Series["Income"].Points.AddXY(i, studentHashtable[i]);
+                }
+            }
         }
 
        

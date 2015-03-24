@@ -138,7 +138,16 @@ namespace InstituteServices
 
         [OperationContract]
         int StudentPaySave(Student student,string month,int year,int amount);
-    
+
+        [OperationContract]
+        DataSet GetStudentIncomeReport();
+
+        [OperationContract]
+        DataSet GetStudentPaymentReport();
+
+        [OperationContract]
+        DataSet GetStudentYearpaymentReport(Student student);
+
     }
     [ServiceContract]
     public interface IAccount {

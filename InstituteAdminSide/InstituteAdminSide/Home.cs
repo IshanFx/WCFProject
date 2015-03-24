@@ -57,5 +57,11 @@ namespace InstituteAdminSide
             Reports reports =new Reports();
             reports.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Email mail = new Email();
+            mail.Show();
+        }
     }
 }

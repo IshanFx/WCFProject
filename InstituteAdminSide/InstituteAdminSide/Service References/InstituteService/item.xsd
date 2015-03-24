@@ -45,6 +45,8 @@
   <xs:element name="Course" nillable="true" type="tns:Course" />
   <xs:complexType name="Student">
     <xs:sequence>
+      <xs:element minOccurs="0" name="StudentPayMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StudentPayYear" type="xs:int" />
       <xs:element minOccurs="0" name="stuAddr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="stuContact" type="xs:int" />
       <xs:element minOccurs="0" name="stuCourseID" type="xs:int" />

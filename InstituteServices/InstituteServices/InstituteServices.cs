@@ -387,6 +387,37 @@ namespace InstituteServices
             return set;
         }
 
-        
+
+        public DataSet GetStudentIncomeReport()
+        {
+            string sql = "SELECT SUM(amount),month FROM studentpayments GROUP BY month";
+            db = new DB();
+            table = db.SelectQuery(sql);
+            set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
+
+
+        public DataSet GetStudentPaymentReport()
+        {
+            string sql = "SELECT s.fname,s.lname,sp.year,sp.month,sp.amount,sp.courseid,c.batch FROM student s,studentpayments sp,course c WHERE s.studentid=sp.studentid AND c.courseid=sp.courseid ORDER BY s.fname";
+            db = new DB();
+            table = db.SelectQuery(sql);
+            set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
+
+
+        public DataSet GetStudentYearpaymentReport(Student student)
+        {
+            string sql = "SELECT s.fname,s.lname,sp.year,sp.month,sp.amount,sp.courseid,c.batch FROM student s,studentpayments sp,course c WHERE s.studentid=sp.studentid AND c.courseid=sp.courseid AND sp.year='"+student.StudentPayYear+"' AND sp.month='"+student.StudentPayMonth+"' ORDER BY s.fname";
+            db = new DB();
+            table = db.SelectQuery(sql);
+            set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+        }
     }
 }

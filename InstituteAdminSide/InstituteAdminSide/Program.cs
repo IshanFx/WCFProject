@@ -13,7 +13,7 @@ namespace InstituteAdminSide
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Reports());
+            Application.Run(new Home());
         }
     }
 }

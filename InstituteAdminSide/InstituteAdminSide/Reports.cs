@@ -12,6 +12,7 @@ namespace InstituteAdminSide
     {
         public TeacherServicesClient teacherServices;
         public EmployeeServicesClient employeeServices;
+        public StudentServicesClient StudentServices;
         public DataSet dataSet;
         public DataTable table;
         public ListViewItem listView;
@@ -19,11 +20,6 @@ namespace InstituteAdminSide
         public Reports()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -49,7 +45,7 @@ namespace InstituteAdminSide
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Data Can't Retrieve","Cannot get data",MessageBoxButtons.OK,MessageBoxIcon.Error)
+                MessageBox.Show("Data Can't Retrieve", "Cannot get data", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
@@ -93,7 +89,7 @@ namespace InstituteAdminSide
             }
             catch (Exception)
             {
-                MessageBox.Show("Data Can't Retrieve","Cannot get data",MessageBoxButtons.OK,MessageBoxIcon.Error)
+                MessageBox.Show("Data Can't Retrieve", "Cannot get data", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
            
         }
@@ -107,7 +103,7 @@ namespace InstituteAdminSide
         //search teacher income details when press enter
         private void txtTeacherYear_KeyDown(object sender, KeyEventArgs e)
         {
-            if (String.IsNullOrEmpty(cmbTeacherMonth.Text) || String.IsNullOrEmpty(txtTeacherYear.Text))
+            if ((String.IsNullOrEmpty(cmbTeacherMonth.Text) || String.IsNullOrEmpty(txtTeacherYear.Text))&& e.KeyCode==Keys.Enter)
             {
                 MessageBox.Show("Please Fill Month And Year", "Fill Data", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
@@ -132,11 +128,12 @@ namespace InstituteAdminSide
                 }
                 catch (FormatException formatException)
                 {
-                    MessageBox.Show("Please check year and month","Check data",MessageBoxButtons.OK,MessageBoxIcon.Exclamation)
+                    MessageBox.Show("Please check year and month", "Check data", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.Message,"Check data",MessageBoxButtons.OK,MessageBoxIcon.Exclamation)
+                    MessageBox.Show(exception.Message, "Check data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
 
@@ -149,11 +146,12 @@ namespace InstituteAdminSide
             try
             {
 
-                if (String.IsNullOrEmpty(cmbEmployeeMonth.Text)|| String.IsNullOrEmpty(txtEmployeeYear.Text))
+                if ((String.IsNullOrEmpty(cmbEmployeeMonth.Text)|| String.IsNullOrEmpty(txtEmployeeYear.Text)) &&  (e.KeyCode==Keys.Enter))
                 {
                     MessageBox.Show("Please Fill Month And Year", "Fill Data", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
                 }
+
                 else if (rbnEmployeeSearchPay.Checked && !String.IsNullOrEmpty(cmbEmployeeMonth.Text) && !String.IsNullOrEmpty(txtEmployeeYear.Text) && (e.KeyCode == Keys.Enter))
                 {
                    
@@ -169,20 +167,19 @@ namespace InstituteAdminSide
                         table = dataSet.Tables[0];
                         FillListView(table, listEmployeepayment);
                     
-
-                    
-                   
+ 
                 }
 
             }
             catch (FormatException formatException)
             {
-                MessageBox.Show("Please check year and month","Check data",MessageBoxButtons.OK,MessageBoxIcon.Exclamation)
+                MessageBox.Show("Please check year and month", "Check data", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
             }
 
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message,"Check data",MessageBoxButtons.OK,MessageBoxIcon.Exclamation)
+                MessageBox.Show(exception.Message, "Check data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             
         }
@@ -194,7 +191,24 @@ namespace InstituteAdminSide
 
         private void Reports_Load(object sender, EventArgs e)
         {
+            //student payment view
+           
+        }
 
+      
+
+        private void FillStudentListView(DataTable table)
+        {
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                ListViewItem list = new ListViewItem(table.Rows[i][0].ToString() + " " + table.Rows[i][1].ToString());
+                list.SubItems.Add(table.Rows[i][2].ToString());
+                list.SubItems.Add(table.Rows[i][3].ToString());
+                list.SubItems.Add(table.Rows[i][4].ToString());
+                list.SubItems.Add(table.Rows[i][5].ToString());
+                list.SubItems.Add(table.Rows[i][6].ToString());
+                listStudentPayment.Items.Add(list);
+            }
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -207,40 +221,117 @@ namespace InstituteAdminSide
         {
             employeeServices = new EmployeeServicesClient();
             teacherServices = new TeacherServicesClient();
+            StudentServices = new StudentServicesClient();
+
 
             DataSet dataSetEmployee = employeeServices.GetEmployeePayment();
             DataSet dataSetTeacher = teacherServices.GetTeachersIncome();
+            DataSet dataSetStudent = StudentServices.GetStudentIncomeReport();
 
             var hashtableTeacher = new Hashtable();
             var hashtableEmployee = new Hashtable();
+            var hashtableStudent = new Hashtable();
 
             DataTable dataTableEmployee = dataSetEmployee.Tables[0];
             DataTable dataTableTeacher = dataSetTeacher.Tables[0];
+            DataTable dataTableStudent = dataSetStudent.Tables[0];
 
             
             AddEmployeeToHashtable(dataTableEmployee, hashtableEmployee);
             AddTeacherToHashtable(dataTableTeacher, hashtableTeacher);
+            AddStudentToHashtable(dataTableStudent, hashtableStudent);
 
-            CalculateIncome(hashtableEmployee, hashtableTeacher);
+            CalculateIncome(hashtableEmployee, hashtableTeacher,hashtableStudent);
+        }
+
+        //add student income to the hash table
+        public static void AddStudentToHashtable(DataTable dataTableStudent, Hashtable hashtableStudent)
+        {
+            for (int i = 0; i < dataTableStudent.Rows.Count; i++)
+            {
+                if (dataTableStudent.Rows[i][1].Equals("January"))
+                {
+                    hashtableStudent.Add(1, dataTableStudent.Rows[i][0]);
+                    continue;
+                }
+                if (dataTableStudent.Rows[i][1].Equals("February"))
+                {
+                    hashtableStudent.Add(2, dataTableStudent.Rows[i][0]);
+                    continue;
+                }
+                if (dataTableStudent.Rows[i][1].Equals("March"))
+                {
+                    hashtableStudent.Add(3, dataTableStudent.Rows[i][0]);
+                    continue;
+                }
+                if (dataTableStudent.Rows[i][1].Equals("April"))
+                {
+                    hashtableStudent.Add(4, dataTableStudent.Rows[i][0]);
+                    continue;
+                }
+                if (dataTableStudent.Rows[i][1].Equals("May"))
+                {
+                    hashtableStudent.Add(5, dataTableStudent.Rows[i][0]);
+                    continue;
+                }
+                if (dataTableStudent.Rows[i][1].Equals("June"))
+                {
+                    hashtableStudent.Add(6, dataTableStudent.Rows[i][0]);
+                    continue;
+                }
+                if (dataTableStudent.Rows[i][1].Equals("July"))
+                {
+                    hashtableStudent.Add(7, dataTableStudent.Rows[i][0]);
+                    continue;
+                }
+                if (dataTableStudent.Rows[i][1].Equals("August"))
+                {
+                    hashtableStudent.Add(8, dataTableStudent.Rows[i][0]);
+                    continue;
+                }
+                if (dataTableStudent.Rows[i][1].Equals("September"))
+                {
+                    hashtableStudent.Add(9, dataTableStudent.Rows[i][0]);
+                    continue;
+                }
+                if (dataTableStudent.Rows[i][1].Equals("October"))
+                {
+                    hashtableStudent.Add(10, dataTableStudent.Rows[i][0]);
+                    continue;
+                }
+                if (dataTableStudent.Rows[i][1].Equals("November"))
+                {
+                    hashtableStudent.Add(11, dataTableStudent.Rows[i][0]);
+                    continue;
+                }
+                if (dataTableStudent.Rows[i][1].Equals("December"))
+                {
+                    hashtableStudent.Add(12, dataTableStudent.Rows[i][0]);
+                }
+            }
         }
 
         //calculate income from the hashtable data
-        private void CalculateIncome(Hashtable hashtableEmployee, Hashtable hashtableTeacher)
+        private void CalculateIncome(Hashtable hashtableEmployee, Hashtable hashtableTeacher,Hashtable hashtableStudent)
         {
             double totalEmployee;
             double totalTeacher;
+            double totalStudent;
             double total;
             for (int i = 1; i < 13; i++)
             {
                 totalEmployee = 0;
                 totalTeacher = 0;
+                totalStudent = 0;
 
                 if (hashtableEmployee[i] != null)
                     totalEmployee = Double.Parse(hashtableEmployee[i].ToString());
                 if (hashtableTeacher[i] != null)
                     totalTeacher = Double.Parse(hashtableTeacher[i].ToString());
+                if(hashtableStudent[i] !=null )
+                    totalStudent = Double.Parse(hashtableStudent[i].ToString());
 
-                total = totalEmployee + totalTeacher;
+                total = totalEmployee + totalTeacher + totalStudent;
                 hashtableTotal.Add(i, total);
             }
 
@@ -402,6 +493,68 @@ namespace InstituteAdminSide
             chart.Show();
         }
 
-       
+        private void StudentIncomehartLoad(object sender, EventArgs e)
+        {
+            StudentServices = new StudentServicesClient();
+            DataSet set = StudentServices.GetStudentIncomeReport();
+            MyChart chart = new MyChart(set, "Student", 3);
+            chart.Show();
+        }
+
+        private void studentYearpaymentSearch(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void rbnStudentAllpayment_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbnStudentAllpayment.Checked)
+            {
+                ClearListView(listStudentPayment);
+                StudentServices = new StudentServicesClient();
+                DataSet set = StudentServices.GetStudentPaymentReport();
+                DataTable table = set.Tables[0];
+
+
+                FillStudentListView(table);
+            }
+        }
+
+        private void StudentPaymentYearSelect(object sender, KeyEventArgs e)
+        {
+            if ((String.IsNullOrEmpty(cmbStudentPayMonth.Text) || String.IsNullOrEmpty(txtStudentPayYear.Text)) && e.KeyCode==Keys.Enter)
+            {
+                MessageBox.Show("Please Fill Month And Year", "Fill Data", MessageBoxButtons.OK,
+                      MessageBoxIcon.Exclamation);
+            }
+            else if (rbnStudentSearchPayment.Checked && !String.IsNullOrEmpty(cmbStudentPayMonth.Text) && !String.IsNullOrEmpty(txtStudentPayYear.Text) && (e.KeyCode == Keys.Enter))
+            {
+                ClearListView(listStudentPayment);
+                StudentServices = new StudentServicesClient();
+                var student = new InstituteService.Student()
+                {
+                    StudentPayMonth = cmbStudentPayMonth.Text,
+                    StudentPayYear = int.Parse(txtStudentPayYear.Text.ToString()) 
+                };
+
+                DataSet set = StudentServices.GetStudentYearpaymentReport(student);
+                DataTable table = set.Tables[0];
+
+
+                FillStudentListView(table);
+            }
+        }
+
+        private void rbnStudentSearchPayment_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddMonthToCmb()
+        {
+            String[] months = {"January","February","March","April","May","June","July","August","September","October","November","December"};
+        }
+
+
     }
 }

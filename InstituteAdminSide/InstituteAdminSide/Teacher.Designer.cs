@@ -69,19 +69,25 @@ namespace InstituteAdminSide
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.gridTeacher = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.listTeacherData = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridTeacher)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -393,7 +399,7 @@ namespace InstituteAdminSide
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(894, 582);
+            this.tabPage2.Size = new System.Drawing.Size(894, 566);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Payment";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -489,22 +495,14 @@ namespace InstituteAdminSide
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.gridTeacher);
+            this.tabPage3.Controls.Add(this.listTeacherData);
             this.tabPage3.Location = new System.Drawing.Point(4, 31);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(894, 582);
+            this.tabPage3.Size = new System.Drawing.Size(894, 566);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "View";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // gridTeacher
-            // 
-            this.gridTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridTeacher.Location = new System.Drawing.Point(14, 21);
-            this.gridTeacher.Name = "gridTeacher";
-            this.gridTeacher.Size = new System.Drawing.Size(855, 518);
-            this.gridTeacher.TabIndex = 0;
             // 
             // panel1
             // 
@@ -519,26 +517,6 @@ namespace InstituteAdminSide
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(928, 714);
             this.panel1.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Stencil", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(14, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 44);
-            this.label4.TabIndex = 63;
-            this.label4.Text = "Teacher";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.Controls.Add(this.tabControl1);
-            this.panel2.Location = new System.Drawing.Point(3, 81);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(925, 630);
-            this.panel2.TabIndex = 64;
             // 
             // label18
             // 
@@ -576,6 +554,78 @@ namespace InstituteAdminSide
             this.label15.Size = new System.Drawing.Size(63, 60);
             this.label15.TabIndex = 75;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DimGray;
+            this.panel2.Controls.Add(this.tabControl1);
+            this.panel2.Location = new System.Drawing.Point(3, 81);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(925, 630);
+            this.panel2.TabIndex = 64;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Stencil", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(14, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(185, 44);
+            this.label4.TabIndex = 63;
+            this.label4.Text = "Teacher";
+            // 
+            // listTeacherData
+            // 
+            this.listTeacherData.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader5,
+            this.columnHeader4,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.listTeacherData.Font = new System.Drawing.Font("Adobe Hebrew", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listTeacherData.GridLines = true;
+            this.listTeacherData.Location = new System.Drawing.Point(6, 20);
+            this.listTeacherData.Name = "listTeacherData";
+            this.listTeacherData.Size = new System.Drawing.Size(848, 477);
+            this.listTeacherData.TabIndex = 2;
+            this.listTeacherData.UseCompatibleStateImageBehavior = false;
+            this.listTeacherData.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Id";
+            this.columnHeader1.Width = 71;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Name";
+            this.columnHeader2.Width = 162;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Nic";
+            this.columnHeader3.Width = 136;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Address";
+            this.columnHeader4.Width = 257;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Contact";
+            this.columnHeader5.Width = 152;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "E-mail";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Subject";
+            // 
             // Teacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -591,7 +641,6 @@ namespace InstituteAdminSide
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridTeacher)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -634,7 +683,6 @@ namespace InstituteAdminSide
         private Button btnTeacherUpdate;
         private Button btnTeacherSave;
         private TabPage tabPage3;
-        private DataGridView gridTeacher;
         private Panel panel1;
         private Label label4;
         private RadioButton rbnNICV;
@@ -646,5 +694,13 @@ namespace InstituteAdminSide
         private Label label16;
         private Label label15;
         private Panel panel2;
+        private ListView listTeacherData;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
+        private ColumnHeader columnHeader7;
     }
 }

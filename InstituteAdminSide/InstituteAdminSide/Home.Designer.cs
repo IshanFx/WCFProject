@@ -39,18 +39,18 @@ namespace InstituteAdminSide
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.timeMenuButton = new System.Windows.Forms.Timer(this.components);
             this.timerMenuButtonMin = new System.Windows.Forms.Timer(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
@@ -146,6 +146,41 @@ namespace InstituteAdminSide
             this.panel1.Size = new System.Drawing.Size(1158, 606);
             this.panel1.TabIndex = 18;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DimGray;
+            this.panel3.Controls.Add(this.lblTime);
+            this.panel3.Controls.Add(this.lblDate);
+            this.panel3.Location = new System.Drawing.Point(0, 468);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1104, 134);
+            this.panel3.TabIndex = 23;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.Font = new System.Drawing.Font("Stencil", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(53, 23);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(184, 76);
+            this.lblTime.TabIndex = 19;
+            this.lblTime.Text = "Time";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.Font = new System.Drawing.Font("Stencil", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.White;
+            this.lblDate.Location = new System.Drawing.Point(695, 23);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(191, 76);
+            this.lblDate.TabIndex = 20;
+            this.lblDate.Text = "Date";
+            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DarkBlue;
@@ -162,6 +197,7 @@ namespace InstituteAdminSide
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // timeMenuButton
             // 
@@ -206,41 +242,6 @@ namespace InstituteAdminSide
             this.label1.TabIndex = 11;
             this.label1.Text = "ACME";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DimGray;
-            this.panel3.Controls.Add(this.lblTime);
-            this.panel3.Controls.Add(this.lblDate);
-            this.panel3.Location = new System.Drawing.Point(0, 468);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1104, 134);
-            this.panel3.TabIndex = 23;
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblTime.Font = new System.Drawing.Font("Stencil", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(53, 23);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(184, 76);
-            this.lblTime.TabIndex = 19;
-            this.lblTime.Text = "Time";
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblDate.Font = new System.Drawing.Font("Stencil", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(695, 23);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(191, 76);
-            this.lblDate.TabIndex = 20;
-            this.lblDate.Text = "Date";
-            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,10 +254,10 @@ namespace InstituteAdminSide
             this.Name = "Home";
             this.Text = "Home";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

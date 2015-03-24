@@ -74,6 +74,7 @@ namespace InstituteAdminSide
             this.label4 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.chartIncome = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -82,7 +83,6 @@ namespace InstituteAdminSide
             this.label15 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.reportTab.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -301,9 +301,9 @@ namespace InstituteAdminSide
             this.btnTeacherIncomeChart.Name = "btnTeacherIncomeChart";
             this.btnTeacherIncomeChart.Size = new System.Drawing.Size(207, 36);
             this.btnTeacherIncomeChart.TabIndex = 17;
-            this.btnTeacherIncomeChart.Text = "Income Chart";
+            this.btnTeacherIncomeChart.Text = "Payment";
             this.btnTeacherIncomeChart.UseVisualStyleBackColor = false;
-            this.btnTeacherIncomeChart.Click += new System.EventHandler(this.button2_Click);
+            this.btnTeacherIncomeChart.Click += new System.EventHandler(this.TeacherIncomeChar_load);
             // 
             // tabPage5
             // 
@@ -451,9 +451,9 @@ namespace InstituteAdminSide
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(207, 36);
             this.button5.TabIndex = 19;
-            this.button5.Text = "Income Chart";
+            this.button5.Text = "Payment";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.EmployeeChart_load);
             // 
             // tabPage1
             // 
@@ -466,6 +466,18 @@ namespace InstituteAdminSide
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Total Income";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Peru;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(28, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(207, 36);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Refresh";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // chartIncome
             // 
@@ -554,18 +566,6 @@ namespace InstituteAdminSide
             this.label6.Size = new System.Drawing.Size(179, 49);
             this.label6.TabIndex = 16;
             this.label6.Text = "Report";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Peru;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(28, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(207, 36);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Refresh";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // Reports
             // 

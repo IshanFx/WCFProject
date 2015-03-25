@@ -213,7 +213,7 @@ namespace InstituteAdminSide
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            GetIncomeToChart();
+            chartIncome.Series["Income"].Points.Clear();
         }
 
         //Data need to get Income Details
@@ -223,10 +223,24 @@ namespace InstituteAdminSide
             teacherServices = new TeacherServicesClient();
             StudentServices = new StudentServicesClient();
 
+            InstituteService.Student student = new InstituteService.Student
+            {
+                StudentPayYear = int.Parse(txtIncomeYear.Text) 
+            };
 
-            DataSet dataSetEmployee = employeeServices.GetEmployeePayment();
-            DataSet dataSetTeacher = teacherServices.GetTeachersIncome();
-            DataSet dataSetStudent = StudentServices.GetStudentIncomeReport();
+            InstituteService.Employee employee = new InstituteService.Employee
+            {
+                EmpPayYear = int.Parse(txtIncomeYear.Text) 
+            };
+
+            InstituteService.Teacher teacher = new InstituteService.Teacher
+            {
+                TeacherPayYear = int.Parse(txtIncomeYear.Text) 
+            };
+
+            DataSet dataSetEmployee = employeeServices.GetEmployeePayment(employee);
+            DataSet dataSetTeacher = teacherServices.GetTeachersIncome(teacher);
+            DataSet dataSetStudent = StudentServices.GetStudentIncomeReport(student);
 
             var hashtableTeacher = new Hashtable();
             var hashtableEmployee = new Hashtable();
@@ -339,6 +353,9 @@ namespace InstituteAdminSide
             {
                 chartIncome.Series["Income"].Points.AddXY(i, hashtableTotal[i]);
             }
+            hashtableEmployee.Clear();
+            hashtableTeacher.Clear();
+            hashtableStudent.Clear();
         }
 
         //add month and total to teacher hashtable
@@ -479,25 +496,42 @@ namespace InstituteAdminSide
         private void TeacherIncomeChar_load(object sender, EventArgs e)
         {
             teacherServices = new TeacherServicesClient();
-            DataSet set = teacherServices.GetTeachersIncome();
-            MyChart chart = new MyChart(set,"Teacher",1);
+           
+
+            InstituteService.Teacher teacher = new InstituteService.Teacher
+            {
+                TeacherPayYear = int.Parse(DateTime.Now.ToString("yyyy"))
+            };
+
+            DataSet set = teacherServices.GetTeachersIncome(teacher);
+            MyChart chart = new MyChart(set,"Teacher Payment",1);
             chart.Show();
         }
 
         //load chart of income details of employee
         private void EmployeeChart_load(object sender, EventArgs e)
         {
+           
+
+            InstituteService.Employee employee = new InstituteService.Employee
+            {
+                EmpPayYear = int.Parse(DateTime.Now.ToString("yyyy"))
+            };
             employeeServices = new EmployeeServicesClient();
-            DataSet set = employeeServices.GetEmployeePayment();
-            MyChart chart = new MyChart(set, "Employee",2);
+            DataSet set = employeeServices.GetEmployeePayment(employee);
+            MyChart chart = new MyChart(set, "Employee Payment",2);
             chart.Show();
         }
 
         private void StudentIncomehartLoad(object sender, EventArgs e)
         {
+            InstituteService.Student student = new InstituteService.Student
+            {
+                StudentPayYear = int.Parse(DateTime.Now.ToString("yyyy"))
+            };
             StudentServices = new StudentServicesClient();
-            DataSet set = StudentServices.GetStudentIncomeReport();
-            MyChart chart = new MyChart(set, "Student", 3);
+            DataSet set = StudentServices.GetStudentIncomeReport(student);
+            MyChart chart = new MyChart(set, "Student Payment", 3);
             chart.Show();
         }
 
@@ -550,10 +584,33 @@ namespace InstituteAdminSide
 
         }
 
-        private void AddMonthToCmb()
-        {
-            String[] months = {"January","February","March","April","May","June","July","August","September","October","November","December"};
+        private void TotalIncomeChart(object sender, KeyEventArgs e)
+       {
+            try
+            {
+                if (String.IsNullOrEmpty(txtIncomeYear.Text) && (e.KeyCode == Keys.Enter))
+                {
+                    MessageBox.Show("Please Enter Year", "Year require", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
+                else if (txtIncomeYear.TextLength != 4 && (e.KeyCode == Keys.Enter))
+                {
+                    MessageBox.Show("Please enter year as 4 Number.Ex 2014", "Year require", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
+
+                else if ((txtIncomeYear.Text.Length == 4) && (e.KeyCode == Keys.Enter))
+                {
+                    GetIncomeToChart();
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+
         }
+
+       
 
 
     }

@@ -269,9 +269,9 @@ namespace InstituteServices
         }
 
 
-        public DataSet GetTeachersIncome()
+        public DataSet GetTeachersIncome(Teacher teacher)
         {
-            string sql = "SELECT SUM(amount),month FROM teacherspayments GROUP BY month order by teacPayID";
+            string sql = "SELECT SUM(amount),month FROM teacherspayments WHERE year='"+teacher.TeacherPayYear+"' GROUP BY month ";
             db = new DB();
             table = db.SelectQuery(sql);
             set = new DataSet();
@@ -312,9 +312,9 @@ namespace InstituteServices
         }
 
 
-        public DataSet GetEmployeePayment()
+        public DataSet GetEmployeePayment(Employee employee)
         {
-            string sql = "SELECT SUM(amount),month FROM emppayments GROUP BY month order by payid";
+            string sql = "SELECT SUM(amount),month FROM emppayments WHERE YEAR='"+employee.EmpPayYear+"' GROUP BY month order by payid";
             db = new DB();
             table = db.SelectQuery(sql);
             set = new DataSet();
@@ -376,9 +376,9 @@ namespace InstituteServices
         }
 
 
-        public DataSet GetStudentIncomeReport()
+        public DataSet GetStudentIncomeReport(Student student)
         {
-            string sql = "SELECT SUM(amount),month FROM studentpayments GROUP BY month";
+            string sql = "SELECT SUM(amount),month FROM studentpayments WHERE year='"+student.StudentPayYear+"' GROUP BY month";
             db = new DB();
             table = db.SelectQuery(sql);
             set = new DataSet();

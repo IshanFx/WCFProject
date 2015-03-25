@@ -38,6 +38,20 @@ namespace InstituteAdminSide
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reports));
             this.reportTab = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbnStudentAllpayment = new System.Windows.Forms.RadioButton();
+            this.rbnStudentSearchPayment = new System.Windows.Forms.RadioButton();
+            this.txtStudentPayYear = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbStudentPayMonth = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.listStudentPayment = new System.Windows.Forms.ListView();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnStudentIncomeChart = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -81,22 +95,11 @@ namespace InstituteAdminSide
             this.label15 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.listStudentPayment = new System.Windows.Forms.ListView();
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbnStudentAllpayment = new System.Windows.Forms.RadioButton();
-            this.rbnStudentSearchPayment = new System.Windows.Forms.RadioButton();
-            this.txtStudentPayYear = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmbStudentPayMonth = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txtIncomeYear = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.reportTab.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -105,7 +108,6 @@ namespace InstituteAdminSide
             ((System.ComponentModel.ISupportInitialize)(this.chartIncome)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // reportTab
@@ -136,6 +138,144 @@ namespace InstituteAdminSide
             this.tabPage3.Size = new System.Drawing.Size(1007, 490);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Student Payment";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbnStudentAllpayment);
+            this.groupBox2.Controls.Add(this.rbnStudentSearchPayment);
+            this.groupBox2.Controls.Add(this.txtStudentPayYear);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.cmbStudentPayMonth);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Location = new System.Drawing.Point(7, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(978, 85);
+            this.groupBox2.TabIndex = 28;
+            this.groupBox2.TabStop = false;
+            // 
+            // rbnStudentAllpayment
+            // 
+            this.rbnStudentAllpayment.AutoSize = true;
+            this.rbnStudentAllpayment.Location = new System.Drawing.Point(11, 31);
+            this.rbnStudentAllpayment.Name = "rbnStudentAllpayment";
+            this.rbnStudentAllpayment.Size = new System.Drawing.Size(141, 23);
+            this.rbnStudentAllpayment.TabIndex = 20;
+            this.rbnStudentAllpayment.TabStop = true;
+            this.rbnStudentAllpayment.Text = "All Payments";
+            this.rbnStudentAllpayment.UseVisualStyleBackColor = true;
+            this.rbnStudentAllpayment.CheckedChanged += new System.EventHandler(this.rbnStudentAllpayment_CheckedChanged);
+            // 
+            // rbnStudentSearchPayment
+            // 
+            this.rbnStudentSearchPayment.AutoSize = true;
+            this.rbnStudentSearchPayment.Location = new System.Drawing.Point(363, 31);
+            this.rbnStudentSearchPayment.Name = "rbnStudentSearchPayment";
+            this.rbnStudentSearchPayment.Size = new System.Drawing.Size(87, 23);
+            this.rbnStudentSearchPayment.TabIndex = 21;
+            this.rbnStudentSearchPayment.TabStop = true;
+            this.rbnStudentSearchPayment.Text = "Search";
+            this.rbnStudentSearchPayment.UseVisualStyleBackColor = true;
+            this.rbnStudentSearchPayment.CheckedChanged += new System.EventHandler(this.rbnStudentSearchPayment_CheckedChanged);
+            // 
+            // txtStudentPayYear
+            // 
+            this.txtStudentPayYear.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStudentPayYear.Location = new System.Drawing.Point(852, 34);
+            this.txtStudentPayYear.Name = "txtStudentPayYear";
+            this.txtStudentPayYear.Size = new System.Drawing.Size(118, 25);
+            this.txtStudentPayYear.TabIndex = 16;
+            this.txtStudentPayYear.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StudentPaymentYearSelect);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.label5.Location = new System.Drawing.Point(785, 34);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 18);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Year";
+            // 
+            // cmbStudentPayMonth
+            // 
+            this.cmbStudentPayMonth.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStudentPayMonth.FormattingEnabled = true;
+            this.cmbStudentPayMonth.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.cmbStudentPayMonth.Location = new System.Drawing.Point(632, 31);
+            this.cmbStudentPayMonth.Name = "cmbStudentPayMonth";
+            this.cmbStudentPayMonth.Size = new System.Drawing.Size(121, 26);
+            this.cmbStudentPayMonth.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.label7.Location = new System.Drawing.Point(546, 34);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 18);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Month";
+            // 
+            // listStudentPayment
+            // 
+            this.listStudentPayment.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15,
+            this.columnHeader16,
+            this.columnHeader17,
+            this.columnHeader18});
+            this.listStudentPayment.Font = new System.Drawing.Font("Adobe Heiti Std R", 12F);
+            this.listStudentPayment.Location = new System.Drawing.Point(8, 95);
+            this.listStudentPayment.Name = "listStudentPayment";
+            this.listStudentPayment.Size = new System.Drawing.Size(989, 313);
+            this.listStudentPayment.TabIndex = 18;
+            this.listStudentPayment.UseCompatibleStateImageBehavior = false;
+            this.listStudentPayment.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Name";
+            this.columnHeader13.Width = 103;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Year";
+            this.columnHeader14.Width = 128;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Month";
+            this.columnHeader15.Width = 164;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Amount";
+            this.columnHeader16.Width = 227;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Course ID";
+            this.columnHeader17.Width = 191;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Batch";
+            this.columnHeader18.Width = 158;
             // 
             // btnStudentIncomeChart
             // 
@@ -224,6 +364,19 @@ namespace InstituteAdminSide
             // 
             this.cmbTeacherMonth.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTeacherMonth.FormattingEnabled = true;
+            this.cmbTeacherMonth.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
             this.cmbTeacherMonth.Location = new System.Drawing.Point(633, 33);
             this.cmbTeacherMonth.Name = "cmbTeacherMonth";
             this.cmbTeacherMonth.Size = new System.Drawing.Size(121, 26);
@@ -420,6 +573,19 @@ namespace InstituteAdminSide
             // 
             this.cmbEmployeeMonth.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEmployeeMonth.FormattingEnabled = true;
+            this.cmbEmployeeMonth.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
             this.cmbEmployeeMonth.Location = new System.Drawing.Point(633, 33);
             this.cmbEmployeeMonth.Name = "cmbEmployeeMonth";
             this.cmbEmployeeMonth.Size = new System.Drawing.Size(121, 26);
@@ -450,6 +616,8 @@ namespace InstituteAdminSide
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.txtIncomeYear);
+            this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.chartIncome);
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
@@ -464,7 +632,7 @@ namespace InstituteAdminSide
             // 
             this.button2.BackColor = System.Drawing.Color.Peru;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(28, 6);
+            this.button2.Location = new System.Drawing.Point(28, 13);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(207, 36);
             this.button2.TabIndex = 18;
@@ -560,130 +728,25 @@ namespace InstituteAdminSide
             this.label6.TabIndex = 16;
             this.label6.Text = "Report";
             // 
-            // listStudentPayment
+            // txtIncomeYear
             // 
-            this.listStudentPayment.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader13,
-            this.columnHeader14,
-            this.columnHeader15,
-            this.columnHeader16,
-            this.columnHeader17,
-            this.columnHeader18});
-            this.listStudentPayment.Font = new System.Drawing.Font("Adobe Heiti Std R", 12F);
-            this.listStudentPayment.Location = new System.Drawing.Point(8, 95);
-            this.listStudentPayment.Name = "listStudentPayment";
-            this.listStudentPayment.Size = new System.Drawing.Size(989, 313);
-            this.listStudentPayment.TabIndex = 18;
-            this.listStudentPayment.UseCompatibleStateImageBehavior = false;
-            this.listStudentPayment.View = System.Windows.Forms.View.Details;
+            this.txtIncomeYear.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIncomeYear.Location = new System.Drawing.Point(359, 20);
+            this.txtIncomeYear.Name = "txtIncomeYear";
+            this.txtIncomeYear.Size = new System.Drawing.Size(118, 25);
+            this.txtIncomeYear.TabIndex = 20;
+            this.txtIncomeYear.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TotalIncomeChart);
             // 
-            // columnHeader13
+            // label8
             // 
-            this.columnHeader13.Text = "Name";
-            this.columnHeader13.Width = 103;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Year";
-            this.columnHeader14.Width = 128;
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "Month";
-            this.columnHeader15.Width = 164;
-            // 
-            // columnHeader16
-            // 
-            this.columnHeader16.Text = "Amount";
-            this.columnHeader16.Width = 227;
-            // 
-            // columnHeader17
-            // 
-            this.columnHeader17.Text = "Course ID";
-            this.columnHeader17.Width = 191;
-            // 
-            // columnHeader18
-            // 
-            this.columnHeader18.Text = "Batch";
-            this.columnHeader18.Width = 158;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.rbnStudentAllpayment);
-            this.groupBox2.Controls.Add(this.rbnStudentSearchPayment);
-            this.groupBox2.Controls.Add(this.txtStudentPayYear);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.cmbStudentPayMonth);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(7, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(978, 85);
-            this.groupBox2.TabIndex = 28;
-            this.groupBox2.TabStop = false;
-            // 
-            // rbnStudentAllpayment
-            // 
-            this.rbnStudentAllpayment.AutoSize = true;
-            this.rbnStudentAllpayment.Location = new System.Drawing.Point(11, 31);
-            this.rbnStudentAllpayment.Name = "rbnStudentAllpayment";
-            this.rbnStudentAllpayment.Size = new System.Drawing.Size(141, 23);
-            this.rbnStudentAllpayment.TabIndex = 20;
-            this.rbnStudentAllpayment.TabStop = true;
-            this.rbnStudentAllpayment.Text = "All Payments";
-            this.rbnStudentAllpayment.UseVisualStyleBackColor = true;
-            this.rbnStudentAllpayment.CheckedChanged += new System.EventHandler(this.rbnStudentAllpayment_CheckedChanged);
-            // 
-            // rbnStudentSearchPayment
-            // 
-            this.rbnStudentSearchPayment.AutoSize = true;
-            this.rbnStudentSearchPayment.Location = new System.Drawing.Point(363, 31);
-            this.rbnStudentSearchPayment.Name = "rbnStudentSearchPayment";
-            this.rbnStudentSearchPayment.Size = new System.Drawing.Size(87, 23);
-            this.rbnStudentSearchPayment.TabIndex = 21;
-            this.rbnStudentSearchPayment.TabStop = true;
-            this.rbnStudentSearchPayment.Text = "Search";
-            this.rbnStudentSearchPayment.UseVisualStyleBackColor = true;
-            this.rbnStudentSearchPayment.CheckedChanged += new System.EventHandler(this.rbnStudentSearchPayment_CheckedChanged);
-            // 
-            // txtStudentPayYear
-            // 
-            this.txtStudentPayYear.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentPayYear.Location = new System.Drawing.Point(852, 34);
-            this.txtStudentPayYear.Name = "txtStudentPayYear";
-            this.txtStudentPayYear.Size = new System.Drawing.Size(118, 25);
-            this.txtStudentPayYear.TabIndex = 16;
-            this.txtStudentPayYear.KeyDown += new System.Windows.Forms.KeyEventHandler(this.StudentPaymentYearSelect);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.label5.Location = new System.Drawing.Point(785, 34);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 18);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Year";
-            // 
-            // cmbStudentPayMonth
-            // 
-            this.cmbStudentPayMonth.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbStudentPayMonth.FormattingEnabled = true;
-            this.cmbStudentPayMonth.Location = new System.Drawing.Point(632, 31);
-            this.cmbStudentPayMonth.Name = "cmbStudentPayMonth";
-            this.cmbStudentPayMonth.Size = new System.Drawing.Size(121, 26);
-            this.cmbStudentPayMonth.TabIndex = 9;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.label7.Location = new System.Drawing.Point(546, 34);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 18);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Month";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Stencil", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.label8.Location = new System.Drawing.Point(290, 23);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 18);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Year";
             // 
             // Reports
             // 
@@ -696,6 +759,8 @@ namespace InstituteAdminSide
             this.Load += new System.EventHandler(this.Reports_Load);
             this.reportTab.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -703,12 +768,11 @@ namespace InstituteAdminSide
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartIncome)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -774,5 +838,7 @@ namespace InstituteAdminSide
         private Label label5;
         private ComboBox cmbStudentPayMonth;
         private Label label7;
+        private TextBox txtIncomeYear;
+        private Label label8;
     }
 }

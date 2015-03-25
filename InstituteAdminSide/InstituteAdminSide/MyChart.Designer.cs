@@ -37,9 +37,8 @@ namespace InstituteAdminSide
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartIncomePart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.chartTitle = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.chartIncomePart)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,31 +69,10 @@ namespace InstituteAdminSide
             this.panel1.BackColor = System.Drawing.Color.DarkCyan;
             this.panel1.Controls.Add(this.chartTitle);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(-1, -3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1010, 583);
             this.panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.Controls.Add(this.chartIncomePart);
-            this.panel2.Location = new System.Drawing.Point(1, 72);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(946, 511);
-            this.panel2.TabIndex = 44;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(294, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(369, 57);
-            this.label6.TabIndex = 43;
-            this.label6.Text = "Income Chart";
             // 
             // chartTitle
             // 
@@ -106,6 +84,15 @@ namespace InstituteAdminSide
             this.chartTitle.Size = new System.Drawing.Size(263, 57);
             this.chartTitle.TabIndex = 45;
             this.chartTitle.Text = "Employee";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DimGray;
+            this.panel2.Controls.Add(this.chartIncomePart);
+            this.panel2.Location = new System.Drawing.Point(1, 72);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(946, 511);
+            this.panel2.TabIndex = 44;
             // 
             // MyChart
             // 
@@ -128,7 +115,6 @@ namespace InstituteAdminSide
 
         private Chart chartIncomePart;
         private Panel panel1;
-        private Label label6;
         private Panel panel2;
         private Label chartTitle;
     }

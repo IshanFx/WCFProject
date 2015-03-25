@@ -69,6 +69,14 @@ namespace InstituteAdminSide
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.listTeacherData = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -76,14 +84,6 @@ namespace InstituteAdminSide
             this.label15 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.listTeacherData = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -504,6 +504,58 @@ namespace InstituteAdminSide
             this.tabPage3.Text = "View";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // listTeacherData
+            // 
+            this.listTeacherData.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader5,
+            this.columnHeader4,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.listTeacherData.Font = new System.Drawing.Font("Adobe Hebrew", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listTeacherData.GridLines = true;
+            this.listTeacherData.Location = new System.Drawing.Point(6, 20);
+            this.listTeacherData.Name = "listTeacherData";
+            this.listTeacherData.Size = new System.Drawing.Size(848, 477);
+            this.listTeacherData.TabIndex = 2;
+            this.listTeacherData.UseCompatibleStateImageBehavior = false;
+            this.listTeacherData.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Id";
+            this.columnHeader1.Width = 71;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Name";
+            this.columnHeader2.Width = 162;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Nic";
+            this.columnHeader3.Width = 136;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Contact";
+            this.columnHeader5.Width = 152;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Address";
+            this.columnHeader4.Width = 257;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "E-mail";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Subject";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkGreen;
@@ -522,7 +574,7 @@ namespace InstituteAdminSide
             // 
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Image = ((System.Drawing.Image)(resources.GetObject("label18.Image")));
-            this.label18.Location = new System.Drawing.Point(640, 6);
+            this.label18.Location = new System.Drawing.Point(640, 10);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(63, 60);
             this.label18.TabIndex = 78;
@@ -573,58 +625,6 @@ namespace InstituteAdminSide
             this.label4.Size = new System.Drawing.Size(185, 44);
             this.label4.TabIndex = 63;
             this.label4.Text = "Teacher";
-            // 
-            // listTeacherData
-            // 
-            this.listTeacherData.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader5,
-            this.columnHeader4,
-            this.columnHeader6,
-            this.columnHeader7});
-            this.listTeacherData.Font = new System.Drawing.Font("Adobe Hebrew", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listTeacherData.GridLines = true;
-            this.listTeacherData.Location = new System.Drawing.Point(6, 20);
-            this.listTeacherData.Name = "listTeacherData";
-            this.listTeacherData.Size = new System.Drawing.Size(848, 477);
-            this.listTeacherData.TabIndex = 2;
-            this.listTeacherData.UseCompatibleStateImageBehavior = false;
-            this.listTeacherData.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Id";
-            this.columnHeader1.Width = 71;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Name";
-            this.columnHeader2.Width = 162;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Nic";
-            this.columnHeader3.Width = 136;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Address";
-            this.columnHeader4.Width = 257;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Contact";
-            this.columnHeader5.Width = 152;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "E-mail";
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Subject";
             // 
             // Teacher
             // 

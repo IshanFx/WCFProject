@@ -38,7 +38,7 @@ namespace InstituteServices
         DataSet GetEmployeePaymentFull();
 
         [OperationContract]
-        DataSet GetEmployeePayment();
+        DataSet GetEmployeePayment(Employee employee);
 
         [OperationContract]
         int GetEmployeeLastId();
@@ -68,7 +68,7 @@ namespace InstituteServices
         DataSet GetTeacherData();
 
         [OperationContract]
-        DataSet GetTeachersIncome();
+        DataSet GetTeachersIncome(Teacher teacher);
 
         [OperationContract]
         DataSet GetTeachersPaymentFull();
@@ -141,7 +141,7 @@ namespace InstituteServices
         int StudentPaySave(Student student,string month,int year,int amount);
 
         [OperationContract]
-        DataSet GetStudentIncomeReport();
+        DataSet GetStudentIncomeReport(Student student);
 
         [OperationContract]
         DataSet GetStudentPaymentReport();

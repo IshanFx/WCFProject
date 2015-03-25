@@ -17,6 +17,7 @@ namespace InstituteAdminSide
         public DataTable table;
         public ListViewItem listView;
         public Hashtable hashtableTotal = new Hashtable();
+        private CustomFormControl formControl = new CustomFormControl();
         public Reports()
         {
             InitializeComponent();
@@ -353,9 +354,7 @@ namespace InstituteAdminSide
             {
                 chartIncome.Series["Income"].Points.AddXY(i, hashtableTotal[i]);
             }
-            hashtableEmployee.Clear();
-            hashtableTeacher.Clear();
-            hashtableStudent.Clear();
+            
         }
 
         //add month and total to teacher hashtable
@@ -608,6 +607,26 @@ namespace InstituteAdminSide
             }
            
 
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Home(), this);
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Employee(), this);
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Email(), this);
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Teacher(), this);
         }
 
        

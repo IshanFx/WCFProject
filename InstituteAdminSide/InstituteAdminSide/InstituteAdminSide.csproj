@@ -53,6 +53,7 @@
     <Compile Include="Email.Designer.cs">
       <DependentUpon>Email.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomFormControl.cs" />
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>

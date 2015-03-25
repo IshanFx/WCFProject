@@ -32,9 +32,9 @@ namespace InstituteAdminSide
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reports));
             this.reportTab = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -642,17 +642,17 @@ namespace InstituteAdminSide
             // 
             // chartIncome
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartIncome.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartIncome.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.chartIncome.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartIncome.Legends.Add(legend4);
             this.chartIncome.Location = new System.Drawing.Point(28, 48);
             this.chartIncome.Name = "chartIncome";
             this.chartIncome.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Income";
-            this.chartIncome.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Income";
+            this.chartIncome.Series.Add(series4);
             this.chartIncome.Size = new System.Drawing.Size(880, 414);
             this.chartIncome.TabIndex = 0;
             this.chartIncome.Text = "chart1";
@@ -679,6 +679,7 @@ namespace InstituteAdminSide
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 60);
             this.label9.TabIndex = 78;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label18
             // 
@@ -688,6 +689,7 @@ namespace InstituteAdminSide
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(63, 60);
             this.label18.TabIndex = 77;
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label16
             // 
@@ -697,6 +699,7 @@ namespace InstituteAdminSide
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(63, 60);
             this.label16.TabIndex = 76;
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label15
             // 
@@ -706,6 +709,7 @@ namespace InstituteAdminSide
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(63, 60);
             this.label15.TabIndex = 75;
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // panel2
             // 

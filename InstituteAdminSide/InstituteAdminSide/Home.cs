@@ -5,6 +5,7 @@ namespace InstituteAdminSide
 {
     public partial class Home : Form
     {
+        private CustomFormControl formControl = new CustomFormControl();
         public Home()
         {
             InitializeComponent();
@@ -25,7 +26,10 @@ namespace InstituteAdminSide
 
         private void timeMenuButton_Tick(object sender, EventArgs e)
         {
-           
+            DateTime time = DateTime.Now;
+            lblTime.Text = time.ToString("HH:mm:ss");
+            lblDate.Text = time.ToString("yyyy/MM/dd");
+
         }
 
         private void button5_MouseLeave(object sender, EventArgs e)
@@ -41,27 +45,27 @@ namespace InstituteAdminSide
        
         private void teacherFormShow(object sender, EventArgs e)
         {
-            Teacher teacher = new Teacher();
-            teacher.Show();
+            formControl.FormLoad(new Teacher(), this);
         }
 
         private void employeeFormShow(object sender, EventArgs e)
         {
-            Employee employee = new Employee();
-            employee.Show();
-
+            formControl.FormLoad(new Employee(), this);
         }
 
         private void reportFormShow(object sender, EventArgs e)
         {
-            Reports reports =new Reports();
-            reports.Show();
+            formControl.FormLoad(new Reports(), this);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Email mail = new Email();
-            mail.Show();
+            formControl.FormLoad(new Email(), this);
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

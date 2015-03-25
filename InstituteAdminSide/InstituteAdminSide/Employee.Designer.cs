@@ -206,7 +206,8 @@ namespace InstituteAdminSide
             // 
             this.btnEmployeeSearch.BackColor = System.Drawing.Color.DarkRed;
             this.btnEmployeeSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEmployeeSearch.FlatAppearance.BorderSize = 0;
+            this.btnEmployeeSearch.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnEmployeeSearch.FlatAppearance.BorderSize = 2;
             this.btnEmployeeSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeeSearch.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployeeSearch.ForeColor = System.Drawing.Color.White;
@@ -222,7 +223,8 @@ namespace InstituteAdminSide
             // 
             this.btnEmployeeUpdate.BackColor = System.Drawing.Color.Maroon;
             this.btnEmployeeUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEmployeeUpdate.FlatAppearance.BorderSize = 0;
+            this.btnEmployeeUpdate.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnEmployeeUpdate.FlatAppearance.BorderSize = 2;
             this.btnEmployeeUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeeUpdate.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployeeUpdate.ForeColor = System.Drawing.Color.White;
@@ -238,7 +240,8 @@ namespace InstituteAdminSide
             // 
             this.btnEmployeeSave.BackColor = System.Drawing.Color.Maroon;
             this.btnEmployeeSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEmployeeSave.FlatAppearance.BorderSize = 0;
+            this.btnEmployeeSave.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnEmployeeSave.FlatAppearance.BorderSize = 2;
             this.btnEmployeeSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeeSave.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployeeSave.ForeColor = System.Drawing.Color.White;
@@ -390,7 +393,8 @@ namespace InstituteAdminSide
             // 
             this.btnEmployeePayment.BackColor = System.Drawing.Color.DarkRed;
             this.btnEmployeePayment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEmployeePayment.FlatAppearance.BorderSize = 0;
+            this.btnEmployeePayment.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnEmployeePayment.FlatAppearance.BorderSize = 2;
             this.btnEmployeePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeePayment.ForeColor = System.Drawing.Color.White;
             this.btnEmployeePayment.Location = new System.Drawing.Point(552, 392);
@@ -569,6 +573,7 @@ namespace InstituteAdminSide
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 60);
             this.label9.TabIndex = 77;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label18
             // 
@@ -578,6 +583,7 @@ namespace InstituteAdminSide
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(63, 60);
             this.label18.TabIndex = 76;
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label17
             // 
@@ -587,6 +593,7 @@ namespace InstituteAdminSide
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(63, 60);
             this.label17.TabIndex = 75;
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label16
             // 
@@ -596,6 +603,7 @@ namespace InstituteAdminSide
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(63, 60);
             this.label16.TabIndex = 74;
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label6
             // 

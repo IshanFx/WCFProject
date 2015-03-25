@@ -201,7 +201,7 @@ namespace InstituteAdminSide
             // 
             // timeMenuButton
             // 
-            this.timeMenuButton.Interval = 10;
+            this.timeMenuButton.Enabled = true;
             this.timeMenuButton.Tick += new System.EventHandler(this.timeMenuButton_Tick);
             // 
             // timerMenuButtonMin
@@ -253,6 +253,7 @@ namespace InstituteAdminSide
             this.Controls.Add(this.timeShow);
             this.Name = "Home";
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

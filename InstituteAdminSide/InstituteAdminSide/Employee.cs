@@ -9,12 +9,15 @@ namespace InstituteAdminSide
 {
     public partial class Employee : Form
     {
+        EmployeeServicesClient client;
+        InstituteService.Employee employee;
+        private CustomFormControl formControl = new CustomFormControl();
+
         public Employee()
         {
             InitializeComponent();
         }
-        EmployeeServicesClient client;
-        InstituteService.Employee employee;
+        
         private void empSavebtn_Click(object sender, EventArgs e)
         {
             char[] employeeNIC = empNICtxt.Text.ToCharArray();
@@ -270,6 +273,26 @@ namespace InstituteAdminSide
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Home(),this);
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Teacher(), this);
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Email(), this);
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Reports(), this);
         }
     }
 }

@@ -182,6 +182,8 @@ namespace InstituteAdminSide
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.DarkGreen;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.GreenYellow;
+            this.button3.FlatAppearance.BorderSize = 2;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(415, 19);
@@ -194,9 +196,11 @@ namespace InstituteAdminSide
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkGreen;
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button2.FlatAppearance.BorderSize = 2;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ForeColor = System.Drawing.Color.ForestGreen;
             this.button2.Location = new System.Drawing.Point(755, 514);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 40);
@@ -208,6 +212,8 @@ namespace InstituteAdminSide
             // btnTeacherUpdate
             // 
             this.btnTeacherUpdate.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnTeacherUpdate.FlatAppearance.BorderColor = System.Drawing.Color.GreenYellow;
+            this.btnTeacherUpdate.FlatAppearance.BorderSize = 2;
             this.btnTeacherUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTeacherUpdate.ForeColor = System.Drawing.Color.White;
             this.btnTeacherUpdate.Location = new System.Drawing.Point(590, 514);
@@ -221,6 +227,8 @@ namespace InstituteAdminSide
             // btnTeacherSave
             // 
             this.btnTeacherSave.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnTeacherSave.FlatAppearance.BorderColor = System.Drawing.Color.GreenYellow;
+            this.btnTeacherSave.FlatAppearance.BorderSize = 2;
             this.btnTeacherSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTeacherSave.ForeColor = System.Drawing.Color.White;
             this.btnTeacherSave.Location = new System.Drawing.Point(454, 514);
@@ -407,6 +415,8 @@ namespace InstituteAdminSide
             // btnEmployeePayment
             // 
             this.btnEmployeePayment.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnEmployeePayment.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnEmployeePayment.FlatAppearance.BorderSize = 2;
             this.btnEmployeePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeePayment.ForeColor = System.Drawing.Color.White;
             this.btnEmployeePayment.Location = new System.Drawing.Point(265, 357);
@@ -578,6 +588,7 @@ namespace InstituteAdminSide
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(63, 60);
             this.label18.TabIndex = 78;
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label17
             // 
@@ -587,6 +598,7 @@ namespace InstituteAdminSide
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(63, 60);
             this.label17.TabIndex = 77;
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label16
             // 
@@ -596,6 +608,7 @@ namespace InstituteAdminSide
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(63, 60);
             this.label16.TabIndex = 76;
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label15
             // 
@@ -605,6 +618,7 @@ namespace InstituteAdminSide
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(63, 60);
             this.label15.TabIndex = 75;
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // panel2
             // 

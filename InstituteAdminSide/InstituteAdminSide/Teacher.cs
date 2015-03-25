@@ -11,6 +11,7 @@ namespace InstituteAdminSide
         private InstituteService.Teacher teacher;
         private DataSet set;
         private DataTable table;
+        private CustomFormControl formControl = new CustomFormControl();
         public Teacher()
         {
             InitializeComponent();
@@ -275,6 +276,26 @@ namespace InstituteAdminSide
                 
             }
             
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Home(), this);
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Employee() , this);
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Email(), this);
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Reports(), this);
         }
     }
 }

@@ -34,6 +34,7 @@ namespace InstituteAdminSide
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Teacher));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txtLastId = new System.Windows.Forms.TextBox();
             this.rbnNICV = new System.Windows.Forms.RadioButton();
@@ -106,6 +107,7 @@ namespace InstituteAdminSide
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnDelete);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.txtLastId);
             this.tabPage1.Controls.Add(this.rbnNICV);
@@ -137,6 +139,21 @@ namespace InstituteAdminSide
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Register";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.GreenYellow;
+            this.btnDelete.FlatAppearance.BorderSize = 2;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(650, 514);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(110, 40);
+            this.btnDelete.TabIndex = 67;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.DeleteTeacher);
             // 
             // label14
             // 
@@ -201,7 +218,7 @@ namespace InstituteAdminSide
             this.button2.FlatAppearance.BorderSize = 2;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button2.Location = new System.Drawing.Point(755, 514);
+            this.button2.Location = new System.Drawing.Point(778, 514);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 40);
             this.button2.TabIndex = 61;
@@ -216,7 +233,7 @@ namespace InstituteAdminSide
             this.btnTeacherUpdate.FlatAppearance.BorderSize = 2;
             this.btnTeacherUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTeacherUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnTeacherUpdate.Location = new System.Drawing.Point(590, 514);
+            this.btnTeacherUpdate.Location = new System.Drawing.Point(526, 514);
             this.btnTeacherUpdate.Name = "btnTeacherUpdate";
             this.btnTeacherUpdate.Size = new System.Drawing.Size(110, 40);
             this.btnTeacherUpdate.TabIndex = 60;
@@ -231,7 +248,7 @@ namespace InstituteAdminSide
             this.btnTeacherSave.FlatAppearance.BorderSize = 2;
             this.btnTeacherSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTeacherSave.ForeColor = System.Drawing.Color.White;
-            this.btnTeacherSave.Location = new System.Drawing.Point(454, 514);
+            this.btnTeacherSave.Location = new System.Drawing.Point(392, 514);
             this.btnTeacherSave.Name = "btnTeacherSave";
             this.btnTeacherSave.Size = new System.Drawing.Size(110, 40);
             this.btnTeacherSave.TabIndex = 59;
@@ -716,5 +733,6 @@ namespace InstituteAdminSide
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
+        private Button btnDelete;
     }
 }

@@ -48,6 +48,9 @@ namespace InstituteServices
 
         [OperationContract]
         DataSet GetEmployeeMonthYearpaymentReport(Employee employee);
+
+        [OperationContract]
+        int DeleteEmployee(int employeeId);
     }
 
     [ServiceContract]
@@ -81,6 +84,9 @@ namespace InstituteServices
 
         [OperationContract]
         DataSet GetTeacherMonthYearpaymentReport(Teacher teacher);
+
+        [OperationContract]
+        int DeleteTeacher(int teacherId);
 
     }
 

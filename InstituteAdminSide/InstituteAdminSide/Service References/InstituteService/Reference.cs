@@ -826,6 +826,9 @@ namespace InstituteAdminSide.InstituteService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/GetEmployeeMonthYearpaymentReport", ReplyAction="http://tempuri.org/IEmployeeServices/GetEmployeeMonthYearpaymentReportResponse")]
         System.Data.DataSet GetEmployeeMonthYearpaymentReport(InstituteAdminSide.InstituteService.Employee employee);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEmployeeServices/DeleteEmployee", ReplyAction="http://tempuri.org/IEmployeeServices/DeleteEmployeeResponse")]
+        int DeleteEmployee(int employeeId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -894,6 +897,10 @@ namespace InstituteAdminSide.InstituteService {
         public System.Data.DataSet GetEmployeeMonthYearpaymentReport(InstituteAdminSide.InstituteService.Employee employee) {
             return base.Channel.GetEmployeeMonthYearpaymentReport(employee);
         }
+        
+        public int DeleteEmployee(int employeeId) {
+            return base.Channel.DeleteEmployee(employeeId);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -929,6 +936,9 @@ namespace InstituteAdminSide.InstituteService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/GetTeacherMonthYearpaymentReport", ReplyAction="http://tempuri.org/ITeacherServices/GetTeacherMonthYearpaymentReportResponse")]
         System.Data.DataSet GetTeacherMonthYearpaymentReport(InstituteAdminSide.InstituteService.Teacher teacher);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITeacherServices/DeleteTeacher", ReplyAction="http://tempuri.org/ITeacherServices/DeleteTeacherResponse")]
+        int DeleteTeacher(int teacherId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -996,6 +1006,10 @@ namespace InstituteAdminSide.InstituteService {
         
         public System.Data.DataSet GetTeacherMonthYearpaymentReport(InstituteAdminSide.InstituteService.Teacher teacher) {
             return base.Channel.GetTeacherMonthYearpaymentReport(teacher);
+        }
+        
+        public int DeleteTeacher(int teacherId) {
+            return base.Channel.DeleteTeacher(teacherId);
         }
     }
     

@@ -78,6 +78,7 @@ namespace InstituteAdminSide
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -101,6 +102,7 @@ namespace InstituteAdminSide
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.rbnNICY);
             this.tabPage1.Controls.Add(this.rbnNICX);
@@ -173,7 +175,7 @@ namespace InstituteAdminSide
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Crimson;
-            this.btnClear.Location = new System.Drawing.Point(744, 459);
+            this.btnClear.Location = new System.Drawing.Point(765, 459);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(111, 40);
             this.btnClear.TabIndex = 41;
@@ -228,7 +230,7 @@ namespace InstituteAdminSide
             this.btnEmployeeUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeeUpdate.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployeeUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnEmployeeUpdate.Location = new System.Drawing.Point(517, 459);
+            this.btnEmployeeUpdate.Location = new System.Drawing.Point(506, 459);
             this.btnEmployeeUpdate.Name = "btnEmployeeUpdate";
             this.btnEmployeeUpdate.Size = new System.Drawing.Size(111, 40);
             this.btnEmployeeUpdate.TabIndex = 37;
@@ -616,6 +618,22 @@ namespace InstituteAdminSide
             this.label6.TabIndex = 42;
             this.label6.Text = "Employee ";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Maroon;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(634, 459);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 40);
+            this.button1.TabIndex = 45;
+            this.button1.Text = "Delete";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -686,6 +704,7 @@ namespace InstituteAdminSide
         private Label label18;
         private Label label17;
         private Label label16;
+        private Button button1;
     }
 }
 

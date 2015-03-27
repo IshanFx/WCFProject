@@ -29,7 +29,7 @@ namespace InstituteServices
         public int SaveEmployee(Employee employee)
         {
             MySqlCommand cmd = new MySqlCommand();
-            string sql = "INSERT INTO Employee VALUES('" + employee.EmpId + "','" + employee.EmpFName + "','" + employee.EmpLName + "','" + employee.EmpNIC + "','" + employee.EmpAddress + "','" + employee .EmpContact+ "')";     
+            string sql = "INSERT INTO Employee VALUES('" + employee.EmpId + "','" + employee.EmpFName + "','" + employee.EmpLName + "','" + employee.EmpNIC + "','" + employee.EmpAddress + "','" + employee .EmpContact+ "','A')";     
       
             return new DB().DMLQuery(sql);
         }
@@ -39,7 +39,7 @@ namespace InstituteServices
                 Employee employee = new Employee();
                 db = new DB();
                 
-                string sql = "SELECT * FROM Employee WHERE empid = '"+employeeid+"'";
+                string sql = "SELECT * FROM Employee WHERE empid = '"+employeeid+"' AND status='A'";
                 DataTable table = db.SelectQuery(sql);             
                      employee.EmpFName = table.Rows[0][1].ToString();
                      employee.EmpLName = table.Rows[0][2].ToString();
@@ -67,7 +67,7 @@ namespace InstituteServices
 
         public int SaveTeacher(Teacher teacher)
         {
-            string sql = "INSERT INTO teachers VALUES('" + teacher.TeacherId + "','" + teacher.TeacherFName + "','" + teacher.TeacherLName + "','" + teacher.TeacherNIC + "','" + teacher.TeacherContact + "','" + teacher.TeacherAddress + "','" + teacher.TeacherMail + "','" + teacher.TeacherSubject + "')";
+            string sql = "INSERT INTO teachers VALUES('" + teacher.TeacherId + "','" + teacher.TeacherFName + "','" + teacher.TeacherLName + "','" + teacher.TeacherNIC + "','" + teacher.TeacherContact + "','" + teacher.TeacherAddress + "','" + teacher.TeacherMail + "','" + teacher.TeacherSubject + "','A')";
 
             return new DB().DMLQuery(sql);
         }
@@ -75,17 +75,24 @@ namespace InstituteServices
         public Teacher SearchTeacherData(int teacherId)
         {
             Teacher teacher = new Teacher ();
-                string sql = "SELECT * FROM teachers WHERE teaid='" + teacherId+ "'";
+                string sql = "SELECT * FROM teachers WHERE teaid='" + teacherId+ "' AND status='A'";
                 db = new DB ();
-                DataTable table = db.SelectQuery(sql);  
+                DataTable table = db.SelectQuery(sql);
+            if (table.Rows.Count.Equals(0))
+            {
+                teacher = null;
+            }
+            else
+            {
                 teacher.TeacherFName = table.Rows[0][1].ToString();
                 teacher.TeacherLName = table.Rows[0][2].ToString();
                 teacher.TeacherNIC = table.Rows[0][3].ToString();
                 teacher.TeacherContact = table.Rows[0][4].ToString();
                 teacher.TeacherAddress = table.Rows[0][5].ToString();
                 teacher.TeacherMail = table.Rows[0][6].ToString();
-                teacher.TeacherSubject = table.Rows[0][7].ToString();
-           
+                teacher.TeacherSubject = table.Rows[0][7].ToString(); 
+            }
+
             return teacher;
         }
 
@@ -260,7 +267,7 @@ namespace InstituteServices
 
         public DataSet GetEmployeeData()
         {
-                string sql = "SELECT* FROM Employee ";
+                string sql = "SELECT* FROM Employee WHERE status ='A'";
                 db = new DB();
                 DataTable table = db.SelectQuery(sql);
                 DataSet set = new DataSet();
@@ -304,7 +311,7 @@ namespace InstituteServices
 
         public DataSet GetTeacherData()
         {
-            string sql = "SELECT * FROM teachers";
+            string sql = "SELECT * FROM teachers WHERE status = 'A'";
             table = new DB().SelectQuery(sql);
             set = new DataSet();
             set.Tables.Add(table);
@@ -406,6 +413,20 @@ namespace InstituteServices
             set = new DataSet();
             set.Tables.Add(table);
             return set;
+        }
+
+
+        public int DeleteTeacher(int teacherId)
+        {
+            string sql = "UPDATE Teachers SET status='D' WHERE teaid='"+teacherId+"'";
+            return new DB().DMLQuery(sql);
+        }
+
+
+        public int DeleteEmployee(int employeeId)
+        {
+            string sql = "UPDATE employee SET status='D' WHERE empid='" + employeeId + "'";
+            return new DB().DMLQuery(sql);
         }
     }
 }

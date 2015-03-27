@@ -75,6 +75,12 @@
   <wsdl:message name="IEmployeeServices_GetEmployeeMonthYearpaymentReport_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetEmployeeMonthYearpaymentReportResponse" />
   </wsdl:message>
+  <wsdl:message name="IEmployeeServices_DeleteEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IEmployeeServices_DeleteEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmployeeResponse" />
+  </wsdl:message>
   <wsdl:message name="ITeacherServices_SaveTeacher_InputMessage">
     <wsdl:part name="parameters" element="tns:SaveTeacher" />
   </wsdl:message>
@@ -134,6 +140,12 @@
   </wsdl:message>
   <wsdl:message name="ITeacherServices_GetTeacherMonthYearpaymentReport_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTeacherMonthYearpaymentReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_DeleteTeacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTeacher" />
+  </wsdl:message>
+  <wsdl:message name="ITeacherServices_DeleteTeacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTeacherResponse" />
   </wsdl:message>
   <wsdl:message name="ICourseServices_SaveCourse_InputMessage">
     <wsdl:part name="parameters" element="tns:SaveCourse" />
@@ -296,6 +308,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeeMonthYearpaymentReport" message="tns:IEmployeeServices_GetEmployeeMonthYearpaymentReport_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/GetEmployeeMonthYearpaymentReportResponse" message="tns:IEmployeeServices_GetEmployeeMonthYearpaymentReport_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="DeleteEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmployeeServices/DeleteEmployee" message="tns:IEmployeeServices_DeleteEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmployeeServices/DeleteEmployeeResponse" message="tns:IEmployeeServices_DeleteEmployee_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ITeacherServices">
     <wsdl:operation name="SaveTeacher">
@@ -337,6 +353,10 @@
     <wsdl:operation name="GetTeacherMonthYearpaymentReport">
       <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/GetTeacherMonthYearpaymentReport" message="tns:ITeacherServices_GetTeacherMonthYearpaymentReport_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/GetTeacherMonthYearpaymentReportResponse" message="tns:ITeacherServices_GetTeacherMonthYearpaymentReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTeacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITeacherServices/DeleteTeacher" message="tns:ITeacherServices_DeleteTeacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITeacherServices/DeleteTeacherResponse" message="tns:ITeacherServices_DeleteTeacher_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ICourseServices">
@@ -523,6 +543,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DeleteEmployee">
+      <soap:operation soapAction="http://tempuri.org/IEmployeeServices/DeleteEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_ITeacherServices" type="tns:ITeacherServices">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -609,6 +638,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetTeacherMonthYearpaymentReport">
       <soap:operation soapAction="http://tempuri.org/ITeacherServices/GetTeacherMonthYearpaymentReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTeacher">
+      <soap:operation soapAction="http://tempuri.org/ITeacherServices/DeleteTeacher" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

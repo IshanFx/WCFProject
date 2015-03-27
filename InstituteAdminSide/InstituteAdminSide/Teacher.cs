@@ -176,7 +176,7 @@ namespace InstituteAdminSide
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(teacherIdtxt.Text))
+            if (teacherIdtxt.Text==null)
             {
                 MessageBox.Show("Please Enter TeacherId", "Enter Id", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
@@ -186,16 +186,29 @@ namespace InstituteAdminSide
                 {
                     //retrieve teachers data from service
 
-                    client = new TeacherServicesClient();
-                    set = client.GetTeacherData();
-                    table = set.Tables[0];
-                    teacherFNametxt.Text = table.Rows[0][1].ToString();
-                    teacherLNametxt.Text = table.Rows[0][2].ToString();
-                    teacherNICtxt.Text = table.Rows[0][3].ToString();
-                    teacherContacttxt.Text = table.Rows[0][4].ToString();
-                    teacherAddresstxt.Text = table.Rows[0][5].ToString();
-                    teacherMailtxt.Text = table.Rows[0][6].ToString();
-                    teacherSubjectcmd.Text = table.Rows[0][7].ToString();
+                    using ( client = new TeacherServicesClient())
+                    {
+                        InstituteService.Teacher teacher = new InstituteService.Teacher() ;
+                        teacher = client.SearchTeacherData(int.Parse(teacherIdtxt.Text));
+                        if (teacher == null)
+                        {
+                           MessageBox.Show("Id not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            teacherFNametxt.Text = teacher.TeacherFName;
+                            teacherLNametxt.Text = teacher.TeacherLName;
+                            teacherNICtxt.Text = teacher.TeacherNIC;
+                            teacherContacttxt.Text = teacher.TeacherContact;
+                            teacherAddresstxt.Text = teacher.TeacherAddress;
+                            teacherMailtxt.Text = teacher.TeacherMail;
+                            teacherSubjectcmd.Text = teacher.TeacherSubject;
+                        }
+                       
+                     
+                    }
+                   ;
+                   
                 }
                 catch (Exception)
                 {
@@ -296,6 +309,38 @@ namespace InstituteAdminSide
         private void label17_Click(object sender, EventArgs e)
         {
             formControl.FormLoad(new Reports(), this);
+        }
+
+        private void DeleteTeacher(object sender, EventArgs e)
+        {
+            try
+            {
+                if (String.IsNullOrEmpty(teacherIdtxt.Text))
+                {
+                    MessageBox.Show("Please Enter Id", "Id required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    client = new InstituteService.TeacherServicesClient();
+                    int chk = client.DeleteTeacher(int.Parse(teacherIdtxt.Text));
+                    if (chk==1)
+                    {
+                        MessageBox.Show(string.Format("Teacher id {0} Delete Success", teacherIdtxt.Text), "Deleted", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(string.Format("Teacher id {0} Delete not Success", teacherIdtxt.Text), "Error", MessageBoxButtons.OK,
+                           MessageBoxIcon.Error);
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
     }
 }

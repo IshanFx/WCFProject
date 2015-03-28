@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using InstituteAdminSide.InstituteService;
@@ -17,6 +18,7 @@ namespace InstituteAdminSide
 {
     public partial class Email : Form
     {
+        private CustomFormControl formControl = new CustomFormControl();
         public Email()
         {
             InitializeComponent();
@@ -139,6 +141,26 @@ namespace InstituteAdminSide
             {
                 MessageBox.Show(items.ToString());
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Home(), this);
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Employee(), this);
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Reports(), this);
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+            formControl.FormLoad(new Teacher(), this);
         }
     }
 }

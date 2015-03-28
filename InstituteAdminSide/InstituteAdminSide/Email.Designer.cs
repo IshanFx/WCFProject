@@ -46,11 +46,11 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -235,6 +235,46 @@
             this.panel3.Size = new System.Drawing.Size(886, 77);
             this.panel3.TabIndex = 53;
             // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
+            this.label4.Location = new System.Drawing.Point(600, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 60);
+            this.label4.TabIndex = 78;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Image = ((System.Drawing.Image)(resources.GetObject("label18.Image")));
+            this.label18.Location = new System.Drawing.Point(807, 9);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(63, 60);
+            this.label18.TabIndex = 77;
+            this.label18.Click += new System.EventHandler(this.label18_Click);
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Image = ((System.Drawing.Image)(resources.GetObject("label17.Image")));
+            this.label17.Location = new System.Drawing.Point(738, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(63, 60);
+            this.label17.TabIndex = 76;
+            this.label17.Click += new System.EventHandler(this.label17_Click);
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Image = ((System.Drawing.Image)(resources.GetObject("label15.Image")));
+            this.label15.Location = new System.Drawing.Point(669, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(63, 60);
+            this.label15.TabIndex = 75;
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -245,42 +285,6 @@
             this.label3.Size = new System.Drawing.Size(190, 57);
             this.label3.TabIndex = 59;
             this.label3.Text = "E -Mail";
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-            this.label4.Location = new System.Drawing.Point(600, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 60);
-            this.label4.TabIndex = 78;
-            // 
-            // label18
-            // 
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Image = ((System.Drawing.Image)(resources.GetObject("label18.Image")));
-            this.label18.Location = new System.Drawing.Point(807, 9);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(63, 60);
-            this.label18.TabIndex = 77;
-            // 
-            // label17
-            // 
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Image = ((System.Drawing.Image)(resources.GetObject("label17.Image")));
-            this.label17.Location = new System.Drawing.Point(738, 9);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(63, 60);
-            this.label17.TabIndex = 76;
-            // 
-            // label15
-            // 
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Image = ((System.Drawing.Image)(resources.GetObject("label15.Image")));
-            this.label15.Location = new System.Drawing.Point(669, 9);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(63, 60);
-            this.label15.TabIndex = 75;
             // 
             // Email
             // 

@@ -139,28 +139,46 @@ namespace InstituteAdminSide
         {
             try
             {
-                client = new EmployeeServicesClient();
-
-                employee = new InstituteService.Employee();
-
-                employee = client.SearchEmployeeData(int.Parse(empIdtxt.Text));
-
-                empLNametxt.Text = employee.EmpLName;
-                empFNametxt.Text = employee.EmpFName;
-                String NICType = employee.EmpNIC[9].ToString();
-                if (NICType.Equals("V"))
+                if (empIdtxt.Text =="")
                 {
-                    rbnNICY.Checked = true;
+                     MessageBox.Show("Please Enter Employee Id", "Enter Id", MessageBoxButtons.OK,
+                            MessageBoxIcon.Question);
                 }
-                else
+                else 
                 {
-                    rbnNICX.Checked = true;
+                    client = new EmployeeServicesClient();
+
+                    employee = new InstituteService.Employee();
+
+                    employee = client.SearchEmployeeData(int.Parse(empIdtxt.Text));
+                    if(employee==null)
+                    {
+
+                        MessageBox.Show("Employee Not Found", "Not Found", MessageBoxButtons.OK,
+                            MessageBoxIcon.Question);
+                    }
+                    else
+                    {
+                        empLNametxt.Text = employee.EmpLName;
+                    empFNametxt.Text = employee.EmpFName;
+                    String NICType = employee.EmpNIC[9].ToString();
+                    if (NICType.Equals("V"))
+                    {
+                        rbnNICY.Checked = true;
+                    }
+                    else
+                    {
+                        rbnNICX.Checked = true;
+                    }
+                    String NICRemoved = employee.EmpNIC.Remove(9);
+                    empNICtxt.Text = NICRemoved;
+                    empAdd1txt.Text = employee.EmpAddress;
+                    empContacttxt.Text = employee.EmpContact;
+                    btnEmployeeSave.Enabled = false;
+                    }
+                    
                 }
-                String NICRemoved = employee.EmpNIC.Remove(9);
-                empNICtxt.Text = NICRemoved;
-                empAdd1txt.Text = employee.EmpAddress;
-                empContacttxt.Text = employee.EmpContact;
-                btnEmployeeSave.Enabled = false;
+                
 
             }
             catch (TimeoutException timeout)
@@ -212,33 +230,33 @@ namespace InstituteAdminSide
 
         private void Employee_Load(object sender, EventArgs e)
         {
-             client = new EmployeeServicesClient();
-            try
-            {
-                InstituteService.Employee emploee = new InstituteService.Employee();
-                DataSet set = client.GetEmployeeData();
-                DataTable table = set.Tables[0];
-                ListViewItem list = null;
-                for (int i = 0; i < table.Columns.Count; i++)
-                {
-                    list = new ListViewItem(table.Rows[i][0].ToString());
-                    list.SubItems.Add(table.Rows[i][1].ToString()+" "+table.Rows[i][2].ToString());
-                    list.SubItems.Add(table.Rows[i][3].ToString());
-                    list.SubItems.Add(table.Rows[i][4].ToString());
-                    list.SubItems.Add(table.Rows[i][5].ToString());
-                    listEmployeeData.Items.Add(list);
-                }
-                
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+          
             GetEmployeeLastId();
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
         {
-            
+            client = new EmployeeServicesClient();
+            try
+            {
+                listEmployeeData.Items.Clear();
+                DataSet set = client.GetEmployeeData();
+                DataTable table = set.Tables[0];
+                ListViewItem list = null;
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    list = new ListViewItem(table.Rows[i][0].ToString());
+                    list.SubItems.Add(table.Rows[i][1].ToString() + " " + table.Rows[i][2].ToString());
+                    list.SubItems.Add(table.Rows[i][3].ToString());
+                    list.SubItems.Add(table.Rows[i][4].ToString());
+                    list.SubItems.Add(table.Rows[i][5].ToString());
+                    listEmployeeData.Items.Add(list);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -293,6 +311,41 @@ namespace InstituteAdminSide
         private void label17_Click(object sender, EventArgs e)
         {
             formControl.FormLoad(new Reports(), this);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (empIdtxt.Text == "")
+                {
+                    MessageBox.Show("Please Enter employee id", "Id required", MessageBoxButtons.OK,
+                        MessageBoxIcon.Question);
+                }
+                else
+                {
+                    client = new EmployeeServicesClient();
+                    int chk = client.DeleteEmployee(int.Parse(empIdtxt.Text));
+                    if (chk == 1)
+                    {
+                        MessageBox.Show("Employee Deleted Sucess", "Success", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        RegisterFieldClear();
+                    }
+
+                    else
+                        MessageBox.Show("Employee Not deleted", "Not deleted", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+
+                }
+            }
+
+
+
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

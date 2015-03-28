@@ -40,19 +40,27 @@ namespace InstituteServices
                 db = new DB();
                 
                 string sql = "SELECT * FROM Employee WHERE empid = '"+employeeid+"' AND status='A'";
-                DataTable table = db.SelectQuery(sql);             
-                     employee.EmpFName = table.Rows[0][1].ToString();
-                     employee.EmpLName = table.Rows[0][2].ToString();
-                     employee.EmpNIC = table.Rows[0][3].ToString();
-                     employee.EmpAddress = table.Rows[0][4].ToString();
-                     employee.EmpContact = table.Rows[0][5].ToString();
+                DataTable table = db.SelectQuery(sql);
+            if (table.Rows.Count.Equals(0))
+            {
+                employee = null;
+            }
+            else
+            {
+                employee.EmpFName = table.Rows[0][1].ToString();
+                employee.EmpLName = table.Rows[0][2].ToString();
+                employee.EmpNIC = table.Rows[0][3].ToString();
+                employee.EmpAddress = table.Rows[0][4].ToString();
+                employee.EmpContact = table.Rows[0][5].ToString();
+            }
+
 
             return employee;
         }
 
         public int UpdateEmployee(Employee employee)
         {
-          string sql = "UPDATE Employee SET fname='" + employee.EmpFName + "',lname='" + employee.EmpLName + "',nic='" + employee.EmpNIC + "',address='" + employee.EmpAddress + "',contact='" + employee.EmpContact + "' WHERE empid='" + employee .EmpId+ "' ";
+          string sql = "UPDATE Employee SET fname='" + employee.EmpFName + "',lname='" + employee.EmpLName + "',nic='" + employee.EmpNIC + "',address='" + employee.EmpAddress + "',contact='" + employee.EmpContact + "' WHERE empid='" + employee .EmpId+ "' AND status='A' ";
 
             return new DB().DMLQuery(sql);
         }
@@ -98,7 +106,7 @@ namespace InstituteServices
 
         public int UpdateTeacher(Teacher teacher)
         {
-            string sql = "UPDATE teachers SET fname='" + teacher.TeacherFName + "',lname='" + teacher.TeacherLName + "',nic='" + teacher.TeacherNIC + "',contact='" + teacher.TeacherContact + "',address='" + teacher.TeacherAddress + "',mail='" + teacher.TeacherMail + "',subname='" + teacher.TeacherSubject + "' WHERE teaid='" + teacher.TeacherId + "'";
+            string sql = "UPDATE teachers SET fname='" + teacher.TeacherFName + "',lname='" + teacher.TeacherLName + "',nic='" + teacher.TeacherNIC + "',contact='" + teacher.TeacherContact + "',address='" + teacher.TeacherAddress + "',mail='" + teacher.TeacherMail + "',subname='" + teacher.TeacherSubject + "' WHERE teaid='" + teacher.TeacherId + "' AND status='A'";
             return new DB().DMLQuery(sql);
         }
 

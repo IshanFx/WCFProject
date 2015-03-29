@@ -63,7 +63,6 @@ namespace InstituteAdminSide
             this.btnEmployeePayment = new System.Windows.Forms.Button();
             this.txtPaymentAmount = new System.Windows.Forms.TextBox();
             this.txtPaymentYear = new System.Windows.Forms.TextBox();
-            this.txtPaymentMonth = new System.Windows.Forms.TextBox();
             this.txtPaymentTeaId = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -85,6 +84,11 @@ namespace InstituteAdminSide
             this.label15 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtHallCost = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtIncome = new System.Windows.Forms.TextBox();
+            this.txtPaymentMonth = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -411,10 +415,14 @@ namespace InstituteAdminSide
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.txtPaymentMonth);
+            this.tabPage2.Controls.Add(this.txtIncome);
+            this.tabPage2.Controls.Add(this.label20);
+            this.tabPage2.Controls.Add(this.txtHallCost);
+            this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.btnEmployeePayment);
             this.tabPage2.Controls.Add(this.txtPaymentAmount);
             this.tabPage2.Controls.Add(this.txtPaymentYear);
-            this.tabPage2.Controls.Add(this.txtPaymentMonth);
             this.tabPage2.Controls.Add(this.txtPaymentTeaId);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label3);
@@ -436,7 +444,7 @@ namespace InstituteAdminSide
             this.btnEmployeePayment.FlatAppearance.BorderSize = 2;
             this.btnEmployeePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeePayment.ForeColor = System.Drawing.Color.White;
-            this.btnEmployeePayment.Location = new System.Drawing.Point(265, 357);
+            this.btnEmployeePayment.Location = new System.Drawing.Point(433, 436);
             this.btnEmployeePayment.Name = "btnEmployeePayment";
             this.btnEmployeePayment.Size = new System.Drawing.Size(194, 37);
             this.btnEmployeePayment.TabIndex = 42;
@@ -447,31 +455,23 @@ namespace InstituteAdminSide
             // txtPaymentAmount
             // 
             this.txtPaymentAmount.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.txtPaymentAmount.Location = new System.Drawing.Point(265, 274);
+            this.txtPaymentAmount.Location = new System.Drawing.Point(326, 360);
             this.txtPaymentAmount.Name = "txtPaymentAmount";
-            this.txtPaymentAmount.Size = new System.Drawing.Size(137, 26);
+            this.txtPaymentAmount.Size = new System.Drawing.Size(157, 26);
             this.txtPaymentAmount.TabIndex = 41;
             // 
             // txtPaymentYear
             // 
             this.txtPaymentYear.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.txtPaymentYear.Location = new System.Drawing.Point(265, 198);
+            this.txtPaymentYear.Location = new System.Drawing.Point(326, 176);
             this.txtPaymentYear.Name = "txtPaymentYear";
-            this.txtPaymentYear.Size = new System.Drawing.Size(137, 26);
+            this.txtPaymentYear.Size = new System.Drawing.Size(157, 26);
             this.txtPaymentYear.TabIndex = 39;
-            // 
-            // txtPaymentMonth
-            // 
-            this.txtPaymentMonth.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.txtPaymentMonth.Location = new System.Drawing.Point(265, 129);
-            this.txtPaymentMonth.Name = "txtPaymentMonth";
-            this.txtPaymentMonth.Size = new System.Drawing.Size(137, 26);
-            this.txtPaymentMonth.TabIndex = 38;
             // 
             // txtPaymentTeaId
             // 
             this.txtPaymentTeaId.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.txtPaymentTeaId.Location = new System.Drawing.Point(265, 64);
+            this.txtPaymentTeaId.Location = new System.Drawing.Point(326, 64);
             this.txtPaymentTeaId.Name = "txtPaymentTeaId";
             this.txtPaymentTeaId.Size = new System.Drawing.Size(61, 26);
             this.txtPaymentTeaId.TabIndex = 37;
@@ -481,18 +481,18 @@ namespace InstituteAdminSide
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label5.Location = new System.Drawing.Point(88, 274);
+            this.label5.Location = new System.Drawing.Point(91, 360);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 22);
+            this.label5.Size = new System.Drawing.Size(92, 22);
             this.label5.TabIndex = 36;
-            this.label5.Text = "Amount";
+            this.label5.Text = "Balance";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label3.Location = new System.Drawing.Point(88, 202);
+            this.label3.Location = new System.Drawing.Point(88, 180);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 22);
             this.label3.TabIndex = 34;
@@ -503,7 +503,7 @@ namespace InstituteAdminSide
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label2.Location = new System.Drawing.Point(88, 133);
+            this.label2.Location = new System.Drawing.Point(88, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 22);
             this.label2.TabIndex = 33;
@@ -530,6 +530,7 @@ namespace InstituteAdminSide
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "View";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // listTeacherData
             // 
@@ -657,6 +658,67 @@ namespace InstituteAdminSide
             this.label4.TabIndex = 63;
             this.label4.Text = "Teacher";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label19.Location = new System.Drawing.Point(88, 298);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(228, 22);
+            this.label19.TabIndex = 43;
+            this.label19.Text = "Hall Cost Percentage";
+            // 
+            // txtHallCost
+            // 
+            this.txtHallCost.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.txtHallCost.Location = new System.Drawing.Point(326, 295);
+            this.txtHallCost.Name = "txtHallCost";
+            this.txtHallCost.Size = new System.Drawing.Size(157, 26);
+            this.txtHallCost.TabIndex = 44;
+            this.txtHallCost.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BalanceCheck);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label20.Location = new System.Drawing.Point(88, 238);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(171, 22);
+            this.label20.TabIndex = 45;
+            this.label20.Text = "Monthly Income";
+            // 
+            // txtIncome
+            // 
+            this.txtIncome.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.txtIncome.Location = new System.Drawing.Point(326, 239);
+            this.txtIncome.Name = "txtIncome";
+            this.txtIncome.Size = new System.Drawing.Size(157, 26);
+            this.txtIncome.TabIndex = 46;
+            // 
+            // txtPaymentMonth
+            // 
+            this.txtPaymentMonth.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.txtPaymentMonth.FormattingEnabled = true;
+            this.txtPaymentMonth.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.txtPaymentMonth.Location = new System.Drawing.Point(326, 112);
+            this.txtPaymentMonth.Name = "txtPaymentMonth";
+            this.txtPaymentMonth.Size = new System.Drawing.Size(192, 26);
+            this.txtPaymentMonth.TabIndex = 47;
+            // 
             // Teacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -702,7 +764,6 @@ namespace InstituteAdminSide
         private Button btnEmployeePayment;
         private TextBox txtPaymentAmount;
         private TextBox txtPaymentYear;
-        private TextBox txtPaymentMonth;
         private TextBox txtPaymentTeaId;
         private Label label5;
         private Label label3;
@@ -734,5 +795,10 @@ namespace InstituteAdminSide
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
         private Button btnDelete;
+        private TextBox txtIncome;
+        private Label label20;
+        private TextBox txtHallCost;
+        private Label label19;
+        private ComboBox txtPaymentMonth;
     }
 }

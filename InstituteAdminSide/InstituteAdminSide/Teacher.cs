@@ -222,7 +222,7 @@ namespace InstituteAdminSide
         private void Teacher_Load(object sender, EventArgs e)
         {
             GetTeacherLastId();
-            FillGridTeacher();
+           
         }
 
         private void FillGridTeacher()
@@ -283,7 +283,6 @@ namespace InstituteAdminSide
                 }
                 catch (Exception)
                 {
-
                     MessageBox.Show(@"Can't Save Data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 
@@ -341,6 +340,23 @@ namespace InstituteAdminSide
                 
                 throw;
             }
+        }
+
+        private void BalanceCheck(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Double income = Double.Parse(txtIncome.Text);
+                float percentage = float.Parse(txtHallCost.Text);
+
+                Double total = (income * percentage) / 100;
+                txtPaymentAmount.Text = (income - total).ToString();
+            }
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+            FillGridTeacher();
         }
     }
 }

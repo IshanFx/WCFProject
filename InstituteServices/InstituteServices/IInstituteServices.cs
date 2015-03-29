@@ -160,9 +160,14 @@ namespace InstituteServices
     }
 
     [ServiceContract]
-    public interface IAccount {
-        int CheckLogIn(Account account);
-    
+    public interface IAccountService {
+
+        [OperationContract]
+        DataSet CheckLogIn(Account account);
+
+        [OperationContract]
+        DataSet ForgetPassword(Account account);
+
     }
 
 

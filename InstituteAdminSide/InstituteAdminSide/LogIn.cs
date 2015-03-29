@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Data;
 using System.Net;
 using System.Net.Mail;
 using System.Windows.Forms;
+using InstituteAdminSide.InstituteService;
 
 namespace InstituteAdminSide
 {
@@ -14,21 +16,51 @@ namespace InstituteAdminSide
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var mail = new MailMessage();
-            var client = new SmtpClient("smtpcorp.com", 2525) 
+            InstituteService.AccountServiceClient accountService = new AccountServiceClient();
+            Account account = new Account();
+            try
             {
-                Credentials = new NetworkCredential("ishantuf@gmail.com", "nvidiagtx680"),
-                EnableSsl = true
-            };
-            mail.From = new MailAddress("info@ACME.com");
-            mail.To.Add(txtForgetMail.Text);
-            mail.Subject = "Password Lost";
-            var plainView = AlternateView.CreateAlternateViewFromString("This is a text message", null, "text/plain");
-            var htmlView = AlternateView.CreateAlternateViewFromString("<b>This is a html message</b>", null, "text/html");
-            mail.AlternateViews.Add(plainView);
-            mail.AlternateViews.Add(htmlView);
-            client.Send(mail);
-            
+                account.EMail = txtForgetMail.Text;
+                DataSet set = accountService.ForgetPassword(account);
+                if (set.Tables[0].Rows.Count == 0)
+                {
+                    MessageBox.Show("Not");
+                }
+                else
+                {
+                    var mail = new MailMessage();
+                    var client = new SmtpClient("smtpcorp.com", 2525)
+                    {
+                        Credentials = new NetworkCredential("ishantuf@gmail.com", "nvidiagtx680"),
+                        EnableSsl = true
+                    };
+                    mail.From = new MailAddress("info@ACME.com");
+                    mail.To.Add(txtForgetMail.Text);
+                    mail.Subject = "Password Lost";
+
+                    var htmlView =
+                        AlternateView.CreateAlternateViewFromString(
+                            "Username :" + set.Tables[0].Rows[0][0].ToString() + "<br>Password :" +
+                            set.Tables[0].Rows[0][1].ToString(), null, "text/html");
+
+                    mail.AlternateViews.Add(htmlView);
+
+                    client.Send(mail);
+                    MessageBox.Show("Mail Send success Check Mail Box", "Success", MessageBoxButtons.OK,
+                        MessageBoxIcon.None);
+                }
+            }
+            catch (SmtpFailedRecipientException recipientException)
+            {
+                MessageBox.Show("Mail not Send", "Not send", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Not send", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
         }
         LogIn log;
         private void label1_Click(object sender, EventArgs e)
@@ -45,19 +77,38 @@ namespace InstituteAdminSide
             {
                 panel1.Height += 5;
             }
-                     
-            
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-           
+
         }
 
         private void LogIn_Load(object sender, EventArgs e)
         {
             panel1.Height = 0;
+        }
+
+        private void LogInClick(object sender, EventArgs e)
+        {
+            InstituteService.AccountServiceClient client = new AccountServiceClient();
+            Account account = new Account();
+            account.UserName = txtUserName.Text;
+            account.Password = txtPassword.Text;
+            DataSet set = client.CheckLogIn(account);
+            
+            if (set.Tables[0].Rows.Count==0)
+            {
+                MessageBox.Show("Incorrect User Name Password match", "Not Found", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                DataTable table = set.Tables[0];
+                MessageBox.Show(String.Format("Welcome {0}",table.Rows[0][0]),"Hello User",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                Home home = new Home();
+                home.Show();
+                this.Hide();
+            }
+
+
         }
     }
 }

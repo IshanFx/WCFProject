@@ -1,16 +1,8 @@
 ﻿using System;
-using System.CodeDom;
 using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows.Forms;
 using InstituteAdminSide.InstituteService;
 
@@ -66,9 +58,9 @@ namespace InstituteAdminSide
         private void Send_click(object sender, EventArgs e)
         {
             var mail = new MailMessage();
-             try
+            try
             {
-               
+
                 var client = new SmtpClient("smtpcorp.com", 2525)
                 {
                     Credentials = new NetworkCredential("ishantuf@gmail.com", "nvidiagtx680"),
@@ -95,15 +87,21 @@ namespace InstituteAdminSide
                     }
                 }
             }
-            catch (Exception ex)
+            catch (SmtpFailedRecipientException recipientException)
             {
                 MessageBox.Show("Mail Not Send.Try Again Later", "Mail Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
             }
             finally
             {
                 mail.Dispose();
-            }     
+            }
         }
 
 

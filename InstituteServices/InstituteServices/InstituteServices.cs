@@ -14,7 +14,7 @@ using System.Drawing;
 namespace InstituteServices
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "InstituteServices" in both code and config file together.
-    public class InstituteServices : IInstituteServices,IEmployeeServices,ITeacherServices,IStudentServices,ICourseServices
+    public class InstituteServices : IInstituteServices,IEmployeeServices,ITeacherServices,IStudentServices,ICourseServices,IAccountService
     {
        
         DB db;
@@ -435,6 +435,29 @@ namespace InstituteServices
         {
             string sql = "UPDATE employee SET status='D' WHERE empid='" + employeeId + "'";
             return new DB().DMLQuery(sql);
+        }
+
+        public DataSet CheckLogIn(Account account)
+        {
+            string sql = "SELECT username FROM account WHERE username='"+account.UserName+"' AND password='"+account.Password+"'";
+            db = new DB();
+            table = db.SelectQuery(sql);
+            set = new DataSet();
+      
+            set.Tables.Add(table);
+            return set;
+        }
+
+
+        public DataSet ForgetPassword(Account account)
+        {
+            string sql = "SELECT username,password FROM account WHERE email='" + account.EMail + "'";
+            db = new DB();
+            table = db.SelectQuery(sql);
+            set = new DataSet();
+            set.Tables.Add(table);
+            return set;
+
         }
     }
 }

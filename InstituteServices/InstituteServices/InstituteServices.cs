@@ -183,6 +183,7 @@ namespace InstituteServices
             student.stuAddr = table.Rows[0][3].ToString();
             student.stuGender = table.Rows[0][4].ToString();
             student.stuContact = Convert.ToInt32(table.Rows[0][5].ToString());
+            student.getImg = (byte[])table.Rows[0][6];
 
             return student;
         }

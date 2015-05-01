@@ -16,7 +16,7 @@ namespace InstituteAdminSide
         public DataSet dataSet;
         public DataTable table;
         public ListViewItem listView;
-        public Hashtable hashtableTotal = new Hashtable();
+        
         private CustomFormControl formControl = new CustomFormControl();
         public Reports()
         {
@@ -257,6 +257,7 @@ namespace InstituteAdminSide
             AddStudentToHashtable(dataTableStudent, hashtableStudent);
 
             CalculateIncome(hashtableEmployee, hashtableTeacher,hashtableStudent);
+           
         }
 
         //add student income to the hash table
@@ -327,12 +328,13 @@ namespace InstituteAdminSide
         }
 
         //calculate income from the hashtable data
-        private void CalculateIncome(Hashtable hashtableEmployee, Hashtable hashtableTeacher,Hashtable hashtableStudent)
+        private void CalculateIncome( Hashtable hashtableEmployee, Hashtable hashtableTeacher,Hashtable hashtableStudent)
         {
             double totalEmployee;
             double totalTeacher;
             double totalStudent;
             double total;
+            Hashtable hashtableTotal = new Hashtable();
             for (int i = 1; i < 13; i++)
             {
                 totalEmployee = 0;
@@ -524,9 +526,19 @@ namespace InstituteAdminSide
 
         private void StudentIncomehartLoad(object sender, EventArgs e)
         {
+            String currentYear = "";
+            if (txtStudentPayYear.Text != "" && txtStudentPayYear.Text.Length == 4)
+            {
+                currentYear = txtStudentPayYear.Text;
+            }
+            else
+            {
+                currentYear = DateTime.Now.ToString("yyyy");
+            }
+
             InstituteService.Student student = new InstituteService.Student
             {
-                StudentPayYear = int.Parse(DateTime.Now.ToString("yyyy"))
+                StudentPayYear = int.Parse(currentYear)
             };
             StudentServices = new StudentServicesClient();
             DataSet set = StudentServices.GetStudentIncomeReport(student);
@@ -585,6 +597,7 @@ namespace InstituteAdminSide
 
         private void TotalIncomeChart(object sender, KeyEventArgs e)
        {
+          
             try
             {
                 if (String.IsNullOrEmpty(txtIncomeYear.Text) && (e.KeyCode == Keys.Enter))

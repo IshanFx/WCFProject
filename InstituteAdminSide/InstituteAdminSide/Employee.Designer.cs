@@ -215,7 +215,7 @@ namespace InstituteAdminSide
             // empIdtxt
             // 
             this.empIdtxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.empIdtxt.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empIdtxt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.empIdtxt.Location = new System.Drawing.Point(230, 60);
             this.empIdtxt.Name = "empIdtxt";
             this.empIdtxt.Size = new System.Drawing.Size(100, 26);
@@ -318,7 +318,7 @@ namespace InstituteAdminSide
             // 
             // empContacttxt
             // 
-            this.empContacttxt.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empContacttxt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.empContacttxt.Location = new System.Drawing.Point(230, 389);
             this.empContacttxt.MaxLength = 10;
             this.empContacttxt.Name = "empContacttxt";
@@ -338,7 +338,7 @@ namespace InstituteAdminSide
             // 
             // empAdd1txt
             // 
-            this.empAdd1txt.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empAdd1txt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.empAdd1txt.Location = new System.Drawing.Point(230, 284);
             this.empAdd1txt.Multiline = true;
             this.empAdd1txt.Name = "empAdd1txt";
@@ -358,7 +358,7 @@ namespace InstituteAdminSide
             // 
             // empNICtxt
             // 
-            this.empNICtxt.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empNICtxt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.empNICtxt.Location = new System.Drawing.Point(230, 221);
             this.empNICtxt.MaxLength = 10;
             this.empNICtxt.Name = "empNICtxt";
@@ -367,7 +367,7 @@ namespace InstituteAdminSide
             // 
             // empFNametxt
             // 
-            this.empFNametxt.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empFNametxt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.empFNametxt.Location = new System.Drawing.Point(230, 106);
             this.empFNametxt.Name = "empFNametxt";
             this.empFNametxt.Size = new System.Drawing.Size(159, 26);
@@ -375,7 +375,7 @@ namespace InstituteAdminSide
             // 
             // empLNametxt
             // 
-            this.empLNametxt.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empLNametxt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.empLNametxt.Location = new System.Drawing.Point(230, 164);
             this.empLNametxt.Name = "empLNametxt";
             this.empLNametxt.Size = new System.Drawing.Size(159, 26);

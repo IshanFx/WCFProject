@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/InstituteServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/InstituteServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
   <xs:complexType name="Employee">
     <xs:sequence>
       <xs:element minOccurs="0" name="EmpAddress" nillable="true" type="xs:string" />
@@ -46,7 +45,9 @@
   <xs:element name="Course" nillable="true" type="tns:Course" />
   <xs:complexType name="Student">
     <xs:sequence>
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="getImg" nillable="true" type="q1:Image" />
+      <xs:element minOccurs="0" name="StudentPayMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StudentPayYear" type="xs:int" />
+      <xs:element minOccurs="0" name="getImg" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="stuAddr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="stuContact" type="xs:int" />
       <xs:element minOccurs="0" name="stuCourseID" type="xs:int" />
@@ -58,4 +59,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Student" nillable="true" type="tns:Student" />
+  <xs:complexType name="Account">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Account" nillable="true" type="tns:Account" />
 </xs:schema>

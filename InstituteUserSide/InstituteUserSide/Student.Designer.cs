@@ -57,7 +57,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.StuPaymentChkBtn = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.StuImagePay = new System.Windows.Forms.PictureBox();
             this.StuPayBtn = new System.Windows.Forms.Button();
             this.StuMrkAtnBtn = new System.Windows.Forms.Button();
             this.txtstuPayFee = new System.Windows.Forms.TextBox();
@@ -84,7 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.StuCosGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stuImage)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StuImagePay)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StuAlDataGrid)).BeginInit();
             this.tabPage5.SuspendLayout();
@@ -342,6 +342,7 @@
             this.txtcont.Name = "txtcont";
             this.txtcont.Size = new System.Drawing.Size(106, 26);
             this.txtcont.TabIndex = 5;
+            this.txtcont.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcont_KeyPress);
             // 
             // txtadd
             // 
@@ -371,6 +372,7 @@
             this.txtcourseid.Name = "txtcourseid";
             this.txtcourseid.Size = new System.Drawing.Size(106, 26);
             this.txtcourseid.TabIndex = 1;
+            this.txtcourseid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcourseid_KeyPress);
             // 
             // txtstuid
             // 
@@ -378,12 +380,13 @@
             this.txtstuid.Name = "txtstuid";
             this.txtstuid.Size = new System.Drawing.Size(106, 26);
             this.txtstuid.TabIndex = 0;
+            this.txtstuid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtstuid_KeyPress);
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.StuPaymentChkBtn);
             this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.pictureBox2);
+            this.tabPage2.Controls.Add(this.StuImagePay);
             this.tabPage2.Controls.Add(this.StuPayBtn);
             this.tabPage2.Controls.Add(this.StuMrkAtnBtn);
             this.tabPage2.Controls.Add(this.txtstuPayFee);
@@ -427,15 +430,15 @@
             this.label14.Size = new System.Drawing.Size(2, 397);
             this.label14.TabIndex = 23;
             // 
-            // pictureBox2
+            // StuImagePay
             // 
-            this.pictureBox2.Image = global::InstituteUserSide.Properties.Resources.propic;
-            this.pictureBox2.Location = new System.Drawing.Point(306, 139);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(158, 190);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 22;
-            this.pictureBox2.TabStop = false;
+            this.StuImagePay.Image = global::InstituteUserSide.Properties.Resources.propic;
+            this.StuImagePay.Location = new System.Drawing.Point(306, 139);
+            this.StuImagePay.Name = "StuImagePay";
+            this.StuImagePay.Size = new System.Drawing.Size(158, 190);
+            this.StuImagePay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.StuImagePay.TabIndex = 22;
+            this.StuImagePay.TabStop = false;
             // 
             // StuPayBtn
             // 
@@ -473,6 +476,7 @@
             this.txtstuPayFee.Name = "txtstuPayFee";
             this.txtstuPayFee.Size = new System.Drawing.Size(121, 26);
             this.txtstuPayFee.TabIndex = 19;
+            this.txtstuPayFee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtstuPayFee_KeyPress);
             // 
             // StuAttenMonth
             // 
@@ -531,6 +535,7 @@
             this.txtStuAtenYear.Name = "txtStuAtenYear";
             this.txtStuAtenYear.Size = new System.Drawing.Size(121, 26);
             this.txtStuAtenYear.TabIndex = 14;
+            this.txtStuAtenYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStuAtenYear_KeyPress);
             // 
             // label8
             // 
@@ -558,6 +563,7 @@
             this.txtStuAttenCosID.Name = "txtStuAttenCosID";
             this.txtStuAttenCosID.Size = new System.Drawing.Size(106, 26);
             this.txtStuAttenCosID.TabIndex = 10;
+            this.txtStuAttenCosID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStuAttenCosID_KeyPress);
             // 
             // txtStuAttenStuID
             // 
@@ -565,6 +571,7 @@
             this.txtStuAttenStuID.Name = "txtStuAttenStuID";
             this.txtStuAttenStuID.Size = new System.Drawing.Size(106, 26);
             this.txtStuAttenStuID.TabIndex = 9;
+            this.txtStuAttenStuID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStuAttenStuID_KeyPress);
             // 
             // tabPage4
             // 
@@ -684,7 +691,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.stuImage)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StuImagePay)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.StuAlDataGrid)).EndInit();
             this.tabPage5.ResumeLayout(false);
@@ -727,7 +734,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView StuAlDataGrid;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox StuImagePay;
         private System.Windows.Forms.Button StuPayBtn;
         private System.Windows.Forms.Button StuMrkAtnBtn;
         private System.Windows.Forms.TextBox txtstuPayFee;

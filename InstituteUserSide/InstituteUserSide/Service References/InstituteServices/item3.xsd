@@ -117,7 +117,9 @@
   </xs:element>
   <xs:element name="GetEmployeePayment">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="employee" nillable="true" type="q5:Employee" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetEmployeePaymentResponse">
@@ -178,7 +180,7 @@
   <xs:element name="GetEmployeeMonthYearpaymentReport">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="employee" nillable="true" type="q5:Employee" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="employee" nillable="true" type="q6:Employee" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -201,10 +203,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="DeleteEmployee">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="employeeId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEmployeeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteEmployeeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SaveTeacher">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="teacher" nillable="true" type="q6:Teacher" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="teacher" nillable="true" type="q7:Teacher" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -225,14 +241,14 @@
   <xs:element name="SearchTeacherDataResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="SearchTeacherDataResult" nillable="true" type="q7:Teacher" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="SearchTeacherDataResult" nillable="true" type="q8:Teacher" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateTeacher">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="teacher" nillable="true" type="q8:Teacher" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="teacher" nillable="true" type="q9:Teacher" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -246,7 +262,7 @@
   <xs:element name="SaveTeacherPayment">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="teacher" nillable="true" type="q9:Teacher" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="teacher" nillable="true" type="q10:Teacher" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -283,7 +299,9 @@
   </xs:element>
   <xs:element name="GetTeachersIncome">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="teacher" nillable="true" type="q11:Teacher" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetTeachersIncomeResponse">
@@ -368,7 +386,7 @@
   <xs:element name="GetTeacherMonthYearpaymentReport">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="teacher" nillable="true" type="q10:Teacher" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="teacher" nillable="true" type="q12:Teacher" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -391,10 +409,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="DeleteTeacher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teacherId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTeacherResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTeacherResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SaveCourse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="course" nillable="true" type="q11:Course" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="course" nillable="true" type="q13:Course" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -408,7 +440,7 @@
   <xs:element name="UpdateCourse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="course" nillable="true" type="q12:Course" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="course" nillable="true" type="q14:Course" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -489,14 +521,14 @@
   <xs:element name="SearchCourseResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="SearchCourseResult" nillable="true" type="q13:Course" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="SearchCourseResult" nillable="true" type="q15:Course" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SaveStudent">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="student" nillable="true" type="q14:Student" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="student" nillable="true" type="q16:Student" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -510,7 +542,7 @@
   <xs:element name="UpdateStudent">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="student" nillable="true" type="q15:Student" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="student" nillable="true" type="q17:Student" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -531,7 +563,7 @@
   <xs:element name="SearchStudentDateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="SearchStudentDateResult" nillable="true" type="q16:Student" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="SearchStudentDateResult" nillable="true" type="q18:Student" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -598,7 +630,7 @@
   <xs:element name="StudentClassSave">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="student" nillable="true" type="q17:Student" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="student" nillable="true" type="q19:Student" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -612,7 +644,7 @@
   <xs:element name="StudentAttenSave">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="student" nillable="true" type="q18:Student" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="student" nillable="true" type="q20:Student" />
         <xs:element minOccurs="0" name="month" type="xs:int" />
         <xs:element minOccurs="0" name="day" type="xs:int" />
         <xs:element minOccurs="0" name="year" type="xs:int" />
@@ -644,7 +676,7 @@
   <xs:element name="StudentPaySave">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="student" nillable="true" type="q19:Student" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="student" nillable="true" type="q21:Student" />
         <xs:element minOccurs="0" name="month" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="year" type="xs:int" />
         <xs:element minOccurs="0" name="amount" type="xs:int" />
@@ -658,6 +690,82 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetStudentIncomeReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="student" nillable="true" type="q22:Student" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStudentIncomeReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStudentIncomeReportResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStudentPaymentReport">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStudentPaymentReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStudentPaymentReportResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStudentYearpaymentReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="student" nillable="true" type="q23:Student" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStudentYearpaymentReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStudentYearpaymentReportResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetStuAttenReport">
     <xs:complexType>
       <xs:sequence />
@@ -667,6 +775,58 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="GetStuAttenReportResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckLogIn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="account" nillable="true" type="q24:Account" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckLogInResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckLogInResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForgetPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/InstituteServices" minOccurs="0" name="account" nillable="true" type="q25:Account" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForgetPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ForgetPasswordResult" nillable="true">
           <xs:complexType>
             <xs:annotation>
               <xs:appinfo>

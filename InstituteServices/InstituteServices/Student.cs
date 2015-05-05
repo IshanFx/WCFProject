@@ -81,13 +81,14 @@ namespace InstituteServices
             set { studentPayYear = value; }
         }
 
-        private Image GetImg;
+        private byte[] GetImg;
 
-        public Image getImg
+        public byte[] getImg
         {
             get { return GetImg; }
             set { GetImg = value; }
         }
+
         
     }
 }

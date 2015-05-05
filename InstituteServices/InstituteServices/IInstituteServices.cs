@@ -154,7 +154,8 @@ namespace InstituteServices
 
         [OperationContract]
         DataSet GetStudentYearpaymentReport(Student student);
-
+        
+        [OperationContract]
         DataSet GetStuAttenReport();
 
     }
